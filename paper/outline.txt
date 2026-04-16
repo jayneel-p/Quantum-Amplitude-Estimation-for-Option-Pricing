@@ -1,5 +1,0 @@
-Title — QMC option pricing; classical VR baseline; Sta20 European; toy Asian.
-
-Refs — KV90 RGB18 Sta20 Man25 Ren25 WK24 BS73 Gla03 Suz20 BHMT02.
-
-1 Intro 2 GBM / Euro / Asian 3 MC + KV 4 Quantum load–payoff–AE 5 Results 6 Discussion 7 Conclusion App math/plots

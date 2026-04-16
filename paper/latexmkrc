@@ -1,3 +1,0 @@
-$ENV{'LANG'} = 'en_US.UTF-8';
-$ENV{'LC_ALL'} = 'en_US.UTF-8';
-$ENV{'PAR_GLOBAL_TEMP'} = '/tmp/biber-par-cache';
