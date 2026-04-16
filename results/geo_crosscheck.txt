@@ -1,0 +1,8 @@
+Geometric Asian Call Cross-Check
+Parameters: S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0, N=252
+
+Closed-form price:  5.565509
+MC mean (20×100000):  5.566503
+MC std across runs: 0.027589
+Bias:               0.000994
+Within 3-sigma:     YES

@@ -1,0 +1,12 @@
+# Install the package (pulls numpy, scipy, matplotlib from pyproject.toml):
+#   pip install -e .
+# Or include the optional quantum dependencies:
+#   pip install -e ".[quantum]"
+#
+# Or pin the same runtime deps without the package:
+numpy>=1.24
+scipy>=1.11
+matplotlib>=3.7
+
+# Optional (quantum circuits / AE demos):
+#   pip install pylatexenc qiskit qiskit-algorithms qiskit-finance

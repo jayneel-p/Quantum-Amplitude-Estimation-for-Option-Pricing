@@ -1,0 +1,31 @@
+Literature / Benchmark Validation Report
+==============================================================
+
+1. Kemna-Vorst / geometric Asian closed-form check
+--------------------------------------------------------------
+Model: one-factor GBM, S0=100, K=100, r=0.05, sigma=0.2, T=1, N=252, averages over t_1..t_N.
+Geometric exact:          5.565509
+Geometric MC:             5.577325 ± 0.014132  z=0.84
+Arithmetic vanilla MC:    5.770683 ± 0.014594
+Arithmetic KV estimate:   5.781736 ± 0.000402
+KV vs vanilla z-score:    0.76
+Stderr reduction:         36.3x
+Geometric MC within 3 standard errors of closed form: PASS
+KV estimate consistent with vanilla MC: PASS
+Arithmetic price above geometric lower bound: PASS
+
+2. Published Black-Scholes Asian benchmark: Xu, Zhang, Wang (2023)
+--------------------------------------------------------------
+Source: Mathematics 11(3), 594, Table 4, row 'w/o ALL'. The paper states S0=50, K=50, daily r=0.0005, initial daily sigma=0.02, T in {30,90,180}, N=10,000.
+Convention matched to the authors' released code: arithmetic average uses S0 plus T simulated daily prices (T+1 observations).
+We run 1,000,000 pseudo-random paths for a tighter independent estimate; PASS means our estimate is within 3 of the published standard errors.
+
+T(days)   Published    Pub SE        Ours    Our SE       Diff    z_pub
+------------------------------------------------------------------------
+     30      1.3871    0.0201      1.4331    0.0020     0.0460     2.29
+     90      2.6589    0.0373      2.7030    0.0038     0.0441     1.18
+    180      4.0166    0.0546      4.0870    0.0056     0.0704     1.29
+
+Xu et al. Table 4 'w/o ALL' reproduced within 3 published SEs: PASS
+Note: the published values are one 10,000-path MC estimate, so exact price matching is neither expected nor required. The short-maturity case is the loosest but still within the 3-SE diagnostic band.
+

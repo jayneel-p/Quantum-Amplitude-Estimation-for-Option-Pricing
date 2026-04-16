@@ -1,0 +1,24 @@
+Toy Arithmetic Asian Quantum Circuit Validation
+==========================================================
+Source pipeline: Stamatopoulos et al. (2020), Sec. 4.2.2, Eq. (32)-(35): the arithmetic Asian payoff is max(Sbar-K,0), with Sbar the average over selected time points. This script uses the same idea on a 3-date finite GBM grid so the quantum payoff can be checked exactly.
+Important scope: this is a toy 3-date grid validation, not a realistic daily-monitored Asian circuit. Realistic Asian pricing is handled by the classical MC/Kemna-Vorst scripts.
+Gate basis for resource counts: ry, rz, x, h, cx (standard simulator gates; no opaque library gates counted).
+Parameters: S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0, monitoring_dates=3, qubits_per_date=2, grid_paths=64.
+
+Exact finite-grid Asian price: 6.997019
+Quantum statevector price:    6.997019
+Absolute circuit/grid error:  4.742873e-13
+Classical MC 3-date price:  7.328024 ± 0.018539
+Objective probability:        0.15726020
+Payoff scale f_max:           46.774480
+Average-price grid range:     [72.3946, 146.7745]
+
+Transpiled resources
+----------------------------------------------------------
+Qubits: 7
+Depth:  2396
+ ry: 149
+ rz: 2106
+  x: 67
+  h: 2
+ cx: 1963

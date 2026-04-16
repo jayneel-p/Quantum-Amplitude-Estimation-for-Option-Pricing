@@ -1,0 +1,10 @@
+European Call Parameters: S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0
+Black-Scholes analytic price: 10.450584
+Each row: mean over 8 independent trials
+
+       Paths   Mean Stderr  Mean |Error|   Q25 |Err|   Q75 |Err|
+----------------------------------------------------------------
+         500       0.68080       0.86157     0.42155     1.24756
+       2,000       0.33336       0.15763     0.11338     0.20651
+      10,000       0.14665       0.08659     0.03395     0.13106
+      50,000       0.06580       0.04883     0.03303     0.06761

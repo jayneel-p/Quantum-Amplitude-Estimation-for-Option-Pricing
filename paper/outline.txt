@@ -1,0 +1,158 @@
+Paper title (working): Quantum Monte Carlo Option Pricing Under an Honest Classical Baseline
+
+Thesis: Quantum amplitude estimation offers a genuine quadratic speedup for
+option pricing, but a defensible near-term project should separate the small
+circuits we can validate exactly from the large path-dependent circuits that are
+still resource-heavy. We reproduce the core Stamatopoulos et al. European-call
+pipeline, validate it against Black-Scholes, and add a small three-date arithmetic
+Asian circuit as a finite-grid extension. Realistic daily-monitored Asian
+pricing is handled classically with Monte Carlo and Kemna-Vorst variance
+reduction, with quantum Asian scaling discussed honestly.
+
+Primary references (in docs/)
+------------------------------
+  [KV90]   Kemna & Vorst (1990), J. Banking & Finance 14, 113–129.
+           Classical MC + geometric-Asian control variate for arithmetic Asians.
+
+  [RGB18]  Rebentrost, Gupt & Bromley (2018), Phys. Rev. A 98, 022321.
+           Quantum MC pricing framework: state prep, payoff unitary, AE;
+           quadratic speedup in sample complexity.
+
+  [Sta20]  Stamatopoulos et al. (2020), Quantum 4, 291.
+           Implementation-focused: option taxonomy, AE with/without QPE,
+           MLE-based AE, IBM Q Tokyo hardware results.
+
+  [Man25]  Manzano et al. (2025), EPJ Quantum Technol. 12, 28.
+           Alternative QAMC pipeline: direct encoding + mRQAE; handles
+           negative payoffs; empirical comparison with standard QAMC.
+
+  [Ren25]  Rendon, Kshirsagar & Tran (2025), arXiv:2501.15614.
+           Quantum preconditioning for Asian option PDE; exponential
+           improvement in accuracy scaling via probability integral estimation.
+
+  [WK24]   Wang & Kan (2024), Quantum 8, 1504.
+           Quantum pricing under Heston stochastic volatility; resource
+           estimates (T-count, logical qubits) for Asian/barrier options.
+
+Additional references (to cite, not in docs/)
+----------------------------------------------
+  [BS73]   Black & Scholes (1973), J. Polit. Econ. 81, 637–654.
+  [Gla03]  Glasserman (2003), Monte Carlo Methods in Financial Engineering, Springer.
+  [Suz20]  Suzuki et al. (2020), Quantum Inf. Process. 19, 75. MLE-based AE without QPE.
+  [BHMT02] Brassard et al. (2002), Contemp. Math. 305. Amplitude estimation algorithm.
+
+Paper structure (target ~15 pages)
+===================================
+
+1. Introduction  (~1.5 pp)
+   - Option pricing as risk-neutral expectation; simulation needed for complex payoffs.
+   - Classical MC: flexible but O(1/sqrt(M)) convergence [Gla03].
+   - Quantum promise: amplitude estimation gives O(1/M) [RGB18, Sta20].
+   - Gap in the literature: most quantum papers benchmark against vanilla MC, not
+     against variance-reduced classical methods.  This overstates practical advantage.
+   - Our contribution: (a) implement both vanilla and control-variate classical MC
+     as baselines, (b) reproduce and validate the Stamatopoulos European-call
+     quantum circuit pipeline, (c) extend the same circuit idea to a toy three-date
+     arithmetic Asian option, and (d) compare resource costs honestly.
+
+2. Financial and mathematical background  (~2 pp)
+   2.1 GBM under risk-neutral measure Q
+       - SDE, log-normal terminal distribution [RGB18 Sec. II].
+   2.2 European call option
+       - Payoff, discounted expectation, Black–Scholes closed form [BS73] as benchmark.
+   2.3 Arithmetic Asian call option
+       - Discrete average payoff max(A - K, 0); no closed form.
+       - Geometric Asian: closed form exists because geometric mean of lognormals
+         is lognormal.  This enables the Kemna–Vorst control variate [KV90].
+
+3. Classical Monte Carlo methodology  (~2.5 pp)
+   3.1 Vanilla MC for European call
+       - Path simulation, payoff averaging, CLT confidence intervals.
+       - Convergence: error ~ O(1/sqrt(M)), validated against BS.
+   3.2 Vanilla MC for arithmetic Asian
+       - Full-path simulation via GBM discretization; averaging over time steps.
+   3.3 Kemna–Vorst variance reduction
+       - Geometric Asian closed form derivation (adjusted drift and vol).
+       - Control variate estimator:  C_arith ≈ C_mc + beta*(C_geo_exact - C_geo_mc).
+       - Optimal beta from sample covariance.
+       - Standard error reduction: ~36x (variance reduction ~1,300x) at N=252.
+         Literature reports ~20-40x stderr reduction depending on parameters.
+         Lead with stderr reduction (comparable to literature); note variance
+         factor in parentheses for context.
+   3.4 Implementation note: simulate each path panel once; vanilla and KV on same ω (CRN).
+
+4. Quantum Monte Carlo framework  (~3 pp)
+   4.1 The quantum pipeline: load distribution -> payoff in amplitude -> AE
+       - Block diagram following [Sta20] Fig. 1, [RGB18] Sec. IV.
+   4.2 State preparation (distribution loading)
+       - Encoding log-normal P(S_T) into qubit amplitudes.
+       - Qiskit approach: piecewise-linear rotation or log-concave loader.
+   4.3 Payoff operator
+       - Mapping max(S - K, 0) into amplitude of an ancilla qubit.
+   4.4 Amplitude estimation
+       - Canonical AE (QPE-based) [BHMT02]: O(1/M) but deep circuits.
+       - MLE-based AE without QPE [Suz20, Sta20 Sec. 5]: shallower, same scaling.
+       - Iterative AE as practical middle ground.
+       - In the numerical section, exact statevector readout is used as the
+         deterministic validation of the A operator; AE is discussed as the
+         sampling procedure that would estimate the same objective probability.
+   4.5 Extension to Asian options
+       - Multi-register path simulation; average oracle.
+       - Additional qubit/depth overhead vs European case.
+       - We implement a three-date finite-grid toy circuit only, then explain why
+         realistic daily monitoring is not a one-night simulator target.
+
+5. Numerical results  (~3 pp)
+   5.1 European call: classical convergence
+       - MC estimates vs BS at M = 500, 2k, 8k, 32k, 128k.
+       - Error vs M plot confirming O(1/sqrt(M)).
+   5.2 Asian call: vanilla MC vs control-variate MC
+       - Convergence comparison: stderr vs M for both estimators.
+       - Show ~1,300x variance reduction (daily monitoring, N=252):
+         CV at 100k paths ≈ Vanilla MC at ~132M paths.
+   5.3 Quantum European call (Qiskit statevector validation)
+       - Reproduce the Stamatopoulos pipeline: log-normal distribution loading
+         plus payoff-ancilla encoding.
+       - Exact circuit expectation vs Black-Scholes for n = 2,...,8 distribution
+         qubits.
+       - Circuit resource summary after transpiling to standard simulator gates
+         ry, rz, x, h, cx.
+   5.4 Quantum Asian toy extension
+       - Three monitoring dates, two qubits per date, 64 finite GBM grid paths.
+       - Exact finite-grid Asian price vs quantum statevector payoff probability.
+       - Classical three-date MC result shown as continuous-model context.
+       - Discuss scaling: realistic N-date Asian circuits require O(N * n)
+         state qubits plus average/payoff workspace.
+   5.5 The honest comparison
+       - Table: to reach epsilon accuracy, how many samples/queries does each
+         method need?
+         * Vanilla MC:           O(1/epsilon^2)
+         * Control-variate MC:   O(1/(rho * epsilon^2))  where rho < 1
+         * Quantum AE:           O(1/epsilon)
+         * But each quantum query costs a nontrivial state-prep/payoff circuit,
+           so gate-count adjusted comparison matters.
+       - Crossover discussion: quantum wins asymptotically, but the validated
+         toy circuits are demonstrations of mechanism rather than practical
+         advantage claims.
+
+6. Discussion  (~1.5 pp)
+   - Variance reduction narrows the gap: quantum still wins asymptotically but
+     the crossover moves to higher accuracy demands.
+   - Path-dependent options (Asian) are more promising for quantum because
+     classical variance reduction is less effective there than for Europeans.
+   - Near-term bottlenecks: distribution loading depth, error mitigation overhead,
+     limited qubit counts.
+   - Comparison with PDE-based quantum approach [Ren25]: different regime
+     (exponential vs quadratic speedup, but different problem formulation).
+
+7. Conclusion  (~0.5 pp)
+   - Summary of findings.
+   - Quantum advantage is real but overstated when measured against strawman
+     classical baselines.
+   - Path-dependent and high-dimensional pricing remain the strongest use case.
+   - Future work: hardware runs, multi-asset options, stochastic vol [WK24].
+
+Appendix
+   A. Geometric Asian closed-form derivation.
+   B. Notation table.
+   C. Additional convergence plots and circuit diagrams.
