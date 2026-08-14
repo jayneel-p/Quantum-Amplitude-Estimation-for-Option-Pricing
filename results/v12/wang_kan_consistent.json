@@ -1,0 +1,70 @@
+{
+  "schema": "wang-kan-consistent-v1",
+  "generated": "2026-07-21T13:15:47-06:00",
+  "convention": "raw and residual capped at the same $0.001 discounted clipping-bias budget (upper-90% CI), grid-free",
+  "environment": {
+    "python": "3.12.6",
+    "numpy": "2.4.4",
+    "platform": "macOS-14.5-arm64-arm-64bit"
+  },
+  "source_hashes": {
+    "scripts/recompute_wang_kan_consistent.py": "7e4fe0621f9ea91a4a3d187a900870048b5882eee3aeb2a9cb92d1cf2db6cb36",
+    "src/qc_option_pricing/quantum/wang_kan_resources.py": "0abdafe1f3796bcb558539ab443cd35e872c63a7821358df2eebd6132eed521d"
+  },
+  "instances": {
+    "call": {
+      "spec": "call",
+      "Z": 200.0,
+      "disc": 0.9704455335485082,
+      "raw_cap": 136.58552018685893,
+      "resid_cap": 13.945499431430187,
+      "thr_cap": 16.0,
+      "variance_ratio": 265.20695809408505,
+      "correlation": 0.9990138497067443,
+      "clip_loss_resid": 0.0008659706681786637,
+      "clip_loss_raw": 0.0007486453116837043,
+      "range_ratio_rotation": 9.794236546238297,
+      "range_ratio_threshold": 8.536595011678683,
+      "range_ratio_rotation_vsZ": 14.341544451914183,
+      "range_ratio_threshold_vsZ": 12.5,
+      "max_raw": 228.9631819176729,
+      "resource": {
+        "rot_A": 10.596544887558885,
+        "rot_B": 10.193784188797284,
+        "thr_A": 9.212185213299447,
+        "thr_B": 8.89124610022339
+      },
+      "resource_vsZ": {
+        "rot_A": 15.803467806445578,
+        "thr_A": 13.732343256392273
+      }
+    },
+    "put": {
+      "spec": "put",
+      "Z": 100.0,
+      "disc": 0.951229424500714,
+      "raw_cap": 44.102741230723296,
+      "resid_cap": 1.780186319398331,
+      "thr_cap": 2.0,
+      "variance_ratio": 1238.5365047033304,
+      "correlation": 0.9997136234395144,
+      "clip_loss_resid": 0.0009557283314931464,
+      "clip_loss_raw": 0.0009015354081611826,
+      "range_ratio_rotation": 24.77422770310311,
+      "range_ratio_threshold": 22.051370615361648,
+      "range_ratio_rotation_vsZ": 56.17389534472891,
+      "range_ratio_threshold_vsZ": 50.0,
+      "max_raw": 58.32854520017802,
+      "resource": {
+        "rot_A": 28.20259571027381,
+        "rot_B": 26.69279128440287,
+        "thr_A": 25.03526055560884,
+        "thr_B": 23.762883250301254
+      },
+      "resource_vsZ": {
+        "rot_A": 67.89513782102954,
+        "thr_A": 59.84037888901625
+      }
+    }
+  }
+}

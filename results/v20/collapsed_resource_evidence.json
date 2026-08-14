@@ -1,0 +1,2400 @@
+{
+ "schema_version": "collapsed-resource-evidence-v1",
+ "created_at_start": "2026-07-27T13:04:38-06:00",
+ "command": "scripts/v21_collapsed_resource_evidence.py",
+ "argv": [],
+ "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+ "purpose": "regenerate every published accuracy and resource number of the arithmetic Asian control-variate oracle on the collapsed geometric leg, which is now the paper's construction",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4",
+  "qiskit": "2.4.2"
+ },
+ "git": {
+  "rev": "5e4007b1343a4b7ccd932f3ea1c3a439662f1f96",
+  "worktree_dirty": true
+ },
+ "model": {
+  "instrument": "daily arithmetic-average Asian call on a uniform binary +/-1 shock tree with N monitoring dates; the finite model, not continuous GBM",
+  "s0": 100.0,
+  "strike": 100.0,
+  "rate": 0.05,
+  "volatility": 0.2,
+  "maturity": 1.0,
+  "n_dates": 252,
+  "shock_points": [
+   -1.0,
+   1.0
+  ],
+  "shock_probabilities": [
+   0.5,
+   0.5
+  ],
+  "geometric_legs": {
+   "per_date": "one shock-selected multiplication per date on a second price register",
+   "collapsed": "weighted shock sum plus one controlled constant multiplication per bit of that sum",
+   "none": "no control; the comparator encodes the capped arithmetic payoff"
+  }
+ },
+ "seeds": {
+  "binary_paired_sweep": 20260716,
+  "continuous_reference": 20260717,
+  "encoded_normalisation_selection": 20260728,
+  "encoded_normalisation_evaluation": 20260729,
+  "continuous_normalisation_selection": 20260713,
+  "continuous_normalisation_evaluation": 20260727,
+  "rng": "numpy.random.default_rng (PCG64)"
+ },
+ "path_counts": {
+  "binary_paired_sweep": 4000000,
+  "continuous_reference": 8000000,
+  "continuous_reference_chunk": 50000,
+  "normalisation_selection": 2000000,
+  "normalisation_evaluation": 2000000,
+  "normalisation_chunk": 250000,
+  "v8_reproduction_binary": 200000,
+  "v8_reproduction_continuous": 1000000
+ },
+ "results_v8_reproduction": {
+  "purpose": "the binary-shock model error is leg-independent, so it must reproduce results/v8 exactly at v8's seeds and path counts; this pins the estimator and the RNG stream before any sample size changes",
+  "paths_binary": 200000,
+  "paths_continuous": 1000000,
+  "seed_binary": 20260716,
+  "seed_continuous": 20260717,
+  "binary_shock_discretization_error": 0.0025750122123913144,
+  "binary_shock_combined_standard_error": 0.0008595742373610103,
+  "results_v8_value": 0.0025750122123913144,
+  "absolute_difference": 0.0,
+  "reproduced": true,
+  "note": "the residual difference is the exact geometric control's summation order: v8 sums over the raw +/-1 shock sum with a plain float sum, this script sums over the weighted shock sum with math.fsum"
+ },
+ "block_1_precision_sweep": {
+  "estimator": "paired common-random-number sweep against unrounded float64 binary paths, plus an independent unit-coefficient QCV Monte Carlo reference for the continuous price; structure follows precision_sweep and seeded_rounding_bias in scripts/validate_arithmetic_asian_oracle.py",
+  "decision_rule": "accept a precision iff |point estimate| + 1.96 * standard error <= 0.01; this is a one-sided test that the true absolute error is inside the predeclared target, not a comparison of point estimates",
+  "predeclared_absolute_target": 0.01,
+  "binary_paths": 4000000,
+  "binary_seed": 20260716,
+  "exact_binary_geometric_control_undiscounted": 5.8535386577515895,
+  "exact_binary_arithmetic_price_discounted": 5.784212836331038,
+  "exact_binary_arithmetic_price_standard_error": 0.0001740448224611356,
+  "continuous_reference": {
+   "paths": 8000000,
+   "seed": 20260717,
+   "chunk": 50000,
+   "geometric_control_discounted_analytic": 5.56550883134935,
+   "residual_discounted": 0.21626620383414846,
+   "residual_standard_error": 0.00012364855662447217,
+   "arithmetic_price_discounted": 5.7817750351834984,
+   "arithmetic_price_standard_error": 0.00012364855662447217
+  },
+  "binary_shock_model_error": {
+   "point_estimate": 0.0024378011475398864,
+   "standard_error": 0.0002134960556564067,
+   "ci95_low": 0.0020193488784533294,
+   "ci95_high": 0.0028562534166264434,
+   "note": "leg-independent: it compares unrounded binary-tree paths with continuous GBM and never touches the encoding"
+  },
+  "decomposition_identity": "continuous price error = binary-shock model error + arithmetic fixed-point rounding error - discounted clipping loss; only the clipping term depends on the geometric leg",
+  "precision_sweep": [
+   {
+    "multiplier_fraction_bits": 18,
+    "price_scale": 1024,
+    "value_bits": 22,
+    "product_bits": 41,
+    "geometric_product_bits": 43,
+    "shock_weight_bits": 15,
+    "per_date_product_bits": 41,
+    "arithmetic_rounding_error_discounted": 0.04926239471479229,
+    "arithmetic_rounding_error_standard_error": 2.1978575985017794e-05,
+    "collapsed_geometric_relative_error_mean": -0.00018752112059835632,
+    "collapsed_geometric_relative_error_standard_error": 2.677304678168923e-08,
+    "collapsed_geometric_payoff_bias_undiscounted": -0.01098405900014892,
+    "per_date_geometric_relative_error_mean": -0.0017153000100675513,
+    "per_date_geometric_relative_error_standard_error": 6.007961911498437e-08,
+    "per_date_geometric_payoff_bias_undiscounted": -0.09914951774038329,
+    "caps": {
+     "collapsed": {
+      "manuscript_B_R_2.864": {
+       "cap_requested_dollars": 2.864,
+       "cap_enforced_dollars": 2.8639981708829363,
+       "cap_numerator": 739049,
+       "clipping_loss_discounted": 0.000977681526464705,
+       "clipping_loss_standard_error": 1.7395484997966605e-05,
+       "clipped_path_fraction": 0.00165075,
+       "fixed_point_encoding_error_discounted": 0.04828471318832758,
+       "fixed_point_encoding_error_standard_error": 2.7407077199358038e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.05072251433586747,
+        "standard_error": 0.00021524802824057432,
+        "ci95_low": 0.050300628200515944,
+        "ci95_high": 0.051144400471218994,
+        "worst_case_at_95_percent": 0.051144400471218994,
+        "meets_target_at_95_percent": false
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.05072251433586747,
+        "standard_error": 0.00022218212172942615,
+        "ci95_low": 0.05028703737727779,
+        "ci95_high": 0.051157991294457146,
+        "worst_case_at_95_percent": 0.051157991294457146,
+        "meets_target_at_95_percent": false
+       },
+       "reconstructed_oracle_price_discounted": 5.832497549519366,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      },
+      "retuned_B_R": {
+       "cap_requested_dollars": 2.8550086639723267,
+       "cap_enforced_dollars": 2.855007595486111,
+       "cap_numerator": 736729,
+       "clipping_loss_discounted": 0.0009919032971432882,
+       "clipping_loss_standard_error": 1.7515902491296245e-05,
+       "clipped_path_fraction": 0.001676,
+       "fixed_point_encoding_error_discounted": 0.048270491417649,
+       "fixed_point_encoding_error_standard_error": 2.747503170807691e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.050708292565188884,
+        "standard_error": 0.00021525669129716582,
+        "ci95_low": 0.05028638945024644,
+        "ci95_high": 0.05113019568013133,
+        "worst_case_at_95_percent": 0.05113019568013133,
+        "meets_target_at_95_percent": false
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.050708292565188884,
+        "standard_error": 0.00022214320880301625,
+        "ci95_low": 0.05027289187593497,
+        "ci95_high": 0.0511436932544428,
+        "worst_case_at_95_percent": 0.0511436932544428,
+        "meets_target_at_95_percent": false
+       },
+       "reconstructed_oracle_price_discounted": 5.832483327748688,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      }
+     },
+     "per_date": {
+      "manuscript_B_R_2.864": {
+       "cap_requested_dollars": 2.864,
+       "cap_enforced_dollars": 2.8639981708829363,
+       "cap_numerator": 739049,
+       "clipping_loss_discounted": 0.0013126885992761164,
+       "clipping_loss_standard_error": 2.0055016288497064e-05,
+       "clipped_path_fraction": 0.002258,
+       "fixed_point_encoding_error_discounted": 0.047949706115516175,
+       "fixed_point_encoding_error_standard_error": 2.8976851431994494e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.05038750726305606,
+        "standard_error": 0.00021545353025595888,
+        "ci95_low": 0.049965218343754385,
+        "ci95_high": 0.05080979618235774,
+        "worst_case_at_95_percent": 0.05080979618235774,
+        "meets_target_at_95_percent": false
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.05038750726305606,
+        "standard_error": 0.00022129638317993104,
+        "ci95_low": 0.04995376635202339,
+        "ci95_high": 0.05082124817408873,
+        "worst_case_at_95_percent": 0.05082124817408873,
+        "meets_target_at_95_percent": false
+       },
+       "reconstructed_oracle_price_discounted": 5.832162542446555,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      },
+      "retuned_B_R": {
+       "cap_requested_dollars": 3.0372113364452398,
+       "cap_enforced_dollars": 3.0372101314484126,
+       "cap_numerator": 783746,
+       "clipping_loss_discounted": 0.0009924203158148644,
+       "clipping_loss_standard_error": 1.7552823544373955e-05,
+       "clipped_path_fraction": 0.00167125,
+       "fixed_point_encoding_error_discounted": 0.048269974398977414,
+       "fixed_point_encoding_error_standard_error": 2.7498075396614424e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.0507077755465173,
+        "standard_error": 0.00021525963377131674,
+        "ci95_low": 0.05028586666432552,
+        "ci95_high": 0.051129684428709084,
+        "worst_case_at_95_percent": 0.051129684428709084,
+        "meets_target_at_95_percent": false
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.0507077755465173,
+        "standard_error": 0.00022214180184194722,
+        "ci95_low": 0.050272377614907084,
+        "ci95_high": 0.05114317347812752,
+        "worst_case_at_95_percent": 0.05114317347812752,
+        "meets_target_at_95_percent": false
+       },
+       "reconstructed_oracle_price_discounted": 5.832482810730016,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      }
+     }
+    }
+   },
+   {
+    "multiplier_fraction_bits": 24,
+    "price_scale": 4096,
+    "value_bits": 24,
+    "product_bits": 49,
+    "geometric_product_bits": 51,
+    "shock_weight_bits": 15,
+    "per_date_product_bits": 49,
+    "arithmetic_rounding_error_discounted": 0.00886381947677533,
+    "arithmetic_rounding_error_standard_error": 3.959466972993309e-06,
+    "collapsed_geometric_relative_error_mean": -5.2180738454456064e-05,
+    "collapsed_geometric_relative_error_standard_error": 6.698223214374339e-09,
+    "collapsed_geometric_payoff_bias_undiscounted": -0.003069345804348139,
+    "per_date_geometric_relative_error_mean": -0.0003121523478801834,
+    "per_date_geometric_relative_error_standard_error": 1.4787092772319195e-08,
+    "per_date_geometric_payoff_bias_undiscounted": -0.017797495157375484,
+    "caps": {
+     "collapsed": {
+      "manuscript_B_R_2.864": {
+       "cap_requested_dollars": 2.864,
+       "cap_enforced_dollars": 2.8640001085069446,
+       "cap_numerator": 2956198,
+       "clipping_loss_discounted": 0.0008051088118905802,
+       "clipping_loss_standard_error": 1.581430117807037e-05,
+       "clipped_path_fraction": 0.001372,
+       "fixed_point_encoding_error_discounted": 0.008058710664884748,
+       "fixed_point_encoding_error_standard_error": 1.6164184835769194e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.010496511812424635,
+        "standard_error": 0.00021410709155057994,
+        "ci95_low": 0.010076861912985497,
+        "ci95_high": 0.010916161711863772,
+        "worst_case_at_95_percent": 0.010916161711863772,
+        "meets_target_at_95_percent": false
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.010496511812424635,
+        "standard_error": 0.00021255829458795958,
+        "ci95_low": 0.010079897555032235,
+        "ci95_high": 0.010913126069817035,
+        "worst_case_at_95_percent": 0.010913126069817035,
+        "meets_target_at_95_percent": false
+       },
+       "reconstructed_oracle_price_discounted": 5.792271546995923,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      },
+      "retuned_B_R": {
+       "cap_requested_dollars": 2.7352055577603624,
+       "cap_enforced_dollars": 2.7352052718874007,
+       "cap_numerator": 2823257,
+       "clipping_loss_discounted": 0.0009921654372048766,
+       "clipping_loss_standard_error": 1.7460075141060755e-05,
+       "clipped_path_fraction": 0.00169025,
+       "fixed_point_encoding_error_discounted": 0.007871654039570457,
+       "fixed_point_encoding_error_standard_error": 1.774958811567963e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.010309455187110343,
+        "standard_error": 0.00021423261576874748,
+        "ci95_low": 0.009889559260203597,
+        "ci95_high": 0.010729351114017089,
+        "worst_case_at_95_percent": 0.010729351114017089,
+        "meets_target_at_95_percent": false
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.010309455187110343,
+        "standard_error": 0.00021202299338600927,
+        "ci95_low": 0.009893890120073766,
+        "ci95_high": 0.01072502025414692,
+        "worst_case_at_95_percent": 0.01072502025414692,
+        "meets_target_at_95_percent": false
+       },
+       "reconstructed_oracle_price_discounted": 5.792084490370609,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      }
+     },
+     "per_date": {
+      "manuscript_B_R_2.864": {
+       "cap_requested_dollars": 2.864,
+       "cap_enforced_dollars": 2.8640001085069446,
+       "cap_numerator": 2956198,
+       "clipping_loss_discounted": 0.0008434928003546846,
+       "clipping_loss_standard_error": 1.616856269975887e-05,
+       "clipped_path_fraction": 0.00143625,
+       "fixed_point_encoding_error_discounted": 0.008020326676420643,
+       "fixed_point_encoding_error_standard_error": 1.6504730868329385e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.01045812782396053,
+        "standard_error": 0.00021413307059368363,
+        "ci95_low": 0.01003842700559691,
+        "ci95_high": 0.01087782864232415,
+        "worst_case_at_95_percent": 0.01087782864232415,
+        "meets_target_at_95_percent": false
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.01045812782396053,
+        "standard_error": 0.00021244632255712503,
+        "ci95_low": 0.010041733031748564,
+        "ci95_high": 0.010874522616172494,
+        "worst_case_at_95_percent": 0.010874522616172494,
+        "meets_target_at_95_percent": false
+       },
+       "reconstructed_oracle_price_discounted": 5.792233163007459,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      },
+      "retuned_B_R": {
+       "cap_requested_dollars": 2.7639548710797692,
+       "cap_enforced_dollars": 2.7639547681051586,
+       "cap_numerator": 2852932,
+       "clipping_loss_discounted": 0.0009921748682449574,
+       "clipping_loss_standard_error": 1.7462318309375592e-05,
+       "clipped_path_fraction": 0.00169,
+       "fixed_point_encoding_error_discounted": 0.007871644608530372,
+       "fixed_point_encoding_error_standard_error": 1.775179136449683e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.010309445756070259,
+        "standard_error": 0.00021423279832344098,
+        "ci95_low": 0.009889549471356314,
+        "ci95_high": 0.010729342040784203,
+        "worst_case_at_95_percent": 0.010729342040784203,
+        "meets_target_at_95_percent": false
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.010309445756070259,
+        "standard_error": 0.00021202296555025476,
+        "ci95_low": 0.00989388074359176,
+        "ci95_high": 0.010725010768548758,
+        "worst_case_at_95_percent": 0.010725010768548758,
+        "meets_target_at_95_percent": false
+       },
+       "reconstructed_oracle_price_discounted": 5.792084480939569,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      }
+     }
+    }
+   },
+   {
+    "multiplier_fraction_bits": 30,
+    "price_scale": 16384,
+    "value_bits": 26,
+    "product_bits": 57,
+    "geometric_product_bits": 59,
+    "shock_weight_bits": 15,
+    "per_date_product_bits": 57,
+    "arithmetic_rounding_error_discounted": 0.0021620902783394077,
+    "arithmetic_rounding_error_standard_error": 9.667807240175348e-07,
+    "collapsed_geometric_relative_error_mean": -1.1550945327263459e-05,
+    "collapsed_geometric_relative_error_standard_error": 1.6239228232736182e-09,
+    "collapsed_geometric_payoff_bias_undiscounted": -0.0006778094884301703,
+    "per_date_geometric_relative_error_mean": -7.637570637122474e-05,
+    "per_date_geometric_relative_error_standard_error": 3.6897121086869304e-09,
+    "per_date_geometric_payoff_bias_undiscounted": -0.004352263132228999,
+    "caps": {
+     "collapsed": {
+      "manuscript_B_R_2.864": {
+       "cap_requested_dollars": 2.864,
+       "cap_enforced_dollars": 2.8640001085069446,
+       "cap_numerator": 11824792,
+       "clipping_loss_discounted": 0.0007780226043221951,
+       "clipping_loss_standard_error": 1.5554471008487706e-05,
+       "clipped_path_fraction": 0.0013275,
+       "fixed_point_encoding_error_discounted": 0.0013840676740172098,
+       "fixed_point_encoding_error_standard_error": 1.5550429705201294e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.003821868821557096,
+        "standard_error": 0.00021406163048257835,
+        "ci95_low": 0.0034023080258112426,
+        "ci95_high": 0.00424142961730295,
+        "worst_case_at_95_percent": 0.00424142961730295,
+        "meets_target_at_95_percent": true
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.003821868821557096,
+        "standard_error": 0.0002111159354409932,
+        "ci95_low": 0.0034080815880927497,
+        "ci95_high": 0.004235656055021443,
+        "worst_case_at_95_percent": 0.004235656055021443,
+        "meets_target_at_95_percent": true
+       },
+       "reconstructed_oracle_price_discounted": 5.785596904005056,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      },
+      "retuned_B_R": {
+       "cap_requested_dollars": 2.71423207732424,
+       "cap_enforced_dollars": 2.714232187422495,
+       "cap_numerator": 11206435,
+       "clipping_loss_discounted": 0.0009921754985360994,
+       "clipping_loss_standard_error": 1.7452300386861295e-05,
+       "clipped_path_fraction": 0.0016925,
+       "fixed_point_encoding_error_discounted": 0.00116991477980331,
+       "fixed_point_encoding_error_standard_error": 1.744073054469374e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.003607715927343196,
+        "standard_error": 0.00021420724745623365,
+        "ci95_low": 0.003187869722328978,
+        "ci95_high": 0.004027562132357414,
+        "worst_case_at_95_percent": 0.004027562132357414,
+        "meets_target_at_95_percent": true
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.003607715927343196,
+        "standard_error": 0.00021049847153725454,
+        "ci95_low": 0.0031951389231301775,
+        "ci95_high": 0.004020292931556215,
+        "worst_case_at_95_percent": 0.004020292931556215,
+        "meets_target_at_95_percent": true
+       },
+       "reconstructed_oracle_price_discounted": 5.785382751110841,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      }
+     },
+     "per_date": {
+      "manuscript_B_R_2.864": {
+       "cap_requested_dollars": 2.864,
+       "cap_enforced_dollars": 2.8640001085069446,
+       "cap_numerator": 11824792,
+       "clipping_loss_discounted": 0.0007871444893336026,
+       "clipping_loss_standard_error": 1.5640611626367364e-05,
+       "clipped_path_fraction": 0.0013425,
+       "fixed_point_encoding_error_discounted": 0.0013749457890058023,
+       "fixed_point_encoding_error_standard_error": 1.5636211779572734e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.0038127469365456888,
+        "standard_error": 0.0002140678791870914,
+        "ci95_low": 0.00339317389333899,
+        "ci95_high": 0.004232319979752388,
+        "worst_case_at_95_percent": 0.004232319979752388,
+        "meets_target_at_95_percent": true
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.0038127469365456888,
+        "standard_error": 0.00021108890843115317,
+        "ci95_low": 0.0033990126760206287,
+        "ci95_high": 0.004226481197070749,
+        "worst_case_at_95_percent": 0.004226481197070749,
+        "meets_target_at_95_percent": true
+       },
+       "reconstructed_oracle_price_discounted": 5.785587782120045,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      },
+      "retuned_B_R": {
+       "cap_requested_dollars": 2.721405519077611,
+       "cap_enforced_dollars": 2.721405513702877,
+       "cap_numerator": 11236052,
+       "clipping_loss_discounted": 0.000992179629267145,
+       "clipping_loss_standard_error": 1.7452909053568737e-05,
+       "clipped_path_fraction": 0.00169275,
+       "fixed_point_encoding_error_discounted": 0.0011699106490722616,
+       "fixed_point_encoding_error_standard_error": 1.7441339235131703e-05,
+       "binary_shock_model_error_discounted": 0.0024378011475398864,
+       "binary_shock_model_error_standard_error": 0.0002134960556564067,
+       "continuous_price_error": {
+        "point_estimate": 0.003607711796612148,
+        "standard_error": 0.00021420729701660131,
+        "ci95_low": 0.0031878654944596098,
+        "ci95_high": 0.004027558098764687,
+        "worst_case_at_95_percent": 0.004027558098764687,
+        "meets_target_at_95_percent": true
+       },
+       "continuous_price_error_direct_paired_se": {
+        "point_estimate": 0.003607711796612148,
+        "standard_error": 0.00021049845987469498,
+        "ci95_low": 0.003195134815257746,
+        "ci95_high": 0.00402028877796655,
+        "worst_case_at_95_percent": 0.00402028877796655,
+        "meets_target_at_95_percent": true
+       },
+       "reconstructed_oracle_price_discounted": 5.78538274698011,
+       "continuous_reference_price_discounted": 5.7817750351834984
+      }
+     }
+    }
+   }
+  ],
+  "paired_contrasts": [
+   {
+    "kind": "precision",
+    "cap_rule": "manuscript_B_R_2.864",
+    "leg": "collapsed",
+    "coarse_fraction_bits": 18,
+    "fine_fraction_bits": 24,
+    "paired_difference": 0.040226002523442835,
+    "paired_standard_error": 1.8038208482205253e-05
+   },
+   {
+    "kind": "precision",
+    "cap_rule": "manuscript_B_R_2.864",
+    "leg": "collapsed",
+    "coarse_fraction_bits": 18,
+    "fine_fraction_bits": 30,
+    "paired_difference": 0.04690064551431038,
+    "paired_standard_error": 2.101785872812672e-05
+   },
+   {
+    "kind": "precision",
+    "cap_rule": "manuscript_B_R_2.864",
+    "leg": "collapsed",
+    "coarse_fraction_bits": 24,
+    "fine_fraction_bits": 30,
+    "paired_difference": 0.006674642990867538,
+    "paired_standard_error": 3.0017610098421817e-06
+   },
+   {
+    "kind": "geometric_leg",
+    "cap_rule": "manuscript_B_R_2.864",
+    "multiplier_fraction_bits": 18,
+    "per_date_minus_collapsed": -0.00033500707281141094,
+    "paired_standard_error": 3.7118552114433945e-06
+   },
+   {
+    "kind": "geometric_leg",
+    "cap_rule": "manuscript_B_R_2.864",
+    "multiplier_fraction_bits": 24,
+    "per_date_minus_collapsed": -3.838398846410456e-05,
+    "paired_standard_error": 5.117904157217061e-07
+   },
+   {
+    "kind": "geometric_leg",
+    "cap_rule": "manuscript_B_R_2.864",
+    "multiplier_fraction_bits": 30,
+    "per_date_minus_collapsed": -9.121885011407517e-06,
+    "paired_standard_error": 1.2497563568127807e-07
+   },
+   {
+    "kind": "precision",
+    "cap_rule": "retuned_B_R",
+    "leg": "collapsed",
+    "coarse_fraction_bits": 18,
+    "fine_fraction_bits": 24,
+    "paired_difference": 0.04039883737807855,
+    "paired_standard_error": 1.8040935736065696e-05
+   },
+   {
+    "kind": "precision",
+    "cap_rule": "retuned_B_R",
+    "leg": "collapsed",
+    "coarse_fraction_bits": 18,
+    "fine_fraction_bits": 30,
+    "paired_difference": 0.04710057663784569,
+    "paired_standard_error": 2.10175573477694e-05
+   },
+   {
+    "kind": "precision",
+    "cap_rule": "retuned_B_R",
+    "leg": "collapsed",
+    "coarse_fraction_bits": 24,
+    "fine_fraction_bits": 30,
+    "paired_difference": 0.006701739259767146,
+    "paired_standard_error": 2.997553556037846e-06
+   },
+   {
+    "kind": "geometric_leg",
+    "cap_rule": "retuned_B_R",
+    "multiplier_fraction_bits": 18,
+    "per_date_minus_collapsed": -5.170186715819766e-07,
+    "paired_standard_error": 1.7454619714374714e-07
+   },
+   {
+    "kind": "geometric_leg",
+    "cap_rule": "retuned_B_R",
+    "multiplier_fraction_bits": 24,
+    "per_date_minus_collapsed": -9.431040083262036e-09,
+    "paired_standard_error": 4.344113855818941e-08
+   },
+   {
+    "kind": "geometric_leg",
+    "cap_rule": "retuned_B_R",
+    "multiplier_fraction_bits": 30,
+    "per_date_minus_collapsed": -4.1307310485049655e-09,
+    "paired_standard_error": 1.0551997648283618e-08
+   }
+  ],
+  "selected_multiplier_fraction_bits": 30,
+  "selection_rule": "the coarsest candidate that passes the test under the manuscript cap, so the choice is comparable with the per_date decision recorded in results/v8; if none passes, 30 bits is retained"
+ },
+ "block_2_retuned_normalisation": {
+  "convention": {
+   "clipping_bias": "exp(-r*T) * E[(X - B)^+], discounted, as in v19",
+   "discount_factor": 0.951229424500714,
+   "selection": "B = smallest level with discounted loss <= budget on the selection sample, by 80-step bisection",
+   "evaluation": "realised discounted loss at the selected B, recomputed on an independent evaluation sample with a different seed",
+   "sample": "uniform binary +/-1 shock paths pushed through the encoded fixed-point model, which is the distribution the circuit's comparator truncates"
+  },
+  "budget": 0.001,
+  "paths_per_sample": 2000000,
+  "seed_selection": 20260728,
+  "seed_evaluation": 20260729,
+  "encoded": [
+   {
+    "multiplier_fraction_bits": 18,
+    "price_scale": 1024,
+    "budget": 0.001,
+    "seconds": 10.06723403930664,
+    "arms": {
+     "raw_payoff": {
+      "B": 55.008675370531705,
+      "loss_in_sample": 0.001,
+      "loss_in_sample_se": 6.833329805878035e-05,
+      "n_selection_paths_above_B": 449,
+      "loss_out_of_sample": 0.001165059707749514,
+      "loss_out_of_sample_se": 7.554966296232549e-05,
+      "n_evaluation_paths_above_B": 476,
+      "mean": 6.129994438709077,
+      "mean_se": 0.005966544311934344
+     },
+     "collapsed_residual": {
+      "B": 2.8550086639723267,
+      "loss_in_sample": 0.0010000000000000002,
+      "loss_in_sample_se": 2.4744659331608874e-05,
+      "n_selection_paths_above_B": 3392,
+      "loss_out_of_sample": 0.0010033771000251212,
+      "loss_out_of_sample_se": 2.5566952797373635e-05,
+      "n_evaluation_paths_above_B": 3310,
+      "mean": 0.28968335863095235,
+      "mean_se": 0.0002849671342058385
+     },
+     "per_date_residual": {
+      "B": 3.0372113364452398,
+      "loss_in_sample": 0.0009999999999999996,
+      "loss_in_sample_se": 2.4794487731497893e-05,
+      "n_selection_paths_above_B": 3384,
+      "loss_out_of_sample": 0.00100367044798167,
+      "loss_out_of_sample_se": 2.5629270069119437e-05,
+      "n_evaluation_paths_above_B": 3289,
+      "mean": 0.3777565676153274,
+      "mean_se": 0.0003258643715364329
+     }
+    },
+    "ratio_B_raw_over_B_collapsed_residual": 19.267428524715992,
+    "ratio_B_raw_over_B_per_date_residual": 18.11157317584426,
+    "collapsed_over_per_date_B_ratio": 0.9400098800216636,
+    "per_date_minus_collapsed_residual_mean": 0.08377782789613815,
+    "per_date_minus_collapsed_residual_paired_se": 5.3996721121970374e-05,
+    "manuscript_cap_loss_on_collapsed_out_of_sample": {
+     "loss": 0.0009893440399961063,
+     "standard_error": 2.540003002801219e-05,
+     "n_paths_above": 3254
+    },
+    "manuscript_cap_loss_on_per_date_out_of_sample": {
+     "loss": 0.0013203099819385285,
+     "standard_error": 2.909724381585606e-05,
+     "n_paths_above": 4466
+    }
+   },
+   {
+    "multiplier_fraction_bits": 24,
+    "price_scale": 4096,
+    "budget": 0.001,
+    "seconds": 11.213857889175415,
+    "arms": {
+     "raw_payoff": {
+      "B": 54.90057939657089,
+      "loss_in_sample": 0.0009999999999999992,
+      "loss_in_sample_se": 6.830725689941635e-05,
+      "n_selection_paths_above_B": 449,
+      "loss_out_of_sample": 0.001165002832870117,
+      "loss_out_of_sample_se": 7.552041749407861e-05,
+      "n_evaluation_paths_above_B": 476,
+      "mean": 6.0875674542827305,
+      "mean_se": 0.005947199040705151
+     },
+     "collapsed_residual": {
+      "B": 2.7352055577603624,
+      "loss_in_sample": 0.0010000000000000002,
+      "loss_in_sample_se": 2.466565802481417e-05,
+      "n_selection_paths_above_B": 3416,
+      "loss_out_of_sample": 0.001003255211778968,
+      "loss_out_of_sample_se": 2.5480558380977774e-05,
+      "n_evaluation_paths_above_B": 3344,
+      "mean": 0.23935418011280848,
+      "mean_se": 0.0002634813256345047
+     },
+     "per_date_residual": {
+      "B": 2.7639548710797692,
+      "loss_in_sample": 0.001,
+      "loss_in_sample_se": 2.4669263987644855e-05,
+      "n_selection_paths_above_B": 3415,
+      "loss_out_of_sample": 0.0010032223219603312,
+      "loss_out_of_sample_se": 2.5483567003473768e-05,
+      "n_evaluation_paths_above_B": 3341,
+      "mean": 0.2540672286967929,
+      "mean_se": 0.0002692299937915534
+     }
+    },
+    "ratio_B_raw_over_B_collapsed_residual": 20.071829424595244,
+    "ratio_B_raw_over_B_per_date_residual": 19.863052024117664,
+    "collapsed_over_per_date_B_ratio": 0.9895984867118415,
+    "per_date_minus_collapsed_residual_mean": 0.013995484737194502,
+    "per_date_minus_collapsed_residual_paired_se": 9.00260073955303e-06,
+    "manuscript_cap_loss_on_collapsed_out_of_sample": {
+     "loss": 0.0008199945938392296,
+     "standard_error": 2.3197837472798736e-05,
+     "n_paths_above": 2695
+    },
+    "manuscript_cap_loss_on_per_date_out_of_sample": {
+     "loss": 0.0008576558063720497,
+     "standard_error": 2.368958173485551e-05,
+     "n_paths_above": 2811
+    }
+   },
+   {
+    "multiplier_fraction_bits": 30,
+    "price_scale": 16384,
+    "budget": 0.001,
+    "seconds": 10.318781852722168,
+    "arms": {
+     "raw_payoff": {
+      "B": 54.885316332005075,
+      "loss_in_sample": 0.0010000000000000002,
+      "loss_in_sample_se": 6.830523532440017e-05,
+      "n_selection_paths_above_B": 449,
+      "loss_out_of_sample": 0.0011649639731857466,
+      "loss_out_of_sample_se": 7.551661771135678e-05,
+      "n_evaluation_paths_above_B": 476,
+      "mean": 6.080528925366235,
+      "mean_se": 0.005944148172671773
+     },
+     "collapsed_residual": {
+      "B": 2.71423207732424,
+      "loss_in_sample": 0.0010000000000000002,
+      "loss_in_sample_se": 2.465539168047101e-05,
+      "n_selection_paths_above_B": 3421,
+      "loss_out_of_sample": 0.001003216725708269,
+      "loss_out_of_sample_se": 2.5468241323670557e-05,
+      "n_evaluation_paths_above_B": 3346,
+      "mean": 0.22992770457155742,
+      "mean_se": 0.0002597978990547881
+     },
+     "per_date_residual": {
+      "B": 2.721405519077611,
+      "loss_in_sample": 0.0009999999999999996,
+      "loss_in_sample_se": 2.4656286046584608e-05,
+      "n_selection_paths_above_B": 3421,
+      "loss_out_of_sample": 0.0010032271273611667,
+      "loss_out_of_sample_se": 2.5469123194474336e-05,
+      "n_evaluation_paths_above_B": 3344,
+      "mean": 0.23359786246950665,
+      "mean_se": 0.000261177885666395
+     }
+    },
+    "ratio_B_raw_over_B_collapsed_residual": 20.221305609987645,
+    "ratio_B_raw_over_B_per_date_residual": 20.16800360962295,
+    "collapsed_over_per_date_B_ratio": 0.9973640673162879,
+    "per_date_minus_collapsed_residual_mean": 0.0034911621850929856,
+    "per_date_minus_collapsed_residual_paired_se": 2.243373675807217e-06,
+    "manuscript_cap_loss_on_collapsed_out_of_sample": {
+     "loss": 0.0007933505607880024,
+     "standard_error": 2.283547890607712e-05,
+     "n_paths_above": 2614
+    },
+    "manuscript_cap_loss_on_per_date_out_of_sample": {
+     "loss": 0.0008023282453177613,
+     "standard_error": 2.2955151533920895e-05,
+     "n_paths_above": 2638
+    }
+   }
+  ],
+  "continuous_cross_check": {
+   "purpose": "reproduces the budget=1e-3 row of results/v19/matched_bias_normalisation.json with the same seeds and path count, to show the selection convention is implemented identically",
+   "arms": {
+    "raw_payoff": {
+     "B": 55.77194947571979,
+     "loss_in_sample": 0.0010000000000000002,
+     "loss_in_sample_se": 7.031281184337104e-05,
+     "n_selection_paths_above_B": 406,
+     "loss_out_of_sample": 0.0009201154268744211,
+     "loss_out_of_sample_se": 6.538525541756787e-05,
+     "n_evaluation_paths_above_B": 406
+    },
+    "residual": {
+     "B": 2.7178412744515983,
+     "loss_in_sample": 0.0009999999999999998,
+     "loss_in_sample_se": 2.5259756275707884e-05,
+     "n_selection_paths_above_B": 3391,
+     "loss_out_of_sample": 0.001040326288151487,
+     "loss_out_of_sample_se": 2.5486315301977486e-05,
+     "n_evaluation_paths_above_B": 3506
+    }
+   },
+   "ratio_B_raw_over_B_residual": 20.520679408319516,
+   "v19_reference": {
+    "B_raw": 55.77194947571979,
+    "B_residual": 2.7178412744515983,
+    "ratio": 20.520679408319516
+   },
+   "reproduces_v19": true
+  },
+  "manuscript_values": {
+   "B_raw": 45.85,
+   "B_residual": 2.864,
+   "ratio": 16.009078212290504,
+   "rule": "paper Eq. (fmax-values): B_A from a closed-form 3-sigma lognormal heuristic and B_R from the continuous-model empirical quantile at a matched 1.35e-3 exceedance fraction, then carried into the encoded oracle as residual_payoff_cap; it is an exceedance rule, not a dollar clipping-bias budget"
+  }
+ },
+ "block_3_resource_ledger": {
+  "ledgers": [
+   {
+    "cap_rule": "retuned_at_1e-3_budget",
+    "cap_source": "Block 2, encoded binary-shock selection",
+    "multiplier_fraction_bits": 30,
+    "price_scale": 16384,
+    "none": {
+     "geometric_leg": "none",
+     "n_dates": 252,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "cap_dollars": 54.885316332005075,
+     "cap_numerator": 226608738,
+     "normalization_numerator": 268435456,
+     "value_bits": 26,
+     "multiplier_bits": 31,
+     "product_bits": 57,
+     "geometric_product_bits": 0,
+     "shock_weight_bits": 0,
+     "total_bits": 32,
+     "residual_bits": 32,
+     "threshold_bits": 28,
+     "geometric_dp_peak_states": 0,
+     "a_toffoli": 15024057,
+     "a_t": 105168399,
+     "a_logical_qubits": 14837,
+     "a_work_qubits": 14556,
+     "q_toffoli": 30077783,
+     "q_t": 210544481,
+     "q_logical_qubits": 29671,
+     "reflection_clean_ancillas": 14834,
+     "qrom_rows": 0,
+     "arbitrary_rotations": 0,
+     "a_counts": {
+      "h_before_toffoli_decomposition": 280,
+      "x": 882118,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 68404,
+      "toffoli": 15024057,
+      "t": 105168399,
+      "cx_after_standard_7t_toffoli_decomposition": 90212746,
+      "h_after_standard_7t_toffoli_decomposition": 30048394
+     },
+     "q_counts": {
+      "h_before_toffoli_decomposition": 562,
+      "x": 1793910,
+      "z": 1,
+      "cx_before_toffoli_decomposition": 136808,
+      "toffoli": 30077783,
+      "t": 210544481,
+      "cx_after_standard_7t_toffoli_decomposition": 180603506,
+      "h_after_standard_7t_toffoli_decomposition": 60156128
+     },
+     "components": {
+      "state_preparation_in_A": {
+       "h_before_toffoli_decomposition": 280,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 0,
+       "t": 0,
+       "cx_after_standard_7t_toffoli_decomposition": 0,
+       "h_after_standard_7t_toffoli_decomposition": 280
+      },
+      "price_selected_multipliers_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 441000,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1008,
+       "toffoli": 7495488,
+       "t": 52468416,
+       "cx_after_standard_7t_toffoli_decomposition": 44973936,
+       "h_after_standard_7t_toffoli_decomposition": 14990976
+      },
+      "arithmetic_price_sum_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 32256,
+       "toffoli": 16128,
+       "t": 112896,
+       "cx_after_standard_7t_toffoli_decomposition": 129024,
+       "h_after_standard_7t_toffoli_decomposition": 32256
+      },
+      "arithmetic_positive_part_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 22,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 328,
+       "toffoli": 164,
+       "t": 1148,
+       "cx_after_standard_7t_toffoli_decomposition": 1312,
+       "h_after_standard_7t_toffoli_decomposition": 328
+      },
+      "initialization_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 3,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 0,
+       "t": 0,
+       "cx_after_standard_7t_toffoli_decomposition": 0,
+       "h_after_standard_7t_toffoli_decomposition": 0
+      },
+      "compute_plus_uncompute_in_A": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 882050,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 67184,
+       "toffoli": 15023560,
+       "t": 105164920,
+       "cx_after_standard_7t_toffoli_decomposition": 90208544,
+       "h_after_standard_7t_toffoli_decomposition": 30047120
+      },
+      "uniform_threshold_encoder_in_A": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 68,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1220,
+       "toffoli": 497,
+       "t": 3479,
+       "cx_after_standard_7t_toffoli_decomposition": 4202,
+       "h_after_standard_7t_toffoli_decomposition": 994
+      },
+      "zero_and_objective_reflections_in_Q": {
+       "h_before_toffoli_decomposition": 2,
+       "x": 29674,
+       "z": 1,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 29669,
+       "t": 207683,
+       "cx_after_standard_7t_toffoli_decomposition": 178014,
+       "h_after_standard_7t_toffoli_decomposition": 59340
+      }
+     },
+     "model_build_seconds": 0.00022792816162109375
+    },
+    "collapsed": {
+     "geometric_leg": "collapsed",
+     "n_dates": 252,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "cap_dollars": 2.71423207732424,
+     "cap_numerator": 11206435,
+     "normalization_numerator": 16777216,
+     "value_bits": 26,
+     "multiplier_bits": 33,
+     "product_bits": 57,
+     "geometric_product_bits": 59,
+     "shock_weight_bits": 15,
+     "total_bits": 32,
+     "residual_bits": 32,
+     "threshold_bits": 24,
+     "geometric_dp_peak_states": 31879,
+     "a_toffoli": 16039589,
+     "a_t": 112277123,
+     "a_logical_qubits": 15857,
+     "a_work_qubits": 15580,
+     "q_toffoli": 32110887,
+     "q_t": 224776209,
+     "q_logical_qubits": 31711,
+     "reflection_clean_ancillas": 15854,
+     "qrom_rows": 0,
+     "arbitrary_rotations": 0,
+     "a_counts": {
+      "h_before_toffoli_decomposition": 276,
+      "x": 908128,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 69380,
+      "toffoli": 16039589,
+      "t": 112277123,
+      "cx_after_standard_7t_toffoli_decomposition": 96306914,
+      "h_after_standard_7t_toffoli_decomposition": 32079454
+     },
+     "q_counts": {
+      "h_before_toffoli_decomposition": 554,
+      "x": 1847970,
+      "z": 1,
+      "cx_before_toffoli_decomposition": 138760,
+      "toffoli": 32110887,
+      "t": 224776209,
+      "cx_after_standard_7t_toffoli_decomposition": 192804082,
+      "h_after_standard_7t_toffoli_decomposition": 64222328
+     },
+     "components": {
+      "state_preparation_in_A": {
+       "h_before_toffoli_decomposition": 276,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 0,
+       "t": 0,
+       "cx_after_standard_7t_toffoli_decomposition": 0,
+       "h_after_standard_7t_toffoli_decomposition": 276
+      },
+      "price_selected_multipliers_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 441000,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1008,
+       "toffoli": 7495488,
+       "t": 52468416,
+       "cx_after_standard_7t_toffoli_decomposition": 44973936,
+       "h_after_standard_7t_toffoli_decomposition": 14990976
+      },
+      "arithmetic_price_sum_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 32256,
+       "toffoli": 16128,
+       "t": 112896,
+       "cx_after_standard_7t_toffoli_decomposition": 129024,
+       "h_after_standard_7t_toffoli_decomposition": 32256
+      },
+      "geometric_weighted_sum_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 2004,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 37800,
+       "t": 264600,
+       "cx_after_standard_7t_toffoli_decomposition": 226800,
+       "h_after_standard_7t_toffoli_decomposition": 75600
+      },
+      "geometric_exponential_chain_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 10668,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 60,
+       "toffoli": 461760,
+       "t": 3232320,
+       "cx_after_standard_7t_toffoli_decomposition": 2770620,
+       "h_after_standard_7t_toffoli_decomposition": 923520
+      },
+      "arithmetic_positive_part_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 22,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 328,
+       "toffoli": 164,
+       "t": 1148,
+       "cx_after_standard_7t_toffoli_decomposition": 1312,
+       "h_after_standard_7t_toffoli_decomposition": 328
+      },
+      "geometric_positive_part_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 32,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 316,
+       "toffoli": 158,
+       "t": 1106,
+       "cx_after_standard_7t_toffoli_decomposition": 1264,
+       "h_after_standard_7t_toffoli_decomposition": 316
+      },
+      "geometric_payoff_scaling_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 300,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 8000,
+       "t": 56000,
+       "cx_after_standard_7t_toffoli_decomposition": 48000,
+       "h_after_standard_7t_toffoli_decomposition": 16000
+      },
+      "residual_subtraction_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 160,
+       "toffoli": 64,
+       "t": 448,
+       "cx_after_standard_7t_toffoli_decomposition": 544,
+       "h_after_standard_7t_toffoli_decomposition": 128
+      },
+      "initialization_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 16,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 0,
+       "t": 0,
+       "cx_after_standard_7t_toffoli_decomposition": 0,
+       "h_after_standard_7t_toffoli_decomposition": 0
+      },
+      "compute_plus_uncompute_in_A": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 908084,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 68256,
+       "toffoli": 16039124,
+       "t": 112273868,
+       "cx_after_standard_7t_toffoli_decomposition": 96303000,
+       "h_after_standard_7t_toffoli_decomposition": 32078248
+      },
+      "uniform_threshold_encoder_in_A": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 44,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1124,
+       "toffoli": 465,
+       "t": 3255,
+       "cx_after_standard_7t_toffoli_decomposition": 3914,
+       "h_after_standard_7t_toffoli_decomposition": 930
+      },
+      "zero_and_objective_reflections_in_Q": {
+       "h_before_toffoli_decomposition": 2,
+       "x": 31714,
+       "z": 1,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 31709,
+       "t": 221963,
+       "cx_after_standard_7t_toffoli_decomposition": 190254,
+       "h_after_standard_7t_toffoli_decomposition": 63420
+      }
+     },
+     "model_build_seconds": 0.3649258613586426
+    },
+    "comparison": {
+     "shared_arithmetic_components_identical": true,
+     "shared_arithmetic_components": {
+      "price_selected_multipliers_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 441000,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1008,
+       "toffoli": 7495488,
+       "t": 52468416,
+       "cx_after_standard_7t_toffoli_decomposition": 44973936,
+       "h_after_standard_7t_toffoli_decomposition": 14990976
+      },
+      "arithmetic_price_sum_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 32256,
+       "toffoli": 16128,
+       "t": 112896,
+       "cx_after_standard_7t_toffoli_decomposition": 129024,
+       "h_after_standard_7t_toffoli_decomposition": 32256
+      },
+      "arithmetic_positive_part_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 22,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 328,
+       "toffoli": 164,
+       "t": 1148,
+       "cx_after_standard_7t_toffoli_decomposition": 1312,
+       "h_after_standard_7t_toffoli_decomposition": 328
+      }
+     },
+     "components_that_differ": [
+      "geometric_exponential_chain_in_compute",
+      "geometric_payoff_scaling_in_compute",
+      "geometric_positive_part_in_compute",
+      "geometric_weighted_sum_in_compute",
+      "residual_subtraction_in_compute",
+      "compute_plus_uncompute_in_A",
+      "initialization_in_compute",
+      "state_preparation_in_A",
+      "uniform_threshold_encoder_in_A",
+      "zero_and_objective_reflections_in_Q"
+     ],
+     "why_they_differ": "state_preparation_in_A and uniform_threshold_encoder_in_A scale with threshold_bits, which is set by each leg's own cap; initialization_in_compute carries the geometric register's constant; the remaining entries are the control modules themselves",
+     "per_query_control_overhead_t": 1.067593726514749,
+     "per_query_control_overhead_qubits": 1.0687470512906923,
+     "query_reduction_ratio": 20.221305609987645,
+     "query_reduction_source": "Block 2, encoded binary-shock selection",
+     "net_t_reduction": 18.941012023367566,
+     "net_toffoli_reduction": 18.941012023367566,
+     "qubit_cost_of_the_control": 1020,
+     "interpretation": "queries fall by the normalisation ratio and each query costs 1.0676x more T; qubits are not reduced at all, they rise by 1.0687x"
+    }
+   },
+   {
+    "cap_rule": "manuscript",
+    "cap_source": "paper Eq. (fmax-values), matched-exceedance rule",
+    "multiplier_fraction_bits": 30,
+    "price_scale": 16384,
+    "none": {
+     "geometric_leg": "none",
+     "n_dates": 252,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "cap_dollars": 45.85,
+     "cap_numerator": 189304013,
+     "normalization_numerator": 268435456,
+     "value_bits": 26,
+     "multiplier_bits": 31,
+     "product_bits": 57,
+     "geometric_product_bits": 0,
+     "shock_weight_bits": 0,
+     "total_bits": 32,
+     "residual_bits": 32,
+     "threshold_bits": 28,
+     "geometric_dp_peak_states": 0,
+     "a_toffoli": 15024057,
+     "a_t": 105168399,
+     "a_logical_qubits": 14837,
+     "a_work_qubits": 14556,
+     "q_toffoli": 30077783,
+     "q_t": 210544481,
+     "q_logical_qubits": 29671,
+     "reflection_clean_ancillas": 14834,
+     "qrom_rows": 0,
+     "arbitrary_rotations": 0,
+     "a_counts": {
+      "h_before_toffoli_decomposition": 280,
+      "x": 882118,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 68404,
+      "toffoli": 15024057,
+      "t": 105168399,
+      "cx_after_standard_7t_toffoli_decomposition": 90212746,
+      "h_after_standard_7t_toffoli_decomposition": 30048394
+     },
+     "q_counts": {
+      "h_before_toffoli_decomposition": 562,
+      "x": 1793910,
+      "z": 1,
+      "cx_before_toffoli_decomposition": 136808,
+      "toffoli": 30077783,
+      "t": 210544481,
+      "cx_after_standard_7t_toffoli_decomposition": 180603506,
+      "h_after_standard_7t_toffoli_decomposition": 60156128
+     },
+     "components": {
+      "state_preparation_in_A": {
+       "h_before_toffoli_decomposition": 280,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 0,
+       "t": 0,
+       "cx_after_standard_7t_toffoli_decomposition": 0,
+       "h_after_standard_7t_toffoli_decomposition": 280
+      },
+      "price_selected_multipliers_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 441000,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1008,
+       "toffoli": 7495488,
+       "t": 52468416,
+       "cx_after_standard_7t_toffoli_decomposition": 44973936,
+       "h_after_standard_7t_toffoli_decomposition": 14990976
+      },
+      "arithmetic_price_sum_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 32256,
+       "toffoli": 16128,
+       "t": 112896,
+       "cx_after_standard_7t_toffoli_decomposition": 129024,
+       "h_after_standard_7t_toffoli_decomposition": 32256
+      },
+      "arithmetic_positive_part_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 22,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 328,
+       "toffoli": 164,
+       "t": 1148,
+       "cx_after_standard_7t_toffoli_decomposition": 1312,
+       "h_after_standard_7t_toffoli_decomposition": 328
+      },
+      "initialization_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 3,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 0,
+       "t": 0,
+       "cx_after_standard_7t_toffoli_decomposition": 0,
+       "h_after_standard_7t_toffoli_decomposition": 0
+      },
+      "compute_plus_uncompute_in_A": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 882050,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 67184,
+       "toffoli": 15023560,
+       "t": 105164920,
+       "cx_after_standard_7t_toffoli_decomposition": 90208544,
+       "h_after_standard_7t_toffoli_decomposition": 30047120
+      },
+      "uniform_threshold_encoder_in_A": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 68,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1220,
+       "toffoli": 497,
+       "t": 3479,
+       "cx_after_standard_7t_toffoli_decomposition": 4202,
+       "h_after_standard_7t_toffoli_decomposition": 994
+      },
+      "zero_and_objective_reflections_in_Q": {
+       "h_before_toffoli_decomposition": 2,
+       "x": 29674,
+       "z": 1,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 29669,
+       "t": 207683,
+       "cx_after_standard_7t_toffoli_decomposition": 178014,
+       "h_after_standard_7t_toffoli_decomposition": 59340
+      }
+     },
+     "model_build_seconds": 0.0001270771026611328
+    },
+    "collapsed": {
+     "geometric_leg": "collapsed",
+     "n_dates": 252,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "cap_dollars": 2.864,
+     "cap_numerator": 11824792,
+     "normalization_numerator": 16777216,
+     "value_bits": 26,
+     "multiplier_bits": 33,
+     "product_bits": 57,
+     "geometric_product_bits": 59,
+     "shock_weight_bits": 15,
+     "total_bits": 32,
+     "residual_bits": 32,
+     "threshold_bits": 24,
+     "geometric_dp_peak_states": 31879,
+     "a_toffoli": 16039589,
+     "a_t": 112277123,
+     "a_logical_qubits": 15857,
+     "a_work_qubits": 15580,
+     "q_toffoli": 32110887,
+     "q_t": 224776209,
+     "q_logical_qubits": 31711,
+     "reflection_clean_ancillas": 15854,
+     "qrom_rows": 0,
+     "arbitrary_rotations": 0,
+     "a_counts": {
+      "h_before_toffoli_decomposition": 276,
+      "x": 908128,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 69380,
+      "toffoli": 16039589,
+      "t": 112277123,
+      "cx_after_standard_7t_toffoli_decomposition": 96306914,
+      "h_after_standard_7t_toffoli_decomposition": 32079454
+     },
+     "q_counts": {
+      "h_before_toffoli_decomposition": 554,
+      "x": 1847970,
+      "z": 1,
+      "cx_before_toffoli_decomposition": 138760,
+      "toffoli": 32110887,
+      "t": 224776209,
+      "cx_after_standard_7t_toffoli_decomposition": 192804082,
+      "h_after_standard_7t_toffoli_decomposition": 64222328
+     },
+     "components": {
+      "state_preparation_in_A": {
+       "h_before_toffoli_decomposition": 276,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 0,
+       "t": 0,
+       "cx_after_standard_7t_toffoli_decomposition": 0,
+       "h_after_standard_7t_toffoli_decomposition": 276
+      },
+      "price_selected_multipliers_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 441000,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1008,
+       "toffoli": 7495488,
+       "t": 52468416,
+       "cx_after_standard_7t_toffoli_decomposition": 44973936,
+       "h_after_standard_7t_toffoli_decomposition": 14990976
+      },
+      "arithmetic_price_sum_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 32256,
+       "toffoli": 16128,
+       "t": 112896,
+       "cx_after_standard_7t_toffoli_decomposition": 129024,
+       "h_after_standard_7t_toffoli_decomposition": 32256
+      },
+      "geometric_weighted_sum_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 2004,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 37800,
+       "t": 264600,
+       "cx_after_standard_7t_toffoli_decomposition": 226800,
+       "h_after_standard_7t_toffoli_decomposition": 75600
+      },
+      "geometric_exponential_chain_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 10668,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 60,
+       "toffoli": 461760,
+       "t": 3232320,
+       "cx_after_standard_7t_toffoli_decomposition": 2770620,
+       "h_after_standard_7t_toffoli_decomposition": 923520
+      },
+      "arithmetic_positive_part_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 22,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 328,
+       "toffoli": 164,
+       "t": 1148,
+       "cx_after_standard_7t_toffoli_decomposition": 1312,
+       "h_after_standard_7t_toffoli_decomposition": 328
+      },
+      "geometric_positive_part_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 32,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 316,
+       "toffoli": 158,
+       "t": 1106,
+       "cx_after_standard_7t_toffoli_decomposition": 1264,
+       "h_after_standard_7t_toffoli_decomposition": 316
+      },
+      "geometric_payoff_scaling_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 300,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 8000,
+       "t": 56000,
+       "cx_after_standard_7t_toffoli_decomposition": 48000,
+       "h_after_standard_7t_toffoli_decomposition": 16000
+      },
+      "residual_subtraction_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 160,
+       "toffoli": 64,
+       "t": 448,
+       "cx_after_standard_7t_toffoli_decomposition": 544,
+       "h_after_standard_7t_toffoli_decomposition": 128
+      },
+      "initialization_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 16,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 0,
+       "t": 0,
+       "cx_after_standard_7t_toffoli_decomposition": 0,
+       "h_after_standard_7t_toffoli_decomposition": 0
+      },
+      "compute_plus_uncompute_in_A": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 908084,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 68256,
+       "toffoli": 16039124,
+       "t": 112273868,
+       "cx_after_standard_7t_toffoli_decomposition": 96303000,
+       "h_after_standard_7t_toffoli_decomposition": 32078248
+      },
+      "uniform_threshold_encoder_in_A": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 44,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1124,
+       "toffoli": 465,
+       "t": 3255,
+       "cx_after_standard_7t_toffoli_decomposition": 3914,
+       "h_after_standard_7t_toffoli_decomposition": 930
+      },
+      "zero_and_objective_reflections_in_Q": {
+       "h_before_toffoli_decomposition": 2,
+       "x": 31714,
+       "z": 1,
+       "cx_before_toffoli_decomposition": 0,
+       "toffoli": 31709,
+       "t": 221963,
+       "cx_after_standard_7t_toffoli_decomposition": 190254,
+       "h_after_standard_7t_toffoli_decomposition": 63420
+      }
+     },
+     "model_build_seconds": 0.33023500442504883
+    },
+    "comparison": {
+     "shared_arithmetic_components_identical": true,
+     "shared_arithmetic_components": {
+      "price_selected_multipliers_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 441000,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 1008,
+       "toffoli": 7495488,
+       "t": 52468416,
+       "cx_after_standard_7t_toffoli_decomposition": 44973936,
+       "h_after_standard_7t_toffoli_decomposition": 14990976
+      },
+      "arithmetic_price_sum_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 0,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 32256,
+       "toffoli": 16128,
+       "t": 112896,
+       "cx_after_standard_7t_toffoli_decomposition": 129024,
+       "h_after_standard_7t_toffoli_decomposition": 32256
+      },
+      "arithmetic_positive_part_in_compute": {
+       "h_before_toffoli_decomposition": 0,
+       "x": 22,
+       "z": 0,
+       "cx_before_toffoli_decomposition": 328,
+       "toffoli": 164,
+       "t": 1148,
+       "cx_after_standard_7t_toffoli_decomposition": 1312,
+       "h_after_standard_7t_toffoli_decomposition": 328
+      }
+     },
+     "components_that_differ": [
+      "geometric_exponential_chain_in_compute",
+      "geometric_payoff_scaling_in_compute",
+      "geometric_positive_part_in_compute",
+      "geometric_weighted_sum_in_compute",
+      "residual_subtraction_in_compute",
+      "compute_plus_uncompute_in_A",
+      "initialization_in_compute",
+      "state_preparation_in_A",
+      "uniform_threshold_encoder_in_A",
+      "zero_and_objective_reflections_in_Q"
+     ],
+     "why_they_differ": "state_preparation_in_A and uniform_threshold_encoder_in_A scale with threshold_bits, which is set by each leg's own cap; initialization_in_compute carries the geometric register's constant; the remaining entries are the control modules themselves",
+     "per_query_control_overhead_t": 1.067593726514749,
+     "per_query_control_overhead_qubits": 1.0687470512906923,
+     "query_reduction_ratio": 16.009078212290504,
+     "query_reduction_source": "paper Eq. (fmax-values), matched-exceedance rule",
+     "net_t_reduction": 14.995477975084686,
+     "net_toffoli_reduction": 14.995477975084686,
+     "qubit_cost_of_the_control": 1020,
+     "interpretation": "queries fall by the normalisation ratio and each query costs 1.0676x more T; qubits are not reduced at all, they rise by 1.0687x"
+    }
+   }
+  ],
+  "toffoli_to_t_convention": "Toffoli = 7 T, 6 CX, 2 H (exact decomposition)",
+  "formula_vs_built_circuit": {
+   "gap_closed": "before this run the compositional resource formula had only been checked against a materialised circuit at one multiplier fraction bit and two dates; counting a circuit needs transpilation, not simulation, so the check is closable at production precision",
+   "method": "build_arithmetic_asian_oracle, then transpile to basis ['h','x','cx','ccx'] at optimization_level=0, then assert the counted h/x/cx/ccx and the circuit's qubit count equal the compositional ledger exactly",
+   "verified_configurations": [
+    {
+     "n_dates": 2,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "collapsed",
+     "cap_dollars": 2.864,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 19,
+      "x": 8970,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 2312,
+      "toffoli": 197633,
+      "t": 1383431,
+      "cx_after_standard_7t_toffoli_decomposition": 1188110,
+      "h_after_standard_7t_toffoli_decomposition": 395285
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 19,
+      "x": 8970,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 2312,
+      "toffoli": 197633,
+      "t": 1383431,
+      "cx_after_standard_7t_toffoli_decomposition": 1188110,
+      "h_after_standard_7t_toffoli_decomposition": 395285
+     },
+     "counts_match": true,
+     "circuit_qubits": 470,
+     "formula_qubits": 470,
+     "qubits_match": true,
+     "build_seconds": 0.8381209373474121,
+     "transpile_seconds": 0.11753416061401367
+    },
+    {
+     "n_dates": 2,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "none",
+     "cap_dollars": 20.0,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 22,
+      "x": 5806,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 1692,
+      "toffoli": 94389,
+      "t": 660723,
+      "cx_after_standard_7t_toffoli_decomposition": 568026,
+      "h_after_standard_7t_toffoli_decomposition": 188800
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 22,
+      "x": 5806,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 1692,
+      "toffoli": 94389,
+      "t": 660723,
+      "cx_after_standard_7t_toffoli_decomposition": 568026,
+      "h_after_standard_7t_toffoli_decomposition": 188800
+     },
+     "counts_match": true,
+     "circuit_qubits": 277,
+     "formula_qubits": 277,
+     "qubits_match": true,
+     "build_seconds": 0.267488956451416,
+     "transpile_seconds": 0.05790400505065918
+    },
+    {
+     "n_dates": 2,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "per_date",
+     "cap_dollars": 2.864,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 19,
+      "x": 11684,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 2312,
+      "toffoli": 197553,
+      "t": 1382871,
+      "cx_after_standard_7t_toffoli_decomposition": 1187630,
+      "h_after_standard_7t_toffoli_decomposition": 395125
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 19,
+      "x": 11684,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 2312,
+      "toffoli": 197553,
+      "t": 1382871,
+      "cx_after_standard_7t_toffoli_decomposition": 1187630,
+      "h_after_standard_7t_toffoli_decomposition": 395125
+     },
+     "counts_match": true,
+     "circuit_qubits": 468,
+     "formula_qubits": 468,
+     "qubits_match": true,
+     "build_seconds": 0.560157299041748,
+     "transpile_seconds": 0.1399219036102295
+    },
+    {
+     "n_dates": 16,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "collapsed",
+     "cap_dollars": 2.864,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 36,
+      "x": 59748,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 5768,
+      "toffoli": 1147305,
+      "t": 8031135,
+      "cx_after_standard_7t_toffoli_decomposition": 6889598,
+      "h_after_standard_7t_toffoli_decomposition": 2294646
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 36,
+      "x": 59748,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 5768,
+      "toffoli": 1147305,
+      "t": 8031135,
+      "cx_after_standard_7t_toffoli_decomposition": 6889598,
+      "h_after_standard_7t_toffoli_decomposition": 2294646
+     },
+     "counts_match": true,
+     "circuit_qubits": 1590,
+     "formula_qubits": 1590,
+     "qubits_match": true,
+     "build_seconds": 3.292323112487793,
+     "transpile_seconds": 0.7586061954498291
+    },
+    {
+     "n_dates": 16,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "per_date",
+     "cap_dollars": 2.864,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 36,
+      "x": 91980,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 5832,
+      "toffoli": 1512233,
+      "t": 10585631,
+      "cx_after_standard_7t_toffoli_decomposition": 9079230,
+      "h_after_standard_7t_toffoli_decomposition": 3024502
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 36,
+      "x": 91980,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 5832,
+      "toffoli": 1512233,
+      "t": 10585631,
+      "cx_after_standard_7t_toffoli_decomposition": 9079230,
+      "h_after_standard_7t_toffoli_decomposition": 3024502
+     },
+     "counts_match": true,
+     "circuit_qubits": 1997,
+     "formula_qubits": 1997,
+     "qubits_match": true,
+     "build_seconds": 4.223151922225952,
+     "transpile_seconds": 0.9144151210784912
+    },
+    {
+     "n_dates": 16,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "none",
+     "cap_dollars": 45.85,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 40,
+      "x": 47626,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 5020,
+      "toffoli": 751405,
+      "t": 5259835,
+      "cx_after_standard_7t_toffoli_decomposition": 4513450,
+      "h_after_standard_7t_toffoli_decomposition": 1502850
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 40,
+      "x": 47626,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 5020,
+      "toffoli": 751405,
+      "t": 5259835,
+      "cx_after_standard_7t_toffoli_decomposition": 4513450,
+      "h_after_standard_7t_toffoli_decomposition": 1502850
+     },
+     "counts_match": true,
+     "circuit_qubits": 1053,
+     "formula_qubits": 1053,
+     "qubits_match": true,
+     "build_seconds": 2.1650187969207764,
+     "transpile_seconds": 0.46311235427856445
+    },
+    {
+     "n_dates": 252,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "collapsed",
+     "cap_dollars": 2.864,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 276,
+      "x": 908128,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 69380,
+      "toffoli": 16039589,
+      "t": 112277123,
+      "cx_after_standard_7t_toffoli_decomposition": 96306914,
+      "h_after_standard_7t_toffoli_decomposition": 32079454
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 276,
+      "x": 908128,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 69380,
+      "toffoli": 16039589,
+      "t": 112277123,
+      "cx_after_standard_7t_toffoli_decomposition": 96306914,
+      "h_after_standard_7t_toffoli_decomposition": 32079454
+     },
+     "counts_match": true,
+     "circuit_qubits": 15857,
+     "formula_qubits": 15857,
+     "qubits_match": true,
+     "build_seconds": 50.36637902259827,
+     "transpile_seconds": 17.300459146499634
+    },
+    {
+     "n_dates": 252,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "none",
+     "cap_dollars": 45.85,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 280,
+      "x": 882118,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 68404,
+      "toffoli": 15024057,
+      "t": 105168399,
+      "cx_after_standard_7t_toffoli_decomposition": 90212746,
+      "h_after_standard_7t_toffoli_decomposition": 30048394
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 280,
+      "x": 882118,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 68404,
+      "toffoli": 15024057,
+      "t": 105168399,
+      "cx_after_standard_7t_toffoli_decomposition": 90212746,
+      "h_after_standard_7t_toffoli_decomposition": 30048394
+     },
+     "counts_match": true,
+     "circuit_qubits": 14837,
+     "formula_qubits": 14837,
+     "qubits_match": true,
+     "build_seconds": 45.063791036605835,
+     "transpile_seconds": 19.227080821990967
+    },
+    {
+     "n_dates": 252,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "collapsed",
+     "cap_dollars": 2.71423207732424,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 276,
+      "x": 908128,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 69380,
+      "toffoli": 16039589,
+      "t": 112277123,
+      "cx_after_standard_7t_toffoli_decomposition": 96306914,
+      "h_after_standard_7t_toffoli_decomposition": 32079454
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 276,
+      "x": 908128,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 69380,
+      "toffoli": 16039589,
+      "t": 112277123,
+      "cx_after_standard_7t_toffoli_decomposition": 96306914,
+      "h_after_standard_7t_toffoli_decomposition": 32079454
+     },
+     "counts_match": true,
+     "circuit_qubits": 15857,
+     "formula_qubits": 15857,
+     "qubits_match": true,
+     "build_seconds": 53.943140745162964,
+     "transpile_seconds": 20.856916904449463
+    },
+    {
+     "n_dates": 252,
+     "multiplier_fraction_bits": 30,
+     "price_scale": 16384,
+     "geometric_leg": "none",
+     "cap_dollars": 54.885316332005075,
+     "geometric_control_from_dynamic_program": true,
+     "counted_circuit": {
+      "h_before_toffoli_decomposition": 280,
+      "x": 882118,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 68404,
+      "toffoli": 15024057,
+      "t": 105168399,
+      "cx_after_standard_7t_toffoli_decomposition": 90212746,
+      "h_after_standard_7t_toffoli_decomposition": 30048394
+     },
+     "compositional_formula": {
+      "h_before_toffoli_decomposition": 280,
+      "x": 882118,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 68404,
+      "toffoli": 15024057,
+      "t": 105168399,
+      "cx_after_standard_7t_toffoli_decomposition": 90212746,
+      "h_after_standard_7t_toffoli_decomposition": 30048394
+     },
+     "counts_match": true,
+     "circuit_qubits": 14837,
+     "formula_qubits": 14837,
+     "qubits_match": true,
+     "build_seconds": 48.48646116256714,
+     "transpile_seconds": 16.942946195602417
+    }
+   ]
+  }
+ },
+ "block_4_scaling": {
+  "tractable_precision_sweep": {
+   "configuration": "multiplier_fraction_bits=14, price_scale=64, residual cap 2.864 dollars on both legs so threshold_bits is common; this is a resource-scaling probe, NOT an accuracy-qualified precision",
+   "rows": [
+    {
+     "geometric_leg": "per_date",
+     "n_dates": 32,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 1168169,
+     "a_t": 8177183,
+     "a_logical_qubits": 2151,
+     "geometric_dp_peak_states": 6304,
+     "value_bits": 15,
+     "product_bits": 30,
+     "geometric_product_bits": 30,
+     "threshold_bits": 13,
+     "model_build_seconds": 0.02584385871887207
+    },
+    {
+     "geometric_leg": "collapsed",
+     "n_dates": 32,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 781929,
+     "a_t": 5473503,
+     "a_logical_qubits": 1512,
+     "geometric_dp_peak_states": 529,
+     "value_bits": 15,
+     "product_bits": 30,
+     "geometric_product_bits": 31,
+     "threshold_bits": 13,
+     "model_build_seconds": 0.0007910728454589844,
+     "chain_factor_bit0_is_identity": false,
+     "chain_factor_bit0": 16420,
+     "factor_scale": 16384
+    },
+    {
+     "geometric_leg": "per_date",
+     "n_dates": 63,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 2294935,
+     "a_t": 16064545,
+     "a_logical_qubits": 4050,
+     "geometric_dp_peak_states": 11382,
+     "value_bits": 15,
+     "product_bits": 30,
+     "geometric_product_bits": 30,
+     "threshold_bits": 14,
+     "model_build_seconds": 0.1461319923400879
+    },
+    {
+     "geometric_leg": "collapsed",
+     "n_dates": 63,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 1373155,
+     "a_t": 9612085,
+     "a_logical_qubits": 2513,
+     "geometric_dp_peak_states": 2017,
+     "value_bits": 15,
+     "product_bits": 30,
+     "geometric_product_bits": 31,
+     "threshold_bits": 14,
+     "model_build_seconds": 0.00472712516784668,
+     "chain_factor_bit0_is_identity": false,
+     "chain_factor_bit0": 16397,
+     "factor_scale": 16384
+    },
+    {
+     "geometric_leg": "per_date",
+     "n_dates": 126,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 5050909,
+     "a_t": 35356363,
+     "a_logical_qubits": 8162,
+     "geometric_dp_peak_states": 17873,
+     "value_bits": 16,
+     "product_bits": 31,
+     "geometric_product_bits": 31,
+     "threshold_bits": 15,
+     "model_build_seconds": 0.5398221015930176
+    },
+    {
+     "geometric_leg": "collapsed",
+     "n_dates": 126,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 2835605,
+     "a_t": 19849235,
+     "a_logical_qubits": 4686,
+     "geometric_dp_peak_states": 8002,
+     "value_bits": 16,
+     "product_bits": 31,
+     "geometric_product_bits": 32,
+     "threshold_bits": 15,
+     "model_build_seconds": 0.04012608528137207,
+     "chain_factor_bit0_is_identity": false,
+     "chain_factor_bit0": 16388,
+     "factor_scale": 16384
+    },
+    {
+     "geometric_leg": "per_date",
+     "n_dates": 252,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 12080885,
+     "a_t": 84566195,
+     "a_logical_qubits": 17127,
+     "geometric_dp_peak_states": 30268,
+     "value_bits": 18,
+     "product_bits": 33,
+     "geometric_product_bits": 33,
+     "threshold_bits": 16,
+     "model_build_seconds": 1.9012229442596436
+    },
+    {
+     "geometric_leg": "collapsed",
+     "n_dates": 252,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 6512837,
+     "a_t": 45589859,
+     "a_logical_qubits": 9353,
+     "geometric_dp_peak_states": 31879,
+     "value_bits": 18,
+     "product_bits": 33,
+     "geometric_product_bits": 35,
+     "threshold_bits": 16,
+     "model_build_seconds": 0.35678601264953613,
+     "chain_factor_bit0_is_identity": false,
+     "chain_factor_bit0": 16385,
+     "factor_scale": 16384
+    },
+    {
+     "geometric_leg": "per_date",
+     "n_dates": 504,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 28448045,
+     "a_t": 199136315,
+     "a_logical_qubits": 36046,
+     "geometric_dp_peak_states": 59451,
+     "value_bits": 20,
+     "product_bits": 35,
+     "geometric_product_bits": 35,
+     "threshold_bits": 17,
+     "model_build_seconds": 6.948276042938232
+    },
+    {
+     "geometric_leg": "collapsed",
+     "n_dates": 504,
+     "multiplier_fraction_bits": 14,
+     "price_scale": 64,
+     "a_toffoli": 14946285,
+     "a_t": 104623995,
+     "a_logical_qubits": 19072,
+     "geometric_dp_peak_states": 127261,
+     "value_bits": 20,
+     "product_bits": 35,
+     "geometric_product_bits": 38,
+     "threshold_bits": 17,
+     "model_build_seconds": 2.986271858215332,
+     "chain_factor_bit0_is_identity": true,
+     "chain_factor_bit0": 16384,
+     "factor_scale": 16384
+    }
+   ]
+  },
+  "production_precision_collapsed_sweep": {
+   "configuration": "geometric_leg='collapsed', multiplier_fraction_bits=30, price_scale=16384, residual cap 2.864 dollars",
+   "rows": [
+    {
+     "n_dates": 32,
+     "a_toffoli": 2126281,
+     "a_t": 14883967,
+     "a_logical_qubits": 2616,
+     "q_t": 29804523,
+     "q_logical_qubits": 5229,
+     "value_bits": 23,
+     "product_bits": 54,
+     "geometric_product_bits": 55,
+     "shock_weight_bits": 10,
+     "total_bits": 27,
+     "threshold_bits": 21,
+     "geometric_dp_peak_states": 529,
+     "model_build_seconds": 0.0011620521545410156
+    },
+    {
+     "n_dates": 63,
+     "a_toffoli": 3734947,
+     "a_t": 26144629,
+     "a_logical_qubits": 4385,
+     "q_t": 52350613,
+     "q_logical_qubits": 8767,
+     "value_bits": 23,
+     "product_bits": 54,
+     "geometric_product_bits": 55,
+     "shock_weight_bits": 11,
+     "total_bits": 28,
+     "threshold_bits": 22,
+     "geometric_dp_peak_states": 2017,
+     "model_build_seconds": 0.005138874053955078
+    },
+    {
+     "n_dates": 126,
+     "a_toffoli": 7441813,
+     "a_t": 52092691,
+     "a_logical_qubits": 8118,
+     "q_t": 104298999,
+     "q_logical_qubits": 16233,
+     "value_bits": 24,
+     "product_bits": 55,
+     "geometric_product_bits": 56,
+     "shock_weight_bits": 13,
+     "total_bits": 30,
+     "threshold_bits": 23,
+     "geometric_dp_peak_states": 8002,
+     "model_build_seconds": 0.03897809982299805
+    },
+    {
+     "n_dates": 252,
+     "a_toffoli": 16039589,
+     "a_t": 112277123,
+     "a_logical_qubits": 15857,
+     "q_t": 224776209,
+     "q_logical_qubits": 31711,
+     "value_bits": 26,
+     "product_bits": 57,
+     "geometric_product_bits": 59,
+     "shock_weight_bits": 15,
+     "total_bits": 32,
+     "threshold_bits": 24,
+     "geometric_dp_peak_states": 31879,
+     "model_build_seconds": 0.3487710952758789
+    },
+    {
+     "n_dates": 504,
+     "a_toffoli": 34860397,
+     "a_t": 244022779,
+     "a_logical_qubits": 31672,
+     "q_t": 488488931,
+     "q_logical_qubits": 63341,
+     "value_bits": 28,
+     "product_bits": 59,
+     "geometric_product_bits": 62,
+     "shock_weight_bits": 17,
+     "total_bits": 34,
+     "threshold_bits": 25,
+     "geometric_dp_peak_states": 127261,
+     "model_build_seconds": 2.944387912750244
+    },
+    {
+     "n_dates": 1008,
+     "a_toffoli": 76073817,
+     "a_t": 532516719,
+     "a_logical_qubits": 64145,
+     "q_t": 1065931433,
+     "q_logical_qubits": 128287,
+     "value_bits": 30,
+     "product_bits": 61,
+     "geometric_product_bits": 65,
+     "shock_weight_bits": 19,
+     "total_bits": 38,
+     "threshold_bits": 26,
+     "geometric_dp_peak_states": 508537,
+     "model_build_seconds": 23.094441175460815
+    }
+   ]
+  },
+  "fitted_exponents": {
+   "toffoli_vs_n_dates": {
+    "exponent": 1.048742403839894,
+    "prefactor": 50690.844153233935,
+    "r_squared": 0.9973089058611039,
+    "max_absolute_log_residual": 0.10172021589097646,
+    "fit_range_n_dates": [
+     32,
+     1008
+    ],
+    "fit_points": 6
+   },
+   "t_vs_n_dates": {
+    "exponent": 1.0487424038398923,
+    "prefactor": 354835.9090726414,
+    "r_squared": 0.9973089058611038,
+    "max_absolute_log_residual": 0.10172021589097469,
+    "fit_range_n_dates": [
+     32,
+     1008
+    ],
+    "fit_points": 6
+   },
+   "a_qubits_vs_n_dates": {
+    "exponent": 0.9347075693646716,
+    "prefactor": 94.3048553023858,
+    "r_squared": 0.9975946865635179,
+    "max_absolute_log_residual": 0.08341945466714495,
+    "fit_range_n_dates": [
+     32,
+     1008
+    ],
+    "fit_points": 6
+   },
+   "q_qubits_vs_n_dates": {
+    "exponent": 0.9348614449190814,
+    "prefactor": 188.4195200314725,
+    "r_squared": 0.9976013867872726,
+    "max_absolute_log_residual": 0.08332149410479417,
+    "fit_range_n_dates": [
+     32,
+     1008
+    ],
+    "fit_points": 6
+   },
+   "basis": "ordinary least squares of log(count) on log(N) over the collapsed 30-fraction-bit, price_scale=16384 rows; the residual curvature comes from value_bits and product_bits growing like log(N), so a single power law is a local description, not an asymptotic law"
+  },
+  "per_date_control_enumeration_at_production_precision": {
+   "claim_tested": "that the per_date geometric dynamic program is intractable at 30 multiplier fraction bits and 252 dates, which is why results/v8 supplied an externally calibrated control constant instead of enumerating it",
+   "verdict": "NOT SUPPORTED at N=252.  The enumeration completes: floor rounding at 2**-30 still merges states, so the reachable-state count grows polynomially, not as 2**N.  It IS far more expensive than the collapsed enumeration, and it does become impractical at larger N, but the specific 252-date instance the paper uses is computable in minutes on one core.",
+   "collapsed_contrast": "the collapsed leg's value depends on the shocks only through the weighted sum, so its enumeration has exactly N(N+1)/2 + 1 states at any precision; this is asserted, not assumed, at every N below",
+   "measured": [
+    {
+     "n_dates": 20,
+     "per_date_states": 1580,
+     "per_date_seconds": 0.004440784454345703,
+     "per_date_exact_control_undiscounted": 6.114076751517132,
+     "collapsed_states": 211,
+     "collapsed_seconds": 0.0002779960632324219,
+     "collapsed_closed_form_states": 211,
+     "state_ratio_per_date_over_collapsed": 7.488151658767772,
+     "two_to_the_n_upper_bound": 1048576.0
+    },
+    {
+     "n_dates": 32,
+     "per_date_states": 6762,
+     "per_date_seconds": 0.030282020568847656,
+     "per_date_exact_control_undiscounted": 6.006943767861372,
+     "collapsed_states": 529,
+     "collapsed_seconds": 0.0008530616760253906,
+     "collapsed_closed_form_states": 529,
+     "state_ratio_per_date_over_collapsed": 12.782608695652174,
+     "two_to_the_n_upper_bound": 4294967296.0
+    },
+    {
+     "n_dates": 45,
+     "per_date_states": 20146,
+     "per_date_seconds": 0.1455380916595459,
+     "per_date_exact_control_undiscounted": 5.955699323164535,
+     "collapsed_states": 1036,
+     "collapsed_seconds": 0.0017430782318115234,
+     "collapsed_closed_form_states": 1036,
+     "state_ratio_per_date_over_collapsed": 19.445945945945947,
+     "two_to_the_n_upper_bound": 35184372088832.0
+    },
+    {
+     "n_dates": 63,
+     "per_date_states": 58162,
+     "per_date_seconds": 0.7058701515197754,
+     "per_date_exact_control_undiscounted": 5.919557894897498,
+     "collapsed_states": 2017,
+     "collapsed_seconds": 0.004842042922973633,
+     "collapsed_closed_form_states": 2017,
+     "state_ratio_per_date_over_collapsed": 28.83589489340605,
+     "two_to_the_n_upper_bound": 9.223372036854776e+18
+    },
+    {
+     "n_dates": 90,
+     "per_date_states": 183565,
+     "per_date_seconds": 3.852283000946045,
+     "per_date_exact_control_undiscounted": 5.8922146407701685,
+     "collapsed_states": 4096,
+     "collapsed_seconds": 0.013204097747802734,
+     "collapsed_closed_form_states": 4096,
+     "state_ratio_per_date_over_collapsed": 44.815673828125,
+     "two_to_the_n_upper_bound": 1.2379400392853803e+27
+    },
+    {
+     "n_dates": 126,
+     "per_date_states": 554371,
+     "per_date_seconds": 18.226091146469116,
+     "per_date_exact_control_undiscounted": 5.873712114922254,
+     "collapsed_states": 8002,
+     "collapsed_seconds": 0.0393068790435791,
+     "collapsed_closed_form_states": 8002,
+     "state_ratio_per_date_over_collapsed": 69.27905523619096,
+     "two_to_the_n_upper_bound": 8.507059173023462e+37
+    },
+    {
+     "n_dates": 180,
+     "per_date_states": 1751398,
+     "per_date_seconds": 77.58513307571411,
+     "per_date_exact_control_undiscounted": 5.859336770857919,
+     "collapsed_states": 16291,
+     "collapsed_seconds": 0.12029170989990234,
+     "collapsed_closed_form_states": 16291,
+     "state_ratio_per_date_over_collapsed": 107.50708980418636,
+     "two_to_the_n_upper_bound": 1.532495540865889e+54
+    },
+    {
+     "n_dates": 252,
+     "per_date_states": 4273406,
+     "per_date_seconds": 350.13506412506104,
+     "per_date_exact_control_undiscounted": 5.849186656502711,
+     "collapsed_states": 31879,
+     "collapsed_seconds": 0.38832998275756836,
+     "collapsed_closed_form_states": 31879,
+     "state_ratio_per_date_over_collapsed": 134.05081715235735,
+     "two_to_the_n_upper_bound": 7.237005577332262e+75
+    }
+   ],
+   "per_date_state_growth_fit": {
+    "exponent": 3.1590707575242214,
+    "prefactor": 0.1218975601642014,
+    "r_squared": 0.9996498697810926,
+    "max_absolute_log_residual": 0.09536175308178763,
+    "fit_range_n_dates": [
+     20,
+     252
+    ],
+    "fit_points": 8
+   },
+   "exact_per_date_control_at_252_dates_30_bits": 5.849186656502711,
+   "results_v8_calibrated_override": 5.849185695523366,
+   "results_v8_calibration_standard_error": 8.796907814680672e-06,
+   "exact_minus_v8_calibration": 9.609793449882886e-07,
+   "v8_calibration_within_own_standard_error": true,
+   "calibration_check_note": "this is an independent exact check of a published number: v8 restored the per_date control by paired Monte Carlo calibration because it treated the enumeration as out of reach.  The exact value agrees with that calibration inside its own reported standard error.",
+   "not_attempted": "N=504 at 30 fraction bits was not enumerated for per_date.  Extrapolating the fitted state exponent from the measured range puts it near 4e7 states, and the measured wall time scales like N times the state count, so it is hours and tens of gigabytes; the collapsed enumeration at N=504 is 127,261 states and under three seconds."
+  }
+ },
+ "source_hashes": {
+  "scripts/v21_collapsed_resource_evidence.py": "3d0c6427c8146facf0f1c72985adabdcb6fa2a9a02afc7ee1022c50b7625b608",
+  "src/qc_option_pricing/quantum/arithmetic_asian_oracle.py": "b8b95f80196c78c38a3216d1b2fedc05d57980044ec38d9220ebb982c2317bb5",
+  "src/qc_option_pricing/quantum/asian_oracle.py": "045c349249681f12476f1c876701830a4d6bfe44c3dbed4225afe59a11bc4598",
+  "tests/test_arithmetic_asian_oracle.py": "73f1e382e6cf07690a7b8fe9255a392e88b8fba83b4ea7fc463000743d9a8e70",
+  "results/v8/arithmetic_asian_oracle_validation.json": "6549c45f25c827f3ffded7040e1004a6a0d16d20b68bd0b9d2103650f2204989",
+  "results/v19/matched_bias_normalisation.json": "811d6bd52f5dd6eddacdc14d73f54e9473b6fae3a63ae08f8f2ca7ae1443de30"
+ },
+ "section_runtime_seconds": {
+  "exact_geometric_control": 0.3086400032043457,
+  "v8_reproduction": 3.2301671504974365,
+  "block_2": 49.044713258743286,
+  "block_1": 50.5740327835083,
+  "block_3": 287.38522696495056,
+  "block_4": 503.6509702205658
+ },
+ "runtime_seconds": 894.4184441566467,
+ "created_at_end": "2026-07-27T13:19:33-06:00"
+}

@@ -1,0 +1,489 @@
+{
+ "grid": {
+  "recipe": "GH8 rematched, ss=32, ps=256",
+  "n_dates": 4,
+  "cells": [
+   {
+    "strike": 90.0,
+    "sigma": 0.1,
+    "reference": 12.594368944947231,
+    "reference_se": 3.2659771975452964e-06,
+    "encoded": 12.595637698838283,
+    "error": 0.0012687538910522989
+   },
+   {
+    "strike": 90.0,
+    "sigma": 0.2,
+    "reference": 13.581445837713323,
+    "reference_se": 3.4413763412746363e-06,
+    "encoded": 13.585220720608065,
+    "error": 0.0037748828947421487
+   },
+   {
+    "strike": 90.0,
+    "sigma": 0.3,
+    "reference": 15.36706096214741,
+    "reference_se": 1.1919783601483233e-05,
+    "encoded": 15.367053106791856,
+    "error": -7.855355553587628e-06
+   },
+   {
+    "strike": 90.0,
+    "sigma": 0.4,
+    "reference": 17.46167508241468,
+    "reference_se": 9.480416894187794e-06,
+    "encoded": 17.464042848530596,
+    "error": 0.002367766115916936
+   },
+   {
+    "strike": 95.0,
+    "sigma": 0.1,
+    "reference": 8.141985068644754,
+    "reference_se": 2.393764799204292e-06,
+    "encoded": 8.141320512357813,
+    "error": -0.0006645562869405097
+   },
+   {
+    "strike": 95.0,
+    "sigma": 0.2,
+    "reference": 9.945586115599315,
+    "reference_se": 5.22225945104137e-06,
+    "encoded": 9.951102972289968,
+    "error": 0.005516856690652716
+   },
+   {
+    "strike": 95.0,
+    "sigma": 0.3,
+    "reference": 12.214254659419725,
+    "reference_se": 2.888092300589219e-06,
+    "encoded": 12.225417591528853,
+    "error": 0.01116293210912822
+   },
+   {
+    "strike": 95.0,
+    "sigma": 0.4,
+    "reference": 14.612899666112968,
+    "reference_se": 1.9608600220615485e-05,
+    "encoded": 14.61573198298718,
+    "error": 0.0028323168742119265
+   },
+   {
+    "strike": 100.0,
+    "sigma": 0.1,
+    "reference": 4.4316052776803065,
+    "reference_se": 3.085411610062027e-06,
+    "encoded": 4.430164774414163,
+    "error": -0.0014405032661439776
+   },
+   {
+    "strike": 100.0,
+    "sigma": 0.2,
+    "reference": 6.939482949224333,
+    "reference_se": 7.822930993312838e-06,
+    "encoded": 6.94072615625948,
+    "error": 0.0012432070351469093
+   },
+   {
+    "strike": 100.0,
+    "sigma": 0.3,
+    "reference": 9.527421979893544,
+    "reference_se": 9.965584433604153e-06,
+    "encoded": 9.525645461170264,
+    "error": -0.0017765187232807733
+   },
+   {
+    "strike": 100.0,
+    "sigma": 0.4,
+    "reference": 12.125815445076496,
+    "reference_se": 3.0285638920761603e-05,
+    "encoded": 12.125285683975308,
+    "error": -0.0005297611011876313
+   },
+   {
+    "strike": 105.0,
+    "sigma": 0.1,
+    "reference": 1.9405725035306753,
+    "reference_se": 6.8468757240011436e-06,
+    "encoded": 1.9450073621110944,
+    "error": 0.004434858580419032
+   },
+   {
+    "strike": 105.0,
+    "sigma": 0.2,
+    "reference": 4.610289090729605,
+    "reference_se": 7.4190591555353104e-06,
+    "encoded": 4.601163434067867,
+    "error": -0.009125656661738368
+   },
+   {
+    "strike": 105.0,
+    "sigma": 0.3,
+    "reference": 7.300269656284743,
+    "reference_se": 1.3759446784354164e-05,
+    "encoded": 7.2864726203424945,
+    "error": -0.01379703594224857
+   },
+   {
+    "strike": 105.0,
+    "sigma": 0.4,
+    "reference": 9.984852615317502,
+    "reference_se": 1.749494129016107e-05,
+    "encoded": 9.976969882667232,
+    "error": -0.00788273265026973
+   },
+   {
+    "strike": 110.0,
+    "sigma": 0.1,
+    "reference": 0.6666798562686611,
+    "reference_se": 4.968698614205698e-06,
+    "encoded": 0.6635083556086947,
+    "error": -0.0031715006599664086
+   },
+   {
+    "strike": 110.0,
+    "sigma": 0.2,
+    "reference": 2.919117209620549,
+    "reference_se": 1.121759263928462e-05,
+    "encoded": 2.9214712774217926,
+    "error": 0.0023540678012436977
+   },
+   {
+    "strike": 110.0,
+    "sigma": 0.3,
+    "reference": 5.501338845268487,
+    "reference_se": 1.6380229820568767e-05,
+    "encoded": 5.497629012175079,
+    "error": -0.0037098330934082213
+   },
+   {
+    "strike": 110.0,
+    "sigma": 0.4,
+    "reference": 8.16490645411115,
+    "reference_se": 3.32749393286242e-05,
+    "encoded": 8.153606314698647,
+    "error": -0.011300139412503185
+   }
+  ],
+  "worst_abs_error": 0.01379703594224857
+ },
+ "grid16": {
+  "recipe": "GH16 rematched, ss=32, ps=256",
+  "n_dates": 4,
+  "cells": [
+   {
+    "strike": 90.0,
+    "sigma": 0.1,
+    "reference": 12.594368944947231,
+    "reference_se": 3.2659771975452964e-06,
+    "encoded": 12.59586413960767,
+    "error": 0.0014951946604391253
+   },
+   {
+    "strike": 90.0,
+    "sigma": 0.2,
+    "reference": 13.581445837713323,
+    "reference_se": 3.4413763412746363e-06,
+    "encoded": 13.585089644942977,
+    "error": 0.0036438072296540724
+   },
+   {
+    "strike": 90.0,
+    "sigma": 0.3,
+    "reference": 15.36706096214741,
+    "reference_se": 1.1919783601483233e-05,
+    "encoded": 15.365102149274149,
+    "error": -0.001958812873260385
+   },
+   {
+    "strike": 90.0,
+    "sigma": 0.4,
+    "reference": 17.46167508241468,
+    "reference_se": 9.480416894187794e-06,
+    "encoded": 17.46754702635711,
+    "error": 0.005871943942430846
+   },
+   {
+    "strike": 95.0,
+    "sigma": 0.1,
+    "reference": 8.141985068644754,
+    "reference_se": 2.393764799204292e-06,
+    "encoded": 8.143990957038005,
+    "error": 0.0020058883932509985
+   },
+   {
+    "strike": 95.0,
+    "sigma": 0.2,
+    "reference": 9.945586115599315,
+    "reference_se": 5.22225945104137e-06,
+    "encoded": 9.947494290223087,
+    "error": 0.0019081746237716857
+   },
+   {
+    "strike": 95.0,
+    "sigma": 0.3,
+    "reference": 12.214254659419725,
+    "reference_se": 2.888092300589219e-06,
+    "encoded": 12.20920457212417,
+    "error": -0.005050087295554562
+   },
+   {
+    "strike": 95.0,
+    "sigma": 0.4,
+    "reference": 14.612899666112968,
+    "reference_se": 1.9608600220615485e-05,
+    "encoded": 14.607229737080887,
+    "error": -0.005669929032080745
+   },
+   {
+    "strike": 100.0,
+    "sigma": 0.1,
+    "reference": 4.4316052776803065,
+    "reference_se": 3.085411610062027e-06,
+    "encoded": 4.4301475596793365,
+    "error": -0.001457718000970054
+   },
+   {
+    "strike": 100.0,
+    "sigma": 0.2,
+    "reference": 6.939482949224333,
+    "reference_se": 7.822930993312838e-06,
+    "encoded": 6.936389054693113,
+    "error": -0.0030938945312195543
+   },
+   {
+    "strike": 100.0,
+    "sigma": 0.3,
+    "reference": 9.527421979893544,
+    "reference_se": 9.965584433604153e-06,
+    "encoded": 9.529365468300915,
+    "error": 0.0019434884073703529
+   },
+   {
+    "strike": 100.0,
+    "sigma": 0.4,
+    "reference": 12.125815445076496,
+    "reference_se": 3.0285638920761603e-05,
+    "encoded": 12.129126945675381,
+    "error": 0.0033115005988850754
+   },
+   {
+    "strike": 105.0,
+    "sigma": 0.1,
+    "reference": 1.9405725035306753,
+    "reference_se": 6.8468757240011436e-06,
+    "encoded": 1.9393455288564365,
+    "error": -0.0012269746742388232
+   },
+   {
+    "strike": 105.0,
+    "sigma": 0.2,
+    "reference": 4.610289090729605,
+    "reference_se": 7.4190591555353104e-06,
+    "encoded": 4.614497980447123,
+    "error": 0.00420888971751765
+   },
+   {
+    "strike": 105.0,
+    "sigma": 0.3,
+    "reference": 7.300269656284743,
+    "reference_se": 1.3759446784354164e-05,
+    "encoded": 7.305519965424212,
+    "error": 0.0052503091394688894
+   },
+   {
+    "strike": 105.0,
+    "sigma": 0.4,
+    "reference": 9.984852615317502,
+    "reference_se": 1.749494129016107e-05,
+    "encoded": 9.990566706975653,
+    "error": 0.005714091658150622
+   },
+   {
+    "strike": 110.0,
+    "sigma": 0.1,
+    "reference": 0.6666798562686611,
+    "reference_se": 4.968698614205698e-06,
+    "encoded": 0.6658696530031905,
+    "error": -0.0008102032654706548
+   },
+   {
+    "strike": 110.0,
+    "sigma": 0.2,
+    "reference": 2.919117209620549,
+    "reference_se": 1.121759263928462e-05,
+    "encoded": 2.9174771400845327,
+    "error": -0.0016400695360161421
+   },
+   {
+    "strike": 110.0,
+    "sigma": 0.3,
+    "reference": 5.501338845268487,
+    "reference_se": 1.6380229820568767e-05,
+    "encoded": 5.497803439961013,
+    "error": -0.003535405307474093
+   },
+   {
+    "strike": 110.0,
+    "sigma": 0.4,
+    "reference": 8.16490645411115,
+    "reference_se": 3.32749393286242e-05,
+    "encoded": 8.164175769424064,
+    "error": -0.0007306846870864803
+   }
+  ],
+  "worst_abs_error": 0.005871943942430846
+ },
+ "dates": {
+  "recipe": "GH8 rematched, ss=32, ps=256",
+  "strike": 100.0,
+  "sigma": 0.2,
+  "rows": [
+   {
+    "n_dates": 2,
+    "paths": 64,
+    "reference": 8.111181792598625,
+    "reference_se": 1.846149310877946e-06,
+    "encoded": 8.107120466559795,
+    "error": -0.0040613260388298045
+   },
+   {
+    "n_dates": 3,
+    "paths": 512,
+    "reference": 7.3303771462263025,
+    "reference_se": 5.087957325655223e-06,
+    "encoded": 7.347557188363388,
+    "error": 0.01718004213708557
+   },
+   {
+    "n_dates": 4,
+    "paths": 4096,
+    "reference": 6.939482949224333,
+    "reference_se": 7.822930993312838e-06,
+    "encoded": 6.94072615625948,
+    "error": 0.0012432070351469093
+   },
+   {
+    "n_dates": 5,
+    "paths": 32768,
+    "reference": 6.704700062725276,
+    "reference_se": 2.587645154589638e-05,
+    "encoded": 6.709486461719942,
+    "error": 0.00478639899466593
+   },
+   {
+    "n_dates": 6,
+    "paths": 262144,
+    "reference": 6.54811926773116,
+    "reference_se": 2.3708849825298956e-05,
+    "encoded": 6.5484196920300315,
+    "error": 0.000300424298871782
+   }
+  ]
+ },
+ "dates16": {
+  "recipe": "GH16 rematched, ss=32, ps=256",
+  "strike": 100.0,
+  "sigma": 0.2,
+  "rows": [
+   {
+    "n_dates": 2,
+    "paths": 256,
+    "reference": 8.111181792598625,
+    "reference_se": 1.846149310877946e-06,
+    "encoded": 8.07572044373794,
+    "error": -0.03546134886068586
+   },
+   {
+    "n_dates": 3,
+    "paths": 4096,
+    "reference": 7.3303771462263025,
+    "reference_se": 5.087957325655223e-06,
+    "encoded": 7.333035408142989,
+    "error": 0.0026582619166868326
+   },
+   {
+    "n_dates": 4,
+    "paths": 65536,
+    "reference": 6.939482949224333,
+    "reference_se": 7.822930993312838e-06,
+    "encoded": 6.936389054693113,
+    "error": -0.0030938945312195543
+   },
+   {
+    "n_dates": 5,
+    "paths": 1048576,
+    "reference": 6.704700062725276,
+    "reference_se": 2.587645154589638e-05,
+    "encoded": 6.704213282105203,
+    "error": -0.0004867806200730129
+   }
+  ]
+ },
+ "quadrature_ladder": {
+  "rows": [
+   {
+    "n_dates": 2,
+    "reference": 8.111181792598625,
+    "reference_se": 1.846149310877946e-06,
+    "gh8_error": -0.002360852742281594,
+    "gh16_error": -0.036469082453617574,
+    "gh32_error": -0.011177068702039605,
+    "gh64_error": 0.005453066391980954
+   },
+   {
+    "n_dates": 3,
+    "reference": 7.3303771462263025,
+    "reference_se": 5.087957325655223e-06,
+    "gh8_error": 0.016563927505102605,
+    "gh16_error": 0.0024497703890711264,
+    "gh32_error": -0.0063577723184184975,
+    "gh64_error": 0.0018725438243683001
+   }
+  ],
+  "gh16_rematch_min_raw_probability": -6.288822650582002e-07,
+  "gh16_rematch_post_clip_moment_errors": {
+   "0": 0.0,
+   "1": -9.478529072737274e-15,
+   "2": 3.6358438477712696e-05,
+   "3": 1.851852005074761e-13,
+   "4": 0.0011212229703039256,
+   "5": 1.3355982986240633e-13
+  }
+ },
+ "provenance": {
+  "command": ".venv/bin/python scripts/v9_oracle_robustness.py --part <part>",
+  "runs": [
+   {
+    "parts": "grid, grid16, dates, dates16, quadrature_ladder; separate foreground runs",
+    "start": null,
+    "end": "2026-07-17T14:17:40-06:00",
+    "time_source": "result file modification time marks the final merge; foreground runs, per-part wall times not logged"
+   }
+  ],
+  "environment": {
+   "python": "3.12.6",
+   "platform": "macOS-14.5-arm64-arm-64bit",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "qiskit": "2.4.2",
+   "qiskit_aer": "0.17.2"
+  },
+  "simulator_settings": "no circuit simulation; exhaustive enumeration and quadrature",
+  "seeds": {
+   "sobol_scramble_seeds": [
+    7,
+    8,
+    9,
+    10
+   ]
+  },
+  "oracle_source_sha256": "2dbfb777551d86d46db06da3da1234f214c4e150f446d97130d580302ac21468",
+  "runner_sha256": "661c535ec205a3908075b554826d99fc29d7e16eea10536f29f6ced653847971",
+  "runner_file": "scripts/v9_oracle_robustness.py",
+  "validation_test_sha256": "5f95ef2ca5ce21e0a253f37b6e37cc7ae9f191f3d5c7fdb0301ace6b0dbdfa8f",
+  "validation_test_file": "tests/test_asian_oracle.py",
+  "runner_revision_note": "runner revised during the session as later parts were added; recorded parts' code paths are unchanged in this hashed revision; intermediate revisions were not retained",
+  "recorded_after_run": true,
+  "recording_script": "scripts/v9_record_provenance.py"
+ }
+}

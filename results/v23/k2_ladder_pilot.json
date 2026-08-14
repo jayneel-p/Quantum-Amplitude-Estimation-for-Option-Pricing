@@ -1,0 +1,1420 @@
+{
+  "all_allocation_candidates": [
+    {
+      "first_budget_fraction": 0.1,
+      "first_cap_numerator": 13433932,
+      "first_discounted_clipping_budget": 0.0001,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74800,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156164,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 3.2537386455233137,
+        "requested_cap_numerator": 13433932,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 2810889,
+      "second_discounted_clipping_budget": 0.0009,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930792,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1895008,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.6808057512555804,
+        "requested_cap_numerator": 2810889,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.15000000000000002,
+      "first_cap_numerator": 12415742,
+      "first_discounted_clipping_budget": 0.00015000000000000001,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74788,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156140,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 3.0071299719432045,
+        "requested_cap_numerator": 12415742,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 2847350,
+      "second_discounted_clipping_budget": 0.0008500000000000001,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930772,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894968,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.689636714874752,
+        "requested_cap_numerator": 2847350,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.2,
+      "first_cap_numerator": 11732519,
+      "first_discounted_clipping_budget": 0.0002,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74816,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156196,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.841651310996404,
+        "requested_cap_numerator": 11732519,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 2886046,
+      "second_discounted_clipping_budget": 0.0008,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930784,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894992,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.6990090022011409,
+        "requested_cap_numerator": 2886046,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.25,
+      "first_cap_numerator": 11210075,
+      "first_discounted_clipping_budget": 0.00025,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74808,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156180,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.715113806346106,
+        "requested_cap_numerator": 11210075,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 2927343,
+      "second_discounted_clipping_budget": 0.00075,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930772,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894968,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.7090112595331102,
+        "requested_cap_numerator": 2927343,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.30000000000000004,
+      "first_cap_numerator": 10793786,
+      "first_discounted_clipping_budget": 0.00030000000000000003,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74808,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156180,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.614287361266121,
+        "requested_cap_numerator": 10793786,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 2971654,
+      "second_discounted_clipping_budget": 0.0007,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930788,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1895000,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.7197435167100694,
+        "requested_cap_numerator": 2971654,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.35,
+      "first_cap_numerator": 10447817,
+      "first_discounted_clipping_budget": 0.00035,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74800,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156164,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.530492631215898,
+        "requested_cap_numerator": 10447817,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3019325,
+      "second_discounted_clipping_budget": 0.00065,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930784,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894992,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.7312895759703621,
+        "requested_cap_numerator": 3019325,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.4,
+      "first_cap_numerator": 10151902,
+      "first_discounted_clipping_budget": 0.0004,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74792,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156148,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.4588211301773315,
+        "requested_cap_numerator": 10151902,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3071009,
+      "second_discounted_clipping_budget": 0.0006000000000000001,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930784,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894992,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.7438075958736359,
+        "requested_cap_numerator": 3071009,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.45000000000000007,
+      "first_cap_numerator": 9892107,
+      "first_discounted_clipping_budget": 0.0004500000000000001,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74812,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156188,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.395898001534598,
+        "requested_cap_numerator": 9892107,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3127156,
+      "second_discounted_clipping_budget": 0.0005499999999999999,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930760,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894944,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.7574065677703373,
+        "requested_cap_numerator": 3127156,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.5,
+      "first_cap_numerator": 9662364,
+      "first_discounted_clipping_budget": 0.0005,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74796,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156156,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.3402535574776784,
+        "requested_cap_numerator": 9662364,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3188808,
+      "second_discounted_clipping_budget": 0.0005,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930788,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1895000,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.7723388671875,
+        "requested_cap_numerator": 3188808,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.55,
+      "first_cap_numerator": 9455988,
+      "first_discounted_clipping_budget": 0.00055,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74816,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156196,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.2902686709449407,
+        "requested_cap_numerator": 9455988,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3257388,
+      "second_discounted_clipping_budget": 0.00045,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930780,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894984,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.7889491489955357,
+        "requested_cap_numerator": 3257388,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.6,
+      "first_cap_numerator": 9269132,
+      "first_discounted_clipping_budget": 0.0006,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74800,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156164,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.2450115869915677,
+        "requested_cap_numerator": 9269132,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3335132,
+      "second_discounted_clipping_budget": 0.0004000000000000001,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930768,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894960,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.8077789791046627,
+        "requested_cap_numerator": 3335132,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.65,
+      "first_cap_numerator": 9097431,
+      "first_discounted_clipping_budget": 0.0006500000000000001,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74812,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156188,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.203425089518229,
+        "requested_cap_numerator": 9097431,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3423796,
+      "second_discounted_clipping_budget": 0.00034999999999999994,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930776,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894976,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.829253665984623,
+        "requested_cap_numerator": 3423796,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.7000000000000001,
+      "first_cap_numerator": 8939056,
+      "first_discounted_clipping_budget": 0.0007000000000000001,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74812,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156188,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.165066189236111,
+        "requested_cap_numerator": 8939056,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3526500,
+      "second_discounted_clipping_budget": 0.0002999999999999999,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930768,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894960,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.8541288829985119,
+        "requested_cap_numerator": 3526500,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.75,
+      "first_cap_numerator": 8792585,
+      "first_discounted_clipping_budget": 0.00075,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74828,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156220,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.1295904734778026,
+        "requested_cap_numerator": 8792585,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3649160,
+      "second_discounted_clipping_budget": 0.00025,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930768,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894960,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.8838375031001984,
+        "requested_cap_numerator": 3649160,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.8,
+      "first_cap_numerator": 8656152,
+      "first_discounted_clipping_budget": 0.0008,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74820,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156204,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.0965459914434526,
+        "requested_cap_numerator": 8656152,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3801211,
+      "second_discounted_clipping_budget": 0.00019999999999999998,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930788,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1895000,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.9206647116040426,
+        "requested_cap_numerator": 3801211,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.85,
+      "first_cap_numerator": 8528713,
+      "first_discounted_clipping_budget": 0.00085,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74828,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156220,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.065679883200025,
+        "requested_cap_numerator": 8528713,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 3999284,
+      "second_discounted_clipping_budget": 0.00015000000000000007,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930780,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1894984,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.9686385866195436,
+        "requested_cap_numerator": 3999284,
+        "threshold_bits": 22
+      }
+    },
+    {
+      "first_budget_fraction": 0.9,
+      "first_cap_numerator": 8409168,
+      "first_discounted_clipping_budget": 0.0009000000000000001,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74824,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156212,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 2.0367257254464284,
+        "requested_cap_numerator": 8409168,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 1207216693.7060993,
+      "optimal_ae_error_fraction_first": 0.3688210114103654,
+      "optimal_ae_error_fraction_second": 0.6311789885896347,
+      "second_cap_numerator": 4291104,
+      "second_discounted_clipping_budget": 9.999999999999994e-05,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417874,
+          "cx_before_toffoli_decomposition": 69996,
+          "h_after_standard_7t_toffoli_decomposition": 33782901,
+          "h_before_toffoli_decomposition": 275,
+          "t": 118239191,
+          "toffoli": 16891313,
+          "x": 930780,
+          "z": 0
+        },
+        "a_qubits": 16713,
+        "implemented_amplitude_scale_dollars": 2.0317460317460316,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 480939335.1111111,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036274,
+          "cx_before_toffoli_decomposition": 139992,
+          "h_after_standard_7t_toffoli_decomposition": 67632646,
+          "h_before_toffoli_decomposition": 552,
+          "t": 236712329,
+          "toffoli": 33816047,
+          "x": 1894986,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33423,
+        "requested_cap_dollars": 1.0393182663690477,
+        "requested_cap_numerator": 4291104,
+        "threshold_bits": 23
+      }
+    }
+  ],
+  "claim_tested": "At the implemented N=252 finite grid and a matched $0.001 total discounted clipping budget, the work-optimised k=2 telescope has a smaller leading scale-times-query-T coefficient than direct QAE of H-C0_shifted.",
+  "configuration": {
+    "cap_selection_one_sided_z": 1.96,
+    "coarse_strike_adjustment_dollars": 0.02508544921875,
+    "coarse_strike_adjustment_units": 411,
+    "evaluation_seed": 20260731,
+    "fine_block_rounding_error_bounds_units": [
+      32,
+      790
+    ],
+    "multiplier_fraction_bits": 30,
+    "n_dates": 252,
+    "paths_per_arm": 2000000,
+    "price_scale": 16384,
+    "selection_seed": 20260730,
+    "total_discounted_clipping_budget": 0.001
+  },
+  "decision": {
+    "criterion_passes_on_selection": true,
+    "direct_over_ladder_leading_work_ratio": 1.138710874105132,
+    "evaluation_direct_loss_within_point_budget": false,
+    "evaluation_ladder_loss_within_point_budget": true
+  },
+  "direct": {
+    "evaluation": {
+      "cap_dollars": 2.7676527235243054,
+      "cap_numerator": 11426996,
+      "ci95_high": 0.0010663292576275688,
+      "ci95_low": 0.0009677880789809658,
+      "clipped_fraction": 0.0016785,
+      "clipped_paths": 3357,
+      "discounted_loss": 0.0010170586683042673,
+      "standard_error": 2.513805577719466e-05
+    },
+    "leading_work_coefficient": 913386126.2222222,
+    "resource": {
+      "a_counts": {
+        "cx_after_standard_7t_toffoli_decomposition": 96308034,
+        "cx_before_toffoli_decomposition": 69660,
+        "h_after_standard_7t_toffoli_decomposition": 32079734,
+        "h_before_toffoli_decomposition": 276,
+        "t": 112278103,
+        "toffoli": 16039729,
+        "x": 908168,
+        "z": 0
+      },
+      "a_qubits": 15889,
+      "implemented_amplitude_scale_dollars": 4.063492063492063,
+      "increment": "coarse_to_target",
+      "leading_work_coefficient_scale_times_q_t": 913386126.2222222,
+      "q_counts": {
+        "cx_after_standard_7t_toffoli_decomposition": 192806706,
+        "cx_before_toffoli_decomposition": 139320,
+        "h_after_standard_7t_toffoli_decomposition": 64223016,
+        "h_before_toffoli_decomposition": 554,
+        "t": 224778617,
+        "toffoli": 32111231,
+        "x": 1848114,
+        "z": 1
+      },
+      "q_qubits_with_clean_reflection_ladder": 31775,
+      "requested_cap_dollars": 2.7676527235243054,
+      "requested_cap_numerator": 11426996,
+      "threshold_bits": 24
+    },
+    "selected_cap_numerator": 11426996,
+    "selection": {
+      "cap_dollars": 2.7676527235243054,
+      "cap_numerator": 11426996,
+      "ci95_high": 0.0009999999505918478,
+      "ci95_low": 0.0009040257447063159,
+      "clipped_fraction": 0.0016155,
+      "clipped_paths": 3231,
+      "discounted_loss": 0.0009520128476490818,
+      "standard_error": 2.448321578712547e-05
+    }
+  },
+  "finite_grid_checks": {
+    "evaluation_minimum_D1": 0,
+    "evaluation_minimum_D2": 0,
+    "evaluation_telescope_exact": true,
+    "evaluation_uncorrected_minimum_D1": -9324,
+    "evaluation_uncorrected_negative_D1_paths": 26924,
+    "selection_minimum_D1": 0,
+    "selection_minimum_D2": 0,
+    "selection_telescope_exact": true,
+    "selection_uncorrected_minimum_D1": -9324,
+    "selection_uncorrected_negative_D1_paths": 27018
+  },
+  "generated_utc": "2026-07-28T03:44:06.657647+00:00",
+  "ladder": {
+    "chosen_allocation": {
+      "first_budget_fraction": 0.1,
+      "first_cap_numerator": 13433932,
+      "first_discounted_clipping_budget": 0.0001,
+      "first_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 17303890,
+          "cx_before_toffoli_decomposition": 3868,
+          "h_after_standard_7t_toffoli_decomposition": 5766950,
+          "h_before_toffoli_decomposition": 276,
+          "t": 20183359,
+          "toffoli": 2883337,
+          "x": 74800,
+          "z": 0
+        },
+        "a_qubits": 3282,
+        "implemented_amplitude_scale_dollars": 4.063492063492063,
+        "increment": "coarse_to_blocked",
+        "leading_work_coefficient_scale_times_q_t": 164216405.3333333,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 34647134,
+          "cx_before_toffoli_decomposition": 7736,
+          "h_after_standard_7t_toffoli_decomposition": 11547020,
+          "h_before_toffoli_decomposition": 554,
+          "t": 40412631,
+          "toffoli": 5773233,
+          "x": 156164,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 6561,
+        "requested_cap_dollars": 3.2537386455233137,
+        "requested_cap_numerator": 13433932,
+        "threshold_bits": 24
+      },
+      "ladder_leading_work_coefficient": 802122950.604135,
+      "optimal_ae_error_fraction_first": 0.4524679264165234,
+      "optimal_ae_error_fraction_second": 0.5475320735834766,
+      "second_cap_numerator": 2810889,
+      "second_discounted_clipping_budget": 0.0009,
+      "second_resource": {
+        "a_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "cx_before_toffoli_decomposition": 69972,
+          "h_after_standard_7t_toffoli_decomposition": 33782884,
+          "h_before_toffoli_decomposition": 274,
+          "t": 118239135,
+          "toffoli": 16891305,
+          "x": 930792,
+          "z": 0
+        },
+        "a_qubits": 16712,
+        "implemented_amplitude_scale_dollars": 1.0158730158730158,
+        "increment": "blocked_to_target",
+        "leading_work_coefficient_scale_times_q_t": 240469539.55555555,
+        "q_counts": {
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "cx_before_toffoli_decomposition": 139944,
+          "h_after_standard_7t_toffoli_decomposition": 67632608,
+          "h_before_toffoli_decomposition": 550,
+          "t": 236712203,
+          "toffoli": 33816029,
+          "x": 1895008,
+          "z": 1
+        },
+        "q_qubits_with_clean_reflection_ladder": 33421,
+        "requested_cap_dollars": 0.6808057512555804,
+        "requested_cap_numerator": 2810889,
+        "threshold_bits": 22
+      }
+    },
+    "evaluation_combined": {
+      "ci95_high": 0.001001260959865864,
+      "ci95_low": 0.0009431285875432064,
+      "discounted_loss": 0.0009721947737045352,
+      "standard_error": 1.4829686817004518e-05
+    },
+    "evaluation_first": {
+      "cap_dollars": 3.2537386455233137,
+      "cap_numerator": 13433932,
+      "ci95_high": 0.00010239143408536133,
+      "ci95_low": 7.610078758754509e-05,
+      "clipped_fraction": 0.000176,
+      "clipped_paths": 352,
+      "discounted_loss": 8.924611083645321e-05,
+      "standard_error": 6.706797575973532e-06
+    },
+    "evaluation_second": {
+      "cap_dollars": 0.6808057512555804,
+      "cap_numerator": 2810889,
+      "ci95_high": 0.0009056928150016657,
+      "ci95_low": 0.0008602045107344983,
+      "clipped_fraction": 0.0060155,
+      "clipped_paths": 12031,
+      "discounted_loss": 0.000882948662868082,
+      "standard_error": 1.1604159251828422e-05
+    },
+    "leading_work_coefficient": 802122950.604135,
+    "selection_first": {
+      "cap_dollars": 3.2537386455233137,
+      "cap_numerator": 13433932,
+      "ci95_high": 9.999996222902285e-05,
+      "ci95_low": 7.264703281568791e-05,
+      "clipped_fraction": 0.000155,
+      "clipped_paths": 310,
+      "discounted_loss": 8.632349752235538e-05,
+      "standard_error": 6.977788115646666e-06
+    },
+    "selection_second": {
+      "cap_dollars": 0.6808057512555804,
+      "cap_numerator": 2810889,
+      "ci95_high": 0.0008999992571806715,
+      "ci95_low": 0.0008548422707307138,
+      "clipped_fraction": 0.0060485,
+      "clipped_paths": 12097,
+      "discounted_loss": 0.0008774207639556926,
+      "standard_error": 1.1519639400499418e-05
+    }
+  },
+  "provenance": {
+    "git": {
+      "head": "900ef6d19657f98f20565a8953750f1d2e512f33",
+      "worktree_dirty": true
+    },
+    "sha256": {
+      "src/qc_option_pricing/quantum/k2_ladder_pilot.py": "88699f2e57a162f2e10ac669515df8cefd68aad97bf9954a0fc0ce05ddb13e5c",
+      "src/qc_option_pricing/quantum/telescoping_asian_ladder.py": "4b13494a7b85765116f119c074b07da2876a0cd3db8bc337513159f68f43fe90"
+    }
+  },
+  "schema": "k2_ladder_pilot.v1",
+  "scope_limitations": [
+    "finite binary-shock model, not a continuous-model tail certificate",
+    "logical Toffoli=7T ledger, not physical resources or runtime",
+    "leading 1/epsilon work model, not an executed AE schedule",
+    "clipping-budget split selected on a finite grid of 17 allocations"
+  ]
+}

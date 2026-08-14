@@ -1,0 +1,27 @@
+{
+ "generated_at": "2026-07-18T09:17:07-06:00",
+ "generated_by": "scripts/v9_record_provenance.py",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "qiskit": "2.4.2",
+  "qiskit_aer": "0.17.2"
+ },
+ "source_files": {
+  "src/qc_option_pricing/quantum/asian_oracle.py": "2dbfb777551d86d46db06da3da1234f214c4e150f446d97130d580302ac21468",
+  "tests/test_asian_oracle.py": "5f95ef2ca5ce21e0a253f37b6e37cc7ae9f191f3d5c7fdb0301ace6b0dbdfa8f",
+  "scripts/v9_oracle_accuracy_sweeps.py": "9554f62393bacfe01073f8ae0d9f1bd2fd54cded1c5daccf6ceb601ba7c5ead3",
+  "scripts/v9_oracle_circuit_check.py": "2e33ca9f02e6c7d8d812c02cfcf7c9d227f6222f5ddaec7fefe73ea19a0f0ad9",
+  "scripts/v9_oracle_champion.py": "06905da7b078b26149b2a2896d3a8156b1b0be5549e5861a3737961acd1ff73f",
+  "scripts/v9_oracle_robustness.py": "661c535ec205a3908075b554826d99fc29d7e16eea10536f29f6ced653847971",
+  "scripts/v9_record_provenance.py": "07165896a8a0eb89d75b8e7ece01f82a71a0211c0afadfc3b3e8b68f044c80a2"
+ },
+ "result_files": {
+  "results/v9/oracle_accuracy_sweeps.json": "0f9ee7b58af286ddb097574d854aafa0146d740df75b538f6b8c8daf54fd8885",
+  "results/v9/oracle_circuit_check.json": "dad0049cb1502f4a955b9f62b2f08955705193a3315a52750ea0ec14763c39ff",
+  "results/v9/oracle_champion.json": "2bc17c3cd8d0469a939fbfec8a82512fd014f91de63c53920a367152b7340887",
+  "results/v9/oracle_robustness.json": "411185676f1e865f903f2a952b849d83d1704961348b9ee14f24940ae1cb7063"
+ }
+}

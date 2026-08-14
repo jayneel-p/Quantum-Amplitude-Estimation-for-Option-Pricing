@@ -1,0 +1,48 @@
+{
+  "increment": "blocked_to_target",
+  "n_dates": 252,
+  "price_scale": 16384,
+  "multiplier_fraction_bits": 30,
+  "cap_dollars": 0.6808057512555804,
+  "threshold_bits": 22,
+  "basis_gates": [
+    "h",
+    "x",
+    "cx",
+    "ccx"
+  ],
+  "optimization_level": 0,
+  "toffoli_to_t_convention": "Toffoli = 7 T, 6 CX, 2 H (exact decomposition)",
+  "compositional_formula": {
+    "h_before_toffoli_decomposition": 274,
+    "x": 930792,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 69972,
+    "toffoli": 16891305,
+    "t": 118239135,
+    "cx_after_standard_7t_toffoli_decomposition": 101417802,
+    "h_after_standard_7t_toffoli_decomposition": 33782884
+  },
+  "counted_circuit": {
+    "h_before_toffoli_decomposition": 274,
+    "x": 930792,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 69972,
+    "toffoli": 16891305,
+    "t": 118239135,
+    "cx_after_standard_7t_toffoli_decomposition": 101417802,
+    "h_after_standard_7t_toffoli_decomposition": 33782884
+  },
+  "compositional_a_qubits": 16712,
+  "counted_a_qubits": 16712,
+  "matches": {
+    "h": true,
+    "x": true,
+    "cx": true,
+    "ccx": true,
+    "qubits": true
+  },
+  "all_match": true,
+  "build_seconds": 78.82890224456787,
+  "transpile_and_count_seconds": 24.899800777435303
+}

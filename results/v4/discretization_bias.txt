@@ -1,0 +1,15 @@
+Bias from discretizing the increment onto a finite grid, raw payoff vs residual
+daily Asian call, N=252, 2000000 paths, equally likely bins, conditional-mean values
+seed 20260705
+continuous reference: E[disc max(A-K,0)] = 5.77650, E[disc R] = 0.21633
+
+Bias and SE use paired per-path differences between the grid and continuous draws.
+qubits/date    raw bias ($)     raw SE   residual bias ($)   resid SE  |raw|/|residual|
+          1        -1.09565    0.00373            -0.07714    0.00018              14.2
+          2        -0.39459    0.00239            -0.02963    0.00012              13.3
+          3        -0.15220    0.00152            -0.01168    0.00008              13.0
+
+gates:
+  [PASS] bias negative at three-SE margin: raw and residual paired estimates are below zero by more than three standard errors
+  [PASS] absolute bias decreases at three-SE margin: each b-to-b+1 change exceeds three times the sum of its paired standard errors
+  [PASS] residual absolute bias smaller at three-SE margin: point-estimate ratio |raw/residual| in [13.0, 14.2]

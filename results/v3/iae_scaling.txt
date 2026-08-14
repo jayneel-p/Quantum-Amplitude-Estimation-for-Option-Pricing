@@ -1,0 +1,12 @@
+IAE measured oracle queries vs amplitude-error target
+European call, n=6 dist qubits, c=0.1, alpha=0.32 (68% conf), 15 trials/point
+master_seed=20260716; default_shots=1024; trial schedules and counts are in iae_scaling_trials.json
+NOTE: with the linear-rescaling payoff (c=0.10), price error = e^-rT * (f_max/(2c)) * amplitude error.
+
+    eps_a   mean_queries       median          std   emp_envelope med/emp  mean|price err|
+    2e-02          6,554        5,120        3,370            245   20.90         0.592355
+    1e-02          5,666        4,096        3,069            514    7.97         0.646187
+    5e-03          4,642        4,096        2,413          1,070    3.83         0.662074
+    2e-03         62,669       73,728       40,428          2,790   26.42         0.152726
+    1e-03         99,738       95,232       40,830          5,735   16.61         0.026778
+    5e-04        113,664       72,704       64,058         11,746    6.19         0.031265

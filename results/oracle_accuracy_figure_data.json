@@ -1,0 +1,134 @@
+{
+ "schema_version": "oracle-accuracy-figure-v1",
+ "created_at": "2026-07-27T15:11:58-06:00",
+ "command": "scripts/figure_oracle_accuracy.py",
+ "argv": [],
+ "figure": "results/oracle_accuracy.png",
+ "purpose": "every value drawn in results/oracle_accuracy.png, so the axis annotations and bar heights are traceable",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4",
+  "matplotlib": "3.10.8"
+ },
+ "git": {
+  "rev": "b2c4f8242a4080a193d3f2fbf5b5cc8349df521d",
+  "worktree_dirty": true
+ },
+ "source": {
+  "evidence": "results/v20/collapsed_resource_evidence.json",
+  "geometric_leg": "collapsed",
+  "cap_arm": "manuscript_B_R_2.864",
+  "cap_dollars": 2.864,
+  "binary_paths": 4000000,
+  "continuous_paths": 8000000,
+  "predeclared_absolute_target": 0.01,
+  "supersedes": "results/v8/arithmetic_asian_oracle_validation.json (retired per-date leg, 200,000 paths)"
+ },
+ "binary_shock_model_error": {
+  "point_estimate": 0.0024378011475398864,
+  "standard_error": 0.0002134960556564067,
+  "ci95_low": 0.0020193488784533294,
+  "ci95_high": 0.0028562534166264434,
+  "note": "leg-independent: it compares unrounded binary-tree paths with continuous GBM and never touches the encoding"
+ },
+ "bars": [
+  {
+   "multiplier_fraction_bits": 18,
+   "price_scale": 1024,
+   "fixed_point_encoding_error_discounted": 0.04828471318832758,
+   "fixed_point_encoding_error_standard_error": 2.7407077199358038e-05,
+   "binary_shock_model_error_discounted": 0.0024378011475398864,
+   "binary_shock_model_error_standard_error": 0.0002134960556564067,
+   "continuous_price_error": 0.05072251433586747,
+   "continuous_price_error_standard_error": 0.00021524802824057432,
+   "continuous_price_error_ci95": [
+    0.050300628200515944,
+    0.051144400471218994
+   ],
+   "meets_target_at_95_percent": false
+  },
+  {
+   "multiplier_fraction_bits": 24,
+   "price_scale": 4096,
+   "fixed_point_encoding_error_discounted": 0.008058710664884748,
+   "fixed_point_encoding_error_standard_error": 1.6164184835769194e-05,
+   "binary_shock_model_error_discounted": 0.0024378011475398864,
+   "binary_shock_model_error_standard_error": 0.0002134960556564067,
+   "continuous_price_error": 0.010496511812424635,
+   "continuous_price_error_standard_error": 0.00021410709155057994,
+   "continuous_price_error_ci95": [
+    0.010076861912985497,
+    0.010916161711863772
+   ],
+   "meets_target_at_95_percent": false
+  },
+  {
+   "multiplier_fraction_bits": 30,
+   "price_scale": 16384,
+   "fixed_point_encoding_error_discounted": 0.0013840676740172098,
+   "fixed_point_encoding_error_standard_error": 1.5550429705201294e-05,
+   "binary_shock_model_error_discounted": 0.0024378011475398864,
+   "binary_shock_model_error_standard_error": 0.0002134960556564067,
+   "continuous_price_error": 0.003821868821557096,
+   "continuous_price_error_standard_error": 0.00021406163048257835,
+   "continuous_price_error_ci95": [
+    0.0034023080258112426,
+    0.00424142961730295
+   ],
+   "meets_target_at_95_percent": true
+  }
+ ],
+ "axis_resource_annotations": {
+  "note": "recomputed here with estimate_arithmetic_asian_resources; the evidence artifact's block_3 ledger only covers 30 fraction bits, and the 30-bit row below is asserted equal to it before plotting",
+  "checked_against": "block_3_resource_ledger, cap_rule='manuscript', collapsed",
+  "rows": [
+   {
+    "multiplier_fraction_bits": 18,
+    "price_scale": 1024,
+    "cap_dollars": 2.864,
+    "cap_numerator": 739049,
+    "value_bits": 22,
+    "threshold_bits": 20,
+    "geometric_dp_peak_states": 31879,
+    "a_toffoli": 9823413,
+    "a_t": 68763891,
+    "a_logical_qubits": 11533,
+    "q_t": 137689209,
+    "q_logical_qubits": 23063
+   },
+   {
+    "multiplier_fraction_bits": 24,
+    "price_scale": 4096,
+    "cap_dollars": 2.864,
+    "cap_numerator": 2956198,
+    "value_bits": 24,
+    "threshold_bits": 22,
+    "geometric_dp_peak_states": 31879,
+    "a_toffoli": 12760541,
+    "a_t": 89323787,
+    "a_logical_qubits": 13695,
+    "q_t": 178839269,
+    "q_logical_qubits": 27387
+   },
+   {
+    "multiplier_fraction_bits": 30,
+    "price_scale": 16384,
+    "cap_dollars": 2.864,
+    "cap_numerator": 11824792,
+    "value_bits": 26,
+    "threshold_bits": 24,
+    "geometric_dp_peak_states": 31879,
+    "a_toffoli": 16039589,
+    "a_t": 112277123,
+    "a_logical_qubits": 15857,
+    "q_t": 224776209,
+    "q_logical_qubits": 31711
+   }
+  ]
+ },
+ "source_hashes": {
+  "scripts/figure_oracle_accuracy.py": "e8f44c7927f0bb648899c34dcc60f371dad5ef648fbb470727f1f9995bacbaa7",
+  "results/v20/collapsed_resource_evidence.json": "d3f1d4a6933ed74b0ed2426478b4aa1c5f695d41975b84da9e8d2ed289114fdd"
+ }
+}

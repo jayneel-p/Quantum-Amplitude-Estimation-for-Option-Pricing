@@ -1,0 +1,20 @@
+v4 maximum-payoff query ratio f_max(A)/f_max(R) at k=1
+daily Asian call, N=252, 1000000 paths/cell, clipping fraction 1.3499e-03
+seed 20260705
+
+rows = sigma, cols = K
+sigma\K        90      95     100     105     110
+   0.10      43.9    37.3    30.6    23.4    16.7
+   0.15      27.2    24.1    21.0    17.9    14.7
+   0.20      19.6    17.6    16.0    14.1    12.4
+   0.30      12.2    11.5    10.7    10.0     9.3
+   0.40       8.9     8.4     8.0     7.7     7.4
+
+range: 7.4 (K=110, sigma=0.4) to 43.9 (K=90, sigma=0.1)
+base case (K=100, sigma=0.20): 16.0
+
+gates:
+  [PASS] base case reproduces daily ratio: ratio(K=100, sigma=0.20) = 16.0 (daily f_max ratio 16.0)
+  [PASS] Lemma 1 A>=G on every path/cell: min(A-G) over all cells = 3.83e-03
+  [PASS] ratio decreases with volatility: ratio(sigma=0.10)=30.6 > ratio(sigma=0.40)=8.0
+  [PASS] all ratios finite and > 1: range [7.4, 43.9]

@@ -1,0 +1,83 @@
+{
+ "schema_version": "wang-kan-cv-restoration-v1",
+ "created_at_start": "2026-07-18T11:47:15-06:00",
+ "command": "scripts/validate_wang_kan_cv_restoration.py",
+ "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4"
+ },
+ "source_hashes": {
+  "src/qc_option_pricing/classical/heston_geometric_asian.py": "51aa6d586764492e0da7c47242ee4c7231c7de6e37c3f5f234cf171580992199",
+  "scripts/validate_wang_kan_cv_restoration.py": "7ee2556085c285e9eb123ebad22fb1d682ace7a87d67f94bcda4946936d9df88",
+  "tests/test_heston_geometric_asian.py": "bc56bcea196c1ca362269c2f78e506fb5585c44ab5dad1378cedb3b9661bb948",
+  "results/v10/wang_kan_cv_feasibility.json": "dc8896425185a3dfb494f8916d0f243a15761f8aaf4bb8a7c2bc4c7b5cb8d528"
+ },
+ "method_note": "affine backward-recursion derivation; independent of the inaccessible Kim et al. (2016) recursive method but computing the same discretely monitored geometric Asian price; validation chain in tests/test_heston_geometric_asian.py",
+ "instances": {
+  "call_instance_1": {
+   "n_fixings": 256,
+   "option_type": "call",
+   "strike": 90.0,
+   "mu_g_exact_discrete_heston": 13.293216565493317,
+   "quad_error_estimate": 3.587255868279382e-10,
+   "expected_geometric_average_undiscounted": 100.58060755544209,
+   "mc_cross_check": {
+    "paths": 500000,
+    "substeps_per_interval": 8,
+    "seed": 2026071861,
+    "price": 13.306805382802718,
+    "se": 0.02132760066474143,
+    "negative_variance_fraction": 0.0
+   },
+   "formula_minus_mc": -0.01358881730940098,
+   "formula_minus_mc_in_se_units": -0.6371470247877378,
+   "mu_g_weak_euler_1m_paths": 13.283131379301885,
+   "geometric_leg_weak_euler_bias": -0.010085186191432172,
+   "residual_mean_discounted": 0.6251072132323325,
+   "residual_se": 0.0009457556939254327,
+   "hybrid_price": 13.91832377872565,
+   "hybrid_price_se": 0.0009457556939254327,
+   "weak_euler_raw_price_8m_paths": 13.908238592534216,
+   "error_budget": {
+    "amplitude_estimation": "set by regime; see resources JSON",
+    "residual_statistical_se": 0.0009457556939254327,
+    "clipping_bias_certificate": 0.0004241568022579501,
+    "restoration_mismatch_note": "E_weak[D] - E_exact[D] unmeasured directly; the residual mean moved by less than 1.5e-3 across N in {64,...,512} (refine part), and the geometric-leg bias eliminated by the hybrid is measured above"
+   }
+  },
+  "put_instance_2": {
+   "n_fixings": 256,
+   "option_type": "put",
+   "strike": 110.0,
+   "mu_g_exact_discrete_heston": 9.550969843590844,
+   "quad_error_estimate": 7.345807807025629e-13,
+   "expected_geometric_average_undiscounted": 102.1674729949102,
+   "mc_cross_check": {
+    "paths": 500000,
+    "substeps_per_interval": 8,
+    "seed": 2026071861,
+    "price": 9.55118596748903,
+    "se": 0.012781259947090744,
+    "negative_variance_fraction": 0.0
+   },
+   "formula_minus_mc": -0.00021612389818592703,
+   "formula_minus_mc_in_se_units": -0.016909436086942346,
+   "mu_g_weak_euler_1m_paths": 9.567601314079496,
+   "geometric_leg_weak_euler_bias": 0.016631470488652766,
+   "residual_mean_discounted": 0.20751786734861724,
+   "residual_se": 0.00024694098314627697,
+   "hybrid_price": 9.343451976242227,
+   "hybrid_price_se": 0.00024694098314627697,
+   "weak_euler_raw_price_8m_paths": 9.36008344673088,
+   "error_budget": {
+    "amplitude_estimation": "set by regime; see resources JSON",
+    "residual_statistical_se": 0.00024694098314627697,
+    "clipping_bias_certificate": 0.00039418104045801824,
+    "restoration_mismatch_note": "E_weak[D] - E_exact[D] unmeasured directly; the residual mean moved by less than 1.5e-3 across N in {64,...,512} (refine part), and the geometric-leg bias eliminated by the hybrid is measured above"
+   }
+  }
+ },
+ "created_at_end": "2026-07-18T11:48:16-06:00"
+}

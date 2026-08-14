@@ -1,0 +1,396 @@
+{
+ "schema_version": "wang-kan-cv-resources-v1",
+ "created_at_start": "2026-07-18T11:15:10-06:00",
+ "command": "scripts/validate_wang_kan_cv_resources.py",
+ "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit"
+ },
+ "source_hashes": {
+  "src/qc_option_pricing/quantum/wang_kan_resources.py": "0abdafe1f3796bcb558539ab443cd35e872c63a7821358df2eebd6132eed521d",
+  "scripts/validate_wang_kan_cv_resources.py": "c50c251c1f5e2151b24b9e726fc6f132187f6412afa67e2d8a2a74f80f01b4e9",
+  "tests/test_wang_kan_resources.py": "09d80481e373bd3c630899b5f8a7cfec96db630aff6797f8a3d0fc201c6188c8",
+  "results/v10/wang_kan_cv_feasibility.json": "dc8896425185a3dfb494f8916d0f243a15761f8aaf4bb8a7c2bc4c7b5cb8d528"
+ },
+ "notes": [
+  "Published module totals are rounded to two significant figures; the EXP and ARCSIN piecewise-polynomial (M, d) are not published and are calibrated against the published U2 and U3 totals; every candidate within 2% is recorded.",
+  "Eq. (64) at eps=1e-3, delta=0.1 evaluates to 7363.116; the published 7363 implies nearest rounding, a strict bound requires 7364.",
+  "Our calibrated total for instance 1 is 2.33e11, inside the interval implied by the published rounded factors (7363 x [3.15, 3.25]e7) though it rounds to 2.3e11, not the published 2.4e11.",
+  "The fixed-point/function-approximation error at (n, p) = (27, 11)/(27, 10) is shared by all three constructions and is not reduced by the control variate; a $0.01 total dollar target requires precision refinement in every arm.  Ratios below compare amplitude-estimation cost at equal encoded-range budgets.",
+  "The geometric control price is a classical input: either the discrete-Heston formula of Kim et al. (2016), UNVERIFIED (primary source inaccessible at run time), or classical Monte Carlo charged below."
+ ],
+ "instances": {
+  "call_instance_1": {
+   "published": {
+    "n": 27,
+    "p": 11,
+    "n_steps": 256,
+    "z": 200.0,
+    "rate": 0.03,
+    "u1": 6400000.0,
+    "u2": 9300000.0,
+    "u3": 60000.0,
+    "q": 32000000.0,
+    "total": 240000000000.0,
+    "queries": 7363,
+    "qubits": 22000.0,
+    "eps_sin": 1e-08,
+    "eps_estimate": 0.001,
+    "delta": 0.1
+   },
+   "reproduction": {
+    "u1_exact": 6445056,
+    "u2_calibrated": 9291876,
+    "u3_calibrated": 60262.998901705025,
+    "t_a": 15797194.998901704,
+    "t_q": 31682385.99780341,
+    "queries_eq64_nearest": 7363,
+    "queries_eq64_ceil": 7364,
+    "total_t_at_published_queries": 233277408101.8265,
+    "exp_calibration_candidates": [
+     {
+      "m_pieces": 11,
+      "degree": 3,
+      "t_count": 36184,
+      "relative_gap": 0.0008762593261647756
+     },
+     {
+      "m_pieces": 32,
+      "degree": 1,
+      "t_count": 36248,
+      "relative_gap": 0.0008909283646136197
+     },
+     {
+      "m_pieces": 2,
+      "degree": 4,
+      "t_count": 36000,
+      "relative_gap": 0.005956923937152662
+     },
+     {
+      "m_pieces": 20,
+      "degree": 2,
+      "t_count": 35760,
+      "relative_gap": 0.012583877777571644
+     },
+     {
+      "m_pieces": 21,
+      "degree": 2,
+      "t_count": 36688,
+      "relative_gap": 0.013040343738715087
+     }
+    ],
+    "arcsin_calibration_candidates": [
+     {
+      "m_pieces": 2,
+      "degree": 3,
+      "t_count": 60064,
+      "relative_gap": 0.004397901320627278
+     },
+     {
+      "m_pieces": 11,
+      "degree": 2,
+      "t_count": 59376,
+      "relative_gap": 0.00710692280211832
+     },
+     {
+      "m_pieces": 22,
+      "degree": 1,
+      "t_count": 60480,
+      "relative_gap": 0.011354306604147872
+     },
+     {
+      "m_pieces": 21,
+      "degree": 1,
+      "t_count": 58752,
+      "relative_gap": 0.01754153072739921
+     }
+    ]
+   },
+   "control_variate": {
+    "certified_cap_dollars": 16.84170919614413,
+    "clipping_bias_discounted": 0.0004241568022579501,
+    "clipping_budget": 0.001,
+    "padded_cap_threshold_encoder": 32.0,
+    "padding_factor": 1.9000446823607622,
+    "range_ratio_rotation": 11.875279264754763,
+    "range_ratio_threshold": 6.25,
+    "classical_variance_ratio": 265.20695809408505,
+    "delta_u2_t_count": 65060,
+    "t_q_overhead_rotation": 1.004117240412671,
+    "t_q_overhead_threshold": 1.0003347602102104
+   },
+   "matched_comparison": {
+    "regime_A_wang_kan_epsilon": {
+     "dollar_ae_budget": 0.19408910670970164,
+     "raw": {
+      "eps_amplitude": 0.001,
+      "queries": 7363,
+      "t_q": 31682385.99780341,
+      "total_t": 233277408101.8265
+     },
+     "cv_rotation": {
+      "dollar_ae_budget": 0.19408910670970164,
+      "delta": 0.1,
+      "eps_amplitude_raw": 0.001,
+      "eps_amplitude_cv": 0.011875279264754764,
+      "queries_raw": 7363,
+      "queries_cv": 565,
+      "query_ratio": 13.031858407079646,
+      "t_q_raw": 31682385.99780341,
+      "t_q_cv": 31812829.99780341,
+      "t_q_overhead_cv": 1.004117240412671,
+      "total_t_raw": 233277408101.8265,
+      "total_t_cv": 17974248948.758926,
+      "total_t_ratio": 12.978423118921677
+     },
+     "cv_threshold": {
+      "dollar_ae_budget": 0.19408910670970164,
+      "delta": 0.1,
+      "eps_amplitude_raw": 0.001,
+      "eps_amplitude_cv": 0.00625,
+      "queries_raw": 7363,
+      "queries_cv": 1106,
+      "query_ratio": 6.657323688969258,
+      "t_q_raw": 31682385.99780341,
+      "t_q_cv": 31692992.0,
+      "t_q_overhead_cv": 1.0003347602102104,
+      "total_t_raw": 233277408101.8265,
+      "total_t_cv": 35052449152.0,
+      "total_t_ratio": 6.655095827691011
+     }
+    },
+    "regime_B_ae_subbudget_of_one_cent": {
+     "dollar_ae_budget": 0.003,
+     "raw": {
+      "eps_amplitude": 1.5456818009302753e-05,
+      "queries": 520363,
+      "t_q": 31682385.99780341,
+      "total_t": 16486341424974.975
+     },
+     "cv_rotation": {
+      "dollar_ae_budget": 0.003,
+      "delta": 0.1,
+      "eps_amplitude_raw": 1.5456818009302753e-05,
+      "eps_amplitude_cv": 0.000183554030404961,
+      "queries_raw": 520363,
+      "queries_cv": 41842,
+      "query_ratio": 12.436379714162802,
+      "t_q_raw": 31682385.99780341,
+      "t_q_cv": 31812829.99780341,
+      "t_q_overhead_cv": 1.004117240412671,
+      "total_t_raw": 16486341424974.975,
+      "total_t_cv": 1331112432768.0903,
+      "total_t_ratio": 12.385386101977206
+     },
+     "cv_threshold": {
+      "dollar_ae_budget": 0.003,
+      "delta": 0.1,
+      "eps_amplitude_raw": 1.5456818009302753e-05,
+      "eps_amplitude_cv": 9.660511255814221e-05,
+      "queries_raw": 520363,
+      "queries_cv": 80573,
+      "query_ratio": 6.458280069005746,
+      "t_q_raw": 31682385.99780341,
+      "t_q_cv": 31692992.0,
+      "t_q_overhead_cv": 1.0003347602102104,
+      "total_t_raw": 16486341424974.975,
+      "total_t_cv": 2553599444416.0,
+      "total_t_ratio": 6.456118817313319
+     }
+    }
+   },
+   "classical_geometric_control_input": {
+    "method": "classical Monte Carlo (formula path UNVERIFIED)",
+    "target_se_dollars": 0.003,
+    "required_paths": 26028106.70188911
+   }
+  },
+  "put_instance_2": {
+   "published": {
+    "n": 27,
+    "p": 10,
+    "n_steps": 256,
+    "z": 100.0,
+    "rate": 0.05,
+    "u1": 6400000.0,
+    "u2": 9200000.0,
+    "u3": 60000.0,
+    "q": 32000000.0,
+    "total": 230000000000.0,
+    "queries": 7363,
+    "qubits": 22000.0,
+    "eps_sin": 1e-08,
+    "eps_estimate": 0.001,
+    "delta": 0.1
+   },
+   "reproduction": {
+    "u1_exact": 6373376,
+    "u2_calibrated": 9205832,
+    "u3_calibrated": 59590.998901705025,
+    "t_a": 15638798.998901704,
+    "t_q": 31365593.99780341,
+    "queries_eq64_nearest": 7363,
+    "queries_eq64_ceil": 7364,
+    "total_t_at_published_queries": 230944868605.8265,
+    "exp_calibration_candidates": [
+     {
+      "m_pieces": 11,
+      "degree": 3,
+      "t_count": 35848,
+      "relative_gap": 0.0006358998156850054
+     },
+     {
+      "m_pieces": 2,
+      "degree": 4,
+      "t_count": 35552,
+      "relative_gap": 0.007626436335437589
+     },
+     {
+      "m_pieces": 20,
+      "degree": 2,
+      "t_count": 35536,
+      "relative_gap": 0.008073049100363135
+     },
+     {
+      "m_pieces": 32,
+      "degree": 1,
+      "t_count": 36136,
+      "relative_gap": 0.008674929584344827
+     },
+     {
+      "m_pieces": 31,
+      "degree": 1,
+      "t_count": 35272,
+      "relative_gap": 0.015442159721634638
+     }
+    ],
+    "arcsin_calibration_candidates": [
+     {
+      "m_pieces": 2,
+      "degree": 3,
+      "t_count": 59392,
+      "relative_gap": 0.006839368752752143
+     },
+     {
+      "m_pieces": 22,
+      "degree": 1,
+      "t_count": 60256,
+      "relative_gap": 0.007608549913021398
+     },
+     {
+      "m_pieces": 11,
+      "degree": 2,
+      "t_count": 58928,
+      "relative_gap": 0.014598436184371268
+     },
+     {
+      "m_pieces": 12,
+      "degree": 2,
+      "t_count": 60720,
+      "relative_gap": 0.015367617344640523
+     }
+    ]
+   },
+   "control_variate": {
+    "certified_cap_dollars": 2.1502789085848977,
+    "clipping_bias_discounted": 0.00039418104045801824,
+    "clipping_budget": 0.001,
+    "padded_cap_threshold_encoder": 4.0,
+    "padding_factor": 1.8602237988896086,
+    "range_ratio_rotation": 46.50559497224022,
+    "range_ratio_threshold": 25.0,
+    "classical_variance_ratio": 1238.5365047033304,
+    "delta_u2_t_count": 64696,
+    "t_q_overhead_rotation": 1.0041356143298,
+    "t_q_overhead_threshold": 1.000357780636878
+   },
+   "matched_comparison": {
+    "regime_A_wang_kan_epsilon": {
+     "dollar_ae_budget": 0.09512294245007141,
+     "raw": {
+      "eps_amplitude": 0.001,
+      "queries": 7363,
+      "t_q": 31365593.99780341,
+      "total_t": 230944868605.8265
+     },
+     "cv_rotation": {
+      "dollar_ae_budget": 0.09512294245007141,
+      "delta": 0.1,
+      "eps_amplitude_raw": 0.001,
+      "eps_amplitude_cv": 0.046505594972240216,
+      "queries_raw": 7363,
+      "queries_cv": 132,
+      "query_ratio": 55.78030303030303,
+      "t_q_raw": 31365593.99780341,
+      "t_q_cv": 31495309.99780341,
+      "t_q_overhead_cv": 1.0041356143298,
+      "total_t_raw": 230944868605.8265,
+      "total_t_cv": 4157380919.71005,
+      "total_t_ratio": 55.55056730811508
+     },
+     "cv_threshold": {
+      "dollar_ae_budget": 0.09512294245007141,
+      "delta": 0.1,
+      "eps_amplitude_raw": 0.001,
+      "eps_amplitude_cv": 0.025,
+      "queries_raw": 7363,
+      "queries_cv": 258,
+      "query_ratio": 28.53875968992248,
+      "t_q_raw": 31365593.99780341,
+      "t_q_cv": 31376816.0,
+      "t_q_overhead_cv": 1.000357780636878,
+      "total_t_raw": 230944868605.8265,
+      "total_t_cv": 8095218528.0,
+      "total_t_ratio": 28.52855272615891
+     }
+    },
+    "regime_B_ae_subbudget_of_one_cent": {
+     "dollar_ae_budget": 0.003,
+     "raw": {
+      "eps_amplitude": 3.153813289128072e-05,
+      "queries": 252007,
+      "t_q": 31365593.99780341,
+      "total_t": 7904349246604.443
+     },
+     "cv_rotation": {
+      "dollar_ae_budget": 0.003,
+      "delta": 0.1,
+      "eps_amplitude_raw": 3.153813289128072e-05,
+      "eps_amplitude_cv": 0.0014666996344225884,
+      "queries_raw": 252007,
+      "queries_cv": 4964,
+      "query_ratio": 50.76692183722804,
+      "t_q_raw": 31365593.99780341,
+      "t_q_cv": 31495309.99780341,
+      "t_q_overhead_cv": 1.0041356143298,
+      "total_t_raw": 7904349246604.443,
+      "total_t_cv": 156342718829.09613,
+      "total_t_ratio": 50.557834133900236
+     },
+     "cv_threshold": {
+      "dollar_ae_budget": 0.003,
+      "delta": 0.1,
+      "eps_amplitude_raw": 3.153813289128072e-05,
+      "eps_amplitude_cv": 0.0007884533222820181,
+      "queries_raw": 252007,
+      "queries_cv": 9401,
+      "query_ratio": 26.806403574087863,
+      "t_q_raw": 31365593.99780341,
+      "t_q_cv": 31376816.0,
+      "t_q_overhead_cv": 1.000357780636878,
+      "total_t_raw": 7904349246604.443,
+      "total_t_cv": 294973447216.0,
+      "total_t_ratio": 26.79681619212434
+     }
+    }
+   },
+   "classical_geometric_control_input": {
+    "method": "classical Monte Carlo (formula path UNVERIFIED)",
+    "target_se_dollars": 0.003,
+    "required_paths": 7962017.227233029
+   }
+  }
+ },
+ "created_at_end": "2026-07-18T11:15:10-06:00"
+}

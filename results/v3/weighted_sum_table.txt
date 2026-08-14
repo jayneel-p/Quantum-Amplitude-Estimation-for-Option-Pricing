@@ -1,0 +1,12 @@
+Weighted-sum (adder-based) geometric-Asian oracle vs exact-grid construction
+(Sta20 Sec 4.2.2 / App A architecture; 4-point equally spaced z-grid on [-3,3] sigma, pdf-proportional probs; basis ry, rz, x, h, cx, O1)
+Parameters: S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0
+
+  N  qubits   depth      cx   exact grid      quantum      |err|  C_G closed | BF qubits  BF depth   BF cx
+----------------------------------------------------------------------------------------------------------------
+  2      13     674     402     9.023311     9.023311   1.17e-13    7.943359 |         5       293     194
+  3      17   1,634   1,015     7.745866     7.745866   1.95e-13    7.133917 |         7     2,396   1,963
+  4      19   2,307   1,452     7.333272     7.333272   3.39e-13    6.733487 |         9    26,661  14,148
+  5      23   4,025   2,665     7.002839     7.002839   3.11e-13    6.494494 |         -         -       -
+
+Loading is per-date (linear in N); the weighted sum register has O(log N^2) qubits; the payoff table on the sum register has O(N^2) entries (polynomial), vs O(4^N) path rotations for the exact-grid construction. 'C_G closed' is the continuous closed form; the gap to 'exact grid' is the 4-point-shock discretization, identical for both circuit constructions.

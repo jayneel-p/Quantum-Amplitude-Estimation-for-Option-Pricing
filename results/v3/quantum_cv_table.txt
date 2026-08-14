@@ -1,0 +1,33 @@
+Quantum control variate (QCV) toy validation
+============================================================
+Residual R = max(A-K,0) - max(G-K,0); by AM-GM, R >= 0 pathwise, so it
+is encoded directly as a nonnegative payoff. C_A = C_G(grid-exact) +
+e^{-rT} E[R]. QAE queries scale with f_max, so the query ratio at fixed
+target error is f_max(A)/f_max(R) (the IQAE constant cancels).
+Basis for resource counts: ry, rz, x, h, cx.
+Parameters: S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0, qubits_per_date=2.
+
+--- 2-date grid (16 paths) ---
+min grid residual:              0.000e+00  (>= 0: AM-GM)
+exact grid arithmetic price:    7.736628
+exact grid geometric price:     7.600957
+exact grid residual price:      0.135671
+raw quantum price:              7.736628   (|err| 2.37e-13)
+QCV quantum price (C_G + resid):7.736628   (|err| 3.55e-15)
+f_max(A) = 42.2858,  f_max(R) = 0.9413,  query ratio f_max(A)/f_max(R) = 44.9x
+objective amplitude: raw 0.192341, residual 0.151526
+resources raw:  qubits 5, depth 293, cx 194
+resources QCV:  qubits 5, depth 293, cx 194
+
+--- 3-date grid (64 paths) ---
+min grid residual:              0.000e+00  (>= 0: AM-GM)
+exact grid arithmetic price:    6.997019
+exact grid geometric price:     6.826543
+exact grid residual price:      0.170476
+raw quantum price:              6.997019   (|err| 4.74e-13)
+QCV quantum price (C_G + resid):6.997019   (|err| 9.77e-15)
+f_max(A) = 46.7745,  f_max(R) = 1.6800,  query ratio f_max(A)/f_max(R) = 27.8x
+objective amplitude: raw 0.157260, residual 0.106676
+resources raw:  qubits 7, depth 2396, cx 1963
+resources QCV:  qubits 7, depth 2396, cx 1963
+

@@ -1,0 +1,25 @@
+Bottom-up structural T-count budget, N=252 daily Asian oracle
+(n_price=8 bits, n_z=3 qubits/shock, eps_rot=0.001, Toffoli=7T, rotation=30T)
+
+component                                   T-gates
+----------------------------------------------------
+shock loading (252 x 7 rotations)            52,920
+log-price prefix sums (251 adders)           52,766
+average accumulation (251 adders)            52,766
+strike comparator (16-bit)                      224
+payoff rotations                                240
+uncompute (work registers)                  105,756
+----------------------------------------------------
+COUNTED STRUCTURAL COMPONENTS               264,672
+TARF transfer used elsewhere             15,830,769
+partial count / TARF transfer                  1.7%
+
+Gap = fixed-point exponentiation (252x log-price -> price), division
+by N, and arcsin/rotation synthesis -- the transcendental arithmetic
+that are not counted in this script.
+
+QCV geometric-leg marginal (adders,   
+  log-comparator, subtraction, x2)          106,428
+partial QCV count / TARF transfer             0.67%
+The D_QCV = 1.1 D factor used in the formula comparison is an assumption.
+This partial count does not establish that factor because it omits the exponential.

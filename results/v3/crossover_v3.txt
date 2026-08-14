@@ -1,0 +1,31 @@
+Fixed-input operation-count formula intersections
+f_max(A) = 45.85  (payoff at +3sigma_G cap, tail mass 1.35e-03)
+f_max(R) = 2.864  (A-G quantile at same tail mass; R quantile 2.864)
+f_max(A)/f_max(R) = 16.0
+Var(disc. residual, beta=1) = 0.1220, E[R] = 0.2161; C_G closed form = 5.565509
+(compare Var vanilla = 64.17, Var KV-CV = 0.0494; Var never enters the quantum cost -- only f_max does)
+discounted clipping loss: raw 0.00652586; one-block residual 0.000798971; two-block residual 0.000219
+D values: QSP transfer 9.89e+05 | TARF transfer 1.58e+07 | Wang-Kan published Asian Tcount(Q) 3.20e+07
+The first two D values are report transfers, not published Asian-oracle counts.
+Classical work is in path steps; quantum work is in T gates.
+
+formula intersections at the TARF-transfer D:
+  QAE raw vs vanilla MC    3.90e-06
+  QAE raw vs KV-MC         3.00e-09
+  QAE+QCV vs KV-MC         4.37e-08
+  QAE+QCV2 vs KV-MC        1.26e-07
+
+formula-intersection range over the three D values:
+  QAE raw vs vanilla MC    [1.9e-06, 6.2e-05]
+  QAE raw vs KV-MC         [1.5e-09, 4.8e-08]
+  QAE+QCV vs KV-MC         [2.2e-08, 7.0e-07]
+  QAE+QCV2 vs KV-MC        [6.2e-08, 2.0e-06]
+
+necessary fixed-input error checks at the TARF-transfer D:
+  comparison                intersection     clip loss  |b=3 grid bias|
+  raw vs vanilla MC            3.903e-06     6.526e-03        1.522e-01
+  raw vs KV-MC                 3.005e-09     6.526e-03        1.522e-01
+  QCV vs KV-MC                 4.373e-08     7.990e-04        1.168e-02
+  QCV2 vs KV-MC                1.259e-07     2.190e-04     not measured
+Every clipping loss exceeds its corresponding formula intersection.
+These values are not achievable price errors or runtime thresholds.

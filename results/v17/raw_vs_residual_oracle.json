@@ -1,0 +1,37 @@
+{
+ "schema": "raw-vs-residual-oracle-v1",
+ "generated": "2026-07-25T15:43:08-06:00",
+ "command": "python scripts/v17_raw_vs_residual_oracle.py",
+ "configuration": {
+  "n_dates": 252,
+  "price_scale": 16384,
+  "multiplier_fraction_bits": 30,
+  "shock_model": "binary +/-1"
+ },
+ "residual_oracle": {
+  "a_toffoli": 30031445,
+  "a_t_gates": 210220115,
+  "a_qubits": 29319
+ },
+ "raw_oracle": {
+  "a_toffoli": 15024025,
+  "a_t_gates": 105168175,
+  "a_qubits": 14833
+ },
+ "register_widths": {
+  "value_bits": 26,
+  "product_bits": 57,
+  "total_bits": 32,
+  "threshold_bits": 24,
+  "control_only_registers": 14486
+ },
+ "per_query_control_overhead_t": 1.9988947702097142,
+ "per_query_control_overhead_qubits": 1.9766062158700195,
+ "query_ratio_k1_from_cutoffs": 16.009078212290504,
+ "net_t_gate_reduction_k1": 8.008964979487596,
+ "caveats": [
+  "Raw oracle retains the residual oracle's threshold encoder unchanged; a production raw oracle normalising against B_A would need a few more threshold bits (~1e2 Toffoli against ~1e7, immaterial to the ratio).",
+  "Net reduction applies at k=1 only.  Blocked controls k>=2 compute k block geometric averages and exponentiate each, so their per-query overhead exceeds 2x and is NOT given by this script.",
+  "Counts are logical, not physical: no routing, distillation, or code distance."
+ ]
+}

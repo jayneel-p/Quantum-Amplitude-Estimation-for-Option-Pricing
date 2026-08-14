@@ -1,0 +1,31 @@
+{
+  "figure": "range_vs_variance",
+  "contract": {
+    "S0": 100.0,
+    "K": 100.0,
+    "r": 0.05,
+    "sigma": 0.2,
+    "T": 1.0,
+    "N": 252,
+    "exceedance_fraction": 0.00135
+  },
+  "paths": 2000000,
+  "seed": 20260720,
+  "fmax_raw": 45.81533459739621,
+  "fmax_resid": 2.8763682544896128,
+  "cutoff_ratio": 15.928188098267603,
+  "var_raw": 70.79697314605664,
+  "var_resid": 0.13556712302116034,
+  "variance_ratio_beta1_residual": 522.228189020476,
+  "variance_ratio_kv_beta_optimal": 1316.4236747996679,
+  "beta_star": 1.035198517000181,
+  "std_raw": 8.414093721016936,
+  "std_resid": 0.3681944092747204,
+  "payoff_correlation": 0.999620110911185,
+  "environment": {
+    "python": "3.12.6",
+    "numpy": "2.4.4",
+    "platform": "macOS-14.5-arm64-arm-64bit"
+  },
+  "git_rev": "b8c980a607f6681b8b8b114813fe09aee2b8e139"
+}

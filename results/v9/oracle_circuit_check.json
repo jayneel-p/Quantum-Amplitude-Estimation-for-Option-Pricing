@@ -1,0 +1,115 @@
+{
+ "truth": 0.22200989136914098,
+ "configs": [
+  {
+   "config": "baseline: binary +/-1, ss=1, ps=1",
+   "kind": "raw",
+   "qubits": 15,
+   "p_circuit": 0.5000000000074492,
+   "p_reference": 0.5,
+   "p_abs_err": 7.44915240602495e-12,
+   "work_leakage": 0.0,
+   "decoded_price": 0.7134220683861643,
+   "price_error_vs_truth": 0.49141217701702333,
+   "sim_seconds": 0.6472530364990234
+  },
+  {
+   "config": "baseline: binary +/-1, ss=1, ps=1",
+   "kind": "qcv",
+   "qubits": 25,
+   "p_circuit": 0.5000000000015367,
+   "p_reference": 0.5,
+   "p_abs_err": 1.5366596883836792e-12,
+   "work_leakage": 0.0,
+   "decoded_price": 0.7134220683777281,
+   "price_error_vs_truth": 0.4914121770085872,
+   "sim_seconds": 0.5857272148132324
+  },
+  {
+   "config": "improved: GH4+rematch, ss=4, ps=8",
+   "kind": "raw",
+   "qubits": 31,
+   "p_circuit": 0.12194037226080487,
+   "p_reference": 0.12194037208504799,
+   "p_abs_err": 1.757568812710275e-10,
+   "work_leakage": 0.0,
+   "decoded_price": 0.2609848577903585,
+   "price_error_vs_truth": 0.03897496642121753,
+   "sim_seconds": 47.548062324523926
+  },
+  {
+   "config": "improved: GH4+rematch, ss=4, ps=8",
+   "kind": "qcv",
+   "qubits": 55,
+   "p_circuit": 0.029803240722414304,
+   "p_reference": 0.029803240740740738,
+   "p_abs_err": 1.83264341202527e-11,
+   "work_leakage": 0.0,
+   "decoded_price": 0.26098485737496857,
+   "price_error_vs_truth": 0.03897496600582759,
+   "sim_seconds": 53.23669695854187
+  },
+  {
+   "config": "improved+: GH4+rematch, ss=4, ps=32",
+   "kind": "raw",
+   "qubits": 35,
+   "p_circuit": 0.11172531565834175,
+   "p_reference": 0.11172531400034288,
+   "p_abs_err": 1.6579988632026144e-09,
+   "work_leakage": 0.0,
+   "decoded_price": 0.2391219173606513,
+   "price_error_vs_truth": 0.01711202599151032,
+   "sim_seconds": 44.64833116531372
+  },
+  {
+   "config": "improved+: GH4+rematch, ss=4, ps=32",
+   "kind": "qcv",
+   "qubits": 63,
+   "p_circuit": 0.011663826668788606,
+   "p_reference": 0.011663826731824416,
+   "p_abs_err": 6.303580921129814e-11,
+   "work_leakage": 0.0,
+   "decoded_price": 0.239121913677179,
+   "price_error_vs_truth": 0.017112022308038016,
+   "sim_seconds": 277.28050684928894
+  }
+ ],
+ "provenance": {
+  "command": ".venv/bin/python scripts/v9_oracle_circuit_check.py",
+  "runs": [
+   {
+    "parts": "all six circuits, single run",
+    "start": "2026-07-17T13:46:51-06:00",
+    "end": "2026-07-17T13:53:58-06:00",
+    "time_source": "background task log creation and final modification times"
+   }
+  ],
+  "environment": {
+   "python": "3.12.6",
+   "platform": "macOS-14.5-arm64-arm-64bit",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "qiskit": "2.4.2",
+   "qiskit_aer": "0.17.2"
+  },
+  "simulator_settings": {
+   "simulator": "qiskit_aer.AerSimulator",
+   "method": "matrix_product_state",
+   "shots": null,
+   "probabilities": "analytic, save_probabilities_dict",
+   "decompose_reps": 8,
+   "other_options": "Aer defaults"
+  },
+  "seeds": {
+   "note": "deterministic; analytic simulation, closed-form reference, no RNG"
+  },
+  "oracle_source_sha256": "2dbfb777551d86d46db06da3da1234f214c4e150f446d97130d580302ac21468",
+  "runner_sha256": "2e33ca9f02e6c7d8d812c02cfcf7c9d227f6222f5ddaec7fefe73ea19a0f0ad9",
+  "runner_file": "scripts/v9_oracle_circuit_check.py",
+  "validation_test_sha256": "5f95ef2ca5ce21e0a253f37b6e37cc7ae9f191f3d5c7fdb0301ace6b0dbdfa8f",
+  "validation_test_file": "tests/test_asian_oracle.py",
+  "runner_revision_note": "runner revised during the session as later parts were added; recorded parts' code paths are unchanged in this hashed revision; intermediate revisions were not retained",
+  "recorded_after_run": true,
+  "recording_script": "scripts/v9_record_provenance.py"
+ }
+}

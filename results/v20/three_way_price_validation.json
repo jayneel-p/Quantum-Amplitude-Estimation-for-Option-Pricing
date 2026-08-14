@@ -1,0 +1,342 @@
+{
+ "schema_version": "three-way-price-validation-v1",
+ "created_at_start": "2026-07-27T15:14:56-06:00",
+ "command": "scripts/v20_three_way_price_validation.py",
+ "argv": [
+  "--mps-crosscheck"
+ ],
+ "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+ "purpose": "give the manuscript's three-way price table a traceable artifact: the same at-the-money Asian call priced by the raw oracle, by the residual oracle plus its exactly computed geometric control, and by classical enumeration of the same rounded integer model",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4",
+  "qiskit": "2.4.2"
+ },
+ "git": {
+  "rev": "aacc3e7921dce155dadbc5ea04eb77dff6942e55",
+  "worktree_dirty": true
+ },
+ "estimand": "discounted price of a discretely monitored at-the-money arithmetic-average Asian call on a uniform binary +/-1 shock tree, in the rounded fixed-point integer model the circuit implements, not the continuous Black-Scholes model",
+ "method": {
+  "decode": "exact bit-parallel permutation decode of the transpiled A: every gate is H, X, CX or Toffoli and the H gates act only on the shock and threshold registers, so fixing those registers makes the rest of A a permutation of computational basis states; all 2**(n*q + m) prepared basis states are advanced together as uint64 bit-planes and the objective probability is the exact fraction that fire",
+  "transpilation": "basis_gates=['h','x','cx','ccx'], optimization_level=0",
+  "raw_leg": "geometric_leg='none', payoff_cap=None; the comparator encodes the arithmetic payoff, so decoding is the bare normalisation with no control added back",
+  "residual_leg": "geometric_leg='collapsed', uncapped; decoding gives the residual expectation and the exact dynamic-programming geometric control is added back classically",
+  "enumeration": "every shock path of the same rounded integer model, walked with plain Python integers, cross-checked against enumerate_arithmetic_asian",
+  "mps_crosscheck": "qiskit-aer MPS decode at S0=1, run only with --mps-crosscheck"
+ },
+ "assertions": {
+  "no_dirty_branch": "both oracles must leave every work qubit at zero and restore every prepared qubit on every branch",
+  "module_matches_inline_walk": "enumerate_arithmetic_asian must equal the inline integer walk exactly",
+  "prices_match_enumeration": "|price - enumeration| <= 1e-10 for both the raw and the restored residual price",
+  "all_passed": true
+ },
+ "cases": {
+  "n_dates_3": {
+   "n_dates": 3,
+   "s0": 100.0,
+   "strike": 100.0,
+   "price_scale": 64,
+   "multiplier_fraction_bits": 14,
+   "rate": 0.05,
+   "volatility": 0.2,
+   "maturity": 1.0,
+   "discount_factor": 0.951229424500714,
+   "raw_oracle": {
+    "spec": {
+     "n_dates": 3,
+     "shock_points": [
+      -1.0,
+      1.0
+     ],
+     "shock_probabilities": [
+      0.5,
+      0.5
+     ],
+     "s0": 100.0,
+     "strike": 100.0,
+     "rate": 0.05,
+     "volatility": 0.2,
+     "maturity": 1.0,
+     "shock_scale": 1,
+     "price_scale": 64,
+     "payoff_cap": null,
+     "residual_payoff_cap": null,
+     "geometric_leg": "none"
+    },
+    "multiplier_fraction_bits": 14,
+    "factor_scale": 16384,
+    "price_factors": [
+     14744,
+     18575
+    ],
+    "initial_price": 6400,
+    "initial_geometric": 0,
+    "value_bits": 14,
+    "multiplier_bits": 15,
+    "product_bits": 29,
+    "geometric_product_bits": 0,
+    "total_bits": 15,
+    "residual_bits": 13,
+    "threshold_bits": 13,
+    "requested_residual_cap_numerator": 5611,
+    "normalization_numerator": 8192,
+    "normalization_dollars": 42.666666666666664,
+    "geometric_dp_peak_states": 0,
+    "circuit_qubits": 200,
+    "shock_qubits": 3,
+    "threshold_qubits": 13,
+    "work_qubits": 183,
+    "prepared_basis_states": 65536,
+    "objective_states_fired": 12247,
+    "objective_probability": 0.1868743896484375,
+    "dirty_basis_states": 0,
+    "decode_seconds": 0.05967724998481572
+   },
+   "residual_oracle": {
+    "spec": {
+     "n_dates": 3,
+     "shock_points": [
+      -1.0,
+      1.0
+     ],
+     "shock_probabilities": [
+      0.5,
+      0.5
+     ],
+     "s0": 100.0,
+     "strike": 100.0,
+     "rate": 0.05,
+     "volatility": 0.2,
+     "maturity": 1.0,
+     "shock_scale": 1,
+     "price_scale": 64,
+     "payoff_cap": null,
+     "residual_payoff_cap": null,
+     "geometric_leg": "collapsed"
+    },
+    "multiplier_fraction_bits": 14,
+    "factor_scale": 16384,
+    "price_factors": [
+     14744,
+     18575
+    ],
+    "initial_price": 6400,
+    "initial_geometric": 5182,
+    "value_bits": 14,
+    "multiplier_bits": 15,
+    "product_bits": 29,
+    "geometric_product_bits": 29,
+    "total_bits": 15,
+    "residual_bits": 13,
+    "threshold_bits": 13,
+    "requested_residual_cap_numerator": 5611,
+    "normalization_numerator": 8192,
+    "normalization_dollars": 42.666666666666664,
+    "geometric_dp_peak_states": 7,
+    "circuit_qubits": 349,
+    "shock_qubits": 3,
+    "threshold_qubits": 13,
+    "work_qubits": 332,
+    "prepared_basis_states": 65536,
+    "objective_states_fired": 427,
+    "objective_probability": 0.0065155029296875,
+    "dirty_basis_states": 0,
+    "decode_seconds": 0.1254355839919299,
+    "geometric_control_undiscounted": 7.6953125
+   },
+   "prices": {
+    "a_raw_circuit_discounted": 7.5844445064194295,
+    "b_residual_circuit_discounted": 0.2644368256912792,
+    "b_exact_dp_geometric_control_discounted": 7.320007680728151,
+    "b_restored_price_discounted": 7.58444450641943,
+    "c_classical_enumeration_discounted": 7.58444450641943,
+    "c_module_enumeration_discounted": 7.58444450641943
+   },
+   "gaps": {
+    "note": "as measured, not rounded; the manuscript caption should be read against these values rather than against 'zero in double precision'",
+    "a_raw_minus_enumeration": -8.881784197001252e-16,
+    "a_raw_minus_enumeration_ulps": -1.0,
+    "b_restored_minus_enumeration": 0.0,
+    "b_restored_minus_enumeration_ulps": 0.0,
+    "a_minus_b": -8.881784197001252e-16,
+    "module_enumeration_equals_inline_walk": true,
+    "double_precision_ulp_of_enumeration": 8.881784197001252e-16
+   },
+   "dirty_qubit_check": {
+    "convention": "a prepared basis state is dirty if any work qubit is left at 1, or any shock/threshold qubit is not restored to its prepared value, after the full A",
+    "raw_dirty_basis_states": 0,
+    "residual_dirty_basis_states": 0,
+    "clean": true
+   }
+  },
+  "n_dates_4": {
+   "n_dates": 4,
+   "s0": 100.0,
+   "strike": 100.0,
+   "price_scale": 64,
+   "multiplier_fraction_bits": 14,
+   "rate": 0.05,
+   "volatility": 0.2,
+   "maturity": 1.0,
+   "discount_factor": 0.951229424500714,
+   "raw_oracle": {
+    "spec": {
+     "n_dates": 4,
+     "shock_points": [
+      -1.0,
+      1.0
+     ],
+     "shock_probabilities": [
+      0.5,
+      0.5
+     ],
+     "s0": 100.0,
+     "strike": 100.0,
+     "rate": 0.05,
+     "volatility": 0.2,
+     "maturity": 1.0,
+     "shock_scale": 1,
+     "price_scale": 64,
+     "payoff_cap": null,
+     "residual_payoff_cap": null,
+     "geometric_leg": "none"
+    },
+    "multiplier_fraction_bits": 14,
+    "factor_scale": 16384,
+    "price_factors": [
+     14937,
+     18244
+    ],
+    "initial_price": 6400,
+    "initial_geometric": 0,
+    "value_bits": 14,
+    "multiplier_bits": 15,
+    "product_bits": 29,
+    "geometric_product_bits": 0,
+    "total_bits": 16,
+    "residual_bits": 13,
+    "threshold_bits": 13,
+    "requested_residual_cap_numerator": 8146,
+    "normalization_numerator": 8192,
+    "normalization_dollars": 32.0,
+    "geometric_dp_peak_states": 0,
+    "circuit_qubits": 234,
+    "shock_qubits": 4,
+    "threshold_qubits": 13,
+    "work_qubits": 216,
+    "prepared_basis_states": 131072,
+    "objective_states_fired": 30885,
+    "objective_probability": 0.23563385009765625,
+    "dirty_basis_states": 0,
+    "decode_seconds": 0.11859887512400746
+   },
+   "residual_oracle": {
+    "spec": {
+     "n_dates": 4,
+     "shock_points": [
+      -1.0,
+      1.0
+     ],
+     "shock_probabilities": [
+      0.5,
+      0.5
+     ],
+     "s0": 100.0,
+     "strike": 100.0,
+     "rate": 0.05,
+     "volatility": 0.2,
+     "maturity": 1.0,
+     "shock_scale": 1,
+     "price_scale": 64,
+     "payoff_cap": null,
+     "residual_payoff_cap": null,
+     "geometric_leg": "collapsed"
+    },
+    "multiplier_fraction_bits": 14,
+    "factor_scale": 16384,
+    "price_factors": [
+     14937,
+     18244
+    ],
+    "initial_price": 6400,
+    "initial_geometric": 5078,
+    "value_bits": 14,
+    "multiplier_bits": 15,
+    "product_bits": 29,
+    "geometric_product_bits": 29,
+    "total_bits": 16,
+    "residual_bits": 13,
+    "threshold_bits": 13,
+    "requested_residual_cap_numerator": 8146,
+    "normalization_numerator": 8192,
+    "normalization_dollars": 32.0,
+    "geometric_dp_peak_states": 11,
+    "circuit_qubits": 416,
+    "shock_qubits": 4,
+    "threshold_qubits": 13,
+    "work_qubits": 398,
+    "prepared_basis_states": 131072,
+    "objective_states_fired": 1029,
+    "objective_probability": 0.00785064697265625,
+    "dirty_basis_states": 0,
+    "decode_seconds": 0.2824272499419749,
+    "geometric_control_undiscounted": 7.2890625
+   },
+   "prices": {
+    "a_raw_circuit_discounted": 7.172539251880994,
+    "b_residual_circuit_discounted": 0.23896852485625847,
+    "b_exact_dp_geometric_control_discounted": 6.933570727024736,
+    "b_restored_price_discounted": 7.172539251880994,
+    "c_classical_enumeration_discounted": 7.172539251880994,
+    "c_module_enumeration_discounted": 7.172539251880994
+   },
+   "gaps": {
+    "note": "as measured, not rounded; the manuscript caption should be read against these values rather than against 'zero in double precision'",
+    "a_raw_minus_enumeration": 0.0,
+    "a_raw_minus_enumeration_ulps": 0.0,
+    "b_restored_minus_enumeration": 0.0,
+    "b_restored_minus_enumeration_ulps": 0.0,
+    "a_minus_b": 0.0,
+    "module_enumeration_equals_inline_walk": true,
+    "double_precision_ulp_of_enumeration": 8.881784197001252e-16
+   },
+   "dirty_qubit_check": {
+    "convention": "a prepared basis state is dirty if any work qubit is left at 1, or any shock/threshold qubit is not restored to its prepared value, after the full A",
+    "raw_dirty_basis_states": 0,
+    "residual_dirty_basis_states": 0,
+    "clean": true
+   }
+  }
+ },
+ "mps_crosscheck": [
+  {
+   "geometric_leg": "none",
+   "n_dates": 3,
+   "s0": 1.0,
+   "bit_parallel_objective_probability": 0.26171875,
+   "mps_objective_probability": 0.2617187499930421,
+   "difference": -6.9578787176283186e-12,
+   "work_register_hamming_leakage": 0.0,
+   "dirty_basis_states": 0
+  },
+  {
+   "geometric_leg": "collapsed",
+   "n_dates": 3,
+   "s0": 1.0,
+   "bit_parallel_objective_probability": 0.080078125,
+   "mps_objective_probability": 0.0800781249458471,
+   "difference": -5.415290438293141e-11,
+   "work_register_hamming_leakage": 6.286082765427636e-13,
+   "dirty_basis_states": 0
+  }
+ ],
+ "source_hashes": {
+  "scripts/v20_three_way_price_validation.py": "af9eaccb0d17dcb93ee2a8d5d0fea2e04cddca686b6a401887c9d14deb734fb1",
+  "src/qc_option_pricing/quantum/arithmetic_asian_oracle.py": "b8b95f80196c78c38a3216d1b2fedc05d57980044ec38d9220ebb982c2317bb5",
+  "src/qc_option_pricing/quantum/asian_oracle.py": "045c349249681f12476f1c876701830a4d6bfe44c3dbed4225afe59a11bc4598"
+ },
+ "runtime_seconds": 256.3074402920902,
+ "created_at_end": "2026-07-27T15:19:12-06:00"
+}

@@ -1,0 +1,489 @@
+{
+ "schema": "parikh-rayan-arithmetic-asian-oracle-v1",
+ "generated_date": "2026-07-17",
+ "command": "python scripts/validate_arithmetic_asian_oracle.py",
+ "environment": {
+  "python": "3.12.13",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.5.1",
+  "qiskit": "2.5.0"
+ },
+ "source_sha256": "e223b2f652cf09278919c910f991c9dac4eb451229795211a4bfa05733f264ce",
+ "validation_test_sha256": "03836790548d0ba0d781aee49be7c2cea67907b9d964238bd423cf7f5631815c",
+ "factorized_baseline_sha256": "6512863d27aabfaff8c44804e35dbe87c0e1dad3320708f0116ca5cec3fc6ca5",
+ "construction": {
+  "price_evolution": "shock-selected fixed-point constant multiplication",
+  "geometric_control": "direct product of weighted shock-selected factors",
+  "payoffs": "ripple-carry subtraction, sign test, and conditional copy",
+  "residual": "reversible subtraction with directed-rounding AM-GM certificate",
+  "probability_transduction": "uniform threshold and reversible comparator",
+  "allowed_primitives": [
+   "h",
+   "x",
+   "cx",
+   "ccx"
+  ],
+  "qrom_rows": 0,
+  "arbitrary_rotations": 0
+ },
+ "small_executable_validation": {
+  "dates": 2,
+  "qubits": 56,
+  "reference_objective_probability": 0.375,
+  "circuit_objective_probability": 0.37500000002039413,
+  "absolute_probability_error": 2.039413082854935e-11,
+  "expected_work_hamming_weight": 2.220446049250313e-14,
+  "roundtrip_hamming_weight_upper_bound": 4.263256414560601e-14,
+  "reference_arithmetic_payoff_undiscounted": 1.75,
+  "reference_geometric_payoff_undiscounted": 0.25,
+  "reference_residual_payoff_undiscounted": 1.5,
+  "minimum_residual_numerator": 2,
+  "maximum_residual_numerator": 4,
+  "executable_primitive_counts": {
+   "h_before_toffoli_decomposition": 5,
+   "x": 148,
+   "z": 0,
+   "cx_before_toffoli_decomposition": 414,
+   "toffoli": 1639,
+   "t": 11473,
+   "cx_after_standard_7t_toffoli_decomposition": 10248,
+   "h_after_standard_7t_toffoli_decomposition": 3283
+  },
+  "counts_match_compositional_estimator": true
+ },
+ "daily_252_model": {
+  "dates": 252,
+  "shock_distribution": "uniform binary +/-1",
+  "price_units_per_dollar": 1024,
+  "multiplier_fraction_bits": 18,
+  "value_bits": 22,
+  "multiplier_bits": 19,
+  "product_bits": 41,
+  "total_bits": 28,
+  "residual_bits": 28,
+  "threshold_bits": 20,
+  "requested_residual_cap_numerator": 739049,
+  "normalization_numerator": 1048576,
+  "geometric_dp_peak_states": 484532,
+  "encoded_geometric_control_undiscounted": 5.75439272702196,
+  "exact_binary_geometric_control_undiscounted": 5.8535386577515895,
+  "exact_binary_geometric_dp_states": 31879,
+  "continuous_geometric_control_undiscounted": 5.850858571023076,
+  "continuous_arithmetic_qcv_reference": {
+   "paths": 1000000,
+   "seed": 20260717,
+   "geometric_control_discounted": 5.56550883134935,
+   "residual_discounted": 0.21665377233207767,
+   "residual_standard_error": 0.0003498855123803969,
+   "arithmetic_price_discounted": 5.782162603681427,
+   "arithmetic_price_standard_error": 0.0003498855123803969
+  },
+  "rounding_bias_study": {
+   "seed": 20260716,
+   "paths": 200000,
+   "estimand": "encoded directed-rounding payoff minus exact binary-shock payoff",
+   "arithmetic_mean_bias_undiscounted": 0.05177551619870197,
+   "arithmetic_bias_standard_error": 0.00010337175649578897,
+   "arithmetic_max_path_bias": 0.15032076421633178,
+   "arithmetic_min_path_bias": 0.0,
+   "geometric_mean_bias_undiscounted": -0.09913236560957113,
+   "geometric_bias_standard_error": 0.0002011839275491632,
+   "geometric_max_path_bias": 0.0,
+   "geometric_min_path_bias": -0.23244305944766097,
+   "requested_residual_cap_dollars": 2.8639981708829363,
+   "power_of_two_normalization_dollars": 4.063492063492063,
+   "encoded_residual_clipping_loss_mean": 0.001625917038690477,
+   "encoded_residual_clipping_loss_standard_error": 0.00010593890346518309,
+   "exact_binary_arithmetic_price_discounted": 5.784737615893818,
+   "exact_binary_arithmetic_price_standard_error": 0.0007851420239428467,
+   "encoded_qcv_capped_price_discounted": 5.832428486700391,
+   "encoded_qcv_capped_price_standard_error": 0.0009624173350518708
+  },
+  "continuous_price_comparison": {
+   "predeclared_absolute_target": 0.01,
+   "binary_shock_discretization_error": 0.0025750122123913144,
+   "binary_shock_combined_standard_error": 0.0008595742373610103,
+   "binary_shock_meets_target_at_95_percent": true,
+   "encoded_oracle_error_including_rounding_and_clipping": 0.050265883018964175,
+   "encoded_oracle_combined_standard_error": 0.0010240444319374222,
+   "encoded_oracle_meets_target_at_95_percent": false
+  },
+  "paired_precision_sweep": [
+   {
+    "name": "current: price_scale=1024, fraction_bits=18",
+    "price_scale": 1024,
+    "multiplier_fraction_bits": 18,
+    "paired_qcv_minus_exact_binary_price": 0.047703774347919226,
+    "paired_standard_error": 0.00013690121777015633,
+    "clipping_loss_discounted": 0.0015466201289994475,
+    "geometric_control_undiscounted_estimate": 5.7544062921420185,
+    "geometric_control_undiscounted_standard_error": 0.0002011839275491632,
+    "estimated_continuous_price_error": 0.05027878656031054,
+    "conservative_combined_standard_error": 0.000870407842888444,
+    "meets_target_at_95_percent": false
+   },
+   {
+    "name": "refined: price_scale=4096, fraction_bits=24",
+    "price_scale": 4096,
+    "multiplier_fraction_bits": 24,
+    "paired_qcv_minus_exact_binary_price": 0.007833397221885521,
+    "paired_standard_error": 8.359983253692694e-05,
+    "clipping_loss_discounted": 0.0010277080013186388,
+    "geometric_control_undiscounted_estimate": 5.8357391327181904,
+    "geometric_control_undiscounted_standard_error": 3.599335503564112e-05,
+    "estimated_continuous_price_error": 0.010408409434276835,
+    "conservative_combined_standard_error": 0.000863630014262453,
+    "meets_target_at_95_percent": false
+   },
+   {
+    "name": "refined: price_scale=16384, fraction_bits=30",
+    "price_scale": 16384,
+    "multiplier_fraction_bits": 30,
+    "paired_qcv_minus_exact_binary_price": 0.0011956016150070682,
+    "paired_standard_error": 7.982092724329157e-05,
+    "clipping_loss_discounted": 0.0009663743339969124,
+    "geometric_control_undiscounted_estimate": 5.849185695523366,
+    "geometric_control_undiscounted_standard_error": 8.796907814680672e-06,
+    "estimated_continuous_price_error": 0.0037706138273983824,
+    "conservative_combined_standard_error": 0.0008632724077374079,
+    "meets_target_at_95_percent": true
+   }
+  ],
+  "accuracy_qualified_candidate": {
+   "price_scale": 16384,
+   "multiplier_fraction_bits": 30,
+   "geometric_control_method": "paired binary-path calibration against the exact unrounded binary geometric control; its standard error is reported below",
+   "geometric_control_undiscounted": 5.849185695523366,
+   "geometric_control_standard_error_undiscounted": 8.796907814680672e-06,
+   "continuous_price_error": 0.0037706138273983824,
+   "continuous_price_error_standard_error": 0.0008632724077374079,
+   "meets_predeclared_target_at_95_percent": true,
+   "resources": {
+    "a_qubits": 29319,
+    "a_work_qubits": 29042,
+    "reflection_clean_ancillas": 29316,
+    "q_qubits_with_clean_reflection_ladder": 58635,
+    "a_counts": {
+     "h_before_toffoli_decomposition": 276,
+     "x": 1702440,
+     "z": 0,
+     "cx_before_toffoli_decomposition": 71276,
+     "toffoli": 30031445,
+     "t": 210220115,
+     "cx_after_standard_7t_toffoli_decomposition": 180259946,
+     "h_after_standard_7t_toffoli_decomposition": 60063166
+    },
+    "q_counts": {
+     "h_before_toffoli_decomposition": 554,
+     "x": 3463518,
+     "z": 1,
+     "cx_before_toffoli_decomposition": 142552,
+     "toffoli": 60121523,
+     "t": 420850661,
+     "cx_after_standard_7t_toffoli_decomposition": 360871690,
+     "h_after_standard_7t_toffoli_decomposition": 120243600
+    },
+    "components": {
+     "state_preparation_in_A": {
+      "h_before_toffoli_decomposition": 276,
+      "x": 0,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 0,
+      "toffoli": 0,
+      "t": 0,
+      "cx_after_standard_7t_toffoli_decomposition": 0,
+      "h_after_standard_7t_toffoli_decomposition": 276
+     },
+     "price_selected_multipliers_in_compute": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 441000,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 1008,
+      "toffoli": 7495488,
+      "t": 52468416,
+      "cx_after_standard_7t_toffoli_decomposition": 44973936,
+      "h_after_standard_7t_toffoli_decomposition": 14990976
+     },
+     "arithmetic_price_sum_in_compute": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 0,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 32256,
+      "toffoli": 16128,
+      "t": 112896,
+      "cx_after_standard_7t_toffoli_decomposition": 129024,
+      "h_after_standard_7t_toffoli_decomposition": 32256
+     },
+     "geometric_selected_multipliers_in_compute": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 409832,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 1008,
+      "toffoli": 7495488,
+      "t": 52468416,
+      "cx_after_standard_7t_toffoli_decomposition": 44973936,
+      "h_after_standard_7t_toffoli_decomposition": 14990976
+     },
+     "arithmetic_positive_part_in_compute": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 22,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 328,
+      "toffoli": 164,
+      "t": 1148,
+      "cx_after_standard_7t_toffoli_decomposition": 1312,
+      "h_after_standard_7t_toffoli_decomposition": 328
+     },
+     "geometric_positive_part_in_compute": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 32,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 316,
+      "toffoli": 158,
+      "t": 1106,
+      "cx_after_standard_7t_toffoli_decomposition": 1264,
+      "h_after_standard_7t_toffoli_decomposition": 316
+     },
+     "geometric_payoff_scaling_in_compute": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 300,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 0,
+      "toffoli": 8000,
+      "t": 56000,
+      "cx_after_standard_7t_toffoli_decomposition": 48000,
+      "h_after_standard_7t_toffoli_decomposition": 16000
+     },
+     "residual_subtraction_in_compute": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 0,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 160,
+      "toffoli": 64,
+      "t": 448,
+      "cx_after_standard_7t_toffoli_decomposition": 544,
+      "h_after_standard_7t_toffoli_decomposition": 128
+     },
+     "initialization_in_compute": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 12,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 0,
+      "toffoli": 0,
+      "t": 0,
+      "cx_after_standard_7t_toffoli_decomposition": 0,
+      "h_after_standard_7t_toffoli_decomposition": 0
+     },
+     "compute_plus_uncompute_in_A": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 1702396,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 70152,
+      "toffoli": 30030980,
+      "t": 210216860,
+      "cx_after_standard_7t_toffoli_decomposition": 180256032,
+      "h_after_standard_7t_toffoli_decomposition": 60061960
+     },
+     "uniform_threshold_encoder_in_A": {
+      "h_before_toffoli_decomposition": 0,
+      "x": 44,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 1124,
+      "toffoli": 465,
+      "t": 3255,
+      "cx_after_standard_7t_toffoli_decomposition": 3914,
+      "h_after_standard_7t_toffoli_decomposition": 930
+     },
+     "zero_and_objective_reflections_in_Q": {
+      "h_before_toffoli_decomposition": 2,
+      "x": 58638,
+      "z": 1,
+      "cx_before_toffoli_decomposition": 0,
+      "toffoli": 58633,
+      "t": 410431,
+      "cx_after_standard_7t_toffoli_decomposition": 351798,
+      "h_after_standard_7t_toffoli_decomposition": 117268
+     }
+    },
+    "qrom_rows": 0,
+    "arbitrary_rotations": 0,
+    "synthesis_model": "exact H/X/Z/CX/Toffoli network; each Toffoli replaced by the standard exact 7-T, 6-CX, 2-H decomposition"
+   }
+  }
+ },
+ "complete_resources": {
+  "a_qubits": 21203,
+  "a_work_qubits": 20930,
+  "reflection_clean_ancillas": 21200,
+  "q_qubits_with_clean_reflection_ladder": 42403,
+  "a_counts": {
+   "h_before_toffoli_decomposition": 272,
+   "x": 857524,
+   "z": 0,
+   "cx_before_toffoli_decomposition": 62852,
+   "toffoli": 18314085,
+   "t": 128198595,
+   "cx_after_standard_7t_toffoli_decomposition": 109947362,
+   "h_after_standard_7t_toffoli_decomposition": 36628442
+  },
+  "q_counts": {
+   "h_before_toffoli_decomposition": 546,
+   "x": 1757454,
+   "z": 1,
+   "cx_before_toffoli_decomposition": 125704,
+   "toffoli": 36670571,
+   "t": 256693997,
+   "cx_after_standard_7t_toffoli_decomposition": 220149130,
+   "h_after_standard_7t_toffoli_decomposition": 73341688
+  },
+  "components": {
+   "state_preparation_in_A": {
+    "h_before_toffoli_decomposition": 272,
+    "x": 0,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 0,
+    "toffoli": 0,
+    "t": 0,
+    "cx_after_standard_7t_toffoli_decomposition": 0,
+    "h_after_standard_7t_toffoli_decomposition": 272
+   },
+   "price_selected_multipliers_in_compute": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 216216,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 1008,
+    "toffoli": 4568256,
+    "t": 31977792,
+    "cx_after_standard_7t_toffoli_decomposition": 27410544,
+    "h_after_standard_7t_toffoli_decomposition": 9136512
+   },
+   "arithmetic_price_sum_in_compute": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 0,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 28224,
+    "toffoli": 14112,
+    "t": 98784,
+    "cx_after_standard_7t_toffoli_decomposition": 112896,
+    "h_after_standard_7t_toffoli_decomposition": 28224
+   },
+   "geometric_selected_multipliers_in_compute": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 212208,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 1008,
+    "toffoli": 4568256,
+    "t": 31977792,
+    "cx_after_standard_7t_toffoli_decomposition": 27410544,
+    "h_after_standard_7t_toffoli_decomposition": 9136512
+   },
+   "arithmetic_positive_part_in_compute": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 22,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 288,
+    "toffoli": 144,
+    "t": 1008,
+    "cx_after_standard_7t_toffoli_decomposition": 1152,
+    "h_after_standard_7t_toffoli_decomposition": 288
+   },
+   "geometric_positive_part_in_compute": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 32,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 276,
+    "toffoli": 138,
+    "t": 966,
+    "cx_after_standard_7t_toffoli_decomposition": 1104,
+    "h_after_standard_7t_toffoli_decomposition": 276
+   },
+   "geometric_payoff_scaling_in_compute": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 252,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 0,
+    "toffoli": 5880,
+    "t": 41160,
+    "cx_after_standard_7t_toffoli_decomposition": 35280,
+    "h_after_standard_7t_toffoli_decomposition": 11760
+   },
+   "residual_subtraction_in_compute": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 0,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 140,
+    "toffoli": 56,
+    "t": 392,
+    "cx_after_standard_7t_toffoli_decomposition": 476,
+    "h_after_standard_7t_toffoli_decomposition": 112
+   },
+   "initialization_in_compute": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 10,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 0,
+    "toffoli": 0,
+    "t": 0,
+    "cx_after_standard_7t_toffoli_decomposition": 0,
+    "h_after_standard_7t_toffoli_decomposition": 0
+   },
+   "compute_plus_uncompute_in_A": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 857480,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 61888,
+    "toffoli": 18313684,
+    "t": 128195788,
+    "cx_after_standard_7t_toffoli_decomposition": 109943992,
+    "h_after_standard_7t_toffoli_decomposition": 36627368
+   },
+   "uniform_threshold_encoder_in_A": {
+    "h_before_toffoli_decomposition": 0,
+    "x": 44,
+    "z": 0,
+    "cx_before_toffoli_decomposition": 964,
+    "toffoli": 401,
+    "t": 2807,
+    "cx_after_standard_7t_toffoli_decomposition": 3370,
+    "h_after_standard_7t_toffoli_decomposition": 802
+   },
+   "zero_and_objective_reflections_in_Q": {
+    "h_before_toffoli_decomposition": 2,
+    "x": 42406,
+    "z": 1,
+    "cx_before_toffoli_decomposition": 0,
+    "toffoli": 42401,
+    "t": 296807,
+    "cx_after_standard_7t_toffoli_decomposition": 254406,
+    "h_after_standard_7t_toffoli_decomposition": 84804
+   }
+  },
+  "qrom_rows": 0,
+  "arbitrary_rotations": 0,
+  "synthesis_model": "exact H/X/Z/CX/Toffoli network; each Toffoli replaced by the standard exact 7-T, 6-CX, 2-H decomposition"
+ },
+ "factorized_baseline_comparison": {
+  "lookup_rows": 648220,
+  "controlled_rotations": 262143,
+  "arithmetic_lookup_rows": 0,
+  "arithmetic_arbitrary_rotations": 0
+ },
+ "evidence_states": {
+  "small_executable_A": "VERIFIED",
+  "small_module_truth_tables": "VERIFIED by tests/test_arithmetic_asian_oracle.py",
+  "252_date_gate_count": "SUPPORTED: compositional formulas match the executable modules on the validated small instance; the 252-date circuit was not materialized",
+  "252_date_monolithic_build_or_simulation": "NOT-ASSESSABLE; intentionally not materialized",
+  "continuous_model_accuracy_current_config": "CONTRADICTED for the predeclared $0.01 target on the stated daily Black--Scholes instance",
+  "continuous_model_accuracy_refined_candidate": "SUPPORTED for the predeclared $0.01 target on the stated daily Black--Scholes instance by an independent unit-QCV Monte Carlo reference and paired finite-model bias study; this is not a uniform error bound",
+  "physical_runtime_or_quantum_advantage": "UNVERIFIED"
+ },
+ "limitations": [
+  "The complete count is for the declared uniform binary-shock finite model, not continuous GBM.",
+  "The out-of-place construction retains intermediate product registers and is complete but not qubit-optimal.",
+  "Shock-selected multiplication scales with the number of shock basis states; only the binary instance is resource-counted here.",
+  "The accuracy-qualified candidate restores its finite geometric control from a paired classical calibration; its reported standard error must be propagated and the calibration must be rerun after any model or precision change.",
+  "The $0.01 accuracy result is for one daily Black--Scholes parameter set and is not a uniform guarantee over strikes, volatilities, maturities, or monitoring schedules.",
+  "The Q reflection count uses a clean-ancilla AND ladder and therefore reports both A-only and Q-with-reflection-ancilla widths.",
+  "No physical code distance, magic-state factory, routing, cycle time, runtime, or advantage claim is inferred."
+ ]
+}

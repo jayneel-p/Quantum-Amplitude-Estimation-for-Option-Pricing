@@ -1,0 +1,16 @@
+Exact 12-date (monthly) Asian grid: 4^12 = 16,777,216 paths, 25 qubits
+conditional-mean 4-point shocks; direct exact evaluation of the encoded
+state, licensed by the synthesis cross-checks at 4 and 6 dates.
+S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0
+
+exact grid arithmetic price: 5.819041    f_max(A) = 89.0766
+
+  k   C_Bk (grid)   f_max(R_k)   ratio    reconstruction |err|
+   1   5.628442       8.9303     10.0     4.44e-15
+   2   5.730219       2.2419     39.7     3.55e-15
+   3   5.762801       0.9654     92.3     3.55e-15
+   4   5.779351       0.5158    172.7     2.66e-15
+   6   5.796885       0.1936    460.0     1.78e-15
+  12   (B_12 = A: residual identically zero)
+
+gates: ALL PASS

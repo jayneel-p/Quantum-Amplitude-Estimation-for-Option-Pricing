@@ -1,0 +1,97 @@
+{
+ "schema_version": "wang-kan-cv-small-oracle-v1",
+ "created_at_start": "2026-07-18T11:15:10-06:00",
+ "created_at_end": "2026-07-18T11:15:11-06:00",
+ "command": "scripts/validate_wang_kan_cv_small_oracle.py",
+ "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit"
+ },
+ "source_hashes": {
+  "scripts/validate_wang_kan_cv_small_oracle.py": "d00bfed50b007e322608766c5f9bfb30d3483e3c4e86774d64d4b18d68fe216e",
+  "src/qc_option_pricing/classical/heston_weak_euler.py": "4815ea71adc4eb6e0f22b58aef033bb78be2d8af9cf468e09cc2154e129c0107"
+ },
+ "claim_label": "semantic reference (handoff section 13); validates payoff semantics, cap clipping, and reversibility, not the fixed-point arithmetic construction",
+ "checks": [
+  {
+   "instance": "call_instance_1",
+   "n_steps": 1,
+   "check": "residual identically zero",
+   "max_abs_residual": 0.0,
+   "pass": true
+  },
+  {
+   "instance": "put_instance_2",
+   "n_steps": 1,
+   "check": "residual identically zero",
+   "max_abs_residual": 0.0,
+   "pass": true
+  },
+  {
+   "instance": "call_instance_1",
+   "n_steps": 2,
+   "paths": 16,
+   "qubits": 5,
+   "cap": 1.0095045429020253,
+   "cap_binding_on_some_path": true,
+   "p_circuit": 0.41620715618633974,
+   "p_exact": 0.41620715618635495,
+   "p_abs_err": 1.5210055437364645e-14,
+   "probability_mass_minus_one": -3.6193270602780103e-14,
+   "roundtrip_nonzero_probability": 7.194245199571014e-14,
+   "minimum_residual": 0.0,
+   "residual_expectation": 0.5157548173471307,
+   "pass": true
+  },
+  {
+   "instance": "call_instance_1",
+   "n_steps": 3,
+   "paths": 64,
+   "qubits": 7,
+   "cap": 1.0629359980574584,
+   "cap_binding_on_some_path": true,
+   "p_circuit": 0.4709471735683254,
+   "p_exact": 0.4709471735683631,
+   "p_abs_err": 3.7692071686024065e-14,
+   "probability_mass_minus_one": -7.971401316808624e-14,
+   "roundtrip_nonzero_probability": 1.603162047558726e-13,
+   "minimum_residual": 0.0,
+   "residual_expectation": 0.6062063051084652,
+   "pass": true
+  },
+  {
+   "instance": "put_instance_2",
+   "n_steps": 2,
+   "paths": 16,
+   "qubits": 5,
+   "cap": 0.35624239910917765,
+   "cap_binding_on_some_path": true,
+   "p_circuit": 0.395050733386777,
+   "p_exact": 0.39505073338679286,
+   "p_abs_err": 1.587618925213974e-14,
+   "probability_mass_minus_one": -4.063416270128073e-14,
+   "roundtrip_nonzero_probability": 7.993605777301127e-14,
+   "minimum_residual": 0.0,
+   "residual_expectation": 0.16553828094882128,
+   "pass": true
+  },
+  {
+   "instance": "put_instance_2",
+   "n_steps": 3,
+   "paths": 64,
+   "qubits": 7,
+   "cap": 0.28332303772149814,
+   "cap_binding_on_some_path": true,
+   "p_circuit": 0.5080498657118564,
+   "p_exact": 0.5080498657119001,
+   "p_abs_err": 4.374278717023117e-14,
+   "probability_mass_minus_one": -8.482103908136196e-14,
+   "roundtrip_nonzero_probability": 1.716404796070492e-13,
+   "minimum_residual": 0.0,
+   "residual_expectation": 0.20683756965129674,
+   "pass": true
+  }
+ ],
+ "all_pass": true
+}

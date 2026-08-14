@@ -1,0 +1,195 @@
+{
+ "capped": {
+  "qubits": 63,
+  "cap_dollars": 0.125,
+  "requested_cap": 0.125,
+  "budget": 0.0001,
+  "exact_clipping_bias": 7.024354052212163e-05,
+  "p_circuit": 0.2093581216186166,
+  "p_reference": 0.2093581211419753,
+  "p_abs_err": 4.766413097545552e-10,
+  "work_leakage": 0.0,
+  "decoded_price": 0.23905167032824473,
+  "decoded_price_plus_bias": 0.23912191386876686,
+  "price_error_vs_truth": 0.01704177895910375,
+  "truth": 0.22200989136914098,
+  "sim_seconds": 368.6295108795166
+ },
+ "champion_ps32": {
+  "qubits": 43,
+  "p_circuit": 0.03910760956767306,
+  "p_reference": 0.0391076052829454,
+  "p_abs_err": 4.28472766295096e-09,
+  "work_leakage": 0.0,
+  "decoded_price": 0.23075816640991464,
+  "price_error_vs_truth": 0.008748275040773662,
+  "sim_seconds": 33305.267015218735,
+  "grid": "GH8 rematched",
+  "shock_scale": 8,
+  "price_scale": 32,
+  "points": [
+   -4.125,
+   -2.75,
+   -1.625,
+   -0.5,
+   0.5,
+   1.625,
+   2.75,
+   4.125
+  ],
+  "probabilities": [
+   0.00025649002615065066,
+   0.008973024730600484,
+   0.12761706292823094,
+   0.36315342231501785,
+   0.36315342231501807,
+   0.1276170629282308,
+   0.008973024730600505,
+   0.0002564900261506496
+  ],
+  "truth": 0.22200989136914098
+ },
+ "roundtrip_raw_ps8": {
+  "kind": "raw",
+  "price_scale": 8,
+  "qubits": 31,
+  "roundtrip_union_bound": 0.0,
+  "sim_seconds": 116.0348060131073
+ },
+ "roundtrip_raw_ps32": {
+  "kind": "raw",
+  "price_scale": 32,
+  "qubits": 35,
+  "roundtrip_union_bound": 0.0,
+  "sim_seconds": 175.86236882209778
+ },
+ "statevector_ps1": {
+  "price_scale": 1,
+  "qubits": 25,
+  "p_statevector": 0.2176167052468984,
+  "p_mps": 0.21761670536719063,
+  "p_reference": 0.21761670524691354,
+  "sv_vs_mps": 1.2029222062892586e-10,
+  "sv_vs_reference": 1.5126788710517758e-14,
+  "decoded_price_sv": 0.621010239881246,
+  "truth": 0.22200989136914098,
+  "sim_seconds": 305.9170491695404
+ },
+ "statevector_ps2": {
+  "price_scale": 2,
+  "qubits": 27,
+  "p_statevector": 0.1672501929012174,
+  "p_mps": 0.16725019293932364,
+  "p_reference": 0.16725019290123452,
+  "sv_vs_mps": 3.810624038536048e-11,
+  "sv_vs_reference": 1.712519015484304e-14,
+  "decoded_price_sv": 0.39773326185264607,
+  "truth": 0.22200989136914098,
+  "sim_seconds": 1503.6675057411194
+ },
+ "provenance": {
+  "command": ".venv/bin/python scripts/v9_oracle_champion.py --part <part>",
+  "runs": [
+   {
+    "parts": "champion_ps32",
+    "command": ".venv/bin/python scripts/v9_oracle_champion.py --part champion_ps32",
+    "start": "2026-07-17T14:09:13-06:00",
+    "end": "2026-07-17T23:24:21-06:00",
+    "time_source": "background task log creation and final modification times; wall 33,308 s against 33,305 recorded simulation seconds"
+   },
+   {
+    "parts": "capped",
+    "command": ".venv/bin/python scripts/v9_oracle_champion.py --part capped",
+    "start": "2026-07-17T14:16:46-06:00",
+    "end": "2026-07-17T14:22:56-06:00",
+    "time_source": "background task log creation and final modification times"
+   },
+   {
+    "parts": "roundtrip_raw_ps8, roundtrip_raw_ps32",
+    "command": ".venv/bin/python scripts/v9_oracle_champion.py --part roundtrip",
+    "start": "2026-07-17T23:32:06-06:00",
+    "end": "2026-07-17T23:37:00-06:00",
+    "time_source": "background task log creation and final modification times",
+    "note": "two earlier runs of this part used the module's dense roundtrip helper, were killed without output, and produced no results; the recorded run uses the per-qubit union bound"
+   },
+   {
+    "parts": "statevector_ps1, statevector_ps2",
+    "command": ".venv/bin/python scripts/v9_oracle_champion.py --part statevector",
+    "start": "2026-07-17T23:37:13-06:00",
+    "end": "2026-07-18T00:09:03-06:00",
+    "time_source": "background task log creation and final modification times"
+   }
+  ],
+  "environment": {
+   "python": "3.12.6",
+   "platform": "macOS-14.5-arm64-arm-64bit",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "qiskit": "2.4.2",
+   "qiskit_aer": "0.17.2"
+  },
+  "simulator_settings": {
+   "champion_and_capped_and_roundtrip": {
+    "simulator": "qiskit_aer.AerSimulator",
+    "method": "matrix_product_state",
+    "shots": null,
+    "probabilities": "analytic, save_probabilities_dict",
+    "decompose_reps": 8,
+    "other_options": "Aer defaults"
+   },
+   "statevector_parts": {
+    "simulator": "qiskit_aer.AerSimulator",
+    "method": "statevector",
+    "shots": null,
+    "probabilities": "analytic, save_probabilities_dict",
+    "decompose_reps": 8,
+    "other_options": "Aer defaults"
+   }
+  },
+  "seeds": {
+   "note": "deterministic; analytic simulation, closed-form reference, no RNG"
+  },
+  "oracle_source_sha256": "2dbfb777551d86d46db06da3da1234f214c4e150f446d97130d580302ac21468",
+  "runner_sha256": "06905da7b078b26149b2a2896d3a8156b1b0be5549e5861a3737961acd1ff73f",
+  "runner_file": "scripts/v9_oracle_champion.py",
+  "validation_test_sha256": "5f95ef2ca5ce21e0a253f37b6e37cc7ae9f191f3d5c7fdb0301ace6b0dbdfa8f",
+  "validation_test_file": "tests/test_asian_oracle.py",
+  "runner_revision_note": "runner revised during the session as later parts were added; recorded parts' code paths are unchanged in this hashed revision; intermediate revisions were not retained",
+  "recorded_after_run": true,
+  "recording_script": "scripts/v9_record_provenance.py"
+ },
+ "champion_ps64": {
+  "qubits": 45,
+  "p_circuit": 0.03854581002232989,
+  "p_reference": 0.03854581112383605,
+  "p_abs_err": 1.1015061640584634e-09,
+  "work_leakage": 0.0,
+  "decoded_price": 0.22715676239666086,
+  "price_error_vs_truth": 0.005146871027519873,
+  "sim_seconds": 23207.070333003998,
+  "grid": "GH8 rematched",
+  "shock_scale": 8,
+  "price_scale": 64,
+  "points": [
+   -4.125,
+   -2.75,
+   -1.625,
+   -0.5,
+   0.5,
+   1.625,
+   2.75,
+   4.125
+  ],
+  "probabilities": [
+   0.00025649002615065066,
+   0.008973024730600484,
+   0.12761706292823094,
+   0.36315342231501785,
+   0.36315342231501807,
+   0.1276170629282308,
+   0.008973024730600505,
+   0.0002564900261506496
+  ],
+  "truth": 0.22200989136914098
+ }
+}

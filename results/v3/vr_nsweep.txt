@@ -1,0 +1,9 @@
+Kemna-Vorst VR factor vs monitoring frequency N
+S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0; 8 independent panels of M=100,000 paths per N
+VR = (mean vanilla SE / mean KV SE)^2 (M-invariant)
+
+    N    mean_v_se   mean_cv_se         VR   SE ratio
+   12     0.026947     0.000751     1288.2      35.89
+   50     0.025589     0.000705     1319.1      36.32
+  126     0.025305     0.000695     1327.4      36.43
+  252     0.025304     0.000696     1320.4      36.34

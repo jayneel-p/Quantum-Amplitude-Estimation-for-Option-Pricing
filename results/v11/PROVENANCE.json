@@ -1,0 +1,24 @@
+{
+ "generated_at": "2026-07-18T12:30:07-06:00",
+ "generated_by": "scripts/record_v11_provenance.py",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1"
+ },
+ "source_files": {
+  "src/qc_option_pricing/classical/heston_weak_euler.py": "4815ea71adc4eb6e0f22b58aef033bb78be2d8af9cf468e09cc2154e129c0107",
+  "src/qc_option_pricing/classical/heston_weak_euler_geometric.py": "ce7091f3ec454f879c3519e2fa1159e0060516ee0fcd776468b1a8177a2d941d",
+  "tests/test_heston_weak_euler_geometric.py": "80113842092f7ec6bbab22d654dbd7ca4d8a05997309db7e2b0a56ee481ff2cb",
+  "scripts/validate_wang_kan_exact_control.py": "26b2b2a3cca4ae859e1b541680bb0fb505ac3d5428ac9a3164f177779ec7ef9d",
+  "scripts/record_v11_provenance.py": "47e5b8f748acf00df0ff381257b46b22927c84eae275770d029c75daf90a0525",
+  "audit/wang-kan-exact-control-2026-07-18/baseline.md": "bd2d87066067f2dd67fcc2529808436522a46feab7d531e7feebaa9ac886b61c",
+  "audit/wang-kan-exact-control-2026-07-18/derivation.md": "f7110287b6d14eef14775929c8fedbbd91337df5ef225909cbd8e005e6c0c58f",
+  "audit/wang-kan-exact-control-2026-07-18/claim-ledger.md": "3b5ca86c130ca3a93ee6f3586205eb8d071aba1a2be3a2f5329aab1bd66cfb06",
+  "audit/wang-kan-exact-control-2026-07-18/decision.md": "95ed8a4ae439f18d98140fe8684ae691c886250665331274a3f2c32d8ade30dd"
+ },
+ "result_files": {
+  "results/v11/wang_kan_exact_control.json": "fbfdfaf0ad2bc66f4fd25c906c2c96b52ef0a1b9659765d21ea0144d65ac8f45"
+ }
+}

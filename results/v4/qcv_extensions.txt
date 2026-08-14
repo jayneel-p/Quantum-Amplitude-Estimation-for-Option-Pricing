@@ -1,0 +1,40 @@
+v4 QCV extensions: block ladder, basket, Heston
+paths: 2000000 (ladder, basket), 500000 (Heston); tail mass 1.3499e-03
+seed 20260704
+
+BS Asian N=252: f_max(A) = 45.86
+  k   f_max(R_k)   ratio    mean(A-B_k)   clip bias E[(R-cap)+]
+   1      2.876     15.9    0.3517        8.69e-04
+   2      0.912     50.3    0.1734        2.31e-04
+   3      0.487     94.1    0.1150        1.07e-04
+   4      0.315    145.7    0.0861        6.28e-05
+   6      0.175    262.1    0.0572        2.91e-05
+  12      0.068    678.8    0.0285        9.23e-06
+
+control prices: C_G closed form = 5.565509 (k=1); k=2 block control by conditioning (1-D quadrature) = 5.678847
+crossover (KV-CV classical baseline, charge 1.1D / 1.2D):
+  eps*_QCV,CV(k=1) = 4.36e-08   eps*_QCV,CV(k=2) = 1.26e-07
+
+basket d=3 (single maturity, equal weights):
+  rho=0.2: f_max(A)=57.07  f_max(R)=7.836  ratio=7.3
+  rho=0.5: f_max(A)=69.45  f_max(R)=4.967  ratio=14.0
+  rho=0.8: f_max(A)=80.49  f_max(R)=2.005  ratio=40.1
+
+Heston Asian (v0=theta=0.04, kappa=2.0, xi=0.3, rho=-0.7):
+  f_max(A)=34.02  f_max(R)=3.016  ratio=11.3
+
+validation gates:
+  [PASS] L1 reproduce v3 k=1: f_max(R)=2.876 (v3: 2.864), ratio=15.9 (v3: 16.0)
+  [PASS] L2 pathwise A>=B_k: min residual over 2000000 paths x 6 ladders = 7.85e-03
+  [PASS] L3 block moments analytic=sample: max mean err 4.1e-04, max rel cov err 4.4e-03 (300k paths)
+  [PASS] L4a k=1 control price vs closed form: MC 5.555596 +- 0.005459 vs C_G 5.565509 (z=-1.82)
+  [PASS] L4b k=2 control price cond-1D vs MC: cond-1D 5.678847 | MC 5.668697 +- 0.005580 (z=-1.82)
+  [PASS] L4c k=2 cond-1D vs dblquad internal: |dblquad - cond-1D| = 3.08e-10
+  [PASS] L5 reproduce v3 crossover k=1: eps*_QCV,CV(k=1) = 4.36e-08 (v3: 4.4e-8)
+  [PASS] B1 geometric basket vs closed form: rho=0.5: MC 8.66740 +- 0.00836 vs CF 8.65440 (z=+1.56)
+  [PASS] B2 arithmetic basket put-call parity: C-P 4.88762 vs S0-Ke^-rT 4.87706 (z=+0.91)
+  [PASS] B3 rho->1 limit vs Black-Scholes: basket 10.43459 +- 0.01041 vs BS 10.45058 (z=-1.54)
+  [PASS] B4 pathwise basket A>=G: min residual 5.28e-10
+  [PASS] H1 Heston CF pricer BS limit: CF(xi->0) 10.450584 vs BS(sqrt(theta)) 10.450584
+  [PASS] H2 Euler European vs Heston CF: MC 10.40834 +- 0.01734 vs CF 10.39422 (z=+0.81)
+  [PASS] H3 pathwise Heston A>=G: min residual 8.12e-03

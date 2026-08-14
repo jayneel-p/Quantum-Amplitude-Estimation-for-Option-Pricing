@@ -1,0 +1,1427 @@
+{
+ "schema_version": "wang-kan-cv-feasibility-v1",
+ "smoke": {
+  "part": "smoke",
+  "created_at_start": "2026-07-18T10:34:56-06:00",
+  "command": "scripts/validate_wang_kan_cv_feasibility.py --smoke",
+  "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+  "environment": {
+   "python": "3.12.6",
+   "platform": "macOS-14.5-arm64-arm-64bit",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "qiskit": "2.4.2",
+   "qiskit_aer": "0.17.2"
+  },
+  "source_hashes": {
+   "src/qc_option_pricing/classical/heston_weak_euler.py": "4815ea71adc4eb6e0f22b58aef033bb78be2d8af9cf468e09cc2154e129c0107",
+   "scripts/validate_wang_kan_cv_feasibility.py": "53724412669311fcb9bab11de93182be44c2a2b9128aa5896ca3a296fc757d08",
+   "tests/test_heston_weak_euler.py": "b2aa2faffef9867e24409f29926cdcecad403ed61af175115819b8ee5265547d"
+  },
+  "created_at_end": "2026-07-18T10:34:58-06:00",
+  "instances": {
+   "call_instance_1": {
+    "spec": {
+     "s0": 100.0,
+     "v0": 0.1,
+     "rate": 0.03,
+     "rho": -0.1,
+     "kappa": 2.0,
+     "theta": 0.12,
+     "xi": 0.3,
+     "maturity": 1.0,
+     "n_steps": 256,
+     "strike": 90.0,
+     "option_type": "call"
+    },
+    "z_normalization": 200.0,
+    "paths_total": 20000,
+    "seeds": [
+     2026071801
+    ],
+    "replicates": [
+     {
+      "seed": 2026071801,
+      "arithmetic_price_discounted": 13.913951246451449,
+      "arithmetic_price_se": 0.1110497003651892,
+      "geometric_price_discounted": 13.289856030426362,
+      "residual_mean_discounted": 0.624095216025088,
+      "residual_se": 0.0071180823384424255,
+      "payoff_variance": 261.8921293258725,
+      "residual_variance": 1.0760034885580747,
+      "payoff_geometric_correlation": 0.9989056000755977,
+      "minimum_average_gap": 0.05418561399606858,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.00595717558746276,
+      "negative_variance_count": 0
+     }
+    ],
+    "variance_certificate": {
+     "certified": true,
+     "condition": "4*kappa*theta*(1-kappa*h) >= xi^2",
+     "lhs": 0.9525,
+     "rhs": 0.09,
+     "worst_case_next_variance": 0.0008489173228346457
+    },
+    "pooled": {
+     "arithmetic_price_discounted": 13.913951246451449,
+     "arithmetic_price_se": 0.11104970036518919,
+     "residual_mean_discounted": 0.624095216025088,
+     "residual_se": 0.0071180823384424255,
+     "payoff_sd_dollars": 15.7047992353919,
+     "residual_sd_dollars": 1.0066488581113673,
+     "clipped_residual_sd_dollars": 1.0066488581113673,
+     "variance_ratio_raw_over_residual": 243.39338311702642,
+     "variance_ratio_raw_over_clipped_residual": 243.39338311702642,
+     "payoff_exceeds_z_probability": 0.0,
+     "max_raw_payoff": 171.3178979237648,
+     "max_residual": 27.00476168481447
+    },
+    "raw_cap_study": {
+     "budget_discounted": 0.001,
+     "grid": [
+      {
+       "quantile": 0.99,
+       "cap": 66.7501427140407,
+       "clipping_bias": 0.1337399450321716,
+       "clipping_bias_se": 0.0146623526233163,
+       "upper_90_ci": 0.1578595150975269,
+       "exceedance_probability": 0.01
+      },
+      {
+       "quantile": 0.995,
+       "cap": 75.68347344085757,
+       "clipping_bias": 0.07055336827905713,
+       "clipping_bias_se": 0.011398840924863691,
+       "upper_90_ci": 0.08930446160045791,
+       "exceedance_probability": 0.005
+      },
+      {
+       "quantile": 0.999,
+       "cap": 96.89477516389559,
+       "clipping_bias": 0.021182906197238158,
+       "clipping_bias_se": 0.006983247018486078,
+       "upper_90_ci": 0.032670347542647755,
+       "exceedance_probability": 0.001
+      },
+      {
+       "quantile": 0.9995,
+       "cap": 108.56729095870851,
+       "clipping_bias": 0.0138427415008134,
+       "clipping_bias_se": 0.005415279619355793,
+       "upper_90_ci": 0.02275087647465368,
+       "exceedance_probability": 0.0005
+      },
+      {
+       "quantile": 0.9999,
+       "cap": 162.5381626883331,
+       "clipping_bias": 0.0005000372800676288,
+       "clipping_bias_se": 0.0004323925705419344,
+       "upper_90_ci": 0.0012113230586091109,
+       "exceedance_probability": 0.0001
+      },
+      {
+       "quantile": 1.0,
+       "cap": 171.3178979237648,
+       "clipping_bias": 0.0,
+       "clipping_bias_se": 0.0,
+       "upper_90_ci": 0.0,
+       "exceedance_probability": 0.0
+      }
+     ],
+     "selected": {
+      "quantile": 1.0,
+      "cap": 171.3178979237648,
+      "clipping_bias": 0.0,
+      "clipping_bias_se": 0.0,
+      "upper_90_ci": 0.0,
+      "exceedance_probability": 0.0
+     }
+    },
+    "residual_cap_study": {
+     "budget_discounted": 0.001,
+     "grid": [
+      {
+       "quantile": 0.99,
+       "cap": 4.594866518775751,
+       "clipping_bias": 0.02541543209178531,
+       "clipping_bias_se": 0.0029151320803243413,
+       "upper_90_ci": 0.03021082436391885,
+       "exceedance_probability": 0.01
+      },
+      {
+       "quantile": 0.995,
+       "cap": 5.968840305661618,
+       "clipping_bias": 0.015705566885196465,
+       "clipping_bias_se": 0.0024195266924309,
+       "upper_90_ci": 0.019685688294245295,
+       "exceedance_probability": 0.005
+      },
+      {
+       "quantile": 0.999,
+       "cap": 11.380338188161947,
+       "clipping_bias": 0.003867776753684178,
+       "clipping_bias_se": 0.001233658305527526,
+       "upper_90_ci": 0.005897144666276958,
+       "exceedance_probability": 0.001
+      },
+      {
+       "quantile": 0.9995,
+       "cap": 14.05102832988154,
+       "clipping_bias": 0.0020648352909344698,
+       "clipping_bias_se": 0.000882451045172342,
+       "upper_90_ci": 0.0035164672602429727,
+       "exceedance_probability": 0.0005
+      },
+      {
+       "quantile": 0.9999,
+       "cap": 18.917426886218344,
+       "clipping_bias": 0.0006261898077885525,
+       "clipping_bias_se": 0.0004567617577728026,
+       "upper_90_ci": 0.0013775628993248127,
+       "exceedance_probability": 0.0001
+      },
+      {
+       "quantile": 1.0,
+       "cap": 27.00476168481447,
+       "clipping_bias": 0.0,
+       "clipping_bias_se": 0.0,
+       "upper_90_ci": 0.0,
+       "exceedance_probability": 0.0
+      }
+     ],
+     "selected": {
+      "quantile": 1.0,
+      "cap": 27.00476168481447,
+      "clipping_bias": 0.0,
+      "clipping_bias_se": 0.0,
+      "upper_90_ci": 0.0,
+      "exceedance_probability": 0.0
+     }
+    },
+    "range_ratio_raw_z_over_selected_residual_cap": 7.406101277037582,
+    "convergence": [
+     {
+      "paths": 4096,
+      "raw_running_mean": 13.662370288339698,
+      "raw_se": 0.24814437058920574,
+      "residual_running_mean": 0.6072178811279351,
+      "residual_se": 0.016028951106852814
+     },
+     {
+      "paths": 8192,
+      "raw_running_mean": 13.796927433726411,
+      "raw_se": 0.17364289361561214,
+      "residual_running_mean": 0.6145905024489704,
+      "residual_se": 0.011281773410433037
+     },
+     {
+      "paths": 16384,
+      "raw_running_mean": 13.864626452190329,
+      "raw_se": 0.12248385919105297,
+      "residual_running_mean": 0.6227993793690679,
+      "residual_se": 0.007951052921698157
+     }
+    ]
+   },
+   "put_instance_2": {
+    "spec": {
+     "s0": 100.0,
+     "v0": 0.05,
+     "rate": 0.05,
+     "rho": -0.1,
+     "kappa": 2.0,
+     "theta": 0.04,
+     "xi": 0.2,
+     "maturity": 1.0,
+     "n_steps": 256,
+     "strike": 110.0,
+     "option_type": "put"
+    },
+    "z_normalization": 100.0,
+    "paths_total": 20000,
+    "seeds": [
+     2026071801
+    ],
+    "replicates": [
+     {
+      "seed": 2026071801,
+      "arithmetic_price_discounted": 9.284534139890638,
+      "arithmetic_price_se": 0.062666838986571,
+      "geometric_price_discounted": 9.48948664644264,
+      "residual_mean_discounted": 0.2049525065520003,
+      "residual_se": 0.0017634903045020212,
+      "payoff_variance": 86.80305721867803,
+      "residual_variance": 0.0687393777508224,
+      "payoff_geometric_correlation": 0.9997238399985064,
+      "minimum_average_gap": 0.018219864143290465,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.001129846249811097,
+      "negative_variance_count": 0
+     }
+    ],
+    "variance_certificate": {
+     "certified": true,
+     "condition": "4*kappa*theta*(1-kappa*h) >= xi^2",
+     "lhs": 0.3175,
+     "rhs": 0.04000000000000001,
+     "worst_case_next_variance": 0.0002731299212598425
+    },
+    "pooled": {
+     "arithmetic_price_discounted": 9.284534139890638,
+     "arithmetic_price_se": 0.062666838986571,
+     "residual_mean_discounted": 0.2049525065520003,
+     "residual_se": 0.0017634903045020212,
+     "payoff_sd_dollars": 8.862429360585974,
+     "residual_sd_dollars": 0.24939519057402176,
+     "clipped_residual_sd_dollars": 0.24596653138449406,
+     "variance_ratio_raw_over_residual": 1262.7850303407715,
+     "variance_ratio_raw_over_clipped_residual": 1298.2356763715165,
+     "payoff_exceeds_z_probability": 0.0,
+     "max_raw_payoff": 45.04702852426058,
+     "max_residual": 3.08703880100839
+    },
+    "raw_cap_study": {
+     "budget_discounted": 0.001,
+     "grid": [
+      {
+       "quantile": 0.99,
+       "cap": 34.31779975778958,
+       "clipping_bias": 0.02892068825693208,
+       "clipping_bias_se": 0.0026253847924543727,
+       "upper_90_ci": 0.03323944624051952,
+       "exceedance_probability": 0.01
+      },
+      {
+       "quantile": 0.995,
+       "cap": 36.57104148470198,
+       "clipping_bias": 0.012646659061545206,
+       "clipping_bias_se": 0.001634350064244238,
+       "upper_90_ci": 0.015335164917226977,
+       "exceedance_probability": 0.005
+      },
+      {
+       "quantile": 0.999,
+       "cap": 40.582951703376445,
+       "clipping_bias": 0.0022182909944860273,
+       "clipping_bias_se": 0.0005691643645263058,
+       "upper_90_ci": 0.0031545663741318003,
+       "exceedance_probability": 0.001
+      },
+      {
+       "quantile": 0.9995,
+       "cap": 42.985208266063594,
+       "clipping_bias": 0.0004917984356023163,
+       "clipping_bias_se": 0.00018701343882049088,
+       "upper_90_ci": 0.0007994355424620237,
+       "exceedance_probability": 0.0005
+      },
+      {
+       "quantile": 0.9999,
+       "cap": 44.57688218987235,
+       "clipping_bias": 3.938743117701149e-05,
+       "clipping_bias_se": 2.8104697453722435e-05,
+       "upper_90_ci": 8.56196584883849e-05,
+       "exceedance_probability": 0.0001
+      },
+      {
+       "quantile": 1.0,
+       "cap": 45.04702852426058,
+       "clipping_bias": 0.0,
+       "clipping_bias_se": 0.0,
+       "upper_90_ci": 0.0,
+       "exceedance_probability": 0.0
+      }
+     ],
+     "selected": {
+      "quantile": 0.9995,
+      "cap": 42.985208266063594,
+      "clipping_bias": 0.0004917984356023163,
+      "clipping_bias_se": 0.00018701343882049088,
+      "upper_90_ci": 0.0007994355424620237,
+      "exceedance_probability": 0.0005
+     }
+    },
+    "residual_cap_study": {
+     "budget_discounted": 0.001,
+     "grid": [
+      {
+       "quantile": 0.99,
+       "cap": 1.2189751800265605,
+       "clipping_bias": 0.0038693975815435105,
+       "clipping_bias_se": 0.00039264438296755685,
+       "upper_90_ci": 0.004515297591525141,
+       "exceedance_probability": 0.01
+      },
+      {
+       "quantile": 0.995,
+       "cap": 1.477257934001617,
+       "clipping_bias": 0.002104137371113913,
+       "clipping_bias_se": 0.0002891015820022591,
+       "upper_90_ci": 0.0025797094735076293,
+       "exceedance_probability": 0.005
+      },
+      {
+       "quantile": 0.999,
+       "cap": 2.217279863676736,
+       "clipping_bias": 0.0003909243537988458,
+       "clipping_bias_se": 0.00010228842599796579,
+       "upper_90_ci": 0.0005591888145654995,
+       "exceedance_probability": 0.001
+      },
+      {
+       "quantile": 0.9995,
+       "cap": 2.493588712040354,
+       "clipping_bias": 0.00016854915557078538,
+       "clipping_bias_se": 5.8495663152563334e-05,
+       "upper_90_ci": 0.0002647745214567521,
+       "exceedance_probability": 0.0005
+      },
+      {
+       "quantile": 0.9999,
+       "cap": 2.9485199865528116,
+       "clipping_bias": 1.1621220470444797e-05,
+       "clipping_bias_se": 8.290490306859133e-06,
+       "upper_90_ci": 2.525907702522807e-05,
+       "exceedance_probability": 0.0001
+      },
+      {
+       "quantile": 1.0,
+       "cap": 3.08703880100839,
+       "clipping_bias": 0.0,
+       "clipping_bias_se": 0.0,
+       "upper_90_ci": 0.0,
+       "exceedance_probability": 0.0
+      }
+     ],
+     "selected": {
+      "quantile": 0.999,
+      "cap": 2.217279863676736,
+      "clipping_bias": 0.0003909243537988458,
+      "clipping_bias_se": 0.00010228842599796579,
+      "upper_90_ci": 0.0005591888145654995,
+      "exceedance_probability": 0.001
+     }
+    },
+    "range_ratio_raw_z_over_selected_residual_cap": 45.10030584690292,
+    "convergence": [
+     {
+      "paths": 4096,
+      "raw_running_mean": 9.562609360914918,
+      "raw_se": 0.14057389095281125,
+      "residual_running_mean": 0.20547164511342395,
+      "residual_se": 0.003827773997790682
+     },
+     {
+      "paths": 8192,
+      "raw_running_mean": 9.38892329616947,
+      "raw_se": 0.0989272542057525,
+      "residual_running_mean": 0.2038240984403149,
+      "residual_se": 0.0027209443244205003
+     },
+     {
+      "paths": 16384,
+      "raw_running_mean": 9.29438253708072,
+      "raw_se": 0.06917392229676199,
+      "residual_running_mean": 0.20503681021117584,
+      "residual_se": 0.0019444609946181895
+     }
+    ]
+   }
+  }
+ },
+ "production": {
+  "part": "production",
+  "created_at_start": "2026-07-18T10:35:10-06:00",
+  "command": "scripts/validate_wang_kan_cv_feasibility.py --production",
+  "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+  "environment": {
+   "python": "3.12.6",
+   "platform": "macOS-14.5-arm64-arm-64bit",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "qiskit": "2.4.2",
+   "qiskit_aer": "0.17.2"
+  },
+  "source_hashes": {
+   "src/qc_option_pricing/classical/heston_weak_euler.py": "4815ea71adc4eb6e0f22b58aef033bb78be2d8af9cf468e09cc2154e129c0107",
+   "scripts/validate_wang_kan_cv_feasibility.py": "53724412669311fcb9bab11de93182be44c2a2b9128aa5896ca3a296fc757d08",
+   "tests/test_heston_weak_euler.py": "b2aa2faffef9867e24409f29926cdcecad403ed61af175115819b8ee5265547d"
+  },
+  "created_at_end": "2026-07-18T10:40:48-06:00",
+  "instances": {
+   "call_instance_1": {
+    "spec": {
+     "s0": 100.0,
+     "v0": 0.1,
+     "rate": 0.03,
+     "rho": -0.1,
+     "kappa": 2.0,
+     "theta": 0.12,
+     "xi": 0.3,
+     "maturity": 1.0,
+     "n_steps": 256,
+     "strike": 90.0,
+     "option_type": "call"
+    },
+    "z_normalization": 200.0,
+    "paths_total": 1048576,
+    "seeds": [
+     2026071801,
+     2026071802,
+     2026071803,
+     2026071804,
+     2026071805,
+     2026071806,
+     2026071807,
+     2026071808
+    ],
+    "replicates": [
+     {
+      "seed": 2026071801,
+      "arithmetic_price_discounted": 13.976913611909007,
+      "arithmetic_price_se": 0.04371171517034597,
+      "geometric_price_discounted": 13.347710717760098,
+      "residual_mean_discounted": 0.6292028941489091,
+      "residual_se": 0.0026888917333283743,
+      "payoff_variance": 265.9275244826196,
+      "residual_variance": 1.006269309272155,
+      "payoff_geometric_correlation": 0.9990200578553218,
+      "minimum_average_gap": 0.04076461992917757,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.003435682108156789,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071802,
+      "arithmetic_price_discounted": 13.880093981742798,
+      "arithmetic_price_se": 0.04340226751502602,
+      "geometric_price_discounted": 13.257537600676216,
+      "residual_mean_discounted": 0.6225563810665827,
+      "residual_se": 0.0026595733583084495,
+      "payoff_variance": 262.17569872284315,
+      "residual_variance": 0.9844451935147003,
+      "payoff_geometric_correlation": 0.9990170710087678,
+      "minimum_average_gap": 0.038490656920487254,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.002871974766440518,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071803,
+      "arithmetic_price_discounted": 13.93067814039416,
+      "arithmetic_price_se": 0.043632832080877336,
+      "geometric_price_discounted": 13.303758891987277,
+      "residual_mean_discounted": 0.6269192484068844,
+      "residual_se": 0.0027017176790986954,
+      "payoff_variance": 264.968593601607,
+      "residual_variance": 1.0158919630414267,
+      "payoff_geometric_correlation": 0.9989848152065588,
+      "minimum_average_gap": 0.03680977580575018,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.004311370292279638,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071804,
+      "arithmetic_price_discounted": 13.923810247825486,
+      "arithmetic_price_se": 0.043698560630309906,
+      "geometric_price_discounted": 13.299635457548167,
+      "residual_mean_discounted": 0.6241747902773181,
+      "residual_se": 0.002684683369821575,
+      "payoff_variance": 265.7674928806045,
+      "residual_variance": 1.00312196562726,
+      "payoff_geometric_correlation": 0.9990121334714864,
+      "minimum_average_gap": 0.044737761619387584,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.003767888184635565,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071805,
+      "arithmetic_price_discounted": 13.833446714869156,
+      "arithmetic_price_se": 0.04339336805258948,
+      "geometric_price_discounted": 13.213206221350196,
+      "residual_mean_discounted": 0.6202404935189598,
+      "residual_se": 0.0026399893502789882,
+      "payoff_variance": 262.0681935758956,
+      "residual_variance": 0.9700004708082557,
+      "payoff_geometric_correlation": 0.9990356714845348,
+      "minimum_average_gap": 0.03746857250642677,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.004500860909210566,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071806,
+      "arithmetic_price_discounted": 13.885830624443809,
+      "arithmetic_price_se": 0.04337712109545778,
+      "geometric_price_discounted": 13.261238900968642,
+      "residual_mean_discounted": 0.6245917234751666,
+      "residual_se": 0.0026431953338150534,
+      "payoff_variance": 261.87198785083024,
+      "residual_variance": 0.9723578241070314,
+      "payoff_geometric_correlation": 0.9990317890217962,
+      "minimum_average_gap": 0.02533260513330049,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.005112240747260941,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071807,
+      "arithmetic_price_discounted": 13.90881531928522,
+      "arithmetic_price_se": 0.043639705391424755,
+      "geometric_price_discounted": 13.281226234014367,
+      "residual_mean_discounted": 0.6275890852708519,
+      "residual_se": 0.002707871189537597,
+      "payoff_variance": 265.05207912324084,
+      "residual_variance": 1.0205248829951357,
+      "payoff_geometric_correlation": 0.9989832948085383,
+      "minimum_average_gap": 0.04564638057360071,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.004369166852949287,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071808,
+      "arithmetic_price_discounted": 13.926320099804096,
+      "arithmetic_price_se": 0.04364569779389589,
+      "geometric_price_discounted": 13.300737010110106,
+      "residual_mean_discounted": 0.6255830896939886,
+      "residual_se": 0.002673223249589022,
+      "payoff_variance": 265.1248755717314,
+      "residual_variance": 0.9945761816693148,
+      "payoff_geometric_correlation": 0.9990265889212573,
+      "minimum_average_gap": 0.03871661652898695,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.00427782458755405,
+      "negative_variance_count": 0
+     }
+    ],
+    "variance_certificate": {
+     "certified": true,
+     "condition": "4*kappa*theta*(1-kappa*h) >= xi^2",
+     "lhs": 0.9525,
+     "rhs": 0.09,
+     "worst_case_next_variance": 0.0008489173228346457
+    },
+    "pooled": {
+     "arithmetic_price_discounted": 13.908238592534216,
+     "arithmetic_price_se": 0.015401797950155699,
+     "residual_mean_discounted": 0.6251072132323325,
+     "residual_se": 0.0009457556939254327,
+     "payoff_sd_dollars": 15.771441100959436,
+     "residual_sd_dollars": 0.9684538305796431,
+     "clipped_residual_sd_dollars": 0.9597211619796682,
+     "variance_ratio_raw_over_residual": 265.20695809408505,
+     "variance_ratio_raw_over_clipped_residual": 270.05524371698954,
+     "payoff_exceeds_z_probability": 9.5367431640625e-07,
+     "max_raw_payoff": 228.9631819176729,
+     "max_residual": 39.81591056067987
+    },
+    "raw_cap_study": {
+     "budget_discounted": 0.001,
+     "grid": [
+      {
+       "quantile": 0.99,
+       "cap": 66.81820819850424,
+       "clipping_bias": 0.12014102056976067,
+       "clipping_bias_se": 0.0016809606221301772,
+       "upper_90_ci": 0.1229062007931648,
+       "exceedance_probability": 0.010000228881835938
+      },
+      {
+       "quantile": 0.995,
+       "cap": 75.39621001016664,
+       "clipping_bias": 0.06017542658894599,
+       "clipping_bias_se": 0.0012079248053163043,
+       "upper_90_ci": 0.06216246289369132,
+       "exceedance_probability": 0.005000114440917969
+      },
+      {
+       "quantile": 0.999,
+       "cap": 95.10243668568704,
+       "clipping_bias": 0.013141009354701033,
+       "clipping_bias_se": 0.0005883944111187427,
+       "upper_90_ci": 0.014108918160991364,
+       "exceedance_probability": 0.0010004043579101562
+      },
+      {
+       "quantile": 0.9995,
+       "cap": 104.14750521630687,
+       "clipping_bias": 0.006765576489699235,
+       "clipping_bias_se": 0.0004310212865381301,
+       "upper_90_ci": 0.007474606506054459,
+       "exceedance_probability": 0.0005006790161132812
+      },
+      {
+       "quantile": 0.9999,
+       "cap": 126.5970782414947,
+       "clipping_bias": 0.0014583293278685263,
+       "clipping_bias_se": 0.00020722207682169675,
+       "upper_90_ci": 0.0017992096442402176,
+       "exceedance_probability": 0.00010013580322265625
+      },
+      {
+       "quantile": 1.0,
+       "cap": 228.9631819176729,
+       "clipping_bias": 0.0,
+       "clipping_bias_se": 0.0,
+       "upper_90_ci": 0.0,
+       "exceedance_probability": 0.0
+      }
+     ],
+     "selected": {
+      "quantile": 1.0,
+      "cap": 228.9631819176729,
+      "clipping_bias": 0.0,
+      "clipping_bias_se": 0.0,
+      "upper_90_ci": 0.0,
+      "exceedance_probability": 0.0
+     }
+    },
+    "residual_cap_study": {
+     "budget_discounted": 0.001,
+     "grid": [
+      {
+       "quantile": 0.99,
+       "cap": 4.719849626637508,
+       "clipping_bias": 0.02051582407003478,
+       "clipping_bias_se": 0.00031261822245141826,
+       "upper_90_ci": 0.02103008104596736,
+       "exceedance_probability": 0.010000228881835938
+      },
+      {
+       "quantile": 0.995,
+       "cap": 6.01838832168108,
+       "clipping_bias": 0.0114990431992006,
+       "clipping_bias_se": 0.00024651395030695093,
+       "upper_90_ci": 0.011904558647455533,
+       "exceedance_probability": 0.005000114440917969
+      },
+      {
+       "quantile": 0.999,
+       "cap": 9.605577467033969,
+       "clipping_bias": 0.002995245953492112,
+       "clipping_bias_se": 0.00014178572684085534,
+       "upper_90_ci": 0.0032284834741453192,
+       "exceedance_probability": 0.0010004043579101562
+      },
+      {
+       "quantile": 0.9995,
+       "cap": 11.498209084289169,
+       "clipping_bias": 0.0016839368765296922,
+       "clipping_bias_se": 0.00011035652151511087,
+       "upper_90_ci": 0.0018654733544220495,
+       "exceedance_probability": 0.0005006790161132812
+      },
+      {
+       "quantile": 0.9999,
+       "cap": 16.84170919614413,
+       "clipping_bias": 0.0004241568022579501,
+       "clipping_bias_se": 5.780080948871883e-05,
+       "upper_90_ci": 0.0005192391338668925,
+       "exceedance_probability": 0.00010013580322265625
+      },
+      {
+       "quantile": 1.0,
+       "cap": 39.81591056067987,
+       "clipping_bias": 0.0,
+       "clipping_bias_se": 0.0,
+       "upper_90_ci": 0.0,
+       "exceedance_probability": 0.0
+      }
+     ],
+     "selected": {
+      "quantile": 0.9999,
+      "cap": 16.84170919614413,
+      "clipping_bias": 0.0004241568022579501,
+      "clipping_bias_se": 5.780080948871883e-05,
+      "upper_90_ci": 0.0005192391338668925,
+      "exceedance_probability": 0.00010013580322265625
+     }
+    },
+    "range_ratio_raw_z_over_selected_residual_cap": 11.875279264754763,
+    "convergence": [
+     {
+      "paths": 4096,
+      "raw_running_mean": 13.662370288339698,
+      "raw_se": 0.24814437058920574,
+      "residual_running_mean": 0.6072178811279351,
+      "residual_se": 0.016028951106852814
+     },
+     {
+      "paths": 8192,
+      "raw_running_mean": 13.796927433726411,
+      "raw_se": 0.17364289361561214,
+      "residual_running_mean": 0.6145905024489704,
+      "residual_se": 0.011281773410433037
+     },
+     {
+      "paths": 16384,
+      "raw_running_mean": 13.864626452190329,
+      "raw_se": 0.12248385919105297,
+      "residual_running_mean": 0.6227993793690679,
+      "residual_se": 0.007951052921698157
+     },
+     {
+      "paths": 32768,
+      "raw_running_mean": 13.97055029345102,
+      "raw_se": 0.086993894154554,
+      "residual_running_mean": 0.6268111987551876,
+      "residual_se": 0.0054079528991044234
+     },
+     {
+      "paths": 65536,
+      "raw_running_mean": 13.984111104025036,
+      "raw_se": 0.061630744116128795,
+      "residual_running_mean": 0.6256318342547909,
+      "residual_se": 0.003775554060246158
+     },
+     {
+      "paths": 131072,
+      "raw_running_mean": 13.976913611909007,
+      "raw_se": 0.04371171517034597,
+      "residual_running_mean": 0.6292028941489091,
+      "residual_se": 0.0026888917333283743
+     },
+     {
+      "paths": 262144,
+      "raw_running_mean": 13.9285037968259,
+      "raw_se": 0.030799724645809087,
+      "residual_running_mean": 0.6258796376077458,
+      "residual_se": 0.001891003910453479
+     },
+     {
+      "paths": 524288,
+      "raw_running_mean": 13.927873995467863,
+      "raw_se": 0.02180574970588145,
+      "residual_running_mean": 0.6257133284749236,
+      "residual_se": 0.001341880808256045
+     },
+     {
+      "paths": 1048576,
+      "raw_running_mean": 13.908238592534216,
+      "raw_se": 0.015401797950155699,
+      "residual_running_mean": 0.6251072132323325,
+      "residual_se": 0.0009457556939254327
+     }
+    ]
+   },
+   "put_instance_2": {
+    "spec": {
+     "s0": 100.0,
+     "v0": 0.05,
+     "rate": 0.05,
+     "rho": -0.1,
+     "kappa": 2.0,
+     "theta": 0.04,
+     "xi": 0.2,
+     "maturity": 1.0,
+     "n_steps": 256,
+     "strike": 110.0,
+     "option_type": "put"
+    },
+    "z_normalization": 100.0,
+    "paths_total": 1048576,
+    "seeds": [
+     2026071801,
+     2026071802,
+     2026071803,
+     2026071804,
+     2026071805,
+     2026071806,
+     2026071807,
+     2026071808
+    ],
+    "replicates": [
+     {
+      "seed": 2026071801,
+      "arithmetic_price_discounted": 9.30696362759127,
+      "arithmetic_price_se": 0.02446878624252184,
+      "geometric_price_discounted": 9.513359252580637,
+      "residual_mean_discounted": 0.20639562498936895,
+      "residual_se": 0.0006918933073828323,
+      "payoff_variance": 86.72897794415262,
+      "residual_variance": 0.06934539622185616,
+      "payoff_geometric_correlation": 0.9997179899860923,
+      "minimum_average_gap": 0.014288321547667238,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.0007062906672340018,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071802,
+      "arithmetic_price_discounted": 9.35482603750345,
+      "arithmetic_price_se": 0.024557319033370033,
+      "geometric_price_discounted": 9.561797692264586,
+      "residual_mean_discounted": 0.2069716547611341,
+      "residual_se": 0.0006946671149811776,
+      "payoff_variance": 87.35771770099633,
+      "residual_variance": 0.06990252360859357,
+      "payoff_geometric_correlation": 0.9997196272780132,
+      "minimum_average_gap": 0.009857763865653624,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.0006506964204420603,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071803,
+      "arithmetic_price_discounted": 9.361440514942915,
+      "arithmetic_price_se": 0.024588140186859588,
+      "geometric_price_discounted": 9.569466785927363,
+      "residual_mean_discounted": 0.208026270984448,
+      "residual_se": 0.0007038577446042499,
+      "payoff_variance": 87.57713540196484,
+      "residual_variance": 0.07176441708266355,
+      "payoff_geometric_correlation": 0.9997123254207092,
+      "minimum_average_gap": 0.013770994255011715,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.0007921703758550741,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071804,
+      "arithmetic_price_discounted": 9.373048218664602,
+      "arithmetic_price_se": 0.02464253098646552,
+      "geometric_price_discounted": 9.580850434648104,
+      "residual_mean_discounted": 0.2078022159835025,
+      "residual_se": 0.0007058178645543574,
+      "payoff_variance": 87.96501824896967,
+      "residual_variance": 0.07216467617747116,
+      "payoff_geometric_correlation": 0.9997114550990995,
+      "minimum_average_gap": 0.007631743019075543,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.000705006585658564,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071805,
+      "arithmetic_price_discounted": 9.398132237883853,
+      "arithmetic_price_se": 0.02462041083337681,
+      "geometric_price_discounted": 9.60576826823244,
+      "residual_mean_discounted": 0.20763603034858968,
+      "residual_se": 0.000694880396030182,
+      "payoff_variance": 87.80716706427344,
+      "residual_variance": 0.06994545401929284,
+      "payoff_geometric_correlation": 0.9997208437495262,
+      "minimum_average_gap": 0.011778193868707376,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.0008060535696627577,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071806,
+      "arithmetic_price_discounted": 9.359938596784096,
+      "arithmetic_price_se": 0.024603396742562778,
+      "geometric_price_discounted": 9.567694100056828,
+      "residual_mean_discounted": 0.20775550327272885,
+      "residual_se": 0.00069830104214648,
+      "payoff_variance": 87.6858495996943,
+      "residual_variance": 0.07063578156089026,
+      "payoff_geometric_correlation": 0.9997151442458775,
+      "minimum_average_gap": 0.014117712133881355,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.0008924975053969861,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071807,
+      "arithmetic_price_discounted": 9.370498695973914,
+      "arithmetic_price_se": 0.024577058326586403,
+      "geometric_price_discounted": 9.57829216272246,
+      "residual_mean_discounted": 0.20779346674854723,
+      "residual_se": 0.0007013117927276577,
+      "payoff_variance": 87.49821126500882,
+      "residual_variance": 0.0712461921652272,
+      "payoff_geometric_correlation": 0.9997124665966264,
+      "minimum_average_gap": 0.013545580787067024,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.0008348695980848176,
+      "negative_variance_count": 0
+     },
+     {
+      "seed": 2026071808,
+      "arithmetic_price_discounted": 9.355819644502931,
+      "arithmetic_price_se": 0.024586754678072125,
+      "geometric_price_discounted": 9.563581816203548,
+      "residual_mean_discounted": 0.20776217170061845,
+      "residual_se": 0.0006967967283951957,
+      "payoff_variance": 87.56726597132746,
+      "residual_variance": 0.0703317753582069,
+      "payoff_geometric_correlation": 0.999718549917309,
+      "minimum_average_gap": 0.014160299320892022,
+      "minimum_residual": 0.0,
+      "minimum_variance": 0.000829691736285868,
+      "negative_variance_count": 0
+     }
+    ],
+    "variance_certificate": {
+     "certified": true,
+     "condition": "4*kappa*theta*(1-kappa*h) >= xi^2",
+     "lhs": 0.3175,
+     "rhs": 0.04000000000000001,
+     "worst_case_next_variance": 0.0002731299212598425
+    },
+    "pooled": {
+     "arithmetic_price_discounted": 9.36008344673088,
+     "arithmetic_price_se": 0.008690556324686962,
+     "residual_mean_discounted": 0.20751786734861724,
+     "residual_se": 0.00024694098314627697,
+     "payoff_sd_dollars": 8.899129676479449,
+     "residual_sd_dollars": 0.2528675667417876,
+     "clipped_residual_sd_dollars": 0.24935571362047262,
+     "variance_ratio_raw_over_residual": 1238.5365047033304,
+     "variance_ratio_raw_over_clipped_residual": 1273.668543037606,
+     "payoff_exceeds_z_probability": 0.0,
+     "max_raw_payoff": 58.32854520017802,
+     "max_residual": 5.253004409213446
+    },
+    "raw_cap_study": {
+     "budget_discounted": 0.001,
+     "grid": [
+      {
+       "quantile": 0.99,
+       "cap": 34.37152467297037,
+       "clipping_bias": 0.03176801483967979,
+       "clipping_bias_se": 0.0004136904548404614,
+       "upper_90_ci": 0.03244853563789235,
+       "exceedance_probability": 0.010000228881835938
+      },
+      {
+       "quantile": 0.995,
+       "cap": 36.845635861853054,
+       "clipping_bias": 0.014588121013347966,
+       "clipping_bias_se": 0.0002687188826527187,
+       "upper_90_ci": 0.015030163575311688,
+       "exceedance_probability": 0.005000114440917969
+      },
+      {
+       "quantile": 0.999,
+       "cap": 41.83859901605973,
+       "clipping_bias": 0.0023355795842173134,
+       "clipping_bias_se": 9.90308844996904e-05,
+       "upper_90_ci": 0.0024984853892193043,
+       "exceedance_probability": 0.0010004043579101562
+      },
+      {
+       "quantile": 0.9995,
+       "cap": 43.62518946232293,
+       "clipping_bias": 0.0011089506442098476,
+       "clipping_bias_se": 6.670923514870034e-05,
+       "upper_90_ci": 0.0012186873360294597,
+       "exceedance_probability": 0.0005006790161132812
+      },
+      {
+       "quantile": 0.9999,
+       "cap": 47.50419316229353,
+       "clipping_bias": 0.00019258248193479034,
+       "clipping_bias_se": 2.6246714973106475e-05,
+       "upper_90_ci": 0.0002357583280655505,
+       "exceedance_probability": 0.00010013580322265625
+      },
+      {
+       "quantile": 1.0,
+       "cap": 58.32854520017802,
+       "clipping_bias": 0.0,
+       "clipping_bias_se": 0.0,
+       "upper_90_ci": 0.0,
+       "exceedance_probability": 0.0
+      }
+     ],
+     "selected": {
+      "quantile": 0.9999,
+      "cap": 47.50419316229353,
+      "clipping_bias": 0.00019258248193479034,
+      "clipping_bias_se": 2.6246714973106475e-05,
+      "upper_90_ci": 0.0002357583280655505,
+      "exceedance_probability": 0.00010013580322265625
+     }
+    },
+    "residual_cap_study": {
+     "budget_discounted": 0.001,
+     "grid": [
+      {
+       "quantile": 0.99,
+       "cap": 1.2532393107374666,
+       "clipping_bias": 0.0036098161082376828,
+       "clipping_bias_se": 5.1016668260461826e-05,
+       "upper_90_ci": 0.0036937385275261424,
+       "exceedance_probability": 0.010000228881835938
+      },
+      {
+       "quantile": 0.995,
+       "cap": 1.5052138538662696,
+       "clipping_bias": 0.0018801717863258297,
+       "clipping_bias_se": 3.7438747073253605e-05,
+       "upper_90_ci": 0.0019417585252613319,
+       "exceedance_probability": 0.005000114440917969
+      },
+      {
+       "quantile": 0.999,
+       "cap": 2.1502789085848977,
+       "clipping_bias": 0.00039418104045801824,
+       "clipping_bias_se": 1.731847395349364e-05,
+       "upper_90_ci": 0.0004226699301115153,
+       "exceedance_probability": 0.0010004043579101562
+      },
+      {
+       "quantile": 0.9995,
+       "cap": 2.4293797516945554,
+       "clipping_bias": 0.00020356625653131154,
+       "clipping_bias_se": 1.2410886276536652e-05,
+       "upper_90_ci": 0.00022398216445621434,
+       "exceedance_probability": 0.0005006790161132812
+      },
+      {
+       "quantile": 0.9999,
+       "cap": 3.111018529648108,
+       "clipping_bias": 4.155085012699157e-05,
+       "clipping_bias_se": 5.37118893269759e-06,
+       "upper_90_ci": 5.0386455921279105e-05,
+       "exceedance_probability": 0.00010013580322265625
+      },
+      {
+       "quantile": 1.0,
+       "cap": 5.253004409213446,
+       "clipping_bias": 0.0,
+       "clipping_bias_se": 0.0,
+       "upper_90_ci": 0.0,
+       "exceedance_probability": 0.0
+      }
+     ],
+     "selected": {
+      "quantile": 0.999,
+      "cap": 2.1502789085848977,
+      "clipping_bias": 0.00039418104045801824,
+      "clipping_bias_se": 1.731847395349364e-05,
+      "upper_90_ci": 0.0004226699301115153,
+      "exceedance_probability": 0.0010004043579101562
+     }
+    },
+    "range_ratio_raw_z_over_selected_residual_cap": 46.50559497224022,
+    "convergence": [
+     {
+      "paths": 4096,
+      "raw_running_mean": 9.562609360914918,
+      "raw_se": 0.14057389095281125,
+      "residual_running_mean": 0.20547164511342395,
+      "residual_se": 0.003827773997790682
+     },
+     {
+      "paths": 8192,
+      "raw_running_mean": 9.38892329616947,
+      "raw_se": 0.0989272542057525,
+      "residual_running_mean": 0.2038240984403149,
+      "residual_se": 0.0027209443244205003
+     },
+     {
+      "paths": 16384,
+      "raw_running_mean": 9.29438253708072,
+      "raw_se": 0.06917392229676199,
+      "residual_running_mean": 0.20503681021117584,
+      "residual_se": 0.0019444609946181895
+     },
+     {
+      "paths": 32768,
+      "raw_running_mean": 9.26961553889094,
+      "raw_se": 0.0488719398648427,
+      "residual_running_mean": 0.2044321541519963,
+      "residual_se": 0.0013648214661633078
+     },
+     {
+      "paths": 65536,
+      "raw_running_mean": 9.264734348502246,
+      "raw_se": 0.03451926920558258,
+      "residual_running_mean": 0.20457874343507107,
+      "residual_se": 0.0009669220961827776
+     },
+     {
+      "paths": 131072,
+      "raw_running_mean": 9.30696362759127,
+      "raw_se": 0.02446878624252184,
+      "residual_running_mean": 0.20639562498936895,
+      "residual_se": 0.0006918933073828323
+     },
+     {
+      "paths": 262144,
+      "raw_running_mean": 9.33089483254736,
+      "raw_se": 0.017333403969017402,
+      "residual_running_mean": 0.2066836398752515,
+      "residual_se": 0.0004902235072384549
+     },
+     {
+      "paths": 524288,
+      "raw_running_mean": 9.34906959967556,
+      "raw_se": 0.012282151460866036,
+      "residual_running_mean": 0.20729894167961338,
+      "residual_se": 0.0003495421252535242
+     },
+     {
+      "paths": 1048576,
+      "raw_running_mean": 9.36008344673088,
+      "raw_se": 0.008690556324686962,
+      "residual_running_mean": 0.20751786734861724,
+      "residual_se": 0.00024694098314627697
+     }
+    ]
+   }
+  }
+ },
+ "refine": {
+  "part": "refine",
+  "created_at_start": "2026-07-18T10:46:35-06:00",
+  "command": "scripts/validate_wang_kan_cv_feasibility.py --refine",
+  "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+  "environment": {
+   "python": "3.12.6",
+   "platform": "macOS-14.5-arm64-arm-64bit",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "qiskit": "2.4.2",
+   "qiskit_aer": "0.17.2"
+  },
+  "source_hashes": {
+   "src/qc_option_pricing/classical/heston_weak_euler.py": "4815ea71adc4eb6e0f22b58aef033bb78be2d8af9cf468e09cc2154e129c0107",
+   "scripts/validate_wang_kan_cv_feasibility.py": "53724412669311fcb9bab11de93182be44c2a2b9128aa5896ca3a296fc757d08",
+   "tests/test_heston_weak_euler.py": "b2aa2faffef9867e24409f29926cdcecad403ed61af175115819b8ee5265547d"
+  },
+  "created_at_end": "2026-07-18T10:47:06-06:00",
+  "instances": {
+   "call_instance_1": {
+    "seeds": [
+     2026071851,
+     2026071852
+    ],
+    "paths_per_cell": 262144,
+    "rows": [
+     {
+      "n_steps": 64,
+      "arithmetic_price_discounted": 14.025687893248975,
+      "residual_mean_discounted": 0.6274498146311986,
+      "residual_se": 0.0018645883736046335
+     },
+     {
+      "n_steps": 128,
+      "arithmetic_price_discounted": 13.985908339449706,
+      "residual_mean_discounted": 0.6281581588749533,
+      "residual_se": 0.0018818979433847516
+     },
+     {
+      "n_steps": 256,
+      "arithmetic_price_discounted": 13.967963533601047,
+      "residual_mean_discounted": 0.627861910431092,
+      "residual_se": 0.0018831353567428258
+     },
+     {
+      "n_steps": 512,
+      "arithmetic_price_discounted": 13.953937084881975,
+      "residual_mean_discounted": 0.627062545278571,
+      "residual_se": 0.001881826811551669
+     }
+    ]
+   },
+   "put_instance_2": {
+    "seeds": [
+     2026071851,
+     2026071852
+    ],
+    "paths_per_cell": 262144,
+    "rows": [
+     {
+      "n_steps": 64,
+      "arithmetic_price_discounted": 9.35084100208799,
+      "residual_mean_discounted": 0.2069110150523446,
+      "residual_se": 0.0004882278075328676
+     },
+     {
+      "n_steps": 128,
+      "arithmetic_price_discounted": 9.33771525072492,
+      "residual_mean_discounted": 0.20822376923607733,
+      "residual_se": 0.0004949172306328382
+     },
+     {
+      "n_steps": 256,
+      "arithmetic_price_discounted": 9.325044236857428,
+      "residual_mean_discounted": 0.20778593834683007,
+      "residual_se": 0.0004967069759750018
+     },
+     {
+      "n_steps": 512,
+      "arithmetic_price_discounted": 9.323814796479493,
+      "residual_mean_discounted": 0.20784515754749872,
+      "residual_se": 0.0004977242219760317
+     }
+    ]
+   }
+  }
+ },
+ "verify": {
+  "part": "verify",
+  "created_at_start": "2026-07-18T10:46:35-06:00",
+  "command": "scripts/validate_wang_kan_cv_feasibility.py --verify",
+  "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+  "environment": {
+   "python": "3.12.6",
+   "platform": "macOS-14.5-arm64-arm-64bit",
+   "numpy": "2.4.4",
+   "scipy": "1.17.1",
+   "qiskit": "2.4.2",
+   "qiskit_aer": "0.17.2"
+  },
+  "source_hashes": {
+   "src/qc_option_pricing/classical/heston_weak_euler.py": "4815ea71adc4eb6e0f22b58aef033bb78be2d8af9cf468e09cc2154e129c0107",
+   "scripts/validate_wang_kan_cv_feasibility.py": "53724412669311fcb9bab11de93182be44c2a2b9128aa5896ca3a296fc757d08",
+   "tests/test_heston_weak_euler.py": "b2aa2faffef9867e24409f29926cdcecad403ed61af175115819b8ee5265547d"
+  },
+  "created_at_end": "2026-07-18T10:49:10-06:00",
+  "instances": {
+   "call_instance_1": {
+    "seeds": [
+     2026071811,
+     2026071812,
+     2026071813,
+     2026071814,
+     2026071815,
+     2026071816,
+     2026071817,
+     2026071818,
+     2026071819,
+     2026071820,
+     2026071821,
+     2026071822,
+     2026071823,
+     2026071824,
+     2026071825,
+     2026071826,
+     2026071827,
+     2026071828,
+     2026071829,
+     2026071830,
+     2026071831,
+     2026071832,
+     2026071833,
+     2026071834,
+     2026071835,
+     2026071836,
+     2026071837,
+     2026071838,
+     2026071839,
+     2026071840,
+     2026071841,
+     2026071842
+    ],
+    "paths_total": 8388608,
+    "replicate_estimates": [
+     13.925102283476118,
+     13.925957142610663,
+     13.920956541819196,
+     13.938262798158716,
+     13.958297153136416,
+     13.951119229652626,
+     13.9105620348299,
+     13.932598732545367,
+     13.920355573787655,
+     13.946924789423276,
+     13.898134391426062,
+     13.9603449498205,
+     13.906691562548735,
+     13.890971620557279,
+     13.955413477254156,
+     13.932337572310994,
+     14.003455529529052,
+     13.928366462609432,
+     13.947515505076446,
+     13.931029200335027,
+     13.911900486269543,
+     13.945659255514506,
+     13.936407433446341,
+     13.923607884554105,
+     13.894735007287743,
+     13.978326027494589,
+     13.909615599807992,
+     13.96433394867764,
+     13.883302523982278,
+     13.925878261199973,
+     13.917026496144443,
+     13.978428960062498
+    ],
+    "arithmetic_price_discounted": 13.932925576104665,
+    "arithmetic_price_se_replicate": 0.004796986003726834
+   },
+   "put_instance_2": {
+    "seeds": [
+     2026071811,
+     2026071812,
+     2026071813,
+     2026071814,
+     2026071815,
+     2026071816,
+     2026071817,
+     2026071818,
+     2026071819,
+     2026071820,
+     2026071821,
+     2026071822,
+     2026071823,
+     2026071824,
+     2026071825,
+     2026071826,
+     2026071827,
+     2026071828,
+     2026071829,
+     2026071830,
+     2026071831,
+     2026071832,
+     2026071833,
+     2026071834,
+     2026071835,
+     2026071836,
+     2026071837,
+     2026071838,
+     2026071839,
+     2026071840,
+     2026071841,
+     2026071842
+    ],
+    "paths_total": 8388608,
+    "replicate_estimates": [
+     9.353203677414559,
+     9.318508449298687,
+     9.37147383758385,
+     9.332656400699337,
+     9.338512670517536,
+     9.329118248256385,
+     9.367130142597631,
+     9.347560091382423,
+     9.364074417458763,
+     9.344571613357461,
+     9.355994804561993,
+     9.331671881191465,
+     9.368347399912352,
+     9.35663466892614,
+     9.342631962891742,
+     9.326862136093336,
+     9.318795767021216,
+     9.338915388617803,
+     9.333275433519525,
+     9.350988398530935,
+     9.355239969281346,
+     9.332666198067772,
+     9.325243975683085,
+     9.361233999860803,
+     9.359743783865863,
+     9.308242049660391,
+     9.355359017506881,
+     9.306580590009988,
+     9.389734467190035,
+     9.352209386814055,
+     9.349089600919314,
+     9.298692511262749
+    ],
+    "arithmetic_price_discounted": 9.34328009187361,
+    "arithmetic_price_se_replicate": 0.0036436338392836698
+   }
+  }
+ }
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "arithmetic-oracle-scaleup-v1",
+  "note": "non-QROM Clifford+T arithmetic residual oracle, MPS-validated",
+  "rows": [
+    {
+      "n_dates": 2,
+      "qubits": 56,
+      "shocks": "binary +/-1",
+      "qrom_rows": 0,
+      "arbitrary_rotations": 0,
+      "toffoli": null,
+      "t": 11473,
+      "objective_probability": 0.37500000002039413,
+      "reference_objective_probability": 0.375,
+      "absolute_probability_error": 2.039413082854935e-11,
+      "work_hamming_weight": 2.220446049250313e-14,
+      "roundtrip_leakage": 4.263256414560601e-14,
+      "seconds": 1.4396228790283203
+    },
+    {
+      "n_dates": 3,
+      "qubits": 81,
+      "shocks": "binary +/-1",
+      "qrom_rows": 0,
+      "arbitrary_rotations": 0,
+      "toffoli": null,
+      "t": 29561,
+      "objective_probability": 0.3593750000386088,
+      "reference_objective_probability": 0.359375,
+      "absolute_probability_error": 3.8608782837457056e-11,
+      "work_hamming_weight": 4.618527782440651e-14,
+      "roundtrip_leakage": 0.0,
+      "seconds": 19.364821195602417
+    },
+    {
+      "n_dates": 4,
+      "qubits": 110,
+      "shocks": "binary +/-1",
+      "qrom_rows": 0,
+      "arbitrary_rotations": 0,
+      "toffoli": null,
+      "t": 59829,
+      "objective_probability": 0.2910156251142732,
+      "reference_objective_probability": 0.291015625,
+      "absolute_probability_error": 1.142732020120718e-10,
+      "work_hamming_weight": 9.57012247226885e-14,
+      "roundtrip_leakage": 5.773159728050814e-14,
+      "seconds": 522.495187997818
+    },
+    {
+      "n_dates": 5,
+      "qubits": 123,
+      "shocks": "binary +/-1",
+      "qrom_rows": 0,
+      "arbitrary_rotations": 0,
+      "toffoli": null,
+      "t": 73857,
+      "objective_probability": 0.43359375001449973,
+      "reference_objective_probability": 0.43359375,
+      "absolute_probability_error": 1.449973474620947e-11,
+      "work_hamming_weight": 0.0,
+      "roundtrip_leakage": 9.237055564881302e-14,
+      "seconds": 3484.6658029556274
+    }
+  ]
+}

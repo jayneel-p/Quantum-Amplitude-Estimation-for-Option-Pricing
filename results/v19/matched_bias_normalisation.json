@@ -1,0 +1,182 @@
+{
+ "schema_version": "matched-bias-normalisation-v1",
+ "created_at_start": "2026-07-27T10:56:54-06:00",
+ "command": "scripts/matched_bias_normalisation.py",
+ "argv": [],
+ "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+ "supersedes": "scripts/v5_matched_bias_cutoff_ratio.py (stdout only; undiscounted losses; selected and evaluated on the same paths)",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4"
+ },
+ "git": {
+  "rev": "35c578bfcac65f6c981635b4bb0146dc1a996a7d",
+  "worktree_dirty": true
+ },
+ "model": {
+  "instrument": "daily arithmetic-average Asian call, continuous Black-Scholes sampled exactly at the daily fixings t_i = i*T/N, i = 1..N (S0 not in the average)",
+  "s0": 100.0,
+  "strike": 100.0,
+  "rate": 0.05,
+  "sigma": 0.2,
+  "maturity": 1.0,
+  "n_fixings": 252,
+  "raw_payoff": "(A_N - K)^+, A_N the arithmetic mean at the fixings",
+  "residual": "(A_N - K)^+ - (G_N - K)^+, G_N the geometric mean; nonnegative path by path"
+ },
+ "convention": {
+  "clipping_bias": "exp(-r*T) * E[(X - B)^+], the DISCOUNTED expected truncation loss, matching the paper's definition; the superseded v3/v5 scripts omitted exp(-r*T)",
+  "discount_factor": 0.951229424500714,
+  "selection": "B = smallest value with discounted loss <= budget on the selection sample, by 80-step bisection",
+  "evaluation": "realised discounted loss at the selected B recomputed on an independent evaluation sample (different seed)"
+ },
+ "sampling": {
+  "rng": "numpy.random.default_rng (PCG64), standard_normal",
+  "n_paths_selection": 2000000,
+  "seed_selection": 20260713,
+  "n_paths_evaluation": 2000000,
+  "seed_evaluation": 20260727,
+  "chunk_size": 250000
+ },
+ "budgets": [
+  {
+   "budget": 0.003,
+   "raw_payoff": {
+    "B": 50.12277340043419,
+    "loss_in_sample": 0.002999999999999996,
+    "loss_in_sample_se": 0.00012121401483362567,
+    "n_selection_paths_above_B": 1234,
+    "loss_out_of_sample": 0.0029767747652390928,
+    "loss_out_of_sample_se": 0.00011719186449518855,
+    "n_evaluation_paths_above_B": 1251
+   },
+   "residual": {
+    "B": 2.0643078152083905,
+    "loss_in_sample": 0.0029999999999999996,
+    "loss_in_sample_se": 4.194600374846647e-05,
+    "n_selection_paths_above_B": 10871,
+    "loss_out_of_sample": 0.003047922287116197,
+    "loss_out_of_sample_se": 4.2432698630423494e-05,
+    "n_evaluation_paths_above_B": 10868
+   },
+   "ratio_B_raw_over_B_residual": 24.28066833403638,
+   "out_of_sample_loss_difference": {
+    "raw_minus_residual": -7.114752187710425e-05,
+    "paired_se": 0.00010577915943201558
+   }
+  },
+  {
+   "budget": 0.001,
+   "raw_payoff": {
+    "B": 55.77194947571979,
+    "loss_in_sample": 0.0010000000000000002,
+    "loss_in_sample_se": 7.031281184337104e-05,
+    "n_selection_paths_above_B": 406,
+    "loss_out_of_sample": 0.0009201154268744211,
+    "loss_out_of_sample_se": 6.538525541756787e-05,
+    "n_evaluation_paths_above_B": 406
+   },
+   "residual": {
+    "B": 2.7178412744515983,
+    "loss_in_sample": 0.0009999999999999998,
+    "loss_in_sample_se": 2.5259756275707884e-05,
+    "n_selection_paths_above_B": 3391,
+    "loss_out_of_sample": 0.001040326288151487,
+    "loss_out_of_sample_se": 2.5486315301977486e-05,
+    "n_evaluation_paths_above_B": 3506
+   },
+   "ratio_B_raw_over_B_residual": 20.520679408319516,
+   "out_of_sample_loss_difference": {
+    "raw_minus_residual": -0.0001202108612770659,
+    "paired_se": 5.9817646211995705e-05
+   }
+  },
+  {
+   "budget": 0.0003,
+   "raw_payoff": {
+    "B": 62.14369068619542,
+    "loss_in_sample": 0.0002999999999999998,
+    "loss_in_sample_se": 3.817049827771262e-05,
+    "n_selection_paths_above_B": 110,
+    "loss_out_of_sample": 0.00024527642158224335,
+    "loss_out_of_sample_se": 3.446603147569214e-05,
+    "n_evaluation_paths_above_B": 109
+   },
+   "residual": {
+    "B": 3.497453433674559,
+    "loss_in_sample": 0.0003000000000000001,
+    "loss_in_sample_se": 1.4518043115829233e-05,
+    "n_selection_paths_above_B": 948,
+    "loss_out_of_sample": 0.00030666803472577625,
+    "loss_out_of_sample_se": 1.4376962810853342e-05,
+    "n_evaluation_paths_above_B": 960
+   },
+   "ratio_B_raw_over_B_residual": 17.76826821705668,
+   "out_of_sample_loss_difference": {
+    "raw_minus_residual": -6.139161314353292e-05,
+    "paired_se": 3.136761731432148e-05
+   }
+  },
+  {
+   "budget": 0.0001,
+   "raw_payoff": {
+    "B": 67.74558385503768,
+    "loss_in_sample": 9.999999999999987e-05,
+    "loss_in_sample_se": 2.1684285731101686e-05,
+    "n_selection_paths_above_B": 47,
+    "loss_out_of_sample": 7.855646144585231e-05,
+    "loss_out_of_sample_se": 2.0387248239795507e-05,
+    "n_evaluation_paths_above_B": 31
+   },
+   "residual": {
+    "B": 4.282755324887761,
+    "loss_in_sample": 9.99999999999999e-05,
+    "loss_in_sample_se": 8.772058003638358e-06,
+    "n_selection_paths_above_B": 279,
+    "loss_out_of_sample": 9.581522063164113e-05,
+    "loss_out_of_sample_se": 8.469424951660615e-06,
+    "n_evaluation_paths_above_B": 286
+   },
+   "ratio_B_raw_over_B_residual": 15.81822418417356,
+   "out_of_sample_loss_difference": {
+    "raw_minus_residual": -1.7258759185788843e-05,
+    "paired_se": 1.803705689408928e-05
+   }
+  }
+ ],
+ "matched_exceedance_reproduction": {
+  "rule": "cutoff set so the fraction of selection paths strictly above it is 1.35e-3 on both arms (the paper's original convention; selection sample = the v5 seed, so this reproduces the quoted 16.0)",
+  "exceedance_fraction": 0.00135,
+  "target_paths_above": 2700,
+  "raw_payoff": {
+   "B": 45.86137507197569,
+   "loss_in_sample": 0.006808394247757133,
+   "loss_in_sample_se": 0.0001832144289199785,
+   "n_selection_paths_above_B": 2700,
+   "loss_out_of_sample": 0.0068561303625029974,
+   "loss_out_of_sample_se": 0.00018068325900828049,
+   "n_evaluation_paths_above_B": 2733
+  },
+  "residual": {
+   "B": 2.850792542296972,
+   "loss_in_sample": 0.0008092546325950826,
+   "loss_in_sample_se": 2.2897113342897494e-05,
+   "n_selection_paths_above_B": 2700,
+   "loss_out_of_sample": 0.0008424551032298701,
+   "loss_out_of_sample_se": 2.304681124044371e-05,
+   "n_evaluation_paths_above_B": 2797
+  },
+  "ratio_B_raw_over_B_residual": 16.087236932023036
+ },
+ "variance_ratio_beta_one": {
+  "definition": "Var[(A_N-K)^+] / Var[(A_N-K)^+ - (G_N-K)^+], ddof=1; the discount factor cancels",
+  "selection_sample": 523.1898751416201,
+  "evaluation_sample": 524.1361669796771
+ },
+ "source_hashes": {
+  "scripts/matched_bias_normalisation.py": "aeaa2d02b7c476a369a4e7581c0ca9d7a13f7a1e56a80dbebeadd6e5037c318b"
+ },
+ "runtime_seconds": 27.124489068984985,
+ "created_at_end": "2026-07-27T10:57:21-06:00"
+}

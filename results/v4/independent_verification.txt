@@ -1,0 +1,39 @@
+Independent verification of the pricing engine and the quantum control variate
+no project src/ imported; each quantity is checked against independent ground truth
+
+[PASS] closed form == independent quadrature
+      closed form 5.5655088313  quadrature 5.5655088319  |diff| 5.42e-10
+[PASS] geometric closed form -> Black-Scholes at N=1
+      C_G(N=1) 10.4505835722  BS 10.4505835722
+[PASS] geometric closed form within MC error
+      closed form 5.565509  MC 5.562986 +- 0.003862  z=-0.65
+[PASS] arithmetic Asian at N=1 == Black-Scholes
+      MC 10.443504 +- 0.007357  BS 10.450584
+[PASS] arithmetic put-call parity
+      C-P 2.422956  e^-rT(E[A]-K) 2.427886  z=-0.86
+[PASS] Kemna-Vorst estimate == plain MC (unbiased)
+      plain 5.779156 +- 0.004001  KV 5.781882 +- 0.000110  z=+0.68
+[PASS] Levy moment-matching within 1% of KV price
+      Levy 5.801499  KV 5.781882  rel 0.34%
+[PASS] Linetsky 10-digit continuous benchmark
+      extrapolated 0.24641761  Linetsky 0.2464156905  z=+0.04
+[PASS] Lemma 1: R>=0 on all 16 grid paths (n=2)
+      min residual = 0.00e+00
+[PASS] exact decomposition C_A == C_G + e^-rT E[R] (n=2)
+      C_A 7.7366284570  C_G+e^-rT E[R] 7.7366284570  |diff| 0.00e+00
+[PASS] Lemma 1: R>=0 on all 64 grid paths (n=3)
+      min residual = 0.00e+00
+[PASS] exact decomposition C_A == C_G + e^-rT E[R] (n=3)
+      C_A 6.9970192347  C_G+e^-rT E[R] 6.9970192347  |diff| 8.88e-16
+[PASS] circuit objective prob == Sum p_i R_i/f_max (n=2)
+      circuit 0.151526125483  classical 0.151526125483  |diff| 4.64e-15
+[PASS] QCV reconstruction from circuit == grid arithmetic price (n=2)
+      reconstruction 7.7366284570  exact grid 7.7366284570  |diff| 3.55e-15
+[PASS] circuit objective prob == Sum p_i R_i/f_max (n=3)
+      circuit 0.106676149951  classical 0.106676149951  |diff| 6.80e-15
+[PASS] QCV reconstruction from circuit == grid arithmetic price (n=3)
+      reconstruction 6.9970192347  exact grid 6.9970192347  |diff| 9.77e-15
+[PASS] R >= 0 on 10^7 simulated daily paths
+      min residual = 0.000e+00
+
+17 checks, 17 passed, 0 failed

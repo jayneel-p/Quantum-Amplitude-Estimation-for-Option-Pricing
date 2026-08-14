@@ -1,0 +1,92 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.pdf~
+*.egg-info/
+dist/
+build/
+results/.mplconfig/
+tmp/
+
+# LaTeX
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Editor / local tooling (not for submission)
+.claude/
+.idea/
+.vscode/
+
+# Experiment scripts remain local, except for the runners required to
+# reproduce the published general-k frontier and IQAE schedule simulation.
+scripts/
+!scripts/
+scripts/*
+!scripts/v25_general_k_frontier.py
+!scripts/v25_executed_iqae.py
+
+# Manuscript sources and build, kept out of the public repository until
+# submission. Supplied directly to co-authors and reviewers.
+paper/
+
+# Reference copy of the pre-revision manuscript
+ogparikhrayan/
+
+# Heston material cut from Section 6, held for a separate paper
+heston-track/
+
+# Local working files (kept locally, not for the public repository)
+docs/
+CHANGELOG.md
+LITERATURE_MAP.md
+paper/*.pre-revision-backup-*
+paper/control_variates_option_pricing.*
+scripts/generate_crossover_figure.py
+scripts/generate_error_decomposition_figure.py
+scripts/generate_kv_sensitivity.py
+scripts/generate_quantum_schematic.py
+scripts/run_classical_demo.py
+results/fast/
+results/regen/
+results/four_item_analysis.py
+results/crossover_plot.png
+results/error_decomposition.png
+results/kv_sensitivity.png
+results/kv_sensitivity_table.txt
+results/quantum_a_operator_schematic.png
+
+# AI audit documents and scripts (local only, not for the public repository)
+audit/
+.agents/
+AGENTS.md
+INDEPENDENT_VERDICT_GPT_AUDIT.md
+LITERATURE_PROOF_DOSSIER.md
+crossover_deep_audit.md
+paper_claim_audit.md
+scripts/audit_clipping_monte_carlo.py
+scripts/audit_crossover_feasibility.py
+scripts/v5_verify_gpt_claims.py
+
+# Editor and audit backups of the manuscript (local only)
+paper/.backup-*/
+paper/.audit-baseline-*/
+paper/.texpadtmp/
+paper/Re_*/
+ORACLE_VALIDATION_SUMMARY.md
+
+# Email correspondence and attachment copies (local only)
+Re_*/
+
+# biblatex intermediates and the standalone build of an \input section
+paper/*-blx.bib
+paper/ParikhRayan_section6_replacement.pdf

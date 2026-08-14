@@ -1,0 +1,52 @@
+Reference-scale Asian oracle validation
+qiskit 2.4.2, qiskit-aer 0.17.2, numpy 2.4.4, python 3.12.6
+simulator: Aer matrix_product_state, analytic probabilities (shots=None)
+
+[PASS] R6 R1 binary: independent enumeration agrees
+       clip_raw 1.480000000000, clip_res 0.880000000000, min residual numerator 1
+[PASS] R1 binary raw: probability, leakage, price
+       p=0.740000000007 (expect 0.740000000000), leak=0.00e+00, price=1.4800000000 (expect 1.4800000000), cap=$2.0, 15 qubits, 0s
+[PASS] R1 binary qcv: probability, leakage, price
+       p=0.440000000014 (expect 0.440000000000), leak=0.00e+00, price=1.4800000000 (expect 1.4800000000), cap=$2.0, 24 qubits, 3s
+[PASS] R6 R2 binary sat-cap: independent enumeration agrees
+       clip_raw 0.500000000000, clip_res 0.500000000000, min residual numerator 1
+[PASS] R2 binary sat-cap raw: probability, leakage, price
+       p=1.000000000000 (expect 1.000000000000), leak=0.00e+00, price=0.5000000000 (expect 0.5000000000), cap=$0.5, 15 qubits, 0s, interior=False
+[PASS] R2 binary sat-cap qcv: probability, leakage, price
+       p=1.000000000000 (expect 1.000000000000), leak=0.00e+00, price=1.1000000000 (expect 1.1000000000), cap=$0.5, 24 qubits, 3s, interior=False
+[PASS] R6 R3 binary part-cap: independent enumeration agrees
+       clip_raw 1.300000000000, clip_res 0.880000000000, min residual numerator 1
+[PASS] R3 binary part-cap raw: probability, leakage, price
+       p=0.866666666664 (expect 0.866666666667), leak=0.00e+00, price=1.3000000000 (expect 1.3000000000), cap=$1.5, 15 qubits, 0s, interior=True
+[PASS] R3 binary part-cap qcv: probability, leakage, price
+       p=0.586666666671 (expect 0.586666666667), leak=0.00e+00, price=1.4800000000 (expect 1.4800000000), cap=$1.5, 24 qubits, 3s, interior=True
+[PASS] R7 selector meets budget minimally
+       selected cap $1.0, exact bias 0.000000 <= budget 0.05; one unit tighter -> bias 0.380000
+[PASS] R6 R7 binary residual-cap no-clip (selector bias 0): independent enumeration agrees
+       clip_raw 1.480000000000, clip_res 0.880000000000, min residual numerator 1
+[PASS] R7 binary residual-cap no-clip (selector bias 0) qcv: probability, leakage, price
+       p=0.879999999995 (expect 0.880000000000), leak=0.00e+00, price=1.4800000000 (expect 1.4800000000), cap=$1.0, 24 qubits, 3s, interior=True
+[PASS] R6 R7 binary residual-cap saturating: independent enumeration agrees
+       clip_raw 1.480000000000, clip_res 0.500000000000, min residual numerator 1
+[PASS] R7 binary residual-cap saturating qcv: probability, leakage, price
+       p=1.000000000000 (expect 1.000000000000), leak=0.00e+00, price=1.1000000000 (expect 1.1000000000), cap=$0.5, 24 qubits, 3s, interior=False
+[PASS] R7b premise: cap strictly inside the residual support
+       residual numerators [1, 2, 3], cap numerator 2: 1 value(s) below, 1 above -> some paths clip, some do not
+[PASS] R6 R7b binary residual-cap partial: independent enumeration agrees
+       clip_raw 1.290000000000, clip_res 0.350000000000, min residual numerator 1
+[PASS] R7b binary residual-cap partial qcv: probability, leakage, price
+       p=0.700000000013 (expect 0.700000000000), leak=0.00e+00, price=1.2500000000 (expect 1.2500000000), cap=$0.5, 26 qubits, 6s, interior=True
+[PASS] R6 R4/R5 gauss-hermite: independent enumeration agrees
+       clip_raw 0.647571234252, clip_res 0.318234481846, min residual numerator 0
+[PASS] R4/R5 gauss-hermite raw: probability, leakage, price
+       p=0.080946404516 (expect 0.080946404281), leak=0.00e+00, price=0.6159888143 (expect 0.6159888125), cap=$8.0, 27 qubits, 15s
+[PASS] R4/R5 gauss-hermite qcv: probability, leakage, price
+       p=0.039779310213 (expect 0.039779310231), leak=0.00e+00, price=0.6159888123 (expect 0.6159888125), cap=$8.0, 43 qubits, 1761s
+[PASS] R7c premise: selector cap strictly inside the residual support
+       selected cap $0.75 (numerator 3) for budget 0.02: 2 value(s) below, 2 above
+[PASS] R6 R7c gauss-hermite residual-cap partial: independent enumeration agrees
+       clip_raw 0.647571234252, clip_res 0.307291666667, min residual numerator 0
+[PASS] R7c gauss-hermite residual-cap partial qcv: probability, leakage, price
+       p=0.409722222201 (expect 0.409722222222), leak=0.00e+00, price=0.6055796847 (expect 0.6055796847), cap=$0.75, 43 qubits, 1507s, interior=True
+
+23/23 checks passed

@@ -1,0 +1,117 @@
+{
+ "schema": "parikh-rayan-factorized-asian-oracle-v1",
+ "method": "Separate total->arithmetic-payoff and weighted-shock->geometric-payoff QROMs, reversible modular subtraction, and existing capped payoff rotation",
+ "small_encoded_validation": {
+  "reference_probability": 0.44,
+  "rectangular_probability": 0.4400000000138729,
+  "factorized_probability": 0.43999999998305056,
+  "factorized_absolute_error": 1.6949441850044877e-11,
+  "rectangular_factorized_difference": 3.0822344676550983e-11,
+  "rectangular_work_leakage": 0.0,
+  "factorized_work_leakage": 0.0,
+  "factorized_roundtrip_leakage": 1.4654943925052066e-13,
+  "rectangular_qubits": 24,
+  "factorized_qubits": 27,
+  "rectangular_lookup_rows_built": 108,
+  "factorized_lookup_rows_built": 78,
+  "rectangular_lookup_bit_toggles_built": 156,
+  "factorized_lookup_bit_toggles_built": 120,
+  "controlled_rotations": 7
+ },
+ "coarse_scaling": [
+  {
+   "dates": 2,
+   "rectangular_qubits": 37,
+   "factorized_qubits": 43,
+   "rectangular_lookup_row_upper_bound": 3634,
+   "factorized_lookup_rows": 180,
+   "row_reduction_factor": 20.18888888888889,
+   "factorized_lookup_bit_toggles": 510,
+   "factorized_modular_adders": 14,
+   "factorized_controlled_rotations": 63
+  },
+  {
+   "dates": 4,
+   "rectangular_qubits": 51,
+   "factorized_qubits": 59,
+   "rectangular_lookup_row_upper_bound": 22420,
+   "factorized_lookup_rows": 440,
+   "row_reduction_factor": 50.95454545454545,
+   "factorized_lookup_bit_toggles": 1510,
+   "factorized_modular_adders": 26,
+   "factorized_controlled_rotations": 255
+  },
+  {
+   "dates": 8,
+   "rectangular_qubits": 64,
+   "factorized_qubits": 73,
+   "rectangular_lookup_row_upper_bound": 167034,
+   "factorized_lookup_rows": 1202,
+   "row_reduction_factor": 138.96339434276206,
+   "factorized_lookup_bit_toggles": 4680,
+   "factorized_modular_adders": 50,
+   "factorized_controlled_rotations": 511
+  },
+  {
+   "dates": 16,
+   "rectangular_qubits": 81,
+   "factorized_qubits": 91,
+   "rectangular_lookup_row_upper_bound": 1402444,
+   "factorized_lookup_rows": 3614,
+   "row_reduction_factor": 388.0586607636967,
+   "factorized_lookup_bit_toggles": 15558,
+   "factorized_modular_adders": 98,
+   "factorized_controlled_rotations": 1023
+  },
+  {
+   "dates": 32,
+   "rectangular_qubits": 107,
+   "factorized_qubits": 119,
+   "rectangular_lookup_row_upper_bound": 13056700,
+   "factorized_lookup_rows": 11876,
+   "row_reduction_factor": 1099.4189962950488,
+   "factorized_lookup_bit_toggles": 56030,
+   "factorized_modular_adders": 194,
+   "factorized_controlled_rotations": 4095
+  },
+  {
+   "dates": 64,
+   "rectangular_qubits": 149,
+   "factorized_qubits": 163,
+   "rectangular_lookup_row_upper_bound": 136107586,
+   "factorized_lookup_rows": 42012,
+   "row_reduction_factor": 3239.731172046082,
+   "factorized_lookup_bit_toggles": 214596,
+   "factorized_modular_adders": 386,
+   "factorized_controlled_rotations": 16383
+  },
+  {
+   "dates": 128,
+   "rectangular_qubits": 225,
+   "factorized_qubits": 241,
+   "rectangular_lookup_row_upper_bound": 1658535250,
+   "factorized_lookup_rows": 160028,
+   "row_reduction_factor": 10364.03160696878,
+   "factorized_lookup_bit_toggles": 889472,
+   "factorized_modular_adders": 770,
+   "factorized_controlled_rotations": 65535
+  },
+  {
+   "dates": 252,
+   "rectangular_qubits": 357,
+   "factorized_qubits": 375,
+   "rectangular_lookup_row_upper_bound": 23883377236,
+   "factorized_lookup_rows": 648220,
+   "row_reduction_factor": 36844.55468205239,
+   "factorized_lookup_bit_toggles": 4223530,
+   "factorized_modular_adders": 1514,
+   "factorized_controlled_rotations": 262143
+  }
+ ],
+ "limitations": [
+  "The per-fixing price exponential remains a one-dimensional QROM.",
+  "The payoff transduction still uses one controlled rotation per residual-register value.",
+  "Counts are logical pre-synthesis structures, not Clifford+T counts.",
+  "The 252-date circuit is estimated, not constructed or simulated."
+ ]
+}

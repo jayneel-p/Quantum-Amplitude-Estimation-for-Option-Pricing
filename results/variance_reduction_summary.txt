@@ -1,0 +1,15 @@
+Asian Call Parameters: S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0, N_steps=252
+Geometric Asian exact price: 5.565509
+Averages over 30 independent trials per point
+
+Variance reduction factors at M = 100,000:
+(factor = vanilla_variance / method_variance)
+
+  Vanilla MC               : stderr=0.025301  VR factor=     1.0x
+  Control Variate (KV)     : stderr=0.000697  VR factor=  1317.9x
+
+Effective sample equivalence:
+  CV at 100,000 paths ≈ Vanilla MC at 131,786,191 paths
+
+Both columns use the same simulated paths per trial (common random numbers).
+Wall-clock time is one GBM run plus both estimators (reported for each label).

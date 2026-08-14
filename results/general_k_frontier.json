@@ -1,0 +1,1476 @@
+{
+  "schema_version": "general-k-blocked-frontier-v1",
+  "created_at": "2026-07-28T19:49:19.816195+00:00",
+  "claim_tested": "For the stated finite binary-shock Asian model and clipping rule, the resource-accounted H-C_k oracle yields the reported leading-order T reductions when query count is proportional to amplitude scale.",
+  "configuration": {
+    "n_dates": 252,
+    "block_counts": [
+      1,
+      2,
+      3,
+      4,
+      6,
+      12
+    ],
+    "transpile_blocks": [
+      1,
+      2,
+      3,
+      4,
+      6
+    ],
+    "s0": 100.0,
+    "strike": 100.0,
+    "rate": 0.05,
+    "volatility": 0.2,
+    "maturity": 1.0,
+    "price_scale": 16384,
+    "multiplier_fraction_bits": 30,
+    "selection_paths": 2000000,
+    "evaluation_paths": 2000000,
+    "selection_seed": 20260730,
+    "evaluation_seed": 20260731,
+    "discounted_clipping_budget": 0.001,
+    "cap_selection_one_sided_z": 6.0,
+    "encoded_control_log2_paths": 16,
+    "continuous_control_log2_points": 17,
+    "control_replicates": 16,
+    "control_seed": 20260902,
+    "control_price_ci95_halfwidth_budget": 0.005
+  },
+  "raw": {
+    "requested_cap_numerator": 235452000,
+    "requested_cap_dollars": 57.027180989583336,
+    "threshold_bits": 28,
+    "normalization_numerator": 268435456,
+    "amplitude_scale_dollars": 65.01587301587301,
+    "a_qubits": 14837,
+    "q_qubits": 29671,
+    "a_counts": {
+      "h_before_toffoli_decomposition": 280,
+      "x": 882106,
+      "z": 0,
+      "cx_before_toffoli_decomposition": 68404,
+      "toffoli": 15024057,
+      "t": 105168399,
+      "cx_after_standard_7t_toffoli_decomposition": 90212746,
+      "h_after_standard_7t_toffoli_decomposition": 30048394
+    },
+    "q_counts": {
+      "h_before_toffoli_decomposition": 562,
+      "x": 1793886,
+      "z": 1,
+      "cx_before_toffoli_decomposition": 136808,
+      "toffoli": 30077783,
+      "t": 210544481,
+      "cx_after_standard_7t_toffoli_decomposition": 180603506,
+      "h_after_standard_7t_toffoli_decomposition": 60156128
+    },
+    "selection_clipping": {
+      "cap_numerator": 235452000,
+      "cap_dollars": 57.027180989583336,
+      "discounted_loss": 0.0006752299743333823,
+      "standard_error": 5.412833133394603e-05,
+      "ci95_low": 0.000569138444918848,
+      "ci95_high": 0.0007813215037479165,
+      "clipped_paths": 303,
+      "clipped_fraction": 0.0001515,
+      "one_sided_selection_upper": 0.0009999999623370585
+    },
+    "evaluation_clipping": {
+      "cap_numerator": 235452000,
+      "cap_dollars": 57.027180989583336,
+      "discounted_loss": 0.0006209245101103813,
+      "standard_error": 5.310094031796933e-05,
+      "ci95_low": 0.0005168466670871614,
+      "ci95_high": 0.0007250023531336011,
+      "clipped_paths": 301,
+      "clipped_fraction": 0.0001505,
+      "ci95_upper": 0.0007250023531336011
+    }
+  },
+  "arms": [
+    {
+      "block_count": 1,
+      "cap_dollars": 2.800265599810888,
+      "evaluation_clipping_loss": 0.0008856567568252455,
+      "threshold_bits": 24,
+      "selected_ratio": 20.364918596805456,
+      "implemented_ratio": 16.0,
+      "q_t": 224776209,
+      "per_query_t_overhead": 1.0675948755930582,
+      "net_t_reduction": 14.986958410709738,
+      "q_qubits": 31711,
+      "qubit_overhead": 1.0687540022243942,
+      "encoded_control_discounted": 5.56809687513442,
+      "encoded_control_se": 0.000762576813598867,
+      "continuous_control_discounted": 5.56551141278311,
+      "continuous_control_se": 6.357955288579502e-06,
+      "transpiled": true,
+      "requested_cap_numerator": 11561647,
+      "normalization_numerator": 16777216,
+      "amplitude_scale_dollars": 4.063492063492063,
+      "selection_clipping": {
+        "cap_numerator": 11561647,
+        "cap_dollars": 2.800265599810888,
+        "discounted_loss": 0.0008620912600795722,
+        "standard_error": 2.2984773780615688e-05,
+        "ci95_low": 0.0008170411034695654,
+        "ci95_high": 0.000907141416689579,
+        "clipped_paths": 2951,
+        "clipped_fraction": 0.0014755,
+        "one_sided_selection_upper": 0.0009999999027632664
+      },
+      "evaluation_clipping": {
+        "cap_numerator": 11561647,
+        "cap_dollars": 2.800265599810888,
+        "discounted_loss": 0.0008856567568252455,
+        "standard_error": 2.364954263353395e-05,
+        "ci95_low": 0.0008393036532635189,
+        "ci95_high": 0.000932009860386972,
+        "clipped_paths": 2934,
+        "clipped_fraction": 0.001467,
+        "ci95_upper": 0.000932009860386972
+      },
+      "sample_seconds": 6.104961750097573,
+      "resource": {
+        "a_qubits": 15857,
+        "q_qubits": 31711,
+        "a_counts": {
+          "h_before_toffoli_decomposition": 276,
+          "x": 908136,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 69380,
+          "toffoli": 16039589,
+          "t": 112277123,
+          "cx_after_standard_7t_toffoli_decomposition": 96306914,
+          "h_after_standard_7t_toffoli_decomposition": 32079454
+        },
+        "q_counts": {
+          "h_before_toffoli_decomposition": 554,
+          "x": 1847986,
+          "z": 1,
+          "cx_before_toffoli_decomposition": 138760,
+          "toffoli": 32110887,
+          "t": 224776209,
+          "cx_after_standard_7t_toffoli_decomposition": 192804082,
+          "h_after_standard_7t_toffoli_decomposition": 64222328
+        },
+        "qrom_rows": 0,
+        "arbitrary_rotations": 0
+      },
+      "rounding_certificates": [
+        {
+          "block_index": 0,
+          "start_date": 0,
+          "stop_date": 252,
+          "weighted_sum_values": 31879,
+          "worst_upward_error_units": -0.749126551211829,
+          "worst_downward_error_units": 175.05120019369147,
+          "rounds_down_everywhere": true
+        }
+      ],
+      "encoded_control": {
+        "block_count": 1,
+        "replicates": 16,
+        "paths_per_replicate": 65536,
+        "seed": 20261002,
+        "undiscounted_mean": 5.853579306650475,
+        "discounted_mean": 5.56809687513442,
+        "discounted_standard_error": 0.000762576813598867,
+        "discounted_ci95_low": 5.566602224579766,
+        "discounted_ci95_high": 5.569591525689074,
+        "replicate_discounted_prices": [
+          5.571232462388983,
+          5.569478982850412,
+          5.566814626637918,
+          5.569068056927476,
+          5.56354469407581,
+          5.5683147599139176,
+          5.566147097072606,
+          5.568617200499615,
+          5.56636484345101,
+          5.563922942380739,
+          5.573663707015724,
+          5.5650454083078875,
+          5.5719342207971305,
+          5.571695231868687,
+          5.564744200308721,
+          5.5689615676540845
+        ],
+        "method": "coupled encoded-minus-continuous correction plus an independent k-dimensional continuous-control reference",
+        "continuous_reference_discounted": 5.56551141278311,
+        "continuous_reference_standard_error": 6.357955288579502e-06,
+        "correction_discounted": 0.0025854623513102415,
+        "correction_standard_error": 0.0007625503085325909,
+        "runtime_seconds": 8.68445475003682
+      },
+      "continuous_control": {
+        "block_count": 1,
+        "replicates": 16,
+        "points_per_replicate": 131072,
+        "seed": 20262002,
+        "undiscounted_mean": 5.850861284809774,
+        "discounted_mean": 5.56551141278311,
+        "discounted_standard_error": 6.357955288579502e-06,
+        "discounted_ci95_low": 5.565498951190744,
+        "discounted_ci95_high": 5.565523874375476,
+        "replicate_discounted_prices": [
+          5.565539363971223,
+          5.565564214787109,
+          5.565496054353338,
+          5.565496682565518,
+          5.565502241268235,
+          5.565503548588468,
+          5.565486950290124,
+          5.565505302053259,
+          5.565504357706794,
+          5.565494351524501,
+          5.56553090721918,
+          5.565565731838513,
+          5.56548115856845,
+          5.565494183355062,
+          5.565509137983134,
+          5.565508418456854
+        ],
+        "runtime_seconds": 0.062292082933709025,
+        "method": "scrambled Sobol' over the k-dimensional joint lognormal law"
+      },
+      "transpile_check": {
+        "materialized": true,
+        "implementation": "optimized production k=1 oracle",
+        "basis_gates": [
+          "h",
+          "x",
+          "cx",
+          "ccx"
+        ],
+        "optimization_level": 0,
+        "build_seconds": 41.31453966698609,
+        "transpile_and_count_seconds": 10.810510874958709,
+        "counted_a_qubits": 15857,
+        "counted_a_counts": {
+          "h_before_toffoli_decomposition": 276,
+          "x": 908136,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 69380,
+          "toffoli": 16039589,
+          "t": 112277123,
+          "cx_after_standard_7t_toffoli_decomposition": 96306914,
+          "h_after_standard_7t_toffoli_decomposition": 32079454
+        },
+        "matches": {
+          "h": true,
+          "x": true,
+          "cx": true,
+          "ccx": true,
+          "qubits": true
+        },
+        "all_match": true
+      },
+      "encoded_control_primary": {
+        "method": "exact one-dimensional integer dynamic program",
+        "discounted_mean": 5.567413577955572,
+        "discounted_standard_error": 0.0,
+        "ci95_low": 5.567413577955572,
+        "ci95_high": 5.567413577955572,
+        "dynamic_program_peak_states": 31879
+      }
+    },
+    {
+      "block_count": 2,
+      "cap_dollars": 0.6711716424851191,
+      "evaluation_clipping_loss": 0.0009375371221117062,
+      "threshold_bits": 22,
+      "selected_ratio": 84.96661268111863,
+      "implemented_ratio": 64.0,
+      "q_t": 236712203,
+      "per_query_t_overhead": 1.1242859555173996,
+      "net_t_reduction": 56.92501955211832,
+      "q_qubits": 33421,
+      "qubit_overhead": 1.1263860335007245,
+      "encoded_control_discounted": 5.681708269545975,
+      "encoded_control_se": 0.0013605209101829425,
+      "continuous_control_discounted": 5.678840642122304,
+      "continuous_control_se": 6.9626479879862e-06,
+      "transpiled": true,
+      "requested_cap_numerator": 2771112,
+      "normalization_numerator": 4194304,
+      "amplitude_scale_dollars": 1.0158730158730158,
+      "selection_clipping": {
+        "cap_numerator": 2771112,
+        "cap_dollars": 0.6711716424851191,
+        "discounted_loss": 0.0009294013704735281,
+        "standard_error": 1.1766407484082032e-05,
+        "ci95_low": 0.0009063392118047273,
+        "ci95_high": 0.0009524635291423289,
+        "clipped_paths": 12832,
+        "clipped_fraction": 0.006416,
+        "one_sided_selection_upper": 0.0009999998153780202
+      },
+      "evaluation_clipping": {
+        "cap_numerator": 2771112,
+        "cap_dollars": 0.6711716424851191,
+        "discounted_loss": 0.0009375371221117062,
+        "standard_error": 1.1778000924021452e-05,
+        "ci95_low": 0.0009144522403006241,
+        "ci95_high": 0.0009606220039227883,
+        "clipped_paths": 13050,
+        "clipped_fraction": 0.006525,
+        "ci95_upper": 0.0009606220039227883
+      },
+      "sample_seconds": 5.344638708047569,
+      "resource": {
+        "a_qubits": 16712,
+        "q_qubits": 33421,
+        "a_counts": {
+          "h_before_toffoli_decomposition": 274,
+          "x": 930784,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 69972,
+          "toffoli": 16891305,
+          "t": 118239135,
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "h_after_standard_7t_toffoli_decomposition": 33782884
+        },
+        "q_counts": {
+          "h_before_toffoli_decomposition": 550,
+          "x": 1894992,
+          "z": 1,
+          "cx_before_toffoli_decomposition": 139944,
+          "toffoli": 33816029,
+          "t": 236712203,
+          "cx_after_standard_7t_toffoli_decomposition": 203036118,
+          "h_after_standard_7t_toffoli_decomposition": 67632608
+        },
+        "qrom_rows": 0,
+        "arbitrary_rotations": 0
+      },
+      "rounding_certificates": [
+        {
+          "block_index": 0,
+          "start_date": 0,
+          "stop_date": 126,
+          "weighted_sum_values": 8002,
+          "worst_upward_error_units": -0.4410515084011215,
+          "worst_downward_error_units": 31.08060171291984,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 1,
+          "start_date": 126,
+          "stop_date": 252,
+          "weighted_sum_values": 23878,
+          "worst_upward_error_units": -0.45423855108380756,
+          "worst_downward_error_units": 789.2630444680875,
+          "rounds_down_everywhere": true
+        }
+      ],
+      "encoded_control": {
+        "block_count": 2,
+        "replicates": 16,
+        "paths_per_replicate": 65536,
+        "seed": 20261102,
+        "undiscounted_mean": 5.97301568181432,
+        "discounted_mean": 5.681708269545975,
+        "discounted_standard_error": 0.0013605209101829425,
+        "discounted_ci95_low": 5.679041648562016,
+        "discounted_ci95_high": 5.684374890529934,
+        "replicate_discounted_prices": [
+          5.679375981810614,
+          5.67548882449239,
+          5.686457507700879,
+          5.681231974975486,
+          5.679801347925791,
+          5.675276759554084,
+          5.688174180564728,
+          5.687189469453269,
+          5.692200846840055,
+          5.6867516770034685,
+          5.677707406253798,
+          5.684664705314023,
+          5.67820474605251,
+          5.675952697395288,
+          5.684138287749074,
+          5.674715899650149
+        ],
+        "method": "coupled encoded-minus-continuous correction plus an independent k-dimensional continuous-control reference",
+        "continuous_reference_discounted": 5.678840642122304,
+        "continuous_reference_standard_error": 6.9626479879862e-06,
+        "correction_discounted": 0.0028676274236714705,
+        "correction_standard_error": 0.0013605030939244562,
+        "runtime_seconds": 8.592181791784242
+      },
+      "continuous_control": {
+        "block_count": 2,
+        "replicates": 16,
+        "points_per_replicate": 131072,
+        "seed": 20262102,
+        "undiscounted_mean": 5.970001027988639,
+        "discounted_mean": 5.678840642122304,
+        "discounted_standard_error": 6.9626479879862e-06,
+        "discounted_ci95_low": 5.678826995332248,
+        "discounted_ci95_high": 5.67885428891236,
+        "replicate_discounted_prices": [
+          5.678859339550104,
+          5.678787239051285,
+          5.678841321975665,
+          5.6788064421259055,
+          5.678861613615977,
+          5.678874868036059,
+          5.678838914106659,
+          5.6788145830712065,
+          5.678857929042894,
+          5.678832859238659,
+          5.678836866546495,
+          5.678808044374081,
+          5.6788337524695915,
+          5.678897678655218,
+          5.678843115382325,
+          5.678855706714738
+        ],
+        "runtime_seconds": 0.1125492921564728,
+        "method": "scrambled Sobol' over the k-dimensional joint lognormal law"
+      },
+      "transpile_check": {
+        "materialized": true,
+        "basis_gates": [
+          "h",
+          "x",
+          "cx",
+          "ccx"
+        ],
+        "optimization_level": 0,
+        "build_seconds": 43.36701704189181,
+        "transpile_and_count_seconds": 11.393817000091076,
+        "counted_a_qubits": 16712,
+        "counted_a_counts": {
+          "h_before_toffoli_decomposition": 274,
+          "x": 930784,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 69972,
+          "toffoli": 16891305,
+          "t": 118239135,
+          "cx_after_standard_7t_toffoli_decomposition": 101417802,
+          "h_after_standard_7t_toffoli_decomposition": 33782884
+        },
+        "matches": {
+          "h": true,
+          "x": true,
+          "cx": true,
+          "ccx": true,
+          "qubits": true
+        },
+        "all_match": true
+      },
+      "encoded_control_primary": {
+        "method": "exact two-dimensional integer dynamic program",
+        "discounted_mean": 5.680589461675959,
+        "discounted_standard_error": 0.0,
+        "ci95_low": 5.680589461675959,
+        "ci95_high": 5.680589461675959,
+        "reachable_states": 191071756,
+        "source": "results/v24/k2_blocked_control_evidence.json",
+        "source_sha256": "e8134ef9cc73a995e135456e6bda3a6ae256b2821fd8337cc43a249b079c82e2"
+      }
+    },
+    {
+      "block_count": 3,
+      "cap_dollars": 0.3149312337239583,
+      "evaluation_clipping_loss": 0.0009759879093413623,
+      "threshold_bits": 21,
+      "selected_ratio": 181.0782002002649,
+      "implemented_ratio": 128.0,
+      "q_t": 249112283,
+      "per_query_t_overhead": 1.1831812537513153,
+      "net_t_reduction": 108.18291753201106,
+      "q_qubits": 35133,
+      "qubit_overhead": 1.1840854706615886,
+      "encoded_control_discounted": 5.715929949110338,
+      "encoded_control_se": 0.0015748799224936365,
+      "continuous_control_discounted": 5.714213277005193,
+      "continuous_control_se": 1.765312650941036e-05,
+      "transpiled": true,
+      "requested_cap_numerator": 1300278,
+      "normalization_numerator": 2097152,
+      "amplitude_scale_dollars": 0.5079365079365079,
+      "selection_clipping": {
+        "cap_numerator": 1300278,
+        "cap_dollars": 0.3149312337239583,
+        "discounted_loss": 0.0009521723391276946,
+        "standard_error": 7.97080033647391e-06,
+        "ci95_low": 0.0009365495704682057,
+        "ci95_high": 0.0009677951077871835,
+        "clipped_paths": 29295,
+        "clipped_fraction": 0.0146475,
+        "one_sided_selection_upper": 0.0009999971411465381
+      },
+      "evaluation_clipping": {
+        "cap_numerator": 1300278,
+        "cap_dollars": 0.3149312337239583,
+        "discounted_loss": 0.0009759879093413623,
+        "standard_error": 8.08442080375735e-06,
+        "ci95_low": 0.0009601424445659979,
+        "ci95_high": 0.0009918333741167267,
+        "clipped_paths": 29760,
+        "clipped_fraction": 0.01488,
+        "ci95_upper": 0.0009918333741167267
+      },
+      "sample_seconds": 5.917143791913986,
+      "resource": {
+        "a_qubits": 17568,
+        "q_qubits": 35133,
+        "a_counts": {
+          "h_before_toffoli_decomposition": 273,
+          "x": 954044,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 70308,
+          "toffoli": 17776169,
+          "t": 124433183,
+          "cx_after_standard_7t_toffoli_decomposition": 106727322,
+          "h_after_standard_7t_toffoli_decomposition": 35552611
+        },
+        "q_counts": {
+          "h_before_toffoli_decomposition": 548,
+          "x": 1943224,
+          "z": 1,
+          "cx_before_toffoli_decomposition": 140616,
+          "toffoli": 35587469,
+          "t": 249112283,
+          "cx_after_standard_7t_toffoli_decomposition": 213665430,
+          "h_after_standard_7t_toffoli_decomposition": 71175486
+        },
+        "qrom_rows": 0,
+        "arbitrary_rotations": 0
+      },
+      "rounding_certificates": [
+        {
+          "block_index": 0,
+          "start_date": 0,
+          "stop_date": 84,
+          "weighted_sum_values": 3571,
+          "worst_upward_error_units": -0.21018302917572385,
+          "worst_downward_error_units": 14.462980160036341,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 1,
+          "start_date": 84,
+          "stop_date": 168,
+          "weighted_sum_values": 10627,
+          "worst_upward_error_units": -0.749126551211829,
+          "worst_downward_error_units": 148.473405056662,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 2,
+          "start_date": 168,
+          "stop_date": 252,
+          "weighted_sum_values": 17683,
+          "worst_upward_error_units": -0.20746576436684497,
+          "worst_downward_error_units": 962.3145050406409,
+          "rounds_down_everywhere": true
+        }
+      ],
+      "encoded_control": {
+        "block_count": 3,
+        "replicates": 16,
+        "paths_per_replicate": 65536,
+        "seed": 20261202,
+        "undiscounted_mean": 6.008991944409776,
+        "discounted_mean": 5.715929949110338,
+        "discounted_standard_error": 0.0015748799224936365,
+        "discounted_ci95_low": 5.71284318446225,
+        "discounted_ci95_high": 5.719016713758426,
+        "replicate_discounted_prices": [
+          5.706074155484506,
+          5.714998796952229,
+          5.72425077751637,
+          5.710188745813186,
+          5.711651135278004,
+          5.713629959747625,
+          5.714819414576025,
+          5.721233286439904,
+          5.723596639032197,
+          5.7145825585666365,
+          5.714998072816198,
+          5.713598519490632,
+          5.718810855661438,
+          5.723913760258996,
+          5.724204867368465,
+          5.704327640762988
+        ],
+        "method": "coupled encoded-minus-continuous correction plus an independent k-dimensional continuous-control reference",
+        "continuous_reference_discounted": 5.714213277005193,
+        "continuous_reference_standard_error": 1.765312650941036e-05,
+        "correction_discounted": 0.0017166721051444789,
+        "correction_standard_error": 0.0015747809807709786,
+        "runtime_seconds": 8.62233466701582
+      },
+      "continuous_control": {
+        "block_count": 3,
+        "replicates": 16,
+        "points_per_replicate": 131072,
+        "seed": 20262202,
+        "undiscounted_mean": 6.007187256643682,
+        "discounted_mean": 5.714213277005193,
+        "discounted_standard_error": 1.765312650941036e-05,
+        "discounted_ci95_low": 5.714178676877235,
+        "discounted_ci95_high": 5.714247877133151,
+        "replicate_discounted_prices": [
+          5.714215783515672,
+          5.714286222033462,
+          5.714152990203844,
+          5.714133470101488,
+          5.714292184262509,
+          5.714392287073388,
+          5.714213202765706,
+          5.714156778314708,
+          5.714198930204942,
+          5.714300261816996,
+          5.714169404875067,
+          5.714149213395434,
+          5.714218263056543,
+          5.714174058637881,
+          5.714165946232535,
+          5.714193435592913
+        ],
+        "runtime_seconds": 0.15888858307152987,
+        "method": "scrambled Sobol' over the k-dimensional joint lognormal law"
+      },
+      "transpile_check": {
+        "materialized": true,
+        "basis_gates": [
+          "h",
+          "x",
+          "cx",
+          "ccx"
+        ],
+        "optimization_level": 0,
+        "build_seconds": 45.891127415932715,
+        "transpile_and_count_seconds": 12.409766416996717,
+        "counted_a_qubits": 17568,
+        "counted_a_counts": {
+          "h_before_toffoli_decomposition": 273,
+          "x": 954044,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 70308,
+          "toffoli": 17776169,
+          "t": 124433183,
+          "cx_after_standard_7t_toffoli_decomposition": 106727322,
+          "h_after_standard_7t_toffoli_decomposition": 35552611
+        },
+        "matches": {
+          "h": true,
+          "x": true,
+          "cx": true,
+          "ccx": true,
+          "qubits": true
+        },
+        "all_match": true
+      },
+      "encoded_control_primary": {
+        "method": "randomized QMC",
+        "discounted_mean": 5.715929949110338,
+        "discounted_standard_error": 0.0015748799224936365,
+        "ci95_low": 5.71284318446225,
+        "ci95_high": 5.719016713758426
+      }
+    },
+    {
+      "block_count": 4,
+      "cap_dollars": 0.1933525933159722,
+      "evaluation_clipping_loss": 0.0009610632385340763,
+      "threshold_bits": 20,
+      "selected_ratio": 294.9387955525938,
+      "implemented_ratio": 256.0,
+      "q_t": 258544349,
+      "per_query_t_overhead": 1.2279797018284226,
+      "net_t_reduction": 208.47250131156414,
+      "q_qubits": 36435,
+      "qubit_overhead": 1.2279667014930404,
+      "encoded_control_discounted": 5.7350249629825525,
+      "encoded_control_se": 0.0015957723429263094,
+      "continuous_control_discounted": 5.731545947389508,
+      "continuous_control_se": 4.55368834738247e-05,
+      "transpiled": true,
+      "requested_cap_numerator": 798308,
+      "normalization_numerator": 1048576,
+      "amplitude_scale_dollars": 0.25396825396825395,
+      "selection_clipping": {
+        "cap_numerator": 798308,
+        "cap_dollars": 0.1933525933159722,
+        "discounted_loss": 0.0009632861411320356,
+        "standard_error": 6.118883542705977e-06,
+        "ci95_low": 0.0009512931293883318,
+        "ci95_high": 0.0009752791528757393,
+        "clipped_paths": 49787,
+        "clipped_fraction": 0.0248935,
+        "one_sided_selection_upper": 0.0009999994423882715
+      },
+      "evaluation_clipping": {
+        "cap_numerator": 798308,
+        "cap_dollars": 0.1933525933159722,
+        "discounted_loss": 0.0009610632385340763,
+        "standard_error": 6.096632757764427e-06,
+        "ci95_low": 0.0009491138383288581,
+        "ci95_high": 0.0009730126387392946,
+        "clipped_paths": 49981,
+        "clipped_fraction": 0.0249905,
+        "ci95_upper": 0.0009730126387392946
+      },
+      "sample_seconds": 6.1484451671130955,
+      "resource": {
+        "a_qubits": 18219,
+        "q_qubits": 36435,
+        "a_counts": {
+          "h_before_toffoli_decomposition": 272,
+          "x": 971988,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 70628,
+          "toffoli": 18449237,
+          "t": 129144659,
+          "cx_after_standard_7t_toffoli_decomposition": 110766050,
+          "h_after_standard_7t_toffoli_decomposition": 36898746
+        },
+        "q_counts": {
+          "h_before_toffoli_decomposition": 546,
+          "x": 1980414,
+          "z": 1,
+          "cx_before_toffoli_decomposition": 141256,
+          "toffoli": 36934907,
+          "t": 258544349,
+          "cx_after_standard_7t_toffoli_decomposition": 221750698,
+          "h_after_standard_7t_toffoli_decomposition": 73870360
+        },
+        "qrom_rows": 0,
+        "arbitrary_rotations": 0
+      },
+      "rounding_certificates": [
+        {
+          "block_index": 0,
+          "start_date": 0,
+          "stop_date": 63,
+          "weighted_sum_values": 2017,
+          "worst_upward_error_units": -0.6233810406865578,
+          "worst_downward_error_units": 14.149207794404697,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 1,
+          "start_date": 63,
+          "stop_date": 126,
+          "weighted_sum_values": 5986,
+          "worst_upward_error_units": -0.0969774973907295,
+          "worst_downward_error_units": 60.81658894559173,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 2,
+          "start_date": 126,
+          "stop_date": 189,
+          "weighted_sum_values": 9955,
+          "worst_upward_error_units": -0.4401315839785031,
+          "worst_downward_error_units": 263.7199435614274,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 3,
+          "start_date": 189,
+          "stop_date": 252,
+          "weighted_sum_values": 13924,
+          "worst_upward_error_units": -0.8469478260906684,
+          "worst_downward_error_units": 1556.7340449849034,
+          "rounds_down_everywhere": true
+        }
+      ],
+      "encoded_control": {
+        "block_count": 4,
+        "replicates": 16,
+        "paths_per_replicate": 65536,
+        "seed": 20261302,
+        "undiscounted_mean": 6.029065980578535,
+        "discounted_mean": 5.7350249629825525,
+        "discounted_standard_error": 0.0015957723429263094,
+        "discounted_ci95_low": 5.731897249190417,
+        "discounted_ci95_high": 5.738152676774688,
+        "replicate_discounted_prices": [
+          5.725174744117866,
+          5.742653438034728,
+          5.743167003895757,
+          5.737967040924392,
+          5.723305387521596,
+          5.736017157377599,
+          5.725240200083316,
+          5.728912552681906,
+          5.736111875024321,
+          5.741264800377621,
+          5.7314361486451375,
+          5.7357543165158225,
+          5.737834300201852,
+          5.736164367269218,
+          5.740851354694857,
+          5.738544720354857
+        ],
+        "method": "coupled encoded-minus-continuous correction plus an independent k-dimensional continuous-control reference",
+        "continuous_reference_discounted": 5.731545947389508,
+        "continuous_reference_standard_error": 4.55368834738247e-05,
+        "correction_discounted": 0.0034790155930450317,
+        "correction_standard_error": 0.0015951224914382011,
+        "runtime_seconds": 8.763140833005309
+      },
+      "continuous_control": {
+        "block_count": 4,
+        "replicates": 16,
+        "points_per_replicate": 131072,
+        "seed": 20262302,
+        "undiscounted_mean": 6.0254085920417255,
+        "discounted_mean": 5.731545947389508,
+        "discounted_standard_error": 4.55368834738247e-05,
+        "discounted_ci95_low": 5.731456695097899,
+        "discounted_ci95_high": 5.731635199681117,
+        "replicate_discounted_prices": [
+          5.7316334107826235,
+          5.73153755362382,
+          5.731287747177547,
+          5.7318096602659,
+          5.731501745849001,
+          5.7317188283417195,
+          5.73165138232831,
+          5.73157194423628,
+          5.731509704430381,
+          5.7316164258547175,
+          5.731602273051659,
+          5.731374414651043,
+          5.731304800373785,
+          5.7319066546335575,
+          5.731423258256736,
+          5.731285354375056
+        ],
+        "runtime_seconds": 0.2028301670216024,
+        "method": "scrambled Sobol' over the k-dimensional joint lognormal law"
+      },
+      "transpile_check": {
+        "materialized": true,
+        "basis_gates": [
+          "h",
+          "x",
+          "cx",
+          "ccx"
+        ],
+        "optimization_level": 0,
+        "build_seconds": 47.526582250138745,
+        "transpile_and_count_seconds": 13.279884499963373,
+        "counted_a_qubits": 18219,
+        "counted_a_counts": {
+          "h_before_toffoli_decomposition": 272,
+          "x": 971988,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 70628,
+          "toffoli": 18449237,
+          "t": 129144659,
+          "cx_after_standard_7t_toffoli_decomposition": 110766050,
+          "h_after_standard_7t_toffoli_decomposition": 36898746
+        },
+        "matches": {
+          "h": true,
+          "x": true,
+          "cx": true,
+          "ccx": true,
+          "qubits": true
+        },
+        "all_match": true
+      },
+      "encoded_control_primary": {
+        "method": "randomized QMC",
+        "discounted_mean": 5.7350249629825525,
+        "discounted_standard_error": 0.0015957723429263094,
+        "ci95_low": 5.731897249190417,
+        "ci95_high": 5.738152676774688
+      }
+    },
+    {
+      "block_count": 6,
+      "cap_dollars": 0.10248069157676092,
+      "evaluation_clipping_loss": 0.0009774948142189967,
+      "threshold_bits": 19,
+      "selected_ratio": 556.4675658620861,
+      "implemented_ratio": 512.0,
+      "q_t": 279860315,
+      "per_query_t_overhead": 1.3292218046788888,
+      "net_t_reduction": 385.18778295522173,
+      "q_qubits": 39389,
+      "qubit_overhead": 1.3275251929493446,
+      "encoded_control_discounted": 5.74878735025003,
+      "encoded_control_se": 0.0013620765056689922,
+      "continuous_control_discounted": 5.7487292132915595,
+      "continuous_control_se": 0.00012941577448406466,
+      "transpiled": true,
+      "requested_cap_numerator": 423119,
+      "normalization_numerator": 524288,
+      "amplitude_scale_dollars": 0.12698412698412698,
+      "selection_clipping": {
+        "cap_numerator": 423119,
+        "cap_dollars": 0.10248069157676092,
+        "discounted_loss": 0.0009745251777183221,
+        "standard_error": 4.244530976713665e-06,
+        "ci95_low": 0.0009662058970039633,
+        "ci95_high": 0.000982844458432681,
+        "clipped_paths": 101683,
+        "clipped_fraction": 0.0508415,
+        "one_sided_selection_upper": 0.0009999923635786042
+      },
+      "evaluation_clipping": {
+        "cap_numerator": 423119,
+        "cap_dollars": 0.10248069157676092,
+        "discounted_loss": 0.0009774948142189967,
+        "standard_error": 4.260516970255454e-06,
+        "ci95_low": 0.000969144200957296,
+        "ci95_high": 0.0009858454274806973,
+        "clipped_paths": 102052,
+        "clipped_fraction": 0.051026,
+        "ci95_upper": 0.0009858454274806973
+      },
+      "sample_seconds": 7.07042537513189,
+      "resource": {
+        "a_qubits": 19696,
+        "q_qubits": 39389,
+        "a_counts": {
+          "h_before_toffoli_decomposition": 271,
+          "x": 1014714,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 71300,
+          "toffoli": 19970329,
+          "t": 139792303,
+          "cx_after_standard_7t_toffoli_decomposition": 119893274,
+          "h_after_standard_7t_toffoli_decomposition": 39940929
+        },
+        "q_counts": {
+          "h_before_toffoli_decomposition": 544,
+          "x": 2068820,
+          "z": 1,
+          "cx_before_toffoli_decomposition": 142600,
+          "toffoli": 39980045,
+          "t": 279860315,
+          "cx_after_standard_7t_toffoli_decomposition": 240022870,
+          "h_after_standard_7t_toffoli_decomposition": 79960634
+        },
+        "qrom_rows": 0,
+        "arbitrary_rotations": 0
+      },
+      "rounding_certificates": [
+        {
+          "block_index": 0,
+          "start_date": 0,
+          "stop_date": 42,
+          "weighted_sum_values": 904,
+          "worst_upward_error_units": -0.18586333766436677,
+          "worst_downward_error_units": 8.594278587709116,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 1,
+          "start_date": 42,
+          "stop_date": 84,
+          "weighted_sum_values": 2668,
+          "worst_upward_error_units": -0.4410515084011215,
+          "worst_downward_error_units": 22.02917333984644,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 2,
+          "start_date": 84,
+          "stop_date": 126,
+          "weighted_sum_values": 4432,
+          "worst_upward_error_units": -0.2801967699633217,
+          "worst_downward_error_units": 61.73778517158766,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 3,
+          "start_date": 126,
+          "stop_date": 168,
+          "weighted_sum_values": 6196,
+          "worst_upward_error_units": -0.28062466147876924,
+          "worst_downward_error_units": 208.51075876036964,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 4,
+          "start_date": 168,
+          "stop_date": 210,
+          "weighted_sum_values": 7960,
+          "worst_upward_error_units": -0.45423855108380756,
+          "worst_downward_error_units": 679.1552414317148,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 5,
+          "start_date": 210,
+          "stop_date": 252,
+          "weighted_sum_values": 9724,
+          "worst_upward_error_units": -0.12310367084532081,
+          "worst_downward_error_units": 1618.3693546356174,
+          "rounds_down_everywhere": true
+        }
+      ],
+      "encoded_control": {
+        "block_count": 6,
+        "replicates": 16,
+        "paths_per_replicate": 65536,
+        "seed": 20261502,
+        "undiscounted_mean": 6.0435339805299675,
+        "discounted_mean": 5.74878735025003,
+        "discounted_standard_error": 0.0013620765056689922,
+        "discounted_ci95_low": 5.7461176802989185,
+        "discounted_ci95_high": 5.7514570202011415,
+        "replicate_discounted_prices": [
+          5.7421448713760075,
+          5.757227887201216,
+          5.7472670089817335,
+          5.745809535582292,
+          5.745403348517973,
+          5.751509407394461,
+          5.748157372689953,
+          5.7445656606948,
+          5.753441505188699,
+          5.754356306438094,
+          5.743123662992537,
+          5.754908704504339,
+          5.745319923215283,
+          5.741655154156057,
+          5.7474023391012325,
+          5.758304915965806
+        ],
+        "method": "coupled encoded-minus-continuous correction plus an independent k-dimensional continuous-control reference",
+        "continuous_reference_discounted": 5.7487292132915595,
+        "continuous_reference_standard_error": 0.00012941577448406466,
+        "correction_discounted": 5.8136958470733635e-05,
+        "correction_standard_error": 0.0013559144385285311,
+        "runtime_seconds": 9.189760708948597
+      },
+      "continuous_control": {
+        "block_count": 6,
+        "replicates": 16,
+        "points_per_replicate": 131072,
+        "seed": 20262502,
+        "undiscounted_mean": 6.043472862825896,
+        "discounted_mean": 5.7487292132915595,
+        "discounted_standard_error": 0.00012941577448406466,
+        "discounted_ci95_low": 5.7484755583735705,
+        "discounted_ci95_high": 5.7489828682095485,
+        "replicate_discounted_prices": [
+          5.748264487300114,
+          5.747959221739378,
+          5.7489928814803655,
+          5.748324842377269,
+          5.749024290008207,
+          5.748513932461238,
+          5.749461838740337,
+          5.748539353685174,
+          5.748505383892948,
+          5.748463833326109,
+          5.748144060950277,
+          5.748484930938779,
+          5.7490920923160855,
+          5.748647213976963,
+          5.749563878469976,
+          5.749685171001728
+        ],
+        "runtime_seconds": 0.2913489581551403,
+        "method": "scrambled Sobol' over the k-dimensional joint lognormal law"
+      },
+      "transpile_check": {
+        "materialized": true,
+        "basis_gates": [
+          "h",
+          "x",
+          "cx",
+          "ccx"
+        ],
+        "optimization_level": 0,
+        "build_seconds": 51.458895166171715,
+        "transpile_and_count_seconds": 14.11808866681531,
+        "counted_a_qubits": 19696,
+        "counted_a_counts": {
+          "h_before_toffoli_decomposition": 271,
+          "x": 1014714,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 71300,
+          "toffoli": 19970329,
+          "t": 139792303,
+          "cx_after_standard_7t_toffoli_decomposition": 119893274,
+          "h_after_standard_7t_toffoli_decomposition": 39940929
+        },
+        "matches": {
+          "h": true,
+          "x": true,
+          "cx": true,
+          "ccx": true,
+          "qubits": true
+        },
+        "all_match": true
+      },
+      "encoded_control_primary": {
+        "method": "randomized QMC",
+        "discounted_mean": 5.74878735025003,
+        "discounted_standard_error": 0.0013620765056689922,
+        "ci95_low": 5.7461176802989185,
+        "ci95_high": 5.7514570202011415
+      }
+    },
+    {
+      "block_count": 12,
+      "cap_dollars": 0.040771242171999005,
+      "evaluation_clipping_loss": 0.0009848733067893193,
+      "threshold_bits": 18,
+      "selected_ratio": 1398.7109038524372,
+      "implemented_ratio": 1024.0,
+      "q_t": 338009539,
+      "per_query_t_overhead": 1.6054067881266383,
+      "net_t_reduction": 637.8445684753293,
+      "q_qubits": 47453,
+      "qubit_overhead": 1.5993057193893028,
+      "encoded_control_discounted": 5.767380185976203,
+      "encoded_control_se": 0.0017130383652335774,
+      "continuous_control_discounted": 5.765153087313863,
+      "continuous_control_se": 0.00028669281968433724,
+      "transpiled": false,
+      "requested_cap_numerator": 168335,
+      "normalization_numerator": 262144,
+      "amplitude_scale_dollars": 0.06349206349206349,
+      "selection_clipping": {
+        "cap_numerator": 168335,
+        "cap_dollars": 0.040771242171999005,
+        "discounted_loss": 0.0009858242728773396,
+        "standard_error": 2.360207730975787e-06,
+        "ci95_low": 0.000981198265724627,
+        "ci95_high": 0.0009904502800300522,
+        "clipped_paths": 299408,
+        "clipped_fraction": 0.149704,
+        "one_sided_selection_upper": 0.0009999855192631944
+      },
+      "evaluation_clipping": {
+        "cap_numerator": 168335,
+        "cap_dollars": 0.040771242171999005,
+        "discounted_loss": 0.0009848733067893193,
+        "standard_error": 2.360039583916442e-06,
+        "ci95_low": 0.000980247629204843,
+        "ci95_high": 0.0009894989843737955,
+        "clipped_paths": 299150,
+        "clipped_fraction": 0.149575,
+        "ci95_upper": 0.0009894989843737955
+      },
+      "sample_seconds": 8.950994584010914,
+      "resource": {
+        "a_qubits": 23728,
+        "q_qubits": 47453,
+        "a_counts": {
+          "h_before_toffoli_decomposition": 270,
+          "x": 1130070,
+          "z": 0,
+          "cx_before_toffoli_decomposition": 73316,
+          "toffoli": 24119813,
+          "t": 168838691,
+          "cx_after_standard_7t_toffoli_decomposition": 144792194,
+          "h_after_standard_7t_toffoli_decomposition": 48239896
+        },
+        "q_counts": {
+          "h_before_toffoli_decomposition": 542,
+          "x": 2307596,
+          "z": 1,
+          "cx_before_toffoli_decomposition": 146632,
+          "toffoli": 48287077,
+          "t": 338009539,
+          "cx_after_standard_7t_toffoli_decomposition": 289869094,
+          "h_after_standard_7t_toffoli_decomposition": 96574696
+        },
+        "qrom_rows": 0,
+        "arbitrary_rotations": 0
+      },
+      "rounding_certificates": [
+        {
+          "block_index": 0,
+          "start_date": 0,
+          "stop_date": 21,
+          "weighted_sum_values": 232,
+          "worst_upward_error_units": -0.6989460203104667,
+          "worst_downward_error_units": 5.801458608640184,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 1,
+          "start_date": 21,
+          "stop_date": 42,
+          "weighted_sum_values": 673,
+          "worst_upward_error_units": -0.6233810406865578,
+          "worst_downward_error_units": 9.9692119429456,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 2,
+          "start_date": 42,
+          "stop_date": 63,
+          "weighted_sum_values": 1114,
+          "worst_upward_error_units": -0.08951321841127867,
+          "worst_downward_error_units": 14.590443665790662,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 3,
+          "start_date": 63,
+          "stop_date": 84,
+          "weighted_sum_values": 1555,
+          "worst_upward_error_units": -0.4741131160379113,
+          "worst_downward_error_units": 28.276116584130385,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 4,
+          "start_date": 84,
+          "stop_date": 105,
+          "weighted_sum_values": 1996,
+          "worst_upward_error_units": -0.0969774973907295,
+          "worst_downward_error_units": 50.344267760438974,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 5,
+          "start_date": 105,
+          "stop_date": 126,
+          "weighted_sum_values": 2437,
+          "worst_upward_error_units": -0.9777735209488841,
+          "worst_downward_error_units": 86.27343478050449,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 6,
+          "start_date": 126,
+          "stop_date": 147,
+          "weighted_sum_values": 2878,
+          "worst_upward_error_units": -0.05745487533898637,
+          "worst_downward_error_units": 133.48124594323056,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 7,
+          "start_date": 147,
+          "stop_date": 168,
+          "weighted_sum_values": 3319,
+          "worst_upward_error_units": -0.4401315839785031,
+          "worst_downward_error_units": 259.4402262733392,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 8,
+          "start_date": 168,
+          "stop_date": 189,
+          "weighted_sum_values": 3760,
+          "worst_upward_error_units": -0.6104578758132017,
+          "worst_downward_error_units": 410.2346238849734,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 9,
+          "start_date": 189,
+          "stop_date": 210,
+          "weighted_sum_values": 4201,
+          "worst_upward_error_units": -0.3527402347998957,
+          "worst_downward_error_units": 743.8605535046945,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 10,
+          "start_date": 210,
+          "stop_date": 231,
+          "weighted_sum_values": 4642,
+          "worst_upward_error_units": -0.8469478260906684,
+          "worst_downward_error_units": 1570.015014823292,
+          "rounds_down_everywhere": true
+        },
+        {
+          "block_index": 11,
+          "start_date": 231,
+          "stop_date": 252,
+          "weighted_sum_values": 5083,
+          "worst_upward_error_units": -0.6098318989737227,
+          "worst_downward_error_units": 2006.2657070239804,
+          "rounds_down_everywhere": true
+        }
+      ],
+      "encoded_control": {
+        "block_count": 12,
+        "replicates": 16,
+        "paths_per_replicate": 65536,
+        "seed": 20262102,
+        "undiscounted_mean": 6.06308009132856,
+        "discounted_mean": 5.767380185976203,
+        "discounted_standard_error": 0.0017130383652335774,
+        "discounted_ci95_low": 5.764022630780345,
+        "discounted_ci95_high": 5.77073774117206,
+        "replicate_discounted_prices": [
+          5.770171708045385,
+          5.75841565070088,
+          5.764110728916527,
+          5.7645619818771285,
+          5.762068721771365,
+          5.767333584017883,
+          5.7725325410868304,
+          5.768602875063373,
+          5.765195843588838,
+          5.761307963997176,
+          5.78105720922421,
+          5.776041247986225,
+          5.773734511212932,
+          5.764900590167792,
+          5.755400164256015,
+          5.772647653706682
+        ],
+        "method": "coupled encoded-minus-continuous correction plus an independent k-dimensional continuous-control reference",
+        "continuous_reference_discounted": 5.765153087313863,
+        "continuous_reference_standard_error": 0.00028669281968433724,
+        "correction_discounted": 0.002227098662339999,
+        "correction_standard_error": 0.0016888776355626156,
+        "runtime_seconds": 9.439485500101
+      },
+      "continuous_control": {
+        "block_count": 12,
+        "replicates": 16,
+        "points_per_replicate": 131072,
+        "seed": 20263102,
+        "undiscounted_mean": 6.060738806876064,
+        "discounted_mean": 5.765153087313863,
+        "discounted_standard_error": 0.00028669281968433724,
+        "discounted_ci95_low": 5.764591169387281,
+        "discounted_ci95_high": 5.765715005240444,
+        "replicate_discounted_prices": [
+          5.765961938872321,
+          5.764700953652822,
+          5.76518058166819,
+          5.764778237376792,
+          5.767605167605336,
+          5.763245545338651,
+          5.764745934280443,
+          5.765505702142262,
+          5.764487161883047,
+          5.764705967797717,
+          5.7664666970356855,
+          5.766026615099975,
+          5.7650326870805415,
+          5.76449245457788,
+          5.766320192401831,
+          5.763193560208312
+        ],
+        "runtime_seconds": 0.6303528330754489,
+        "method": "scrambled Sobol' over the k-dimensional joint lognormal law"
+      },
+      "transpile_check": {
+        "materialized": false,
+        "all_match": null
+      },
+      "encoded_control_primary": {
+        "method": "randomized QMC",
+        "discounted_mean": 5.767380185976203,
+        "discounted_standard_error": 0.0017130383652335774,
+        "ci95_low": 5.764022630780345,
+        "ci95_high": 5.77073774117206
+      }
+    }
+  ],
+  "k1_implementation_comparison": {
+    "generic_a_t": 112278103,
+    "production_a_t": 112277123,
+    "generic_q_t": 224778617,
+    "production_q_t": 224776209,
+    "generic_a_qubits": 15889,
+    "production_a_qubits": 15857,
+    "generic_q_qubits": 31775,
+    "production_q_qubits": 31711
+  },
+  "k2_frozen_regression": {
+    "a_counts_match": true,
+    "q_counts_match": true,
+    "a_qubits_match": true,
+    "q_qubits_match": true,
+    "all_match": true
+  },
+  "stopping_analysis": {
+    "rule": "stop at the first tested k whose net leading-order T reduction does not exceed the preceding tested rung",
+    "first_non_improving_transition": null,
+    "conclusion": "no T-count stopping point was observed within the tested block counts",
+    "marginal_transitions": [
+      {
+        "from_k": 1,
+        "to_k": 2,
+        "net_gain_multiplier": 3.7983036979297604,
+        "additional_q_qubits": 1710,
+        "encoded_control_runtime_ratio": 0.9893749278557542
+      },
+      {
+        "from_k": 2,
+        "to_k": 3,
+        "net_gain_multiplier": 1.900445856377142,
+        "additional_q_qubits": 1712,
+        "encoded_control_runtime_ratio": 1.003509338601333
+      },
+      {
+        "from_k": 3,
+        "to_k": 4,
+        "net_gain_multiplier": 1.927037152144447,
+        "additional_q_qubits": 1302,
+        "encoded_control_runtime_ratio": 1.0163303990655956
+      },
+      {
+        "from_k": 4,
+        "to_k": 6,
+        "net_gain_multiplier": 1.8476671049269702,
+        "additional_q_qubits": 2954,
+        "encoded_control_runtime_ratio": 1.0486834439926467
+      },
+      {
+        "from_k": 6,
+        "to_k": 12,
+        "net_gain_multiplier": 1.6559314617449303,
+        "additional_q_qubits": 8064,
+        "encoded_control_runtime_ratio": 1.0271742430582802
+      }
+    ]
+  },
+  "gates": {
+    "all_rounding_certificates_pass": true,
+    "all_materialized_circuits_match_ledgers": true,
+    "all_selection_bounds_within_budget": true,
+    "all_evaluation_ci95_bounds_within_budget": true,
+    "all_encoded_control_ci95_halfwidths_below_budget": true,
+    "production_regressions_pass": true
+  },
+  "limitations": [
+    "Logical Clifford+T counts, not physical resources or runtime.",
+    "Query count is modeled as proportional to implemented amplitude scale; no AE schedule is executed.",
+    "Caps are selected on seeded binary-shock samples and checked on one independent seed.",
+    "Control-price intervals are empirical randomized-QMC intervals, not deterministic certificates.",
+    "The finite binary-shock model is not the continuous Black--Scholes model.",
+    "The k=1 row uses the saved optimized production oracle; the uniform general-k layout has a small avoidable k=1 aggregation surcharge."
+  ],
+  "environment": {
+    "python": "3.12.6",
+    "numpy": "2.2.2",
+    "platform": "macOS-14.5-arm64-arm-64bit"
+  },
+  "provenance": {
+    "git": {
+      "head": "900ef6d19657f98f20565a8953750f1d2e512f33",
+      "worktree_dirty": true
+    },
+    "input_sha256": {
+      "scripts/v25_general_k_frontier.py": "27e46b57bdc6167b02af90c0309c1ffbbf81731df3318005aa4c016ad05cb232",
+      "src/qc_option_pricing/quantum/blocked_asian_oracle.py": "2191ea2e35b72313e72ff611622d1bff9b66ad82ab3488be410c5ee4a7763c9c",
+      "src/qc_option_pricing/quantum/telescoping_asian_ladder.py": "4b13494a7b85765116f119c074b07da2876a0cd3db8bc337513159f68f43fe90",
+      "src/qc_option_pricing/quantum/arithmetic_asian_oracle.py": "b8b95f80196c78c38a3216d1b2fedc05d57980044ec38d9220ebb982c2317bb5"
+    },
+    "output_sha256": {
+      "results/general_k_frontier.csv": "c960d9c07839f7ba775757b0cb3f7973a08bc92e9324bd0373535acae9d8cafb",
+      "results/general_k_frontier.png": "80276f16014aac529034db0183efa7a1e0d5b32d128bb76a447190f637252039"
+    }
+  }
+}

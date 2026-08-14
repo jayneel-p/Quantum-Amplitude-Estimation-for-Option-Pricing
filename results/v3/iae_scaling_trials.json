@@ -1,0 +1,5118 @@
+{
+ "schema": "parikh-rayan-iae-trials-v1",
+ "config": {
+  "s0": 100.0,
+  "strike": 100.0,
+  "rate": 0.05,
+  "volatility": 0.2,
+  "maturity": 1.0,
+  "distribution_qubits": 6,
+  "alpha": 0.32,
+  "c_approx": 0.1,
+  "epsilon_grid": [
+   0.02,
+   0.01,
+   0.005,
+   0.002,
+   0.001,
+   0.0005
+  ],
+  "trials_per_point": 15,
+  "sampler_default_shots": 1024,
+  "master_seed": 20260716,
+  "seed_rule": "master_seed + point_index * trials_per_point + trial_index",
+  "black_scholes_price": 10.450583572185565
+ },
+ "trials": [
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 0,
+   "seed": 20260716,
+   "sampler_default_shots": 1024,
+   "price": 10.524069431654981,
+   "undiscounted_payoff": 11.063650009753331,
+   "raw_amplitude": 0.4412625210600989,
+   "absolute_price_error": 0.07348585946941633,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.43782632361938717,
+    0.4446987185008106
+   ],
+   "confidence_interval_processed": [
+    9.143831905414569,
+    12.983468114092098
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42177830588345216,
+     0.48278758937733257
+    ],
+    [
+     0.43782632361938717,
+     0.4446987185008106
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 1,
+   "seed": 20260717,
+   "sampler_default_shots": 1024,
+   "price": 11.510169357762537,
+   "undiscounted_payoff": 12.10030836020874,
+   "raw_amplitude": 0.44311798995200946,
+   "absolute_price_error": 1.0595857855769726,
+   "num_oracle_queries": 5120,
+   "powers": [
+    0,
+    0,
+    5
+   ],
+   "ratios": [
+    1.0,
+    11.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    5120
+   ],
+   "confidence_interval": [
+    0.44025921912439364,
+    0.4459767607796252
+   ],
+   "confidence_interval_processed": [
+    10.503100957052185,
+    13.697515763365264
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.43243511456009825,
+     0.4935547554839796
+    ],
+    [
+     0.44025921912439364,
+     0.4459767607796252
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 2,
+   "seed": 20260718,
+   "sampler_default_shots": 1024,
+   "price": 10.017021168118177,
+   "undiscounted_payoff": 10.530604825829437,
+   "raw_amplitude": 0.4403084470816092,
+   "absolute_price_error": 0.4335624040673878,
+   "num_oracle_queries": 9216,
+   "powers": [
+    0,
+    0,
+    9
+   ],
+   "ratios": [
+    1.0,
+    19.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    9216
+   ],
+   "confidence_interval": [
+    0.43869294030313044,
+    0.4419239538600879
+   ],
+   "confidence_interval_processed": [
+    9.62801432731514,
+    11.433195324343702
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.38314593784710355,
+     0.44351467471312506
+    ],
+    [
+     0.43869294030313044,
+     0.4419239538600879
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 3,
+   "seed": 20260719,
+   "sampler_default_shots": 1024,
+   "price": 9.428508061051199,
+   "undiscounted_payoff": 9.911918006531474,
+   "raw_amplitude": 0.4392010869310464,
+   "absolute_price_error": 1.022075511134366,
+   "num_oracle_queries": 5120,
+   "powers": [
+    0,
+    0,
+    5
+   ],
+   "ratios": [
+    1.0,
+    11.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    5120
+   ],
+   "confidence_interval": [
+    0.43630109189863336,
+    0.44210108196345943
+   ],
+   "confidence_interval_processed": [
+    8.291678465067312,
+    11.532157547995602
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4382538336771438,
+     0.4994218434469153
+    ],
+    [
+     0.43630109189863336,
+     0.44210108196345943
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 4,
+   "seed": 20260720,
+   "sampler_default_shots": 1024,
+   "price": 10.190039119818158,
+   "undiscounted_payoff": 10.71249359760581,
+   "raw_amplitude": 0.44063400174257406,
+   "absolute_price_error": 0.260544452367407,
+   "num_oracle_queries": 10240,
+   "powers": [
+    0,
+    0,
+    10
+   ],
+   "ratios": [
+    1.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240
+   ],
+   "confidence_interval": [
+    0.4391787402334608,
+    0.44208926325168724
+   ],
+   "confidence_interval_processed": [
+    9.899432811679532,
+    11.52555438353206
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.39761088507274434,
+     0.45826419051613027
+    ],
+    [
+     0.4391787402334608,
+     0.44208926325168724
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 5,
+   "seed": 20260721,
+   "sampler_default_shots": 1024,
+   "price": 8.396989712629225,
+   "undiscounted_payoff": 8.82751258145392,
+   "raw_amplitude": 0.4372601576638809,
+   "absolute_price_error": 2.05359385955634,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.43381206875342576,
+    0.440708246574336
+   ],
+   "confidence_interval_processed": [
+    6.901050662464086,
+    10.753974500443755
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42177830588345216,
+     0.48278758937733257
+    ],
+    [
+     0.43381206875342576,
+     0.440708246574336
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 6,
+   "seed": 20260722,
+   "sampler_default_shots": 1024,
+   "price": 11.081041977626858,
+   "undiscounted_payoff": 11.649179148808534,
+   "raw_amplitude": 0.44231053374658025,
+   "absolute_price_error": 0.6304584054412938,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.43792989740099963,
+    0.4466911700921609
+   ],
+   "confidence_interval_processed": [
+    9.201699017099877,
+    14.09665928051722
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4063026906507246,
+     0.46710107396612405
+    ],
+    [
+     0.43792989740099963,
+     0.4466911700921609
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 7,
+   "seed": 20260723,
+   "sampler_default_shots": 1024,
+   "price": 10.624441616810046,
+   "undiscounted_payoff": 11.169168386886954,
+   "raw_amplitude": 0.44145138373236725,
+   "absolute_price_error": 0.17385804462448107,
+   "num_oracle_queries": 10240,
+   "powers": [
+    0,
+    0,
+    10
+   ],
+   "ratios": [
+    1.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240
+   ],
+   "confidence_interval": [
+    0.4399950929872493,
+    0.44290767447748525
+   ],
+   "confidence_interval_processed": [
+    10.355532562433476,
+    11.982804211340461
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.39278625187369876,
+     0.45335066659951334
+    ],
+    [
+     0.4399950929872493,
+     0.44290767447748525
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 8,
+   "seed": 20260724,
+   "sampler_default_shots": 1024,
+   "price": 10.871364079662595,
+   "undiscounted_payoff": 11.428750835129822,
+   "raw_amplitude": 0.4419159988655874,
+   "absolute_price_error": 0.4207805074770299,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4384813603508987,
+    0.4453506373802762
+   ],
+   "confidence_interval_processed": [
+    9.509803709381172,
+    13.347697960878502
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41500403621593807,
+     0.47592842451065903
+    ],
+    [
+     0.4384813603508987,
+     0.4453506373802762
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 9,
+   "seed": 20260725,
+   "sampler_default_shots": 1024,
+   "price": 10.814349159678306,
+   "undiscounted_payoff": 11.368812697688147,
+   "raw_amplitude": 0.44180871824665136,
+   "absolute_price_error": 0.36376558749274146,
+   "num_oracle_queries": 10240,
+   "powers": [
+    0,
+    0,
+    10
+   ],
+   "ratios": [
+    1.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240
+   ],
+   "confidence_interval": [
+    0.4403519553684076,
+    0.44326548112489506
+   ],
+   "confidence_interval_processed": [
+    10.554913090452034,
+    12.18271230492423
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.39568067515106037,
+     0.456299137278845
+    ],
+    [
+     0.4403519553684076,
+     0.44326548112489506
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 10,
+   "seed": 20260726,
+   "sampler_default_shots": 1024,
+   "price": 10.871364079662595,
+   "undiscounted_payoff": 11.428750835129822,
+   "raw_amplitude": 0.4419159988655874,
+   "absolute_price_error": 0.4207805074770299,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4384813603508987,
+    0.4453506373802762
+   ],
+   "confidence_interval_processed": [
+    9.509803709381172,
+    13.347697960878502
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4285582853112337,
+     0.4896410476567076
+    ],
+    [
+     0.4384813603508987,
+     0.4453506373802762
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 11,
+   "seed": 20260727,
+   "sampler_default_shots": 1024,
+   "price": 9.66683981022075,
+   "undiscounted_payoff": 10.162469285782164,
+   "raw_amplitude": 0.4396495375746686,
+   "absolute_price_error": 0.7837437619648142,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.4352677456283898,
+    0.44403132952094737
+   ],
+   "confidence_interval_processed": [
+    7.714343515055364,
+    12.610595056508933
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4130695826750391,
+     0.4739676116913456
+    ],
+    [
+     0.4352677456283898,
+     0.44403132952094737
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 12,
+   "seed": 20260728,
+   "sampler_default_shots": 1024,
+   "price": 10.436828531608539,
+   "undiscounted_payoff": 10.971936173112677,
+   "raw_amplitude": 0.44109836652377576,
+   "absolute_price_error": 0.013755040577025923,
+   "num_oracle_queries": 10240,
+   "powers": [
+    0,
+    0,
+    10
+   ],
+   "ratios": [
+    1.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240
+   ],
+   "confidence_interval": [
+    0.4396425286839563,
+    0.44255420436359516
+   ],
+   "confidence_interval_processed": [
+    10.158553388773043,
+    11.785318957452281
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.39278625187369876,
+     0.45335066659951334
+    ],
+    [
+     0.4396425286839563,
+     0.44255420436359516
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 13,
+   "seed": 20260729,
+   "sampler_default_shots": 1024,
+   "price": 11.610480274375355,
+   "undiscounted_payoff": 12.20576232749478,
+   "raw_amplitude": 0.44330673733994286,
+   "absolute_price_error": 1.1598967021897906,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.4389264562296703,
+    0.4476870184502154
+   ],
+   "confidence_interval_processed": [
+    9.75848066726149,
+    14.653043987728068
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4130695826750391,
+     0.4739676116913456
+    ],
+    [
+     0.4389264562296703,
+     0.4476870184502154
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.02,
+   "point_index": 0,
+   "trial_index": 14,
+   "seed": 20260730,
+   "sampler_default_shots": 1024,
+   "price": 10.466017921326522,
+   "undiscounted_payoff": 11.002622134844048,
+   "raw_amplitude": 0.44115328996830877,
+   "absolute_price_error": 0.015434349140956982,
+   "num_oracle_queries": 12288,
+   "powers": [
+    0,
+    0,
+    12
+   ],
+   "ratios": [
+    1.0,
+    25.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    12288
+   ],
+   "confidence_interval": [
+    0.4399349810967456,
+    0.4423715988398719
+   ],
+   "confidence_interval_processed": [
+    10.32194779390192,
+    11.683296475786175
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4072690369044439,
+     0.468082360283144
+    ],
+    [
+     0.4399349810967456,
+     0.4423715988398719
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 0,
+   "seed": 20260731,
+   "sampler_default_shots": 1024,
+   "price": 10.529945697126818,
+   "undiscounted_payoff": 11.069827557798506,
+   "raw_amplitude": 0.44127357797988453,
+   "absolute_price_error": 0.0793621249412535,
+   "num_oracle_queries": 10240,
+   "powers": [
+    0,
+    0,
+    10
+   ],
+   "ratios": [
+    1.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240
+   ],
+   "confidence_interval": [
+    0.4397689719539428,
+    0.4427781840058263
+   ],
+   "confidence_interval_processed": [
+    10.229197780744192,
+    11.910457334852852
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.39660885355622155,
+     0.4592907794709316
+    ],
+    [
+     0.4397689719539428,
+     0.4427781840058263
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 1,
+   "seed": 20260732,
+   "sampler_default_shots": 1024,
+   "price": 9.185051116155764,
+   "undiscounted_payoff": 9.655978757150892,
+   "raw_amplitude": 0.43874299259819705,
+   "absolute_price_error": 1.265532456029801,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4351869221458799,
+    0.44229906305051425
+   ],
+   "confidence_interval_processed": [
+    7.669187092103682,
+    11.642770422198137
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4168958367024796,
+     0.47989711156163967
+    ],
+    [
+     0.4351869221458799,
+     0.44229906305051425
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 2,
+   "seed": 20260733,
+   "sampler_default_shots": 1024,
+   "price": 10.873567653035828,
+   "undiscounted_payoff": 11.431067388125845,
+   "raw_amplitude": 0.44192014516124856,
+   "absolute_price_error": 0.42298408085026296,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4383724322173779,
+    0.44546785810511913
+   ],
+   "confidence_interval_processed": [
+    9.448945098543703,
+    13.413189677707956
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4168958367024796,
+     0.47989711156163967
+    ],
+    [
+     0.4383724322173779,
+     0.44546785810511913
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 3,
+   "seed": 20260734,
+   "sampler_default_shots": 1024,
+   "price": 11.325830914447957,
+   "undiscounted_payoff": 11.90651868280117,
+   "raw_amplitude": 0.4427711343868706,
+   "absolute_price_error": 0.8752473422623925,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4392252798565686,
+    0.4463169889171726
+   ],
+   "confidence_interval_processed": [
+    9.925434696772882,
+    13.88760266882946
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4159285762279849,
+     0.4789170704776077
+    ],
+    [
+     0.4392252798565686,
+     0.4463169889171726
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 4,
+   "seed": 20260735,
+   "sampler_default_shots": 1024,
+   "price": 11.401333700620308,
+   "undiscounted_payoff": 11.985892579600023,
+   "raw_amplitude": 0.4429132022111208,
+   "absolute_price_error": 0.950750128434743,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.43838714726736155,
+    0.44743925715488003
+   ],
+   "confidence_interval_processed": [
+    9.457166459467295,
+    14.514618699732752
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4062626306548213,
+     0.46911000477520004
+    ],
+    [
+     0.43838714726736155,
+     0.44743925715488003
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 5,
+   "seed": 20260736,
+   "sampler_default_shots": 1024,
+   "price": 10.75861748518438,
+   "undiscounted_payoff": 11.310223599140047,
+   "raw_amplitude": 0.44170385221271324,
+   "absolute_price_error": 0.3080339129988161,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.43815564399501195,
+    0.4452520604304146
+   ],
+   "confidence_interval_processed": [
+    9.327824597965183,
+    13.29262260031494
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42754365661053545,
+     0.4906696132701825
+    ],
+    [
+     0.43815564399501195,
+     0.4452520604304146
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 6,
+   "seed": 20260737,
+   "sampler_default_shots": 1024,
+   "price": 9.55752025791409,
+   "undiscounted_payoff": 10.047544800173405,
+   "raw_amplitude": 0.43944383932521913,
+   "absolute_price_error": 0.8930633142714743,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.43491645184911115,
+    0.44397122680132706
+   ],
+   "confidence_interval_processed": [
+    7.518074188557906,
+    12.577015411788874
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4081948491839652,
+     0.4710723878391191
+    ],
+    [
+     0.43491645184911115,
+     0.44397122680132706
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 7,
+   "seed": 20260738,
+   "sampler_default_shots": 1024,
+   "price": 12.30346772220013,
+   "undiscounted_payoff": 12.934280001544353,
+   "raw_amplitude": 0.44461067887556277,
+   "absolute_price_error": 1.8528841500145656,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4410683962216118,
+    0.4481529615295137
+   ],
+   "confidence_interval_processed": [
+    10.955191638003852,
+    14.913368365084853
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41786321793795306,
+     0.4808770319572326
+    ],
+    [
+     0.4410683962216118,
+     0.4481529615295137
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 8,
+   "seed": 20260739,
+   "sampler_default_shots": 1024,
+   "price": 9.86093932970495,
+   "undiscounted_payoff": 10.366520500436378,
+   "raw_amplitude": 0.4400147598110796,
+   "absolute_price_error": 0.589644242480615,
+   "num_oracle_queries": 11264,
+   "powers": [
+    0,
+    0,
+    11
+   ],
+   "ratios": [
+    1.0,
+    23.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    11264
+   ],
+   "confidence_interval": [
+    0.43864541442351707,
+    0.44138410519864224
+   ],
+   "confidence_interval_processed": [
+    9.601461416523298,
+    11.131579584349492
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.40143421522944356,
+     0.464201917796178
+    ],
+    [
+     0.43864541442351707,
+     0.44138410519864224
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 9,
+   "seed": 20260740,
+   "sampler_default_shots": 1024,
+   "price": 10.75861748518438,
+   "undiscounted_payoff": 11.310223599140047,
+   "raw_amplitude": 0.44170385221271324,
+   "absolute_price_error": 0.3080339129988161,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.43815564399501195,
+    0.4452520604304146
+   ],
+   "confidence_interval_processed": [
+    9.327824597965183,
+    13.29262260031494
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42657507158926466,
+     0.4896908960135342
+    ],
+    [
+     0.43815564399501195,
+     0.4452520604304146
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 10,
+   "seed": 20260741,
+   "sampler_default_shots": 1024,
+   "price": 10.782105070785509,
+   "undiscounted_payoff": 11.334915419006169,
+   "raw_amplitude": 0.44174804700806325,
+   "absolute_price_error": 0.33152149859994395,
+   "num_oracle_queries": 10240,
+   "powers": [
+    0,
+    0,
+    10
+   ],
+   "ratios": [
+    1.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240
+   ],
+   "confidence_interval": [
+    0.44024281674076954,
+    0.443253277275357
+   ],
+   "confidence_interval_processed": [
+    10.493936875657218,
+    12.175893962355154
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.3975736809883106,
+     0.4602732518368903
+    ],
+    [
+     0.44024281674076954,
+     0.443253277275357
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 11,
+   "seed": 20260742,
+   "sampler_default_shots": 1024,
+   "price": 11.006237436294938,
+   "undiscounted_payoff": 11.57053929662862,
+   "raw_amplitude": 0.4421697797562997,
+   "absolute_price_error": 0.5556538641093738,
+   "num_oracle_queries": 10240,
+   "powers": [
+    0,
+    0,
+    10
+   ],
+   "ratios": [
+    1.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240
+   ],
+   "confidence_interval": [
+    0.44066397362324033,
+    0.44367558588935896
+   ],
+   "confidence_interval_processed": [
+    10.729239014630592,
+    12.411839578626616
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.3917865584797208,
+     0.4543765771471115
+    ],
+    [
+     0.44066397362324033,
+     0.44367558588935896
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 12,
+   "seed": 20260743,
+   "sampler_default_shots": 1024,
+   "price": 9.668724573721178,
+   "undiscounted_payoff": 10.16445068317367,
+   "raw_amplitude": 0.4396530839901495,
+   "absolute_price_error": 0.7818589984643864,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.4351257922439222,
+    0.4441803757363768
+   ],
+   "confidence_interval_processed": [
+    7.635033556249096,
+    12.693867810098244
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41302752013154764,
+     0.47597622234817144
+    ],
+    [
+     0.4351257922439222,
+     0.4441803757363768
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 13,
+   "seed": 20260744,
+   "sampler_default_shots": 1024,
+   "price": 10.887190953927476,
+   "undiscounted_payoff": 11.445389170590468,
+   "raw_amplitude": 0.4419457790857022,
+   "absolute_price_error": 0.4366073817419114,
+   "num_oracle_queries": 5120,
+   "powers": [
+    0,
+    0,
+    5
+   ],
+   "ratios": [
+    1.0,
+    11.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    5120
+   ],
+   "confidence_interval": [
+    0.43898524899752134,
+    0.44490630917388313
+   ],
+   "confidence_interval_processed": [
+    9.791328436364427,
+    13.09944990481654
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.43335768534823077,
+     0.4965393993463397
+    ],
+    [
+     0.43898524899752134,
+     0.44490630917388313
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.01,
+   "point_index": 1,
+   "trial_index": 14,
+   "seed": 20260745,
+   "sampler_default_shots": 1024,
+   "price": 10.408963332717825,
+   "undiscounted_payoff": 10.9426422949241,
+   "raw_amplitude": 0.4410459347079529,
+   "absolute_price_error": 0.04162023946773985,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.43749615927428875,
+    0.44459571014161703
+   ],
+   "confidence_interval_processed": [
+    8.959367683534522,
+    12.92591690631368
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42657507158926466,
+     0.4896908960135342
+    ],
+    [
+     0.43749615927428875,
+     0.44459571014161703
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 0,
+   "seed": 20260746,
+   "sampler_default_shots": 1024,
+   "price": 10.875491518663372,
+   "undiscounted_payoff": 11.433089892453394,
+   "raw_amplitude": 0.4419237651522146,
+   "absolute_price_error": 0.4249079464778074,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4382803195425713,
+    0.4455672107618579
+   ],
+   "confidence_interval_processed": [
+    9.39748135590841,
+    13.468698428998376
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4170073821183859,
+     0.4817479239346049
+    ],
+    [
+     0.4382803195425713,
+     0.4455672107618579
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 1,
+   "seed": 20260747,
+   "sampler_default_shots": 1024,
+   "price": 10.875491518663372,
+   "undiscounted_payoff": 11.433089892453394,
+   "raw_amplitude": 0.4419237651522146,
+   "absolute_price_error": 0.4249079464778074,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4382803195425713,
+    0.4455672107618579
+   ],
+   "confidence_interval_processed": [
+    9.39748135590841,
+    13.468698428998376
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4179745684144262,
+     0.4827277497684431
+    ],
+    [
+     0.4382803195425713,
+     0.4455672107618579
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 2,
+   "seed": 20260748,
+   "sampler_default_shots": 1024,
+   "price": 10.410959059429286,
+   "undiscounted_payoff": 10.944740344732125,
+   "raw_amplitude": 0.4410496899144303,
+   "absolute_price_error": 0.03962451275627821,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.43740422029652526,
+    0.44469515953233524
+   ],
+   "confidence_interval_processed": [
+    8.908000986174956,
+    12.98147970328926
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4247483395446774,
+     0.48958306546664415
+    ],
+    [
+     0.43740422029652526,
+     0.44469515953233524
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 3,
+   "seed": 20260749,
+   "sampler_default_shots": 1024,
+   "price": 10.890229335143998,
+   "undiscounted_payoff": 11.44858333294317,
+   "raw_amplitude": 0.4419514961755019,
+   "absolute_price_error": 0.43964576295843294,
+   "num_oracle_queries": 5120,
+   "powers": [
+    0,
+    0,
+    5
+   ],
+   "ratios": [
+    1.0,
+    11.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    5120
+   ],
+   "confidence_interval": [
+    0.43891320269602296,
+    0.4449897896549808
+   ],
+   "confidence_interval_processed": [
+    9.751075861722331,
+    13.146090804164006
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.43443564722520955,
+     0.4993658869142431
+    ],
+    [
+     0.43891320269602296,
+     0.4449897896549808
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 4,
+   "seed": 20260750,
+   "sampler_default_shots": 1024,
+   "price": 10.655256590578297,
+   "undiscounted_payoff": 11.201563278145102,
+   "raw_amplitude": 0.44150936591421136,
+   "absolute_price_error": 0.20467301839273233,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.43685957139429604,
+    0.4461591604341267
+   ],
+   "confidence_interval_processed": [
+    8.60370333126741,
+    13.799423225022792
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.406376536970273,
+     0.4709616407958865
+    ],
+    [
+     0.43685957139429604,
+     0.4461591604341267
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 5,
+   "seed": 20260751,
+   "sampler_default_shots": 1024,
+   "price": 10.410959059429286,
+   "undiscounted_payoff": 10.944740344732125,
+   "raw_amplitude": 0.4410496899144303,
+   "absolute_price_error": 0.03962451275627821,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.43740422029652526,
+    0.44469515953233524
+   ],
+   "confidence_interval_processed": [
+    8.908000986174956,
+    12.98147970328926
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4189418786761074,
+     0.48370745170811547
+    ],
+    [
+     0.43740422029652526,
+     0.44469515953233524
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 6,
+   "seed": 20260752,
+   "sampler_default_shots": 1024,
+   "price": 10.111550883970201,
+   "undiscounted_payoff": 10.629981183853308,
+   "raw_amplitude": 0.4404863164257607,
+   "absolute_price_error": 0.33903268821536336,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.4358361593274001,
+    0.4451364735241213
+   ],
+   "confidence_interval_processed": [
+    8.031918662858304,
+    13.22804370484831
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4131398781021952,
+     0.4778273801755536
+    ],
+    [
+     0.4358361593274001,
+     0.4451364735241213
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 7,
+   "seed": 20260753,
+   "sampler_default_shots": 1024,
+   "price": 12.342492239237197,
+   "undiscounted_payoff": 12.975305348355457,
+   "raw_amplitude": 0.4446841083277583,
+   "absolute_price_error": 1.8919086670516325,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.4400351778921461,
+    0.44933303876337055
+   ],
+   "confidence_interval_processed": [
+    10.377928169047854,
+    15.572682527663094
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4083082966913327,
+     0.4729239036536356
+    ],
+    [
+     0.4400351778921461,
+     0.44933303876337055
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 8,
+   "seed": 20260754,
+   "sampler_default_shots": 1024,
+   "price": 10.870426547345632,
+   "undiscounted_payoff": 11.427765234503081,
+   "raw_amplitude": 0.441914234782655,
+   "absolute_price_error": 0.4198429751600674,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.437264571617939,
+    0.446563897947371
+   ],
+   "confidence_interval_processed": [
+    8.829978676333146,
+    14.025551792673014
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4131398781021952,
+     0.4778273801755536
+    ],
+    [
+     0.437264571617939,
+     0.446563897947371
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 9,
+   "seed": 20260755,
+   "sampler_default_shots": 1024,
+   "price": 10.27278191399141,
+   "undiscounted_payoff": 10.799478705553542,
+   "raw_amplitude": 0.4407896925367355,
+   "absolute_price_error": 0.17780165819415394,
+   "num_oracle_queries": 11264,
+   "powers": [
+    0,
+    0,
+    11
+   ],
+   "ratios": [
+    1.0,
+    23.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    11264
+   ],
+   "confidence_interval": [
+    0.4393822275753426,
+    0.44219715749812843
+   ],
+   "confidence_interval_processed": [
+    10.013122053840057,
+    11.585835357267054
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.39865450410389985,
+     0.4631075870484688
+    ],
+    [
+     0.4393822275753426,
+     0.44219715749812843
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 10,
+   "seed": 20260756,
+   "sampler_default_shots": 1024,
+   "price": 9.811096294062295,
+   "undiscounted_payoff": 10.314121957709615,
+   "raw_amplitude": 0.4399209739789699,
+   "absolute_price_error": 0.6394872781232692,
+   "num_oracle_queries": 4096,
+   "powers": [
+    0,
+    0,
+    4
+   ],
+   "ratios": [
+    1.0,
+    9.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096
+   ],
+   "confidence_interval": [
+    0.4362726393155678,
+    0.44356930864237204
+   ],
+   "confidence_interval_processed": [
+    8.275781886064816,
+    12.352462029354445
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41507338172251634,
+     0.47978790029103724
+    ],
+    [
+     0.4362726393155678,
+     0.44356930864237204
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 11,
+   "seed": 20260757,
+   "sampler_default_shots": 1024,
+   "price": 8.784386380825346,
+   "undiscounted_payoff": 9.234771501560875,
+   "raw_amplitude": 0.43798909237692263,
+   "absolute_price_error": 1.6661971913602187,
+   "num_oracle_queries": 5120,
+   "powers": [
+    0,
+    0,
+    5
+   ],
+   "ratios": [
+    1.0,
+    11.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    5120
+   ],
+   "confidence_interval": [
+    0.43490187637345784,
+    0.44107630838038736
+   ],
+   "confidence_interval_processed": [
+    7.509930808405461,
+    10.959612194716259
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4305592460787891,
+     0.4954542357658774
+    ],
+    [
+     0.43490187637345784,
+     0.44107630838038736
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 12,
+   "seed": 20260758,
+   "sampler_default_shots": 1024,
+   "price": 12.239215946425574,
+   "undiscounted_payoff": 12.86673396678173,
+   "raw_amplitude": 0.4444897812179894,
+   "absolute_price_error": 1.7886323742400094,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.4398408081197312,
+    0.44913875431624756
+   ],
+   "confidence_interval_processed": [
+    10.269332951672624,
+    15.464134981890837
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.406376536970273,
+     0.4709616407958865
+    ],
+    [
+     0.4398408081197312,
+     0.44913875431624756
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 13,
+   "seed": 20260759,
+   "sampler_default_shots": 1024,
+   "price": 9.685139155587665,
+   "undiscounted_payoff": 10.181706858649004,
+   "raw_amplitude": 0.4396839700547568,
+   "absolute_price_error": 0.7654444165978997,
+   "num_oracle_queries": 9216,
+   "powers": [
+    0,
+    0,
+    9
+   ],
+   "ratios": [
+    1.0,
+    19.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    9216
+   ],
+   "confidence_interval": [
+    0.4379707178724166,
+    0.44139722223709693
+   ],
+   "confidence_interval_processed": [
+    9.224505587853182,
+    11.138908129444795
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.38708656298365823,
+     0.451311410730272
+    ],
+    [
+     0.4379707178724166,
+     0.44139722223709693
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.005,
+   "point_index": 2,
+   "trial_index": 14,
+   "seed": 20260760,
+   "sampler_default_shots": 1024,
+   "price": 9.781200391474847,
+   "undiscounted_payoff": 10.282693259419359,
+   "raw_amplitude": 0.43986472114314873,
+   "absolute_price_error": 0.6693831807107173,
+   "num_oracle_queries": 3072,
+   "powers": [
+    0,
+    0,
+    3
+   ],
+   "ratios": [
+    1.0,
+    7.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072
+   ],
+   "confidence_interval": [
+    0.4352143211321449,
+    0.44451512115415254
+   ],
+   "confidence_interval_processed": [
+    7.684495022098888,
+    12.88089149673983
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.40154932611319005,
+     0.46605379679831904
+    ],
+    [
+     0.4352143211321449,
+     0.44451512115415254
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 0,
+   "seed": 20260761,
+   "sampler_default_shots": 1024,
+   "price": 10.480249800950183,
+   "undiscounted_payoff": 11.017583698539507,
+   "raw_amplitude": 0.4411800690088664,
+   "absolute_price_error": 0.029666228764618552,
+   "num_oracle_queries": 99328,
+   "powers": [
+    0,
+    0,
+    4,
+    93
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    20.77777777777778
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    95232
+   ],
+   "confidence_interval": [
+    0.44100316641913684,
+    0.44135697159859594
+   ],
+   "confidence_interval_processed": [
+    10.918747470317154,
+    11.116419926761832
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4172339506380224,
+     0.48348146869019715
+    ],
+    [
+     0.43754605529298995,
+     0.44500155466209945
+    ],
+    [
+     0.44100316641913684,
+     0.44135697159859594
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 1,
+   "seed": 20260762,
+   "sampler_default_shots": 1024,
+   "price": 10.50421272133221,
+   "undiscounted_payoff": 11.042775224121891,
+   "raw_amplitude": 0.44122515820535757,
+   "absolute_price_error": 0.05362914914664607,
+   "num_oracle_queries": 73728,
+   "powers": [
+    0,
+    0,
+    3,
+    69
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.857142857142858
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    70656
+   ],
+   "confidence_interval": [
+    0.44098626265070495,
+    0.44146405376001013
+   ],
+   "confidence_interval_processed": [
+    10.909303263100597,
+    11.176247185143154
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4008138004504643,
+     0.46680679135198216
+    ],
+    [
+     0.4383611444817757,
+     0.44787318182883706
+    ],
+    [
+     0.44098626265070495,
+     0.44146405376001013
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 2,
+   "seed": 20260763,
+   "sampler_default_shots": 1024,
+   "price": 10.44110411032804,
+   "undiscounted_payoff": 10.97643096544077,
+   "raw_amplitude": 0.44110641155359365,
+   "absolute_price_error": 0.00947946185752535,
+   "num_oracle_queries": 71680,
+   "powers": [
+    0,
+    0,
+    3,
+    67
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.285714285714285
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    68608
+   ],
+   "confidence_interval": [
+    0.4408612862180032,
+    0.4413515368891841
+   ],
+   "confidence_interval_processed": [
+    10.839478399350385,
+    11.11338353153115
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4027436662922557,
+     0.4687704332904007
+    ],
+    [
+     0.43695830732327345,
+     0.446471091989592
+    ],
+    [
+     0.4408612862180032,
+     0.4413515368891841
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 3,
+   "seed": 20260764,
+   "sampler_default_shots": 1024,
+   "price": 10.477491663337004,
+   "undiscounted_payoff": 11.014684148186943,
+   "raw_amplitude": 0.44117487923204424,
+   "absolute_price_error": 0.026908091151438995,
+   "num_oracle_queries": 99328,
+   "powers": [
+    0,
+    0,
+    4,
+    93
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    20.77777777777778
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    95232
+   ],
+   "confidence_interval": [
+    0.4409979765732279,
+    0.4413517818908605
+   ],
+   "confidence_interval_processed": [
+    10.915847881365536,
+    11.11352041500832
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4172339506380224,
+     0.48348146869019715
+    ],
+    [
+     0.4377657886159234,
+     0.4452202801319725
+    ],
+    [
+     0.4409979765732279,
+     0.4413517818908605
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 4,
+   "seed": 20260765,
+   "sampler_default_shots": 1024,
+   "price": 10.355413470091738,
+   "undiscounted_payoff": 10.886346872130389,
+   "raw_amplitude": 0.4409451740227138,
+   "absolute_price_error": 0.09517010209382626,
+   "num_oracle_queries": 9216,
+   "powers": [
+    0,
+    0,
+    9
+   ],
+   "ratios": [
+    1.0,
+    19.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    9216
+   ],
+   "confidence_interval": [
+    0.43919002366597776,
+    0.44270032437944995
+   ],
+   "confidence_interval_processed": [
+    9.905736913349724,
+    11.866956830911084
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.38828222738219337,
+     0.45403057410465947
+    ],
+    [
+     0.43919002366597776,
+     0.44270032437944995
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 5,
+   "seed": 20260766,
+   "sampler_default_shots": 1024,
+   "price": 10.005339051533527,
+   "undiscounted_payoff": 10.5183237543195,
+   "raw_amplitude": 0.44028646573535757,
+   "absolute_price_error": 0.4452445206520377,
+   "num_oracle_queries": 11264,
+   "powers": [
+    0,
+    0,
+    11
+   ],
+   "ratios": [
+    1.0,
+    23.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    11264
+   ],
+   "confidence_interval": [
+    0.4388469064271663,
+    0.4417260250435489
+   ],
+   "confidence_interval_processed": [
+    9.71403585473868,
+    11.32261165390035
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.39888444810266077,
+     0.46484263631670764
+    ],
+    [
+     0.4388469064271663,
+     0.4417260250435489
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 6,
+   "seed": 20260767,
+   "sampler_default_shots": 1024,
+   "price": 10.425639901492403,
+   "undiscounted_payoff": 10.960173889663542,
+   "raw_amplitude": 0.44107731373330905,
+   "absolute_price_error": 0.024943670693161835,
+   "num_oracle_queries": 98304,
+   "powers": [
+    0,
+    0,
+    4,
+    92
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    20.555555555555557
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    94208
+   ],
+   "confidence_interval": [
+    0.4408984830694914,
+    0.4412561443971267
+   ],
+   "confidence_interval_processed": [
+    10.860260438259278,
+    11.060087341067804
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4153002574950959,
+     0.48152165147230286
+    ],
+    [
+     0.43665107446362267,
+     0.44411089458860614
+    ],
+    [
+     0.4408984830694914,
+     0.4412561443971267
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 7,
+   "seed": 20260768,
+   "sampler_default_shots": 1024,
+   "price": 10.514005758690907,
+   "undiscounted_payoff": 11.05307036124282,
+   "raw_amplitude": 0.4412435850155573,
+   "absolute_price_error": 0.06342218650534193,
+   "num_oracle_queries": 72704,
+   "powers": [
+    0,
+    0,
+    3,
+    68
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.571428571428573
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    69632
+   ],
+   "confidence_interval": [
+    0.44100178731809964,
+    0.441485382713015
+   ],
+   "confidence_interval_processed": [
+    10.917976960710352,
+    11.188163761775284
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41143439607718946,
+     0.47760049309326796
+    ],
+    [
+     0.437362056026374,
+     0.4468746102605363
+    ],
+    [
+     0.44100178731809964,
+     0.441485382713015
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 8,
+   "seed": 20260769,
+   "sampler_default_shots": 1024,
+   "price": 10.527028730840414,
+   "undiscounted_payoff": 11.066761035452506,
+   "raw_amplitude": 0.4412680893472826,
+   "absolute_price_error": 0.07644515865484891,
+   "num_oracle_queries": 103424,
+   "powers": [
+    0,
+    0,
+    4,
+    97
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    21.666666666666668
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    99328
+   ],
+   "confidence_interval": [
+    0.4410966749443285,
+    0.4414395037502367
+   ],
+   "confidence_interval_processed": [
+    10.970991080491032,
+    11.162530990413979
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42594184128908896,
+     0.4922943781053858
+    ],
+    [
+     0.43988437197390473,
+     0.4473301038818451
+    ],
+    [
+     0.4410966749443285,
+     0.4414395037502367
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 9,
+   "seed": 20260770,
+   "sampler_default_shots": 1024,
+   "price": 10.465184002639706,
+   "undiscounted_payoff": 11.001745460231872,
+   "raw_amplitude": 0.44115172084722803,
+   "absolute_price_error": 0.014600430454141389,
+   "num_oracle_queries": 100352,
+   "powers": [
+    0,
+    0,
+    4,
+    94
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    96256
+   ],
+   "confidence_interval": [
+    0.4409765774295882,
+    0.4413268642648679
+   ],
+   "confidence_interval_processed": [
+    10.903892088927597,
+    11.099598831536145
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4162670405961354,
+     0.4825016235144055
+    ],
+    [
+     0.4384159488908416,
+     0.4458675732025604
+    ],
+    [
+     0.4409765774295882,
+     0.4413268642648679
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 10,
+   "seed": 20260771,
+   "sampler_default_shots": 1024,
+   "price": 10.768858111902572,
+   "undiscounted_payoff": 11.320989274017657,
+   "raw_amplitude": 0.4417231212176145,
+   "absolute_price_error": 0.3182745397170077,
+   "num_oracle_queries": 8192,
+   "powers": [
+    0,
+    0,
+    8
+   ],
+   "ratios": [
+    1.0,
+    17.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    8192
+   ],
+   "confidence_interval": [
+    0.43973830703300276,
+    0.44370793540222614
+   ],
+   "confidence_interval_processed": [
+    10.212065159174971,
+    12.429913388860317
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.37192794655563577,
+     0.43729008354544013
+    ],
+    [
+     0.43973830703300276,
+     0.44370793540222614
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 11,
+   "seed": 20260772,
+   "sampler_default_shots": 1024,
+   "price": 9.89017756736991,
+   "undiscounted_payoff": 10.397257814602524,
+   "raw_amplitude": 0.4400697751690624,
+   "absolute_price_error": 0.5604060048156541,
+   "num_oracle_queries": 9216,
+   "powers": [
+    0,
+    0,
+    9
+   ],
+   "ratios": [
+    1.0,
+    19.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    9216
+   ],
+   "confidence_interval": [
+    0.43831647662737866,
+    0.44182307371074614
+   ],
+   "confidence_interval_processed": [
+    9.417682472756606,
+    11.376833156448411
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.37961936290979387,
+     0.44517267238184555
+    ],
+    [
+     0.43831647662737866,
+     0.44182307371074614
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 12,
+   "seed": 20260773,
+   "sampler_default_shots": 1024,
+   "price": 10.470918976154469,
+   "undiscounted_payoff": 11.007774472126423,
+   "raw_amplitude": 0.4411625119087329,
+   "absolute_price_error": 0.020335403968903876,
+   "num_oracle_queries": 73728,
+   "powers": [
+    0,
+    0,
+    3,
+    69
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.857142857142858
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    70656
+   ],
+   "confidence_interval": [
+    0.4409235605249627,
+    0.4414014632925032
+   ],
+   "confidence_interval_processed": [
+    10.874271319140004,
+    11.141277625112872
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.40177866923556094,
+     0.46778867640814326
+    ],
+    [
+     0.43816247507586176,
+     0.44767460934291614
+    ],
+    [
+     0.4409235605249627,
+     0.4414014632925032
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 13,
+   "seed": 20260774,
+   "sampler_default_shots": 1024,
+   "price": 10.480249800950183,
+   "undiscounted_payoff": 11.017583698539507,
+   "raw_amplitude": 0.4411800690088664,
+   "absolute_price_error": 0.029666228764618552,
+   "num_oracle_queries": 99328,
+   "powers": [
+    0,
+    0,
+    4,
+    93
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    20.77777777777778
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    95232
+   ],
+   "confidence_interval": [
+    0.44100316641913684,
+    0.44135697159859594
+   ],
+   "confidence_interval_processed": [
+    10.918747470317154,
+    11.116419926761832
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42013544165464123,
+     0.4864202437588022
+    ],
+    [
+     0.4377657886159234,
+     0.4452202801319725
+    ],
+    [
+     0.44100316641913684,
+     0.44135697159859594
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.002,
+   "point_index": 3,
+   "trial_index": 14,
+   "seed": 20260775,
+   "sampler_default_shots": 1024,
+   "price": 10.973281741840005,
+   "undiscounted_payoff": 11.535893927587148,
+   "raw_amplitude": 0.4421077695438927,
+   "absolute_price_error": 0.5226981696544399,
+   "num_oracle_queries": 10240,
+   "powers": [
+    0,
+    0,
+    10
+   ],
+   "ratios": [
+    1.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240
+   ],
+   "confidence_interval": [
+    0.4405253685141382,
+    0.4436901705736472
+   ],
+   "confidence_interval_processed": [
+    10.6517997514918,
+    12.419988103682496
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.3950272872414067,
+     0.460912783654374
+    ],
+    [
+     0.4405253685141382,
+     0.4436901705736472
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 0,
+   "seed": 20260776,
+   "sampler_default_shots": 1024,
+   "price": 10.513068025872485,
+   "undiscounted_payoff": 11.05208454983469,
+   "raw_amplitude": 0.44124182055535666,
+   "absolute_price_error": 0.06248445368692046,
+   "num_oracle_queries": 82944,
+   "powers": [
+    0,
+    0,
+    3,
+    78
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    22.428571428571427
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    79872
+   ],
+   "confidence_interval": [
+    0.44102673171199447,
+    0.4414569093987189
+   ],
+   "confidence_interval_processed": [
+    10.93191349952319,
+    11.17225560014622
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.40595627042978893,
+     0.47335916210383144
+    ],
+    [
+     0.4352270073816039,
+     0.4449284814279239
+    ],
+    [
+     0.44102673171199447,
+     0.4414569093987189
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 1,
+   "seed": 20260777,
+   "sampler_default_shots": 1024,
+   "price": 10.429358389505579,
+   "undiscounted_payoff": 10.964083028634015,
+   "raw_amplitude": 0.44108431052810715,
+   "absolute_price_error": 0.021225182679986077,
+   "num_oracle_queries": 71680,
+   "powers": [
+    0,
+    0,
+    3,
+    67
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.285714285714285
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    68608
+   ],
+   "confidence_interval": [
+    0.44083431094520814,
+    0.4413343101110061
+   ],
+   "confidence_interval_processed": [
+    10.82440719987045,
+    11.103758857397553
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.40306095534673536,
+     0.47041490735255154
+    ],
+    [
+     0.43625663890646077,
+     0.4459574702778947
+    ],
+    [
+     0.44083431094520814,
+     0.4413343101110061
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 2,
+   "seed": 20260778,
+   "sampler_default_shots": 1024,
+   "price": 10.428739306752338,
+   "undiscounted_payoff": 10.963432204829267,
+   "raw_amplitude": 0.44108314564738893,
+   "absolute_price_error": 0.02184426543322715,
+   "num_oracle_queries": 95232,
+   "powers": [
+    0,
+    0,
+    4,
+    89
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    19.88888888888889
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    91136
+   ],
+   "confidence_interval": [
+    0.4408933653308512,
+    0.4412729259639266
+   ],
+   "confidence_interval_processed": [
+    10.857401135944944,
+    11.069463273713561
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4233527161923894,
+     0.4910001511691464
+    ],
+    [
+     0.4349470357359528,
+     0.4425612548220438
+    ],
+    [
+     0.4408933653308512,
+     0.4412729259639266
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 3,
+   "seed": 20260779,
+   "sampler_default_shots": 1024,
+   "price": 10.48401978981989,
+   "undiscounted_payoff": 11.02154697887189,
+   "raw_amplitude": 0.4411871627088915,
+   "absolute_price_error": 0.033436217634324805,
+   "num_oracle_queries": 101376,
+   "powers": [
+    0,
+    0,
+    4,
+    95
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    21.22222222222222
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    97280
+   ],
+   "confidence_interval": [
+    0.4410101482326422,
+    0.44136417718514087
+   ],
+   "confidence_interval_processed": [
+    10.922648239175734,
+    11.120445718568044
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4243204140238856,
+     0.4919789781825232
+    ],
+    [
+     0.43877210458742777,
+     0.4463677391736145
+    ],
+    [
+     0.4410101482326422,
+     0.44136417718514087
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 4,
+   "seed": 20260780,
+   "sampler_default_shots": 1024,
+   "price": 10.530600768366897,
+   "undiscounted_payoff": 11.07051621525927,
+   "raw_amplitude": 0.4412748105773889,
+   "absolute_price_error": 0.0800171961813323,
+   "num_oracle_queries": 82944,
+   "powers": [
+    0,
+    0,
+    3,
+    78
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    22.428571428571427
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    79872
+   ],
+   "confidence_interval": [
+    0.44105970769909036,
+    0.4414899134556874
+   ],
+   "confidence_interval_processed": [
+    10.950337323569237,
+    11.190695106949303
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4078871324330478,
+     0.47532134711705415
+    ],
+    [
+     0.4352270073816039,
+     0.4449284814279239
+    ],
+    [
+     0.44105970769909036,
+     0.4414899134556874
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 5,
+   "seed": 20260781,
+   "sampler_default_shots": 1024,
+   "price": 10.496487462729752,
+   "undiscounted_payoff": 11.034653883041097,
+   "raw_amplitude": 0.441210622176463,
+   "absolute_price_error": 0.045903890544186865,
+   "num_oracle_queries": 81920,
+   "powers": [
+    0,
+    0,
+    3,
+    77
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    22.142857142857142
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    78848
+   ],
+   "confidence_interval": [
+    0.4409923749930825,
+    0.44142886935984343
+   ],
+   "confidence_interval_processed": [
+    10.91271825474728,
+    11.156589511334882
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4088527587379953,
+     0.47630224445367836
+    ],
+    [
+     0.43460124774593123,
+     0.4443031580272204
+    ],
+    [
+     0.4409923749930825,
+     0.44142886935984343
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 6,
+   "seed": 20260782,
+   "sampler_default_shots": 1024,
+   "price": 10.445550311821044,
+   "undiscounted_payoff": 10.98110512855903,
+   "raw_amplitude": 0.4411147776312487,
+   "absolute_price_error": 0.005033260364520231,
+   "num_oracle_queries": 242688,
+   "powers": [
+    0,
+    0,
+    10,
+    227
+   ],
+   "ratios": [
+    1.0,
+    21.0,
+    21.666666666666668
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240,
+    232448
+   ],
+   "confidence_interval": [
+    0.44104058201098956,
+    0.4411889732515078
+   ],
+   "confidence_interval_processed": [
+    10.939651720396718,
+    11.022558536721336
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.3924548813755797,
+     0.45960923301221235
+    ],
+    [
+     0.4397769174926417,
+     0.44300237076894694
+    ],
+    [
+     0.44104058201098956,
+     0.4411889732515078
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 7,
+   "seed": 20260783,
+   "sampler_default_shots": 1024,
+   "price": 10.470964892715745,
+   "undiscounted_payoff": 11.007822742880139,
+   "raw_amplitude": 0.4411625983064182,
+   "absolute_price_error": 0.020381320530180602,
+   "num_oracle_queries": 73728,
+   "powers": [
+    0,
+    0,
+    3,
+    69
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.857142857142858
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    70656
+   ],
+   "confidence_interval": [
+    0.440918919030542,
+    0.4414062775822944
+   ],
+   "confidence_interval_processed": [
+    10.87167809649381,
+    11.143967389266466
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4107844015022954,
+     0.47826364923132514
+    ],
+    [
+     0.4382694984315593,
+     0.44796931892156766
+    ],
+    [
+     0.440918919030542,
+     0.4414062775822944
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 8,
+   "seed": 20260784,
+   "sampler_default_shots": 1024,
+   "price": 10.427908316429717,
+   "undiscounted_payoff": 10.962558608721727,
+   "raw_amplitude": 0.44108158203638737,
+   "absolute_price_error": 0.022675255755848056,
+   "num_oracle_queries": 100352,
+   "powers": [
+    0,
+    0,
+    4,
+    94
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    96256
+   ],
+   "confidence_interval": [
+    0.44090294019878623,
+    0.44126022387398856
+   ],
+   "confidence_interval_processed": [
+    10.862750655326602,
+    11.062366562116884
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42722428036214005,
+     0.4949146867465579
+    ],
+    [
+     0.4379140360999334,
+     0.4455132900867027
+    ],
+    [
+     0.44090294019878623,
+     0.44126022387398856
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 9,
+   "seed": 20260785,
+   "sampler_default_shots": 1024,
+   "price": 10.434067543889785,
+   "undiscounted_payoff": 10.969033626526503,
+   "raw_amplitude": 0.4410931713841277,
+   "absolute_price_error": 0.01651602829577925,
+   "num_oracle_queries": 98304,
+   "powers": [
+    0,
+    0,
+    4,
+    92
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    20.555555555555557
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    94208
+   ],
+   "confidence_interval": [
+    0.44091078362605485,
+    0.4412755591422005
+   ],
+   "confidence_interval_processed": [
+    10.867132811454171,
+    11.070934441598833
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4233527161923894,
+     0.4910001511691464
+    ],
+    [
+     0.4365813352905445,
+     0.44418680361805973
+    ],
+    [
+     0.44091078362605485,
+     0.4412755591422005
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 10,
+   "seed": 20260786,
+   "sampler_default_shots": 1024,
+   "price": 10.459412949915714,
+   "undiscounted_payoff": 10.995678519307477,
+   "raw_amplitude": 0.44114086189823165,
+   "absolute_price_error": 0.008829377730149801,
+   "num_oracle_queries": 98304,
+   "powers": [
+    0,
+    0,
+    4,
+    92
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    20.555555555555557
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    94208
+   ],
+   "confidence_interval": [
+    0.44095846512901593,
+    0.4413232586674474
+   ],
+   "confidence_interval_processed": [
+    10.893772669671343,
+    11.097584368943643
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41658244483582646,
+     0.4841447504818935
+    ],
+    [
+     0.4370320376526843,
+     0.4446353185996558
+    ],
+    [
+     0.44095846512901593,
+     0.4413232586674474
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 11,
+   "seed": 20260787,
+   "sampler_default_shots": 1024,
+   "price": 10.465196999498874,
+   "undiscounted_payoff": 11.001759123454258,
+   "raw_amplitude": 0.44115174530242496,
+   "absolute_price_error": 0.014613427313308947,
+   "num_oracle_queries": 100352,
+   "powers": [
+    0,
+    0,
+    4,
+    94
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    21.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    96256
+   ],
+   "confidence_interval": [
+    0.44097312300814107,
+    0.4413303675967089
+   ],
+   "confidence_interval_processed": [
+    10.90196208899348,
+    11.101556157915066
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42045039645544885,
+     0.48806289676015324
+    ],
+    [
+     0.43813071141124493,
+     0.44572902473699144
+    ],
+    [
+     0.44097312300814107,
+     0.4413303675967089
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 12,
+   "seed": 20260788,
+   "sampler_default_shots": 1024,
+   "price": 10.457407527212695,
+   "undiscounted_payoff": 10.993570276383776,
+   "raw_amplitude": 0.44113708844754773,
+   "absolute_price_error": 0.006823955027130069,
+   "num_oracle_queries": 82944,
+   "powers": [
+    0,
+    0,
+    3,
+    78
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    22.428571428571427
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    79872
+   ],
+   "confidence_interval": [
+    0.440922041343687,
+    0.4413521355514084
+   ],
+   "confidence_interval_processed": [
+    10.873422546109023,
+    11.113718006658502
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.3982380445448555,
+     0.4655052037114191
+    ],
+    [
+     0.4352270073816039,
+     0.4449284814279239
+    ],
+    [
+     0.440922041343687,
+     0.4413521355514084
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 13,
+   "seed": 20260789,
+   "sampler_default_shots": 1024,
+   "price": 10.43836317445025,
+   "undiscounted_payoff": 10.97354949877543,
+   "raw_amplitude": 0.44110125414396273,
+   "absolute_price_error": 0.012220397735314137,
+   "num_oracle_queries": 83968,
+   "powers": [
+    0,
+    0,
+    3,
+    79
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    22.714285714285715
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    80896
+   ],
+   "confidence_interval": [
+    0.44088906380209514,
+    0.4413134444858303
+   ],
+   "confidence_interval_processed": [
+    10.854997853559475,
+    11.092101143991389
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41271656388825273,
+     0.48022453472196736
+    ],
+    [
+     0.43605200483330747,
+     0.4457529567702083
+    ],
+    [
+     0.44088906380209514,
+     0.4413134444858303
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.001,
+   "point_index": 4,
+   "trial_index": 14,
+   "seed": 20260790,
+   "sampler_default_shots": 1024,
+   "price": 10.480252310424447,
+   "undiscounted_payoff": 11.017586336677267,
+   "raw_amplitude": 0.4411800737307524,
+   "absolute_price_error": 0.029668738238882497,
+   "num_oracle_queries": 99328,
+   "powers": [
+    0,
+    0,
+    4,
+    93
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    20.77777777777778
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    95232
+   ],
+   "confidence_interval": [
+    0.44099965473866665,
+    0.44136049272283817
+   ],
+   "confidence_interval_processed": [
+    10.916785479523654,
+    11.118387193830882
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41658244483582646,
+     0.4841447504818935
+    ],
+    [
+     0.43769586677099537,
+     0.4452960868285067
+    ],
+    [
+     0.44099965473866665,
+     0.44136049272283817
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 0,
+   "seed": 20260791,
+   "sampler_default_shots": 1024,
+   "price": 10.426351898449711,
+   "undiscounted_payoff": 10.960922391485468,
+   "raw_amplitude": 0.4410786534435863,
+   "absolute_price_error": 0.02423167373585322,
+   "num_oracle_queries": 72704,
+   "powers": [
+    0,
+    0,
+    3,
+    68
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.571428571428573
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    69632
+   ],
+   "confidence_interval": [
+    0.440827705707527,
+    0.4413296011796456
+   ],
+   "confidence_interval_processed": [
+    10.820716825524237,
+    11.10112795744667
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.40634315528217874,
+     0.47493159446768235
+    ],
+    [
+     0.43718890167805563,
+     0.44705657584489134
+    ],
+    [
+     0.440827705707527,
+     0.4413296011796456
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 1,
+   "seed": 20260792,
+   "sampler_default_shots": 1024,
+   "price": 10.47406694556132,
+   "undiscounted_payoff": 11.011083841376122,
+   "raw_amplitude": 0.4411684352022577,
+   "absolute_price_error": 0.02348337337575579,
+   "num_oracle_queries": 214016,
+   "powers": [
+    0,
+    0,
+    9,
+    200
+   ],
+   "ratios": [
+    1.0,
+    19.0,
+    21.105263157894736
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    9216,
+    204800
+   ],
+   "confidence_interval": [
+    0.4410828231912347,
+    0.4412540472132806
+   ],
+   "confidence_interval_processed": [
+    10.963252047206367,
+    11.05891563554584
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.3841790897456875,
+     0.45233047135496024
+    ],
+    [
+     0.43944955620192594,
+     0.4430920703298128
+    ],
+    [
+     0.4410828231912347,
+     0.4412540472132806
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 2,
+   "seed": 20260793,
+   "sampler_default_shots": 1024,
+   "price": 10.539557102281837,
+   "undiscounted_payoff": 11.079931750233538,
+   "raw_amplitude": 0.4412916630266435,
+   "absolute_price_error": 0.08897353009627196,
+   "num_oracle_queries": 101376,
+   "powers": [
+    0,
+    0,
+    4,
+    95
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    21.22222222222222
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    97280
+   ],
+   "confidence_interval": [
+    0.4411116361638827,
+    0.44147168988940433
+   ],
+   "confidence_interval_processed": [
+    10.97934997739923,
+    11.18051352306785
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.42567332159679233,
+     0.4945277192373075
+    ],
+    [
+     0.4384973005409872,
+     0.44622379043275495
+    ],
+    [
+     0.4411116361638827,
+     0.44147168988940433
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 3,
+   "seed": 20260794,
+   "sampler_default_shots": 1024,
+   "price": 10.48091986260824,
+   "undiscounted_payoff": 11.01828811499341,
+   "raw_amplitude": 0.441181329812695,
+   "absolute_price_error": 0.030336290422674494,
+   "num_oracle_queries": 101376,
+   "powers": [
+    0,
+    0,
+    4,
+    95
+   ],
+   "ratios": [
+    1.0,
+    9.0,
+    21.22222222222222
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    4096,
+    97280
+   ],
+   "confidence_interval": [
+    0.44100124301136345,
+    0.44136141661402656
+   ],
+   "confidence_interval_processed": [
+    10.917672854225067,
+    11.118903375761784
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4227704427437751,
+     0.4915916525910773
+    ],
+    [
+     0.4387096627489444,
+     0.44643529531671383
+    ],
+    [
+     0.44100124301136345,
+     0.44136141661402656
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 4,
+   "seed": 20260795,
+   "sampler_default_shots": 1024,
+   "price": 10.507004577020542,
+   "undiscounted_payoff": 11.045710221312287,
+   "raw_amplitude": 0.44123041142690567,
+   "absolute_price_error": 0.05642100483497714,
+   "num_oracle_queries": 70656,
+   "powers": [
+    0,
+    0,
+    3,
+    66
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    67584
+   ],
+   "confidence_interval": [
+    0.44097233121871005,
+    0.44148849163510134
+   ],
+   "confidence_interval_processed": [
+    10.901519712875483,
+    11.189900729749125
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.3947704650428716,
+     0.46314852680805774
+    ],
+    [
+     0.43617512567311584,
+     0.4460432973708284
+    ],
+    [
+     0.44097233121871005,
+     0.44148849163510134
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 5,
+   "seed": 20260796,
+   "sampler_default_shots": 1024,
+   "price": 10.451026722012251,
+   "undiscounted_payoff": 10.986862320304944,
+   "raw_amplitude": 0.4411250821739021,
+   "absolute_price_error": 0.00044314982668680614,
+   "num_oracle_queries": 243712,
+   "powers": [
+    0,
+    0,
+    10,
+    228
+   ],
+   "ratios": [
+    1.0,
+    21.0,
+    21.761904761904763
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240,
+    233472
+   ],
+   "confidence_interval": [
+    0.44104981714567587,
+    0.44120034720212836
+   ],
+   "confidence_interval_processed": [
+    10.944811429369414,
+    11.028913211240472
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.3938069413200944,
+     0.4621657380550929
+    ],
+    [
+     0.4400448953614352,
+     0.443326954747443
+    ],
+    [
+     0.44104981714567587,
+     0.44120034720212836
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 6,
+   "seed": 20260797,
+   "sampler_default_shots": 1024,
+   "price": 10.480870896943959,
+   "undiscounted_payoff": 11.018236638805838,
+   "raw_amplitude": 0.44118123767774553,
+   "absolute_price_error": 0.030287324758393908,
+   "num_oracle_queries": 72704,
+   "powers": [
+    0,
+    0,
+    3,
+    68
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.571428571428573
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    69632
+   ],
+   "confidence_interval": [
+    0.440930335953641,
+    0.44143213940185005
+   ],
+   "confidence_interval_processed": [
+    10.878056779919179,
+    11.1584164976925
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4034481865382414,
+     0.47198762239345615
+    ],
+    [
+     0.4379891835961908,
+     0.4478565195294141
+    ],
+    [
+     0.440930335953641,
+     0.44143213940185005
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 7,
+   "seed": 20260798,
+   "sampler_default_shots": 1024,
+   "price": 10.488005986256537,
+   "undiscounted_payoff": 11.025737551970213,
+   "raw_amplitude": 0.44119466323017686,
+   "absolute_price_error": 0.037422414070972465,
+   "num_oracle_queries": 71680,
+   "powers": [
+    0,
+    0,
+    3,
+    67
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.285714285714285
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    68608
+   ],
+   "confidence_interval": [
+    0.44094033749199024,
+    0.44144898896836343
+   ],
+   "confidence_interval_processed": [
+    10.883644681873415,
+    11.167830422066979
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.40827379736709146,
+     0.4768935800545603
+    ],
+    [
+     0.43658247537723993,
+     0.4464504375348349
+    ],
+    [
+     0.44094033749199024,
+     0.44144898896836343
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 8,
+   "seed": 20260799,
+   "sampler_default_shots": 1024,
+   "price": 10.543945772923939,
+   "undiscounted_payoff": 11.084545432831094,
+   "raw_amplitude": 0.4412999208528918,
+   "absolute_price_error": 0.09336220073837431,
+   "num_oracle_queries": 116736,
+   "powers": [
+    0,
+    0,
+    5,
+    109
+   ],
+   "ratios": [
+    1.0,
+    11.0,
+    19.90909090909091
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    5120,
+    111616
+   ],
+   "confidence_interval": [
+    0.44114267712558847,
+    0.44145716458019524
+   ],
+   "confidence_interval_processed": [
+    10.996692694541363,
+    11.172398171120859
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4314826143053767,
+     0.5003963191131584
+    ],
+    [
+     0.43935305902888094,
+     0.445778238547281
+    ],
+    [
+     0.44114267712558847,
+     0.44145716458019524
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 9,
+   "seed": 20260800,
+   "sampler_default_shots": 1024,
+   "price": 10.452792927128513,
+   "undiscounted_payoff": 10.988719080693942,
+   "raw_amplitude": 0.4411284055071295,
+   "absolute_price_error": 0.0022093549429484938,
+   "num_oracle_queries": 70656,
+   "powers": [
+    0,
+    0,
+    3,
+    66
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    67584
+   ],
+   "confidence_interval": [
+    0.440870333975954,
+    0.4413864770383051
+   ],
+   "confidence_interval_processed": [
+    10.844533420145122,
+    11.132904741242795
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4073084100954053,
+     0.4759126534454531
+    ],
+    [
+     0.4355593535996783,
+     0.44542786767211395
+    ],
+    [
+     0.440870333975954,
+     0.4413864770383051
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 10,
+   "seed": 20260801,
+   "sampler_default_shots": 1024,
+   "price": 10.425696628158246,
+   "undiscounted_payoff": 10.960233524767736,
+   "raw_amplitude": 0.4410774204715422,
+   "absolute_price_error": 0.024886944027318947,
+   "num_oracle_queries": 70656,
+   "powers": [
+    0,
+    0,
+    3,
+    66
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    67584
+   ],
+   "confidence_interval": [
+    0.4408193523139289,
+    0.44133548862915556
+   ],
+   "confidence_interval_processed": [
+    10.816049749042449,
+    11.104417300493054
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.4131027174386031,
+     0.48179623067823985
+    ],
+    [
+     0.435352799123427,
+     0.4452214351762346
+    ],
+    [
+     0.4408193523139289,
+     0.44133548862915556
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 11,
+   "seed": 20260802,
+   "sampler_default_shots": 1024,
+   "price": 10.441179951400269,
+   "undiscounted_payoff": 10.976510694967923,
+   "raw_amplitude": 0.4411065542579449,
+   "absolute_price_error": 0.009403620785295885,
+   "num_oracle_queries": 70656,
+   "powers": [
+    0,
+    0,
+    3,
+    66
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.0
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    67584
+   ],
+   "confidence_interval": [
+    0.4408484842511872,
+    0.44136462426470263
+   ],
+   "confidence_interval_processed": [
+    10.832325886117808,
+    11.120695503818034
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.41020496891936303,
+     0.4788550365268808
+    ],
+    [
+     0.43617512567311584,
+     0.4460432973708284
+    ],
+    [
+     0.4408484842511872,
+     0.44136462426470263
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 12,
+   "seed": 20260803,
+   "sampler_default_shots": 1024,
+   "price": 10.473256693360883,
+   "undiscounted_payoff": 11.010232046657027,
+   "raw_amplitude": 0.4411669106125962,
+   "absolute_price_error": 0.022673121175317945,
+   "num_oracle_queries": 239616,
+   "powers": [
+    0,
+    0,
+    10,
+    224
+   ],
+   "ratios": [
+    1.0,
+    21.0,
+    21.38095238095238
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    10240,
+    229376
+   ],
+   "confidence_interval": [
+    0.44109035157629667,
+    0.44124346964889577
+   ],
+   "confidence_interval_processed": [
+    10.967458187915033,
+    11.053005905399022
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.39284355151946043,
+     0.4611828154927471
+    ],
+    [
+     0.43904902175282046,
+     0.4423284841360758
+    ],
+    [
+     0.44109035157629667,
+     0.44124346964889577
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 13,
+   "seed": 20260804,
+   "sampler_default_shots": 1024,
+   "price": 10.453603340755159,
+   "undiscounted_payoff": 10.989571045115744,
+   "raw_amplitude": 0.44112993040053433,
+   "absolute_price_error": 0.0030197685695938503,
+   "num_oracle_queries": 116736,
+   "powers": [
+    0,
+    0,
+    5,
+    109
+   ],
+   "ratios": [
+    1.0,
+    11.0,
+    19.90909090909091
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    5120,
+    111616
+   ],
+   "confidence_interval": [
+    0.440972534015364,
+    0.44128732678570465
+   ],
+   "confidence_interval_processed": [
+    10.901633016227374,
+    11.077509074004114
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.43535808965011014,
+     0.5043061065356532
+    ],
+    [
+     0.43935305902888094,
+     0.445778238547281
+    ],
+    [
+     0.440972534015364,
+     0.44128732678570465
+    ]
+   ]
+  },
+  {
+   "eps_a": 0.0005,
+   "point_index": 5,
+   "trial_index": 14,
+   "seed": 20260805,
+   "sampler_default_shots": 1024,
+   "price": 10.472408096688675,
+   "undiscounted_payoff": 11.009339941503054,
+   "raw_amplitude": 0.4411653138730718,
+   "absolute_price_error": 0.0218245245031099,
+   "num_oracle_queries": 71680,
+   "powers": [
+    0,
+    0,
+    3,
+    67
+   ],
+   "ratios": [
+    1.0,
+    7.0,
+    19.285714285714285
+   ],
+   "round_shots": [
+    1024,
+    1024,
+    1024,
+    1024
+   ],
+   "round_oracle_queries": [
+    0,
+    0,
+    3072,
+    68608
+   ],
+   "confidence_interval": [
+    0.44091098399481304,
+    0.44141964375133047
+   ],
+   "confidence_interval_processed": [
+    10.867244758330381,
+    11.151435124675698
+   ],
+   "estimate_intervals": [
+    [
+     0.0,
+     1.0
+    ],
+    [
+     0.40827379736709146,
+     0.4768935800545603
+    ],
+    [
+     0.4363791119599074,
+     0.44624717707637634
+    ],
+    [
+     0.44091098399481304,
+     0.44141964375133047
+    ]
+   ]
+  }
+ ]
+}

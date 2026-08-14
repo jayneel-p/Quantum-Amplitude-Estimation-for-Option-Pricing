@@ -1,0 +1,16 @@
+European Call Quantum Circuit Validation
+==========================================================
+Source pipeline: Stamatopoulos et al. (2020), Sec. 3.1 and 4.1.1: load a log-normal terminal distribution, encode the European-call payoff into an objective qubit, and recover the expected payoff from the objective-qubit probability. Black-Scholes is the classical benchmark.
+Gate basis for resource counts: ry, rz, x, h, cx (standard simulator gates; no opaque library gates counted).
+Parameters: S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0, c_approx=0.10, log-normal bounds=±3 sigma.
+Black-Scholes price: 10.450584
+
+  n   grid        price      abs_err      raw_amp   qubits    depth      ry      rz       x       h      cx
+-------------------------------------------------------------------------------------------------------
+  2      4     6.833602     3.616981   0.43431845        5       94      20      49       8       2      51
+  3      8    10.673862     0.223279   0.44154437        7      158      34     100       4       4      94
+  4     16    10.384347     0.066236   0.44099962        9      250      51     159      12       7     141
+  5     32    10.473624     0.023041   0.44116760       11      364      75     232       8       9     196
+  6     64    10.461750     0.011167   0.44114526       13      556     118     343      16      12     267
+  7    128    10.460000     0.009416   0.44114197       15      864     191     515      12      14     370
+  8    256    10.460131     0.009547   0.44114221       17     1436     328     815      20      17     537

@@ -1,0 +1,17 @@
+RQMC (scrambled Sobol + Brownian bridge) vs MC, daily Asian call
+S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0, N=252; 16 independent sample sets/randomizations per point
+master_seed=20260716; MC and Sobol seeds are recorded in rqmc_replicates.json
+SD = sample standard deviation across single-replicate estimates.
+RQMC randomization = SciPy Sobol LMS+digital shift; points generated with random_base2.
+
+        M         MC est         SD     MC+KV est         SD      RQMC est         SD   RQMC+KV est         SD
+    1,024       5.87469   0.320604       5.78222   0.006547       5.78438   0.012372       5.78190   0.002169
+    2,048       5.75290   0.195768       5.77940   0.004909       5.78346   0.005680       5.78182   0.000949
+    4,096       5.84835   0.095650       5.78140   0.003038       5.78118   0.004634       5.78179   0.000552
+    8,192       5.78929   0.099513       5.78163   0.002224       5.78120   0.002035       5.78186   0.000498
+   16,384       5.80819   0.052430       5.78166   0.002140       5.78156   0.001295       5.78172   0.000227
+   32,768       5.78941   0.050924       5.78243   0.001128       5.78219   0.000824       5.78182   0.000213
+   65,536       5.77471   0.029218       5.78174   0.000983       5.78203   0.000314       5.78183   0.000111
+
+fitted replicate SD ~ M^-alpha over the sweep: MC: alpha=0.54, MC+KV: alpha=0.46, RQMC: alpha=0.83, RQMC+KV: alpha=0.66
+at M=2^16: SD(MC)/SD(RQMC+KV) = 262x (variance ratio 68,846x)

@@ -1,0 +1,19 @@
+{
+ "part": "refine",
+ "created_at_start": "2026-07-18T10:46:35-06:00",
+ "command": "scripts/validate_wang_kan_cv_feasibility.py --refine",
+ "cwd": "/Users/jayneelparikh/Desktop/QC Final Project",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "qiskit": "2.4.2",
+  "qiskit_aer": "0.17.2"
+ },
+ "source_hashes": {
+  "src/qc_option_pricing/classical/heston_weak_euler.py": "4815ea71adc4eb6e0f22b58aef033bb78be2d8af9cf468e09cc2154e129c0107",
+  "scripts/validate_wang_kan_cv_feasibility.py": "53724412669311fcb9bab11de93182be44c2a2b9128aa5896ca3a296fc757d08",
+  "tests/test_heston_weak_euler.py": "b2aa2faffef9867e24409f29926cdcecad403ed61af175115819b8ee5265547d"
+ }
+}

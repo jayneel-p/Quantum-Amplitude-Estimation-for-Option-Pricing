@@ -1,0 +1,193 @@
+{
+  "schema_version": "k2-blocked-control-evidence-v1",
+  "created_at": "2026-07-28T15:28:05.452428+00:00",
+  "git_revision": "900ef6d19657f98f20565a8953750f1d2e512f33",
+  "claim_tested": "A single-amplitude two-block geometric control, with its price restored classically, reaches a matched price error with fewer leading T gates than the shipped one-block oracle.",
+  "configuration": {
+    "n_dates": 252,
+    "price_scale": 16384,
+    "multiplier_fraction_bits": 30,
+    "caps_selected_by": "results/v23/k2_ladder_pilot.json, $0.001 discounted budget on binary-shock paths"
+  },
+  "arms": {
+    "raw": {
+      "label": "arithmetic_none",
+      "cap_dollars": 54.885316394624255,
+      "cap_numerator": 226608738,
+      "threshold_bits": 28,
+      "normalization_numerator": 268435456,
+      "amplitude_scale_dollars": 65.01587301587301,
+      "register_fill_fraction": 0.8441833332180977,
+      "a_t": 105168399,
+      "q_t": 210544481,
+      "a_qubits": 14837,
+      "q_qubits": 29671,
+      "a_toffoli": 15024057
+    },
+    "k1": {
+      "label": "arithmetic_collapsed",
+      "cap_dollars": 2.7676527235243054,
+      "cap_numerator": 11426996,
+      "threshold_bits": 24,
+      "normalization_numerator": 16777216,
+      "amplitude_scale_dollars": 4.063492063492063,
+      "register_fill_fraction": 0.6811020374298096,
+      "a_t": 112277123,
+      "q_t": 224776209,
+      "a_qubits": 15857,
+      "q_qubits": 31711,
+      "a_toffoli": 16039589
+    },
+    "k2": {
+      "label": "ladder_blocked_to_target",
+      "cap_dollars": 0.6808057512555804,
+      "cap_numerator": 2810889,
+      "threshold_bits": 22,
+      "normalization_numerator": 4194304,
+      "amplitude_scale_dollars": 1.0158730158730158,
+      "register_fill_fraction": 0.6701681613922119,
+      "a_t": 118239135,
+      "q_t": 236712203,
+      "a_qubits": 16712,
+      "q_qubits": 33421,
+      "a_toffoli": 16891305
+    }
+  },
+  "comparison": {
+    "implemented_scale_ratio_k1": 16.0,
+    "implemented_scale_ratio_k2": 64.0,
+    "per_query_t_overhead_k1": 1.0675948755930582,
+    "per_query_t_overhead_k2": 1.1242859555173996,
+    "leading_t_gain_k1": 14.986958410709738,
+    "leading_t_gain_k2": 56.92501955211832,
+    "k2_over_k1_leading_gain": 3.7983036979297604,
+    "query_model": "queries taken proportional to the implemented amplitude scale; no schedule executed"
+  },
+  "rounding_certificate": {
+    "strike_adjustment_units": 0,
+    "blocks": [
+      {
+        "block_index": 0,
+        "dates": [
+          0,
+          126
+        ],
+        "weighted_sum_values": 8002,
+        "shock_weight_bits": 13,
+        "chain_multiplications": 13,
+        "worst_upward_violation_units": -0.4410515084011215,
+        "worst_downward_deficit_units": 31.08060171291984,
+        "recorded_error_bound_units": 32,
+        "rounds_down_everywhere": true
+      },
+      {
+        "block_index": 1,
+        "dates": [
+          126,
+          252
+        ],
+        "weighted_sum_values": 23878,
+        "shock_weight_bits": 15,
+        "chain_multiplications": 15,
+        "worst_upward_violation_units": -0.45423855108380756,
+        "worst_downward_deficit_units": 789.2630444680875,
+        "recorded_error_bound_units": 790,
+        "rounds_down_everywhere": true
+      }
+    ],
+    "reachable_pairs": 191071756
+  },
+  "sampled_ordering": {
+    "paths_checked": 200,
+    "minimum_blocked_to_target_numerator": 0,
+    "nonnegative_on_every_sampled_path": true
+  },
+  "exact_control_restoration": {
+    "method": "exact two-dimensional dynamic program over both block weighted sums",
+    "first_block_sum_values": 8002,
+    "second_block_sum_values": 23878,
+    "reachable_pairs": 191071756,
+    "control_undiscounted": 5.971839511438174,
+    "control_discounted": 5.680589461675959
+  },
+  "control_cross_check": {
+    "paths": 200000,
+    "seed": 20260802,
+    "control_undiscounted": 5.971277184143067,
+    "standard_error": 0.01858270649570173
+  },
+  "control_agreement_z": 0.030260785490909894,
+  "limitations": [
+    "No amplitude-estimation schedule was executed on any 252-date oracle.",
+    "Resource counts are logical and use the exact seven-T Toffoli convention.",
+    "Caps are selected on seeded binary-shock samples, not certified from a continuous tail bound.",
+    "The k=2 oracle was counted compositionally; it was not transpiled at 252 dates here."
+  ],
+  "environment": {
+    "python": "3.12.6",
+    "numpy": "2.4.4",
+    "platform": "macOS-14.5-arm64-arm-64bit"
+  },
+  "inputs": {
+    "scripts/v24_k2_blocked_control_evidence.py": {
+      "sha256": "c4f02734b7e262747d31abd6629fe897d39c3cf2c561bd7f989db07988325698"
+    },
+    "src/qc_option_pricing/quantum/telescoping_asian_ladder.py": {
+      "sha256": "4b13494a7b85765116f119c074b07da2876a0cd3db8bc337513159f68f43fe90"
+    },
+    "src/qc_option_pricing/quantum/arithmetic_asian_oracle.py": {
+      "sha256": "b8b95f80196c78c38a3216d1b2fedc05d57980044ec38d9220ebb982c2317bb5"
+    }
+  },
+  "gates": [
+    {
+      "name": "k=2 threshold register is narrower than k=1",
+      "passed": true,
+      "observed": [
+        24,
+        22
+      ]
+    },
+    {
+      "name": "implemented ratios are exact powers of two",
+      "passed": true,
+      "observed": [
+        16.0,
+        64.0
+      ]
+    },
+    {
+      "name": "k=1 arm reproduces the published 16-fold implemented ratio",
+      "passed": true,
+      "observed": 16.0
+    },
+    {
+      "name": "k=1 arm reproduces the published 1.068 per-query overhead",
+      "passed": true,
+      "observed": 1.0675948755930582
+    },
+    {
+      "name": "both block chains round down on every reachable value",
+      "passed": true,
+      "observed": [
+        -0.4410515084011215,
+        -0.45423855108380756
+      ]
+    },
+    {
+      "name": "the k=2 partition needs no strike shift",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "name": "H - C1 is nonnegative on every sampled path",
+      "passed": true,
+      "observed": 0
+    },
+    {
+      "name": "exact control agrees with independent sampling",
+      "passed": true,
+      "observed_z": 0.030260785490909894
+    }
+  ]
+}

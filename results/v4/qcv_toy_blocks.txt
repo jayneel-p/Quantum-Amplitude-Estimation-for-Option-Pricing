@@ -1,0 +1,15 @@
+v4 block-geometric QCV on the exact 4-date toy grid (256 paths)
+conditional-mean 4-point shocks, basis {ry, rz, x, h, cx}, S0=100.0, K=100.0, r=0.05, sigma=0.2, T=1.0
+
+exact grid arithmetic price:  6.596331
+exact grid geometric price:   6.415617   (k=1 control)
+exact grid B_2 price:         6.527193   (k=2 control)
+
+encoding   f_max      statevector price   reconstruction |err|   depth      cx
+  raw     51.5854   6.596331          1.62e-11           27641   14668
+  R1       2.3979   0.180714          4.31e-13           27641   14668
+  R2       0.4839   0.069138          1.70e-13           27641   14668
+
+query ratios: f_max(A)/f_max(R1) = 21.5   f_max(A)/f_max(R2) = 106.6
+
+checks: ALL PASS

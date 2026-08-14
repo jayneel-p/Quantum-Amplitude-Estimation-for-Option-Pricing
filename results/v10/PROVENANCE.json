@@ -1,0 +1,31 @@
+{
+ "generated_at": "2026-07-18T11:49:08-06:00",
+ "generated_by": "scripts/record_v10_provenance.py",
+ "environment": {
+  "python": "3.12.6",
+  "platform": "macOS-14.5-arm64-arm-64bit",
+  "numpy": "2.4.4",
+  "scipy": "1.17.1",
+  "qiskit": "2.4.2",
+  "qiskit_aer": "0.17.2"
+ },
+ "source_files": {
+  "src/qc_option_pricing/classical/heston_weak_euler.py": "4815ea71adc4eb6e0f22b58aef033bb78be2d8af9cf468e09cc2154e129c0107",
+  "src/qc_option_pricing/quantum/wang_kan_resources.py": "0abdafe1f3796bcb558539ab443cd35e872c63a7821358df2eebd6132eed521d",
+  "tests/test_heston_weak_euler.py": "b2aa2faffef9867e24409f29926cdcecad403ed61af175115819b8ee5265547d",
+  "tests/test_wang_kan_resources.py": "09d80481e373bd3c630899b5f8a7cfec96db630aff6797f8a3d0fc201c6188c8",
+  "scripts/validate_wang_kan_cv_feasibility.py": "53724412669311fcb9bab11de93182be44c2a2b9128aa5896ca3a296fc757d08",
+  "scripts/validate_wang_kan_cv_resources.py": "c50c251c1f5e2151b24b9e726fc6f132187f6412afa67e2d8a2a74f80f01b4e9",
+  "scripts/validate_wang_kan_cv_small_oracle.py": "d00bfed50b007e322608766c5f9bfb30d3483e3c4e86774d64d4b18d68fe216e",
+  "scripts/record_v10_provenance.py": "b6f242de7dd21dbe95b6d58ca7e74b0865498c1e0f6561233bc8f06e9d931f22",
+  "src/qc_option_pricing/classical/heston_geometric_asian.py": "51aa6d586764492e0da7c47242ee4c7231c7de6e37c3f5f234cf171580992199",
+  "tests/test_heston_geometric_asian.py": "bc56bcea196c1ca362269c2f78e506fb5585c44ab5dad1378cedb3b9661bb948",
+  "scripts/validate_wang_kan_cv_restoration.py": "7ee2556085c285e9eb123ebad22fb1d682ace7a87d67f94bcda4946936d9df88"
+ },
+ "result_files": {
+  "results/v10/wang_kan_cv_feasibility.json": "dc8896425185a3dfb494f8916d0f243a15761f8aaf4bb8a7c2bc4c7b5cb8d528",
+  "results/v10/wang_kan_cv_resources.json": "2fd7219dbd6f21b84d757907952583a35259f954af45e70280a745d51c2f6273",
+  "results/v10/wang_kan_cv_small_oracle.json": "83449571bd8ed77bf5ef90b95d7db9278200d422fd526316aeadbac4395c9538",
+  "results/v10/wang_kan_cv_restoration.json": "608d2d1ad8165cafae3aafbaa8643a954399bc7a3e06f8325023d7c6fd75ae22"
+ }
+}
