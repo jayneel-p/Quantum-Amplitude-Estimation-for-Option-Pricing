@@ -27,13 +27,10 @@ tmp/
 .idea/
 .vscode/
 
-# Experiment scripts remain local, except for the runners required to
-# reproduce the published general-k frontier and IQAE schedule simulation.
-scripts/
-!scripts/
-scripts/*
-!scripts/v25_general_k_frontier.py
-!scripts/v25_executed_iqae.py
+# Publication generators are tracked so the released results remain reproducible.
+# Superseded exploratory scripts stay local unless a published provenance record
+# requires their exact historical version at the top-level scripts/ path.
+scripts/_retired/
 
 # Manuscript sources and build, kept out of the public repository until
 # submission. Supplied directly to co-authors and reviewers.
